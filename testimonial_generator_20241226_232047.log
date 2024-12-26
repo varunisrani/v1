@@ -1,0 +1,9 @@
+2024-12-26 23:20:47,787 - INFO - Initializing application
+2024-12-26 23:20:47,917 - INFO - Initializing TestimonialGenerator
+2024-12-26 23:20:47,917 - INFO - Font downloaded successfully
+2024-12-26 23:20:47,917 - INFO - TestimonialGenerator initialized successfully
+2024-12-26 23:20:47,918 - INFO - Initializing TestimonialGenerator
+2024-12-26 23:20:47,918 - INFO - Font downloaded successfully
+2024-12-26 23:20:47,918 - INFO - TestimonialGenerator initialized successfully
+2024-12-26 23:20:47,960 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-26 23:20:49,096 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"

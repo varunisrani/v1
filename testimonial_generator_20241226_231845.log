@@ -1,0 +1,51 @@
+2024-12-26 23:18:45,088 - INFO - Initializing application
+2024-12-26 23:18:45,199 - INFO - Initializing TestimonialGenerator
+2024-12-26 23:18:45,199 - INFO - Font downloaded successfully
+2024-12-26 23:18:45,199 - INFO - TestimonialGenerator initialized successfully
+2024-12-26 23:18:45,371 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-26 23:18:46,380 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-26 23:18:51,756 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-26 23:18:51,759 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:18:51,759 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:18:51,760 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:20,761 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-26 23:19:20,763 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:20,763 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:20,764 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:29,042 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-26 23:19:29,044 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:29,044 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:29,044 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:34,010 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:34,010 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:34,010 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:36,592 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:36,592 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:36,592 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:37,198 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:37,198 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:37,198 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:37,509 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:37,510 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:37,510 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:38,134 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:38,134 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:38,134 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:38,636 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:38,637 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:38,637 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:39,014 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:39,015 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:39,015 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:39,275 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:39,275 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:39,275 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:39,661 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:39,662 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:39,662 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:39,992 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:39,992 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:39,992 - ERROR - Error rendering text SVG: 'image_size'
+2024-12-26 23:19:40,493 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:19:40,493 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:19:40,493 - ERROR - Error rendering text SVG: 'image_size'

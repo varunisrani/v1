@@ -1,0 +1,10 @@
+2024-12-26 23:25:02,950 - INFO - Initializing application
+2024-12-26 23:25:03,059 - INFO - Initializing TestimonialGenerator
+2024-12-26 23:25:03,059 - INFO - Font downloaded successfully
+2024-12-26 23:25:03,059 - INFO - TestimonialGenerator initialized successfully
+2024-12-26 23:25:03,236 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-26 23:25:04,286 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-26 23:25:04,664 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-26 23:25:04,669 - ERROR - Error rendering background SVG: 'image_size'
+2024-12-26 23:25:04,669 - ERROR - Error rendering shapes SVG: 'image_size'
+2024-12-26 23:25:04,669 - ERROR - Error rendering text SVG: 'image_size'
