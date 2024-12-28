@@ -108,22 +108,73 @@ export default function Home() {
     fetchInitialData();
   }, []);
 
-  // Generate new testimonial
+  // Update the color mode selection buttons
+  const handleColorModeChange = (mode) => {
+    setColorMode(mode);
+    
+    // Reset pending colors
+    setPendingColors(null);
+
+    // Handle each mode differently
+    switch (mode) {
+      case 'preset':
+        // Set default preset scheme
+        setPresetScheme('Professional (Blue/White)');
+        setCustomColors(COLOR_SCHEMES['Professional (Blue/White)']);
+        break;
+        
+      case 'custom':
+        // Keep current colors for custom editing
+        break;
+        
+      case 'random':
+        // Will use random colors on next generation
+        break;
+    }
+  };
+
+  // Update the generateTestimonial function
   const generateTestimonial = async () => {
     try {
       setLoading(true);
       setError(null);
+
+      // Handle colors based on mode
+      let currentColors;
+      
+      switch (colorMode) {
+        case 'preset':
+          currentColors = COLOR_SCHEMES[presetScheme];
+          break;
+          
+        case 'custom':
+          currentColors = customColors;
+          break;
+          
+        case 'random':
+          // Get random colors from API
+          try {
+            const colorResponse = await axios.get(`${API_BASE_URL}/random-design`);
+            if (colorResponse.data?.colors) {
+              currentColors = colorResponse.data.colors;
+              setCustomColors(currentColors); // Update UI with new colors
+            }
+          } catch (error) {
+            console.error('Error getting random colors:', error);
+            currentColors = customColors; // Fallback to current colors
+          }
+          break;
+          
+        default:
+          currentColors = customColors;
+      }
 
       const response = await axios.post(`${API_BASE_URL}/generate-testimonial`, {
         topic,
         selected_shapes: selectedShapes,
         font_size: fontSize,
         has_quotes: hasQuotes,
-        colors: {
-          bg: colorMode === 'preset' ? COLOR_SCHEMES[presetScheme].bg : customColors.bg,
-          text: colorMode === 'preset' ? COLOR_SCHEMES[presetScheme].text : customColors.text,
-          accent: colorMode === 'preset' ? COLOR_SCHEMES[presetScheme].accent : customColors.accent
-        }
+        colors: currentColors
       });
 
       if (response.data) {
@@ -149,11 +200,8 @@ export default function Home() {
       setLoading(true);
       setError(null);
 
-      // Apply any pending color changes
-      if (pendingColors) {
-        setCustomColors(pendingColors);
-        setPendingColors(null);
-      }
+      // Get current active colors (either pending or current)
+      const currentColors = pendingColors || customColors;
 
       const response = await axios.post(`${API_BASE_URL}/update-design`, {
         text: testimonialText,
@@ -166,7 +214,7 @@ export default function Home() {
         })),
         font_size: fontSize,
         has_quotes: hasQuotes,
-        colors: pendingColors || customColors
+        colors: currentColors
       });
 
       if (response.data) {
@@ -176,6 +224,12 @@ export default function Home() {
           text: response.data.text_svg || '',
           combined: response.data.combined_svg || ''
         });
+
+        // If there were pending colors, apply them now
+        if (pendingColors) {
+          setCustomColors(pendingColors);
+          setPendingColors(null);
+        }
       }
     } catch (error) {
       console.error('Error updating design:', error);
@@ -375,8 +429,21 @@ export default function Home() {
     );
   };
 
+  // Also add a keyboard shortcut for quick random generation
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      // Press 'R' key for random colors
+      if (e.key === 'r' || e.key === 'R') {
+        document.querySelector('[data-random-colors]')?.click();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white text-black">
       {/* Top Navigation Bar */}
       <nav className="bg-white border-b border-gray-200 fixed w-full z-50">
         <div className="flex items-center justify-between px-4 h-14">
@@ -461,9 +528,19 @@ export default function Home() {
                 <button 
                   onClick={generateTestimonial}
                   disabled={loading}
-                  className="flex-1 px-4 py-2 bg-purple-600 text-white text-sm rounded-lg hover:bg-purple-700 disabled:opacity-50"
+                  className="flex-1 px-4 py-2 bg-purple-600 text-white text-sm rounded-lg 
+                            hover:bg-purple-700 disabled:opacity-50 flex items-center justify-center space-x-2"
                 >
-                  {loading ? 'Generating...' : 'Generate'}
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                       className="h-4 w-4" fill="none" 
+                       viewBox="0 0 24 24" 
+                       stroke="currentColor">
+                    <path strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                  <span>{loading ? 'Generating...' : 'Generate Testimonial'}</span>
                 </button>
                 <button 
                   onClick={updateDesign}
@@ -507,7 +584,7 @@ export default function Home() {
                 {['preset', 'custom', 'random'].map((mode) => (
                   <button
                     key={mode}
-                    onClick={() => setColorMode(mode)}
+                    onClick={() => handleColorModeChange(mode)}
                     className={`px-3 py-1.5 text-sm rounded-lg transition-colors
                       ${colorMode === mode 
                         ? 'bg-purple-100 text-purple-700 font-medium' 
@@ -518,7 +595,7 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Preset Color Schemes */}
+              {/* Mode-specific content */}
               {colorMode === 'preset' && (
                 <div className="space-y-2">
                   {Object.entries(COLOR_SCHEMES).map(([name, colors]) => (
@@ -526,13 +603,13 @@ export default function Home() {
                       key={name}
                       onClick={() => {
                         setPresetScheme(name);
-                        setPendingColors(colors); // Store colors but don't apply yet
+                        setCustomColors(colors);
+                        generateTestimonial();
                       }}
                       className={`w-full p-3 rounded-lg border-2 transition-all
-                        ${(presetScheme === name || 
-                           (pendingColors && pendingColors === colors)) 
-                            ? 'border-purple-500 shadow-sm' 
-                            : 'border-transparent hover:border-gray-200'}`}
+                        ${presetScheme === name 
+                          ? 'border-purple-500 shadow-sm' 
+                          : 'border-transparent hover:border-gray-200'}`}
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-sm">{name}</span>
@@ -550,7 +627,6 @@ export default function Home() {
                 </div>
               )}
 
-              {/* Custom Colors */}
               {colorMode === 'custom' && (
                 <div className="space-y-3">
                   {Object.entries(customColors).map(([key, value]) => (
@@ -561,7 +637,7 @@ export default function Home() {
                           type="color"
                           value={value}
                           onChange={(e) => {
-                            setPendingColors({
+                            setCustomColors({
                               ...customColors,
                               [key]: e.target.value
                             });
@@ -574,30 +650,30 @@ export default function Home() {
                       </div>
                     </div>
                   ))}
+                  <button
+                    onClick={generateTestimonial}
+                    className="w-full px-4 py-2 bg-purple-600 text-white rounded-lg 
+                              hover:bg-purple-700 transition-colors"
+                  >
+                    Apply Custom Colors
+                  </button>
                 </div>
               )}
 
-              {/* Random Colors */}
               {colorMode === 'random' && (
-                <button
-                  onClick={async () => {
-                    try {
-                      const response = await axios.get(`${API_BASE_URL}/random-design`);
-                      if (response.data?.colors) {
-                        setCustomColors(response.data.colors);
-                        updateDesign();
-                      }
-                    } catch (error) {
-                      console.error('Error getting random colors:', error);
-                      setError('Failed to generate random colors');
-                    }
-                  }}
-                  className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 
-                             text-white text-sm rounded-lg hover:from-purple-600 hover:to-pink-600 
-                             transition-all duration-200"
-                >
-                  Generate Random Colors
-                </button>
+                <div className="text-center p-4">
+                  <p className="text-sm text-gray-600 mb-4">
+                    Random colors will be generated each time you create a new testimonial
+                  </p>
+                  <button
+                    onClick={generateTestimonial}
+                    className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 
+                              text-white text-sm rounded-lg hover:from-purple-600 hover:to-pink-600 
+                              transition-all duration-200"
+                  >
+                    Generate with Random Colors
+                  </button>
+                </div>
               )}
             </div>
 

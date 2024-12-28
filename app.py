@@ -212,15 +212,12 @@ async def upload_custom_font(file: UploadFile = File(...)):
 
 @app.get("/random-design")
 async def get_random_design():
-    """Get random design configuration"""
+    """Get random design configuration with generated accent color"""
     try:
-        design = generator.get_current_design()
+        colors = generator.get_random_color_theme()
         return {
-            "colors": {
-                "bg": design['bgco'],
-                "text": design['textco'],
-                "accent": design['accent']
-            }
+            "colors": colors,
+            "success": True
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

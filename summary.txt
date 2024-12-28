@@ -1,0 +1,62 @@
+TESTIMONIAL DESIGNER - CODE STRUCTURE SUMMARY
+
+1. DEPENDENCIES
+   - React (useState, useEffect)
+   - axios (API calls)
+
+2. CONSTANTS
+   - COLOR_PALETTES (Light, Dark, Colorful themes)
+   - COLOR_WHEEL (Basic, Warm, Cool, Neutral, Pastel)
+   - COLOR_SCHEMES (Professional, Creative, Nature, etc.)
+   - SHAPE_PATTERNS (Circles, Dots, Waves, Corners)
+
+3. MAIN COMPONENTS
+   └── Home
+       ├── TopNavBar (File, Save, Share)
+       ├── Sidebar
+       │   └── ElementLibrary
+       │       ├── TextLibrary
+       │       ├── ShapeLibrary
+       │       └── BackgroundLibrary
+       └── Canvas
+           ├── Preview Controls
+           ├── Main Preview
+           └── Components Preview
+
+4. STATE MANAGEMENT
+   - Design State: text, shapes, colors, fonts
+   - UI State: loading, errors, active views
+   - Edit State: selections, dragging, positions
+
+5. CORE FUNCTIONS
+   - updateDesign(): Save changes to backend
+   - generateTestimonial(): Create new content
+   - handleTextUpdate(): Update text content
+   - handleFontUpload(): Custom font processing
+
+6. API INTEGRATION
+   Endpoints:
+   - /generate-testimonial
+   - /update-design
+   - /upload-font
+   - /color-schemes
+   - /shape-patterns
+
+7. FEATURES
+   - Text editing with formatting
+   - Shape manipulation
+   - Color theme selection
+   - Background customization
+   - Component downloads
+   - Real-time preview
+
+File Structure:
+app/
+├── page.js (main component)
+├── components/ (suggested organization)
+│   ├── TopNavBar.js
+│   ├── Sidebar.js
+│   └── Canvas.js
+└── utils/ (suggested organization)
+    ├── constants.js
+    └── api.js 

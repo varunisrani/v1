@@ -382,6 +382,136 @@ class TestimonialGenerator:
             logger.error(f"Error rendering shapes SVG: {str(e)}")
             return None
 
+    def get_random_color_theme(self):
+        """Get a random color theme from ss11.csv with harmonious colors"""
+        try:
+            with open('ss11.csv', mode='r') as file:
+                next(file)  # Skip header
+                themes = list(csv.reader(file))
+                theme = random.choice(themes)
+                
+                def hex_to_rgb(hex_color):
+                    hex_color = hex_color.lstrip('#')
+                    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+                
+                def rgb_to_hex(rgb):
+                    return '#{:02x}{:02x}{:02x}'.format(*rgb)
+                
+                def get_contrast_ratio(color1, color2):
+                    # Calculate relative luminance
+                    def luminance(r, g, b):
+                        rs = r / 255
+                        gs = g / 255
+                        bs = b / 255
+                        return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs
+                    
+                    l1 = luminance(*color1)
+                    l2 = luminance(*color2)
+                    
+                    # Calculate contrast ratio
+                    lighter = max(l1, l2)
+                    darker = min(l1, l2)
+                    return (lighter + 0.05) / (darker + 0.05)
+                
+                def generate_harmonious_accent(bg_rgb, text_rgb):
+                    # Get HSL values for better color manipulation
+                    def rgb_to_hsl(r, g, b):
+                        r, g, b = r/255, g/255, b/255
+                        cmax, cmin = max(r, g, b), min(r, g, b)
+                        delta = cmax - cmin
+                        
+                        # Calculate hue
+                        if delta == 0:
+                            h = 0
+                        elif cmax == r:
+                            h = 60 * ((g-b)/delta % 6)
+                        elif cmax == g:
+                            h = 60 * ((b-r)/delta + 2)
+                        else:
+                            h = 60 * ((r-g)/delta + 4)
+                        
+                        # Calculate lightness
+                        l = (cmax + cmin) / 2
+                        
+                        # Calculate saturation
+                        s = 0 if delta == 0 else delta/(1-abs(2*l-1))
+                        
+                        return (h, s, l)
+                    
+                    def hsl_to_rgb(h, s, l):
+                        c = (1 - abs(2*l - 1)) * s
+                        x = c * (1 - abs((h/60) % 2 - 1))
+                        m = l - c/2
+                        
+                        if 0 <= h < 60:
+                            r, g, b = c, x, 0
+                        elif 60 <= h < 120:
+                            r, g, b = x, c, 0
+                        elif 120 <= h < 180:
+                            r, g, b = 0, c, x
+                        elif 180 <= h < 240:
+                            r, g, b = 0, x, c
+                        elif 240 <= h < 300:
+                            r, g, b = x, 0, c
+                        else:
+                            r, g, b = c, 0, x
+                        
+                        return (
+                            int((r + m) * 255),
+                            int((g + m) * 255),
+                            int((b + m) * 255)
+                        )
+                    
+                    # Get HSL values of background
+                    bg_hsl = rgb_to_hsl(*bg_rgb)
+                    
+                    # Create complementary accent color
+                    accent_h = (bg_hsl[0] + 180) % 360  # Complementary hue
+                    accent_s = min(1.0, bg_hsl[1] + 0.3)  # Increased saturation
+                    accent_l = 0.5  # Mid lightness for good contrast
+                    
+                    # Convert back to RGB
+                    accent_rgb = hsl_to_rgb(accent_h, accent_s, accent_l)
+                    
+                    # Ensure good contrast with both bg and text
+                    if get_contrast_ratio(accent_rgb, bg_rgb) < 4.5:
+                        accent_l = 0.7 if bg_hsl[2] < 0.5 else 0.3
+                        accent_rgb = hsl_to_rgb(accent_h, accent_s, accent_l)
+                    
+                    return accent_rgb
+                
+                # Get colors from CSV
+                bg_color = f"#{theme[1]}"
+                text_color = f"#{theme[2]}"
+                
+                # Convert to RGB for processing
+                bg_rgb = hex_to_rgb(bg_color)
+                text_rgb = hex_to_rgb(text_color)
+                
+                # Generate harmonious accent color
+                accent_rgb = generate_harmonious_accent(bg_rgb, text_rgb)
+                accent_color = rgb_to_hex(accent_rgb)
+                
+                # Verify contrast ratios
+                if get_contrast_ratio(text_rgb, bg_rgb) < 4.5:
+                    # Adjust text color for better readability
+                    text_rgb = tuple(255 - c for c in bg_rgb)  # Use complementary color
+                    text_color = rgb_to_hex(text_rgb)
+                
+                return {
+                    "bg": bg_color,
+                    "text": text_color,
+                    "accent": accent_color
+                }
+                
+        except Exception as e:
+            logger.error(f"Error getting random color theme: {str(e)}")
+            return {
+                "bg": "#FFFFFF",
+                "text": "#000000",
+                "accent": "#2196F3"
+            }
+
 # Add this to store the current design state
 class DesignState:
     def __init__(self):
