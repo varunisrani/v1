@@ -111,86 +111,72 @@ export default function Home() {
   // Update the color mode selection buttons
   const handleColorModeChange = (mode) => {
     setColorMode(mode);
-    
-    // Reset pending colors
     setPendingColors(null);
 
-    // Handle each mode differently
     switch (mode) {
-      case 'preset':
-        // Set default preset scheme
-        setPresetScheme('Professional (Blue/White)');
-        setCustomColors(COLOR_SCHEMES['Professional (Blue/White)']);
-        break;
-        
-      case 'custom':
-        // Keep current colors for custom editing
-        break;
-        
-      case 'random':
-        // Will use random colors on next generation
-        break;
+        case 'preset':
+            setPresetScheme('Professional (Blue/White)');
+            setCustomColors(COLOR_SCHEMES['Professional (Blue/White)']);
+            break;
+        case 'custom':
+            // Keep current custom colors
+            break;
+        case 'random':
+            // Colors will be set on next generation
+            break;
     }
   };
 
   // Update the generateTestimonial function
   const generateTestimonial = async () => {
     try {
-      setLoading(true);
-      setError(null);
+        setLoading(true);
+        setError(null);
 
-      // Handle colors based on mode
-      let currentColors;
-      
-      switch (colorMode) {
-        case 'preset':
-          currentColors = COLOR_SCHEMES[presetScheme];
-          break;
-          
-        case 'custom':
-          currentColors = customColors;
-          break;
-          
-        case 'random':
-          // Get random colors from API
-          try {
-            const colorResponse = await axios.get(`${API_BASE_URL}/random-design`);
-            if (colorResponse.data?.colors) {
-              currentColors = colorResponse.data.colors;
-              setCustomColors(currentColors); // Update UI with new colors
+        // Prepare request data based on color mode
+        let requestData = {
+            topic: topic || "general product",
+            selected_shapes: ['Square'],
+            font_size: fontSize,
+            has_quotes: hasQuotes,
+        };
+
+        // Handle different color modes
+        switch (colorMode) {
+            case 'random':
+                requestData.colors = { random: true };
+                break;
+            case 'preset':
+                requestData.colors = COLOR_SCHEMES[presetScheme];
+                break;
+            case 'custom':
+                requestData.colors = customColors;
+                break;
+            default:
+                requestData.colors = customColors;
+        }
+
+        const response = await axios.post(`${API_BASE_URL}/generate-testimonial`, requestData);
+
+        if (response.data) {
+            setTestimonialText(response.data.text_content);
+            setSvgPreviews({
+                background: response.data.background_svg || '',
+                shapes: response.data.shapes_svg || '',
+                text: response.data.text_svg || '',
+                combined: response.data.combined_svg || ''
+            });
+            
+            // Only update colors if in random mode
+            if (colorMode === 'random' && response.data.colors) {
+                setCustomColors(response.data.colors);
             }
-          } catch (error) {
-            console.error('Error getting random colors:', error);
-            currentColors = customColors; // Fallback to current colors
-          }
-          break;
-          
-        default:
-          currentColors = customColors;
-      }
-
-      const response = await axios.post(`${API_BASE_URL}/generate-testimonial`, {
-        topic,
-        selected_shapes: selectedShapes,
-        font_size: fontSize,
-        has_quotes: hasQuotes,
-        colors: currentColors
-      });
-
-      if (response.data) {
-        setTestimonialText(response.data.text_content);
-        setSvgPreviews({
-          background: response.data.background_svg || '',
-          shapes: response.data.shapes_svg || '',
-          text: response.data.text_svg || '',
-          combined: response.data.combined_svg || ''
-        });
-      }
+        }
     } catch (error) {
-      console.error('Error generating testimonial:', error);
-      setError(error.response?.data?.detail || 'Failed to generate testimonial');
+        console.error('Error generating testimonial:', error);
+        setError(error.response?.data?.detail || 'Failed to generate testimonial');
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
   };
 

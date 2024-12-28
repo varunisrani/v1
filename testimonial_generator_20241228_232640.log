@@ -1,0 +1,189 @@
+2024-12-28 23:26:40,073 - INFO - Initializing application
+2024-12-28 23:26:40,169 - INFO - Initializing TestimonialGenerator
+2024-12-28 23:26:40,170 - INFO - Font downloaded successfully
+2024-12-28 23:26:40,170 - INFO - CSV columns found: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:26:40,170 - ERROR - Missing required columns: {'bgco', 'accent', 'textco'}
+2024-12-28 23:26:40,170 - WARNING - CSV validation failed, using default color schemes
+2024-12-28 23:26:40,170 - INFO - TestimonialGenerator initialized successfully
+2024-12-28 23:26:40,439 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-28 23:26:41,512 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-28 23:26:42,213 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8C551E', '(1400', ' 900)', '48', '#FFB74D', 'square,curve', '#8A5520']
+2024-12-28 23:26:42,213 - INFO - Generated theme: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:26:42,851 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:26:42,856 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:26:42,856 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:26:42,856 - INFO - Using random colors: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:26:46,108 - INFO - Selected row: ['Poppins-Medium', '455959', 'FFFFFF', '(1400', ' 900)', '48', '#FFAB40', 'curve,square', '#E5E5E5']
+2024-12-28 23:26:46,108 - INFO - Generated theme: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:26:46,634 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:26:46,636 - INFO - Selected row: ['Poppins-Medium', '455959', 'FFFFFF', '(1400', ' 900)', '48', '#FFAB40', 'curve,square', '#E5E5E5']
+2024-12-28 23:26:46,637 - INFO - Generated theme: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:26:46,637 - INFO - Using random colors: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:26:49,119 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'curve,square', '#3A3A39']
+2024-12-28 23:26:49,119 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:26:49,603 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:26:49,605 - INFO - Selected row: ['Poppins-Medium', 'ECDE61', '333333', '(1400', ' 900)', '48', '#FFEB3B', 'curve,square', '#333333']
+2024-12-28 23:26:49,606 - INFO - Generated theme: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:26:49,606 - INFO - Using random colors: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:26:51,797 - INFO - Selected row: ['Poppins-Medium', 'FFF4E8', 'FF7963', '(1400', ' 900)', '48', '#FF5722', 'square,curve', '#FF7963']
+2024-12-28 23:26:51,797 - INFO - Generated theme: {'bg': '#FFF4E8', 'text': '#FF7963', 'accent': '#FF5722'}
+2024-12-28 23:26:52,375 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:26:52,376 - INFO - Selected row: ['Poppins-Medium', 'ECDE61', '333333', '(1400', ' 900)', '48', '#FFEB3B', 'curve,square', '#333333']
+2024-12-28 23:26:52,376 - INFO - Generated theme: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:26:52,376 - INFO - Using random colors: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:26:53,454 - INFO - Selected row: ['Poppins-Medium', 'FFF4E8', 'FF7963', '(1400', ' 900)', '48', '#FF5722', 'square,curve', '#FF7963']
+2024-12-28 23:26:53,454 - INFO - Generated theme: {'bg': '#FFF4E8', 'text': '#FF7963', 'accent': '#FF5722'}
+2024-12-28 23:26:53,845 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:26:53,847 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'curve,square', '#3A3A39']
+2024-12-28 23:26:53,847 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:26:53,847 - INFO - Using random colors: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:26:55,200 - INFO - Selected row: ['Poppins-Medium', 'ECDE61', '333333', '(1400', ' 900)', '48', '#FFEB3B', 'curve,square', '#333333']
+2024-12-28 23:26:55,201 - INFO - Generated theme: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:26:55,644 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:26:55,646 - INFO - Selected row: ['Poppins-Medium', '455959', 'FFFFFF', '(1400', ' 900)', '48', '#FFAB40', 'curve,square', '#E5E5E5']
+2024-12-28 23:26:55,646 - INFO - Generated theme: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:26:55,647 - INFO - Using random colors: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:26:58,195 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'curve,square', '#3A3A39']
+2024-12-28 23:26:58,195 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:26:58,715 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:26:58,716 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8C551E', '(1400', ' 900)', '48', '#FFB74D', 'square,curve', '#8A5520']
+2024-12-28 23:26:58,716 - INFO - Generated theme: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:26:58,716 - INFO - Using random colors: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:27:02,183 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'curve,square', '#3A3A39']
+2024-12-28 23:27:02,184 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:27:02,709 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:02,711 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8C551E', '(1400', ' 900)', '48', '#FFB74D', 'square,curve', '#8A5520']
+2024-12-28 23:27:02,712 - INFO - Generated theme: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:27:02,712 - INFO - Using random colors: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:27:05,399 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'curve,square', '#3A3A39']
+2024-12-28 23:27:05,399 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:27:05,824 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:05,827 - INFO - Selected row: ['Poppins-Medium', '455959', 'FFFFFF', '(1400', ' 900)', '48', '#FFAB40', 'curve,square', '#E5E5E5']
+2024-12-28 23:27:05,827 - INFO - Generated theme: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:05,827 - INFO - Using random colors: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:07,425 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:27:07,425 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:07,933 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:07,935 - INFO - Selected row: ['Poppins-Medium', 'E2D4C6', '462717', '(1400', ' 900)', '48', '#FF7043', 'square,curve', '#442618']
+2024-12-28 23:27:07,936 - INFO - Generated theme: {'bg': '#E2D4C6', 'text': '#462717', 'accent': '#FF7043'}
+2024-12-28 23:27:07,936 - INFO - Using random colors: {'bg': '#E2D4C6', 'text': '#462717', 'accent': '#FF7043'}
+2024-12-28 23:27:11,092 - INFO - Selected row: ['Poppins-Medium', 'FFF4E8', 'FF7963', '(1400', ' 900)', '48', '#FF5722', 'square,curve', '#FF7963']
+2024-12-28 23:27:11,093 - INFO - Generated theme: {'bg': '#FFF4E8', 'text': '#FF7963', 'accent': '#FF5722'}
+2024-12-28 23:27:11,526 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:11,529 - INFO - Selected row: ['Poppins-Medium', '455959', 'FFFFFF', '(1400', ' 900)', '48', '#FFAB40', 'curve,square', '#E5E5E5']
+2024-12-28 23:27:11,529 - INFO - Generated theme: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:11,529 - INFO - Using random colors: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:12,657 - INFO - Selected row: ['Poppins-Medium', 'FFF4E8', 'FF7963', '(1400', ' 900)', '48', '#FF5722', 'square,curve', '#FF7963']
+2024-12-28 23:27:12,657 - INFO - Generated theme: {'bg': '#FFF4E8', 'text': '#FF7963', 'accent': '#FF5722'}
+2024-12-28 23:27:13,154 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:13,156 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'curve,square', '#3A3A39']
+2024-12-28 23:27:13,156 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:27:13,156 - INFO - Using random colors: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:27:13,643 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:27:13,643 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:14,178 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:14,181 - INFO - Selected row: ['Poppins-Medium', 'E2D4C6', '462717', '(1400', ' 900)', '48', '#FF7043', 'square,curve', '#442618']
+2024-12-28 23:27:14,181 - INFO - Generated theme: {'bg': '#E2D4C6', 'text': '#462717', 'accent': '#FF7043'}
+2024-12-28 23:27:14,181 - INFO - Using random colors: {'bg': '#E2D4C6', 'text': '#462717', 'accent': '#FF7043'}
+2024-12-28 23:27:14,652 - INFO - Selected row: ['Poppins-Medium', 'E2D4C6', '462717', '(1400', ' 900)', '48', '#FF7043', 'square,curve', '#442618']
+2024-12-28 23:27:14,653 - INFO - Generated theme: {'bg': '#E2D4C6', 'text': '#462717', 'accent': '#FF7043'}
+2024-12-28 23:27:15,103 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:15,105 - INFO - Selected row: ['Poppins-Medium', 'FFF4E8', 'FF7963', '(1400', ' 900)', '48', '#FF5722', 'square,curve', '#FF7963']
+2024-12-28 23:27:15,105 - INFO - Generated theme: {'bg': '#FFF4E8', 'text': '#FF7963', 'accent': '#FF5722'}
+2024-12-28 23:27:15,105 - INFO - Using random colors: {'bg': '#FFF4E8', 'text': '#FF7963', 'accent': '#FF5722'}
+2024-12-28 23:27:15,567 - INFO - Selected row: ['Poppins-Medium', '4D3329', 'F8EEE5', '(1400', ' 900)', '48', '#FF8A65', 'curve,square', '#E5D6CD']
+2024-12-28 23:27:15,567 - INFO - Generated theme: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-28 23:27:15,993 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:15,995 - INFO - Selected row: ['Poppins-Medium', '4D3329', 'F8EEE5', '(1400', ' 900)', '48', '#FF8A65', 'curve,square', '#E5D6CD']
+2024-12-28 23:27:15,995 - INFO - Generated theme: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-28 23:27:15,995 - INFO - Using random colors: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-28 23:27:16,486 - INFO - Selected row: ['Poppins-Medium', 'FFF4E8', 'FF7963', '(1400', ' 900)', '48', '#FF5722', 'square,curve', '#FF7963']
+2024-12-28 23:27:16,487 - INFO - Generated theme: {'bg': '#FFF4E8', 'text': '#FF7963', 'accent': '#FF5722'}
+2024-12-28 23:27:16,928 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:16,931 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8C551E', '(1400', ' 900)', '48', '#FFB74D', 'square,curve', '#8A5520']
+2024-12-28 23:27:16,931 - INFO - Generated theme: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:27:16,931 - INFO - Using random colors: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:27:17,399 - INFO - Selected row: ['Poppins-Medium', 'E2D4C6', '462717', '(1400', ' 900)', '48', '#FF7043', 'square,curve', '#442618']
+2024-12-28 23:27:17,399 - INFO - Generated theme: {'bg': '#E2D4C6', 'text': '#462717', 'accent': '#FF7043'}
+2024-12-28 23:27:17,833 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:17,836 - INFO - Selected row: ['Poppins-Medium', 'ECDE61', '333333', '(1400', ' 900)', '48', '#FFEB3B', 'curve,square', '#333333']
+2024-12-28 23:27:17,836 - INFO - Generated theme: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:27:17,836 - INFO - Using random colors: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:27:18,305 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:27:18,305 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:18,735 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:18,737 - INFO - Selected row: ['Poppins-Medium', '15110B', 'E8DFD4', '(1400', ' 900)', '48', '#FFAB91', 'square,curve', '#D4C7BE']
+2024-12-28 23:27:18,737 - INFO - Generated theme: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-28 23:27:18,737 - INFO - Using random colors: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-28 23:27:19,234 - INFO - Selected row: ['Poppins-Medium', 'ECDE61', '333333', '(1400', ' 900)', '48', '#FFEB3B', 'curve,square', '#333333']
+2024-12-28 23:27:19,234 - INFO - Generated theme: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:27:19,656 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:19,658 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'curve,square', '#3A3A39']
+2024-12-28 23:27:19,658 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:27:19,658 - INFO - Using random colors: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:27:20,073 - INFO - Selected row: ['Poppins-Medium', 'ECDE61', '333333', '(1400', ' 900)', '48', '#FFEB3B', 'curve,square', '#333333']
+2024-12-28 23:27:20,073 - INFO - Generated theme: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:27:21,129 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:21,132 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:27:21,132 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:21,132 - INFO - Using random colors: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:22,027 - INFO - Selected row: ['Poppins-Medium', '455959', 'FFFFFF', '(1400', ' 900)', '48', '#FFAB40', 'curve,square', '#E5E5E5']
+2024-12-28 23:27:22,027 - INFO - Generated theme: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:22,474 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:22,477 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8C551E', '(1400', ' 900)', '48', '#FFB74D', 'square,curve', '#8A5520']
+2024-12-28 23:27:22,477 - INFO - Generated theme: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:27:22,477 - INFO - Using random colors: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-28 23:27:23,086 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:27:23,086 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:23,587 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:23,589 - INFO - Selected row: ['Poppins-Medium', '4D3329', 'F8EEE5', '(1400', ' 900)', '48', '#FF8A65', 'curve,square', '#E5D6CD']
+2024-12-28 23:27:23,589 - INFO - Generated theme: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-28 23:27:23,589 - INFO - Using random colors: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-28 23:27:24,191 - INFO - Selected row: ['Poppins-Medium', 'E2D4C6', '462717', '(1400', ' 900)', '48', '#FF7043', 'square,curve', '#442618']
+2024-12-28 23:27:24,191 - INFO - Generated theme: {'bg': '#E2D4C6', 'text': '#462717', 'accent': '#FF7043'}
+2024-12-28 23:27:24,648 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:24,650 - INFO - Selected row: ['Poppins-Medium', '455959', 'FFFFFF', '(1400', ' 900)', '48', '#FFAB40', 'curve,square', '#E5E5E5']
+2024-12-28 23:27:24,650 - INFO - Generated theme: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:24,650 - INFO - Using random colors: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:25,668 - INFO - Selected row: ['Poppins-Medium', '4D3329', 'F8EEE5', '(1400', ' 900)', '48', '#FF8A65', 'curve,square', '#E5D6CD']
+2024-12-28 23:27:25,669 - INFO - Generated theme: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-28 23:27:26,046 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:26,049 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'curve,square', '#3A3A39']
+2024-12-28 23:27:26,050 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:27:26,050 - INFO - Using random colors: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-28 23:27:27,042 - INFO - Selected row: ['Poppins-Medium', '15110B', 'E8DFD4', '(1400', ' 900)', '48', '#FFAB91', 'square,curve', '#D4C7BE']
+2024-12-28 23:27:27,042 - INFO - Generated theme: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-28 23:27:27,491 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:27,493 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:27:27,493 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:27,493 - INFO - Using random colors: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:27,913 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:27:27,913 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-28 23:27:28,436 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:28,438 - INFO - Selected row: ['Poppins-Medium', 'F5EFE9', '5E523E', '(1400', ' 900)', '48', '#FF8C42', 'curve,square', '#584D3E']
+2024-12-28 23:27:28,438 - INFO - Generated theme: {'bg': '#F5EFE9', 'text': '#5E523E', 'accent': '#FF8C42'}
+2024-12-28 23:27:28,438 - INFO - Using random colors: {'bg': '#F5EFE9', 'text': '#5E523E', 'accent': '#FF8C42'}
+2024-12-28 23:27:28,761 - INFO - Selected row: ['Poppins-Medium', 'F5EFE9', '5E523E', '(1400', ' 900)', '48', '#FF8C42', 'curve,square', '#584D3E']
+2024-12-28 23:27:28,761 - INFO - Generated theme: {'bg': '#F5EFE9', 'text': '#5E523E', 'accent': '#FF8C42'}
+2024-12-28 23:27:29,232 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:29,235 - INFO - Selected row: ['Poppins-Medium', '15110B', 'E8DFD4', '(1400', ' 900)', '48', '#FFAB91', 'square,curve', '#D4C7BE']
+2024-12-28 23:27:29,235 - INFO - Generated theme: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-28 23:27:29,235 - INFO - Using random colors: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-28 23:27:29,755 - INFO - Selected row: ['Poppins-Medium', 'F5EFE9', '5E523E', '(1400', ' 900)', '48', '#FF8C42', 'curve,square', '#584D3E']
+2024-12-28 23:27:29,755 - INFO - Generated theme: {'bg': '#F5EFE9', 'text': '#5E523E', 'accent': '#FF8C42'}
+2024-12-28 23:27:30,256 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:30,258 - INFO - Selected row: ['Poppins-Medium', '455959', 'FFFFFF', '(1400', ' 900)', '48', '#FFAB40', 'curve,square', '#E5E5E5']
+2024-12-28 23:27:30,258 - INFO - Generated theme: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:30,258 - INFO - Using random colors: {'bg': '#455959', 'text': '#FFFFFF', 'accent': '#FFAB40'}
+2024-12-28 23:27:32,615 - INFO - Selected row: ['Poppins-Medium', '15110B', 'E8DFD4', '(1400', ' 900)', '48', '#FFAB91', 'square,curve', '#D4C7BE']
+2024-12-28 23:27:32,615 - INFO - Generated theme: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-28 23:27:33,123 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:33,125 - INFO - Selected row: ['Poppins-Medium', 'F5EFE9', '5E523E', '(1400', ' 900)', '48', '#FF8C42', 'curve,square', '#584D3E']
+2024-12-28 23:27:33,125 - INFO - Generated theme: {'bg': '#F5EFE9', 'text': '#5E523E', 'accent': '#FF8C42'}
+2024-12-28 23:27:33,125 - INFO - Using random colors: {'bg': '#F5EFE9', 'text': '#5E523E', 'accent': '#FF8C42'}
+2024-12-28 23:27:33,816 - INFO - Selected row: ['Poppins-Medium', '4D3329', 'F8EEE5', '(1400', ' 900)', '48', '#FF8A65', 'curve,square', '#E5D6CD']
+2024-12-28 23:27:33,816 - INFO - Generated theme: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-28 23:27:34,967 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:27:34,969 - INFO - Selected row: ['Poppins-Medium', 'ECDE61', '333333', '(1400', ' 900)', '48', '#FFEB3B', 'curve,square', '#333333']
+2024-12-28 23:27:34,969 - INFO - Generated theme: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-28 23:27:34,969 - INFO - Using random colors: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}

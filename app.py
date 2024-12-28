@@ -1,12 +1,25 @@
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-from typing import List, Optional, Dict
+from pydantic import BaseModel, Field
+from typing import List, Optional, Dict, Union
 import uvicorn
 from testimonial_generator import TestimonialGenerator, SVGShapeGenerator
 import json
 import os
+import logging
 from fastapi.responses import JSONResponse
+from datetime import datetime
+
+# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(f'api_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
 app = FastAPI(title="Testimonial Generator API")
 
@@ -24,17 +37,29 @@ generator = TestimonialGenerator()
 
 class TestimonialRequest(BaseModel):
     topic: str
-    selected_shapes: List[str]
-    font_size: int = 48
-    has_quotes: bool = True
-    colors: Dict[str, str]
+    selected_shapes: List[str] = Field(default=['Square'])
+    font_size: int = Field(default=32, ge=24, le=48)
+    has_quotes: bool = Field(default=True)
+    colors: Union[Dict[str, str], Dict[str, bool]] = Field(
+        default={
+            "bg": "#FFF5EE",
+            "text": "#8B4513",
+            "accent": "#DEB887"
+        }
+    )
 
 class UpdateDesignRequest(BaseModel):
     text: str
-    selected_shapes: List[str]
-    font_size: int = 48
-    has_quotes: bool = True
-    colors: Dict[str, str]
+    selected_shapes: List[str] = Field(default=['Square'])
+    font_size: int = Field(default=32, ge=24, le=48)
+    has_quotes: bool = Field(default=True)
+    colors: Dict[str, str] = Field(
+        default={
+            "bg": "#FFF5EE",
+            "text": "#8B4513",
+            "accent": "#DEB887"
+        }
+    )
 
 class SVGResponse(BaseModel):
     background_svg: str = ''
@@ -53,20 +78,25 @@ async def generate_testimonial(request: TestimonialRequest):
         # Generate testimonial text
         testimonial_text = generator.generate_testimonial(request.topic)
         
-        # For random mode, get colors from CSV with error handling
-        try:
-            if request.colors.get('random', False):
+        # Handle colors based on request
+        if isinstance(request.colors, dict) and request.colors.get('random', False):
+            # Random mode
+            try:
                 colors = generator.get_random_color_theme()
-                logger.info(f"Random colors generated: {colors}")
-            else:
-                colors = request.colors
-        except Exception as color_error:
-            logger.error(f"Error getting random colors: {str(color_error)}")
-            # Fallback to default colors
+                logger.info(f"Using random colors: {colors}")
+            except Exception as color_error:
+                logger.error(f"Error getting random colors: {str(color_error)}")
+                colors = {
+                    "bg": "#FFF5EE",
+                    "text": "#8B4513",
+                    "accent": "#DEB887"
+                }
+        else:
+            # Preset or Custom mode
             colors = {
-                "bg": "#FFF5EE",
-                "text": "#8B4513",
-                "accent": "#DEB887"
+                "bg": request.colors.get("bg", "#FFFFFF"),
+                "text": request.colors.get("text", "#000000"),
+                "accent": request.colors.get("accent", "#2196F3")
             }
         
         # Update generator design style
@@ -81,7 +111,7 @@ async def generate_testimonial(request: TestimonialRequest):
         background_svg = generator.render_background_svg(colors['bg']) or ''
         shapes_svg = generator.render_shapes_svg(
             colors['accent'],
-            ['Square']  # Force Square shape for random mode
+            ['Square']  # Always use Square shape
         ) or ''
         text_svg = generator.render_text_svg(
             testimonial_text,
@@ -91,7 +121,7 @@ async def generate_testimonial(request: TestimonialRequest):
         ) or ''
         combined_svg = generator.render_svg(
             testimonial_text,
-            ['Square'],  # Force Square shape for random mode
+            ['Square'],
             request.has_quotes
         ) or ''
         
@@ -104,7 +134,7 @@ async def generate_testimonial(request: TestimonialRequest):
             colors=colors
         )
     except Exception as e:
-        print(f"Error in generate_testimonial: {str(e)}")
+        logger.error(f"Error in generate_testimonial: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/update-design", response_model=SVGResponse)

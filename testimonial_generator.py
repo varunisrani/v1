@@ -463,27 +463,46 @@ class TestimonialGenerator:
     def get_random_color_theme(self):
         """Get random color theme from CSV file"""
         try:
-            with open('ss11.csv', mode='r') as file:
-                next(file)  # Skip header
-                themes = list(csv.DictReader(file))
-                theme = random.choice(themes)
+            with open('ss11.csv', mode='r', encoding='utf-8') as file:
+                # Read CSV file
+                csv_reader = csv.reader(file)
+                # Skip header
+                next(csv_reader)
+                # Convert to list to use random.choice
+                all_rows = list(csv_reader)
                 
-                # Print the available columns and their values for debugging
-                logger.info(f"Available columns in CSV: {theme.keys()}")
-                logger.info(f"Selected theme: {theme}")
+                if not all_rows:
+                    raise ValueError("No color themes found in CSV")
                 
-                # Update these keys to match your actual CSV column names
-                return {
-                    "bg": f"#{theme['bgco']}",        # Column name for background color
-                    "text": f"#{theme['textco']}",    # Column name for text color
-                    "accent": f"#{theme['accent']}"    # Column name for accent/shape color
+                # Select random row
+                selected_row = random.choice(all_rows)
+                logger.info(f"Selected row: {selected_row}")
+                
+                # Make sure we have enough columns
+                if len(selected_row) < 7:
+                    raise ValueError(f"Invalid row format: {selected_row}")
+                
+                # Remove any '#' if present and ensure valid hex colors
+                bg_color = selected_row[1].strip('#')
+                text_color = selected_row[2].strip('#')
+                accent_color = selected_row[6].strip('#')
+                
+                # Create color theme
+                theme = {
+                    "bg": f"#{bg_color}",
+                    "text": f"#{text_color}",
+                    "accent": f"#{accent_color}"
                 }
+                
+                logger.info(f"Generated theme: {theme}")
+                return theme
+                
         except Exception as e:
             logger.error(f"Error getting random color theme: {str(e)}")
-            # Log more details about the error
-            logger.error(f"Full error details: ", exc_info=True)
+            logger.error("Full error details: ", exc_info=True)
+            # Return default colors if there's an error
             return {
-                "bg": "#FFF5EE",  # Default fallback colors
+                "bg": "#FFF5EE",
                 "text": "#8B4513",
                 "accent": "#DEB887"
             }
