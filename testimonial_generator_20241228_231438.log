@@ -1,0 +1,16 @@
+2024-12-28 23:14:38,241 - INFO - Initializing application
+2024-12-28 23:14:38,346 - INFO - Initializing TestimonialGenerator
+2024-12-28 23:14:38,346 - INFO - Font downloaded successfully
+2024-12-28 23:14:38,346 - INFO - CSV Header: font,bgco,textco,imagesize,fontsize,accent,shapes,shape_color
+2024-12-28 23:14:38,346 - INFO - First Row: Poppins-Medium,F3F3EB,818174,(1400, 900),48,#FF6F61,"square,curve",#7A7A6D
+2024-12-28 23:14:38,346 - INFO - First Row as Dict: {'font': 'Poppins-Medium', 'bgco': 'F3F3EB', 'textco': '818174', 'imagesize': '(1400', 'fontsize': ' 900)', 'accent': '48', 'shapes': '#FF6F61', 'shape_color': 'square,curve', None: ['#7A7A6D']}
+2024-12-28 23:14:38,346 - INFO - CSV columns found: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:14:38,346 - INFO - TestimonialGenerator initialized successfully
+2024-12-28 23:14:38,643 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-28 23:14:39,558 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-28 23:14:46,786 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:14:46,787 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'FFF4E8', '818174': 'FF7963', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF5722', 'square,curve': 'square,curve', '#7A7A6D': '#FF7963'}
+2024-12-28 23:14:47,341 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:14:48,621 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:14:48,621 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '455959', '818174': 'FFFFFF', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFAB40', 'square,curve': 'curve,square', '#7A7A6D': '#E5E5E5'}
+2024-12-28 23:14:49,103 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"

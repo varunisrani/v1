@@ -1,0 +1,344 @@
+2024-12-28 23:17:03,941 - INFO - Initializing application
+2024-12-28 23:17:04,036 - INFO - Initializing TestimonialGenerator
+2024-12-28 23:17:04,036 - INFO - Font downloaded successfully
+2024-12-28 23:17:04,036 - INFO - CSV columns found: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D']
+2024-12-28 23:17:04,036 - ERROR - Missing required columns: {'accent', 'textco', 'bgco'}
+2024-12-28 23:17:04,036 - WARNING - CSV validation failed, using default color schemes
+2024-12-28 23:17:04,036 - INFO - TestimonialGenerator initialized successfully
+2024-12-28 23:17:05,390 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-28 23:17:05,401 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-28 23:17:13,322 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:13,323 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '15110B', '818174': 'E8DFD4', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFAB91', 'square,curve': 'square,curve', '#7A7A6D': '#D4C7BE'}
+2024-12-28 23:17:13,323 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:13,323 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:13,900 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:16,040 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:16,040 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'FDF6F0', '818174': '8C551E', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFB74D', 'square,curve': 'square,curve', '#7A7A6D': '#8A5520'}
+2024-12-28 23:17:16,040 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:16,040 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:16,463 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:18,839 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:18,839 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '455959', '818174': 'FFFFFF', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFAB40', 'square,curve': 'curve,square', '#7A7A6D': '#E5E5E5'}
+2024-12-28 23:17:18,839 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:18,839 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:19,279 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:20,400 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:20,401 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:17:20,401 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:20,401 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:20,793 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:25,858 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:25,858 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'FDF6F0', '818174': '8C551E', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFB74D', 'square,curve': 'square,curve', '#7A7A6D': '#8A5520'}
+2024-12-28 23:17:25,859 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:25,859 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:26,367 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:30,655 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:30,655 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F5EFE9', '818174': '5E523E', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF8C42', 'square,curve': 'curve,square', '#7A7A6D': '#584D3E'}
+2024-12-28 23:17:30,655 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:30,655 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:30,663 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:30,663 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '455959', '818174': 'FFFFFF', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFAB40', 'square,curve': 'curve,square', '#7A7A6D': '#E5E5E5'}
+2024-12-28 23:17:30,663 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:30,663 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:31,077 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:32,382 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:32,382 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:17:32,382 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:32,382 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:32,393 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:32,393 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '4D3329', '818174': 'F8EEE5', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF8A65', 'square,curve': 'curve,square', '#7A7A6D': '#E5D6CD'}
+2024-12-28 23:17:32,393 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:32,393 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:32,901 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:33,770 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:33,771 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:17:33,771 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:33,771 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:33,781 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:33,781 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:17:33,781 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:33,781 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:34,193 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:34,990 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:34,991 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'ECDE61', '818174': '333333', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFEB3B', 'square,curve': 'curve,square', '#7A7A6D': '#333333'}
+2024-12-28 23:17:34,991 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:34,991 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:35,001 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:35,001 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '15110B', '818174': 'E8DFD4', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFAB91', 'square,curve': 'square,curve', '#7A7A6D': '#D4C7BE'}
+2024-12-28 23:17:35,001 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:35,001 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:35,418 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:36,039 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:36,039 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '4D3329', '818174': 'F8EEE5', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF8A65', 'square,curve': 'curve,square', '#7A7A6D': '#E5D6CD'}
+2024-12-28 23:17:36,040 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:36,040 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:36,048 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:36,048 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:17:36,048 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:36,048 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:36,492 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:38,163 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:38,164 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '4D3329', '818174': 'F8EEE5', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF8A65', 'square,curve': 'curve,square', '#7A7A6D': '#E5D6CD'}
+2024-12-28 23:17:38,164 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:38,164 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:38,175 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:38,176 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'ECDE61', '818174': '333333', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFEB3B', 'square,curve': 'curve,square', '#7A7A6D': '#333333'}
+2024-12-28 23:17:38,176 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:38,176 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:38,606 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:39,842 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:39,842 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'FFF4E8', '818174': 'FF7963', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF5722', 'square,curve': 'square,curve', '#7A7A6D': '#FF7963'}
+2024-12-28 23:17:39,842 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:39,843 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:39,853 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:39,853 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'E2D4C6', '818174': '462717', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'square,curve', '#7A7A6D': '#442618'}
+2024-12-28 23:17:39,853 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:39,853 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:40,292 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:40,938 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:40,938 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'ECDE61', '818174': '333333', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFEB3B', 'square,curve': 'curve,square', '#7A7A6D': '#333333'}
+2024-12-28 23:17:40,938 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:40,939 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:40,945 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:40,946 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'FFF4E8', '818174': 'FF7963', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF5722', 'square,curve': 'square,curve', '#7A7A6D': '#FF7963'}
+2024-12-28 23:17:40,946 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:40,946 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:41,365 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:17:41,852 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:41,852 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:17:41,852 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:41,852 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:41,864 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:17:41,864 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'FDF6F0', '818174': '8C551E', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFB74D', 'square,curve': 'square,curve', '#7A7A6D': '#8A5520'}
+2024-12-28 23:17:41,864 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:17:41,864 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:17:42,261 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:18:17,619 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:18:17,619 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '4D3329', '818174': 'F8EEE5', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF8A65', 'square,curve': 'curve,square', '#7A7A6D': '#E5D6CD'}
+2024-12-28 23:18:17,619 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:18:17,620 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:18:17,626 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:18:17,627 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'E2D4C6', '818174': '462717', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'square,curve', '#7A7A6D': '#442618'}
+2024-12-28 23:18:17,627 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:18:17,627 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:18:18,211 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:18:19,362 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:18:19,363 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:18:19,363 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:18:19,363 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:18:19,373 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:18:19,374 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '4D3329', '818174': 'F8EEE5', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF8A65', 'square,curve': 'curve,square', '#7A7A6D': '#E5D6CD'}
+2024-12-28 23:18:19,374 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:18:19,374 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:18:19,799 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:18:20,982 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:18:20,983 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'ECDE61', '818174': '333333', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFEB3B', 'square,curve': 'curve,square', '#7A7A6D': '#333333'}
+2024-12-28 23:18:20,983 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:18:20,983 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:18:20,995 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:18:20,995 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:18:20,996 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:18:20,996 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:18:21,485 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:19:00,699 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:19:00,700 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F5EFE9', '818174': '5E523E', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF8C42', 'square,curve': 'curve,square', '#7A7A6D': '#584D3E'}
+2024-12-28 23:19:00,700 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:19:00,701 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:19:00,708 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:19:00,708 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': '15110B', '818174': 'E8DFD4', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FFAB91', 'square,curve': 'square,curve', '#7A7A6D': '#D4C7BE'}
+2024-12-28 23:19:00,708 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:19:00,708 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:19:01,223 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:19:02,364 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:19:02,365 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'E2D4C6', '818174': '462717', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'square,curve', '#7A7A6D': '#442618'}
+2024-12-28 23:19:02,365 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:19:02,365 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:19:02,369 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:19:02,369 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F5EFE9', '818174': '5E523E', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF8C42', 'square,curve': 'curve,square', '#7A7A6D': '#584D3E'}
+2024-12-28 23:19:02,369 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:19:02,369 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:19:02,854 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 23:19:04,658 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:19:04,658 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:19:04,658 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:19:04,658 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:19:04,669 - INFO - Available columns in CSV: dict_keys(['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square,curve', '#7A7A6D'])
+2024-12-28 23:19:04,669 - INFO - Selected theme: {'Poppins-Medium': 'Poppins-Medium', 'F3F3EB': 'F6EFE5', '818174': '393938', '(1400': '(1400', ' 900)': ' 900)', '48': '48', '#FF6F61': '#FF7043', 'square,curve': 'curve,square', '#7A7A6D': '#3A3A39'}
+2024-12-28 23:19:04,669 - ERROR - Error getting random color theme: 'bgco'
+2024-12-28 23:19:04,669 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 477, in get_random_color_theme
+    "bg": f"#{theme['bgco']}",        # Column name for background color
+              ~~~~~^^^^^^^^
+KeyError: 'bgco'
+2024-12-28 23:19:05,109 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"

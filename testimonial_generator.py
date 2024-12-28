@@ -193,13 +193,69 @@ class SVGShapeGenerator:
             dwg.add(dwg.line(start=(width-size, height), end=(width, height), stroke=stroke_color, stroke_width=t, stroke_opacity=opacity))
             dwg.add(dwg.line(start=(width, height), end=(width, height-size), stroke=stroke_color, stroke_width=t, stroke_opacity=opacity))
 
+    @staticmethod
+    def draw_square(dwg, width, height, color, opacity=0.5):
+        """Draw a centered rectangular card with shadow effect"""
+        color = SVGShapeGenerator.validate_color(color)
+        
+        # Calculate card dimensions
+        card_width = width * 0.8  # 80% of width
+        card_height = height * 0.6  # 60% of height
+        x = (width - card_width) / 2  # Center horizontally
+        y = (height - card_height) / 2  # Center vertically
+        
+        # Draw shadow
+        dwg.add(dwg.rect(
+            insert=(x + 4, y + 4),  # Offset for shadow
+            size=(card_width, card_height),
+            fill='#000000',
+            fill_opacity=0.1,
+            rx=20,  # Rounded corners
+            ry=20
+        ))
+        
+        # Draw main card
+        dwg.add(dwg.rect(
+            insert=(x, y),
+            size=(card_width, card_height),
+            fill='#FFFFFF',  # Always white background
+            stroke=color,    # Accent color border
+            stroke_width=2,
+            stroke_opacity=opacity,
+            rx=20,  # Rounded corners
+            ry=20
+        ))
+        
+        # Add decorative stars
+        star_color = svgwrite.rgb(int(color[1:3], 16), int(color[3:5], 16), int(color[5:7], 16))
+        star_y = y + 30  # Position stars at top of card
+        star_spacing = 40
+        num_stars = 5
+        star_start_x = (width - (num_stars - 1) * star_spacing) / 2
+        
+        for i in range(num_stars):
+            star_x = star_start_x + (i * star_spacing)
+            # Draw a simple star shape
+            points = []
+            for j in range(5):
+                angle = (j * 4 * math.pi / 5) - math.pi / 2
+                points.append((
+                    star_x + 10 * math.cos(angle),
+                    star_y + 10 * math.sin(angle)
+                ))
+            dwg.add(dwg.polygon(
+                points=points,
+                fill=star_color,
+                fill_opacity=opacity
+            ))
+
 class TestimonialGenerator:
     def __init__(self):
         logger.info("Initializing TestimonialGenerator")
         self.client = client
         self.design_style = {
             'font': 'Poppins-Medium',
-            'imagesize': (1400, 900),  # Default image size
+            'imagesize': (1400, 900),
             'fontsize': 48,
             'bgco': '#FFFFFF',
             'textco': '#000000',
@@ -207,6 +263,11 @@ class TestimonialGenerator:
         }
         self.font_path = None
         self._download_font()
+        
+        # Validate CSV structure on initialization
+        if not self.validate_csv_structure():
+            logger.warning("CSV validation failed, using default color schemes")
+        
         logger.info("TestimonialGenerator initialized successfully")
 
     def _download_font(self):
@@ -306,8 +367,19 @@ class TestimonialGenerator:
             return None
 
     def generate_testimonial(self, topic):
-        """Generate testimonial using Groq"""
+        """Generate testimonial with random theme"""
         try:
+            # Get random colors from CSV
+            colors = self.get_random_color_theme()
+            
+            # Update design style with new colors
+            self.design_style.update({
+                'bgco': colors['bg'],
+                'textco': colors['text'],
+                'accent': colors['accent']
+            })
+            
+            # Generate testimonial text
             response = self.client.chat.completions.create(
                 messages=[{
                     "role": "system",
@@ -317,6 +389,7 @@ class TestimonialGenerator:
                 temperature=0.7,
                 max_tokens=150
             )
+            
             return response.choices[0].message.content.strip()
         except Exception as e:
             logger.error(f"Error generating testimonial: {str(e)}")
@@ -330,22 +403,25 @@ class TestimonialGenerator:
             if has_quotes:
                 text = f'"{text}"'
             
-            # Wrap text and calculate position
-            lines = self.wrap_text(text, font_size, width)
-            total_height = len(lines) * font_size * 1.2
-            current_y = (height - total_height) / 2
-
-            for line in lines:
-                text_width = len(line) * font_size * 0.6  # Approximation
-                x = (width - text_width) / 2
+            # Calculate text position relative to card
+            card_height = height * 0.6  # Match card height from draw_square
+            card_y = (height - card_height) / 2
+            
+            # Draw main content inside the card
+            content_lines = self.wrap_text(text, font_size * 0.8, width * 0.7)
+            y_pos = card_y + 80  # Start inside the card
+            
+            # Center and render text
+            for line in content_lines:
                 dwg.add(dwg.text(
                     line,
-                    insert=(x, current_y + font_size),
+                    insert=(width/2, y_pos),
                     fill=text_color,
-                    font_size=font_size,
-                    font_family=self.design_style['font']
+                    font_size=font_size * 0.8,
+                    font_family=self.design_style['font'],
+                    text_anchor="middle"
                 ))
-                current_y += font_size * 1.2
+                y_pos += font_size * 1.2
 
             return dwg.tostring()
         except Exception as e:
@@ -376,6 +452,8 @@ class TestimonialGenerator:
                     SVGShapeGenerator.draw_waves(dwg, width, height, accent_color)
                 elif shape == "Corners":
                     SVGShapeGenerator.draw_corners(dwg, width, height, accent_color)
+                elif shape == "Square":  # Add the new shape condition
+                    SVGShapeGenerator.draw_square(dwg, width, height, accent_color)
             
             return dwg.tostring()
         except Exception as e:
@@ -383,134 +461,57 @@ class TestimonialGenerator:
             return None
 
     def get_random_color_theme(self):
-        """Get a random color theme from ss11.csv with harmonious colors"""
+        """Get random color theme from CSV file"""
         try:
             with open('ss11.csv', mode='r') as file:
                 next(file)  # Skip header
-                themes = list(csv.reader(file))
+                themes = list(csv.DictReader(file))
                 theme = random.choice(themes)
                 
-                def hex_to_rgb(hex_color):
-                    hex_color = hex_color.lstrip('#')
-                    return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+                # Print the available columns and their values for debugging
+                logger.info(f"Available columns in CSV: {theme.keys()}")
+                logger.info(f"Selected theme: {theme}")
                 
-                def rgb_to_hex(rgb):
-                    return '#{:02x}{:02x}{:02x}'.format(*rgb)
-                
-                def get_contrast_ratio(color1, color2):
-                    # Calculate relative luminance
-                    def luminance(r, g, b):
-                        rs = r / 255
-                        gs = g / 255
-                        bs = b / 255
-                        return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs
-                    
-                    l1 = luminance(*color1)
-                    l2 = luminance(*color2)
-                    
-                    # Calculate contrast ratio
-                    lighter = max(l1, l2)
-                    darker = min(l1, l2)
-                    return (lighter + 0.05) / (darker + 0.05)
-                
-                def generate_harmonious_accent(bg_rgb, text_rgb):
-                    # Get HSL values for better color manipulation
-                    def rgb_to_hsl(r, g, b):
-                        r, g, b = r/255, g/255, b/255
-                        cmax, cmin = max(r, g, b), min(r, g, b)
-                        delta = cmax - cmin
-                        
-                        # Calculate hue
-                        if delta == 0:
-                            h = 0
-                        elif cmax == r:
-                            h = 60 * ((g-b)/delta % 6)
-                        elif cmax == g:
-                            h = 60 * ((b-r)/delta + 2)
-                        else:
-                            h = 60 * ((r-g)/delta + 4)
-                        
-                        # Calculate lightness
-                        l = (cmax + cmin) / 2
-                        
-                        # Calculate saturation
-                        s = 0 if delta == 0 else delta/(1-abs(2*l-1))
-                        
-                        return (h, s, l)
-                    
-                    def hsl_to_rgb(h, s, l):
-                        c = (1 - abs(2*l - 1)) * s
-                        x = c * (1 - abs((h/60) % 2 - 1))
-                        m = l - c/2
-                        
-                        if 0 <= h < 60:
-                            r, g, b = c, x, 0
-                        elif 60 <= h < 120:
-                            r, g, b = x, c, 0
-                        elif 120 <= h < 180:
-                            r, g, b = 0, c, x
-                        elif 180 <= h < 240:
-                            r, g, b = 0, x, c
-                        elif 240 <= h < 300:
-                            r, g, b = x, 0, c
-                        else:
-                            r, g, b = c, 0, x
-                        
-                        return (
-                            int((r + m) * 255),
-                            int((g + m) * 255),
-                            int((b + m) * 255)
-                        )
-                    
-                    # Get HSL values of background
-                    bg_hsl = rgb_to_hsl(*bg_rgb)
-                    
-                    # Create complementary accent color
-                    accent_h = (bg_hsl[0] + 180) % 360  # Complementary hue
-                    accent_s = min(1.0, bg_hsl[1] + 0.3)  # Increased saturation
-                    accent_l = 0.5  # Mid lightness for good contrast
-                    
-                    # Convert back to RGB
-                    accent_rgb = hsl_to_rgb(accent_h, accent_s, accent_l)
-                    
-                    # Ensure good contrast with both bg and text
-                    if get_contrast_ratio(accent_rgb, bg_rgb) < 4.5:
-                        accent_l = 0.7 if bg_hsl[2] < 0.5 else 0.3
-                        accent_rgb = hsl_to_rgb(accent_h, accent_s, accent_l)
-                    
-                    return accent_rgb
-                
-                # Get colors from CSV
-                bg_color = f"#{theme[1]}"
-                text_color = f"#{theme[2]}"
-                
-                # Convert to RGB for processing
-                bg_rgb = hex_to_rgb(bg_color)
-                text_rgb = hex_to_rgb(text_color)
-                
-                # Generate harmonious accent color
-                accent_rgb = generate_harmonious_accent(bg_rgb, text_rgb)
-                accent_color = rgb_to_hex(accent_rgb)
-                
-                # Verify contrast ratios
-                if get_contrast_ratio(text_rgb, bg_rgb) < 4.5:
-                    # Adjust text color for better readability
-                    text_rgb = tuple(255 - c for c in bg_rgb)  # Use complementary color
-                    text_color = rgb_to_hex(text_rgb)
-                
+                # Update these keys to match your actual CSV column names
                 return {
-                    "bg": bg_color,
-                    "text": text_color,
-                    "accent": accent_color
+                    "bg": f"#{theme['bgco']}",        # Column name for background color
+                    "text": f"#{theme['textco']}",    # Column name for text color
+                    "accent": f"#{theme['accent']}"    # Column name for accent/shape color
                 }
-                
         except Exception as e:
             logger.error(f"Error getting random color theme: {str(e)}")
+            # Log more details about the error
+            logger.error(f"Full error details: ", exc_info=True)
             return {
-                "bg": "#FFFFFF",
-                "text": "#000000",
-                "accent": "#2196F3"
+                "bg": "#FFF5EE",  # Default fallback colors
+                "text": "#8B4513",
+                "accent": "#DEB887"
             }
+
+    def validate_csv_structure(self):
+        """Validate the CSV file structure and log column information"""
+        try:
+            with open('ss11.csv', mode='r') as file:
+                # Read header
+                header = next(file)
+                reader = csv.DictReader(file)
+                # Get column names
+                columns = reader.fieldnames
+                
+                logger.info(f"CSV columns found: {columns}")
+                
+                # Check required columns
+                required_columns = {'bgco', 'textco', 'accent'}
+                missing_columns = required_columns - set(columns)
+                
+                if missing_columns:
+                    logger.error(f"Missing required columns: {missing_columns}")
+                    return False
+                    
+                return True
+        except Exception as e:
+            logger.error(f"Error validating CSV: {str(e)}")
+            return False
 
 # Add this to store the current design state
 class DesignState:

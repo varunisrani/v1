@@ -54,15 +54,15 @@ export default function Home() {
   // State management
   const [topic, setTopic] = useState('');
   const [testimonialText, setTestimonialText] = useState('');
-  const [selectedShapes, setSelectedShapes] = useState(['Circles', 'Dots']);
-  const [fontSize, setFontSize] = useState(48);
+  const [selectedShapes, setSelectedShapes] = useState(['Square']);
+  const [fontSize, setFontSize] = useState(32);
   const [hasQuotes, setHasQuotes] = useState(true);
   const [colorMode, setColorMode] = useState('preset');
   const [presetScheme, setPresetScheme] = useState('Professional (Blue/White)');
   const [customColors, setCustomColors] = useState({
-    bg: '#FFFFFF',
-    text: '#000000',
-    accent: '#2196F3'
+    bg: '#FFF5EE',
+    text: '#8B4513',
+    accent: '#DEB887'
   });
   const [svgPreviews, setSvgPreviews] = useState({
     background: '',
@@ -681,7 +681,7 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-sm font-medium text-gray-900">Shapes</h3>
               <div className="grid grid-cols-2 gap-2">
-                {["Circles", "Dots", "Waves", "Corners"].map((shape) => (
+                {["Circles", "Dots", "Waves", "Corners", "Square"].map((shape) => (
                   <label
                     key={shape}
                     className={`flex items-center justify-center p-3 border rounded-lg cursor-pointer
@@ -716,7 +716,7 @@ export default function Home() {
                   <input
                     type="range"
                     min="24"
-                    max="72"
+                    max="48"
                     value={fontSize}
                     onChange={(e) => setFontSize(Number(e.target.value))}
                     className="w-full"
@@ -724,7 +724,7 @@ export default function Home() {
                   <div className="flex justify-between text-xs text-gray-500">
                     <span>24px</span>
                     <span>{fontSize}px</span>
-                    <span>72px</span>
+                    <span>48px</span>
                   </div>
                 </div>
                 <label className="flex items-center space-x-2">
@@ -853,7 +853,7 @@ export default function Home() {
                           <input
                             type="range"
                             min="24"
-                            max="72"
+                            max="48"
                             value={fontSize}
                             onChange={(e) => setFontSize(Number(e.target.value))}
                             className="w-full"

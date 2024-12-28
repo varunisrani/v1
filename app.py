@@ -53,29 +53,45 @@ async def generate_testimonial(request: TestimonialRequest):
         # Generate testimonial text
         testimonial_text = generator.generate_testimonial(request.topic)
         
+        # For random mode, get colors from CSV with error handling
+        try:
+            if request.colors.get('random', False):
+                colors = generator.get_random_color_theme()
+                logger.info(f"Random colors generated: {colors}")
+            else:
+                colors = request.colors
+        except Exception as color_error:
+            logger.error(f"Error getting random colors: {str(color_error)}")
+            # Fallback to default colors
+            colors = {
+                "bg": "#FFF5EE",
+                "text": "#8B4513",
+                "accent": "#DEB887"
+            }
+        
         # Update generator design style
         generator.design_style.update({
             'fontsize': request.font_size,
-            'bgco': request.colors['bg'],
-            'textco': request.colors['text'],
-            'accent': request.colors['accent']
+            'bgco': colors['bg'],
+            'textco': colors['text'],
+            'accent': colors['accent']
         })
         
         # Generate SVG components
-        background_svg = generator.render_background_svg(request.colors['bg']) or ''
+        background_svg = generator.render_background_svg(colors['bg']) or ''
         shapes_svg = generator.render_shapes_svg(
-            request.colors['accent'],
-            request.selected_shapes
+            colors['accent'],
+            ['Square']  # Force Square shape for random mode
         ) or ''
         text_svg = generator.render_text_svg(
             testimonial_text,
-            request.colors['text'],
+            colors['text'],
             request.font_size,
             request.has_quotes
         ) or ''
         combined_svg = generator.render_svg(
             testimonial_text,
-            request.selected_shapes,
+            ['Square'],  # Force Square shape for random mode
             request.has_quotes
         ) or ''
         
@@ -85,7 +101,7 @@ async def generate_testimonial(request: TestimonialRequest):
             text_svg=text_svg,
             combined_svg=combined_svg,
             text_content=testimonial_text,
-            colors=request.colors
+            colors=colors
         )
     except Exception as e:
         print(f"Error in generate_testimonial: {str(e)}")
@@ -183,6 +199,11 @@ async def get_shape_patterns():
             "name": "Corners",
             "description": "Corner decorative elements",
             "preview": generator.render_shapes_svg("#000000", ["Corners"])
+        },
+        {
+            "name": "Square",
+            "description": "Centered square with text",
+            "preview": generator.render_shapes_svg("#000000", ["Square"])
         }
     ]
 

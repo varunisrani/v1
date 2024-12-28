@@ -1,0 +1,8 @@
+2024-12-28 22:57:18,811 - INFO - Initializing application
+2024-12-28 22:57:18,910 - INFO - Initializing TestimonialGenerator
+2024-12-28 22:57:18,910 - INFO - Font downloaded successfully
+2024-12-28 22:57:18,910 - INFO - TestimonialGenerator initialized successfully
+2024-12-28 22:57:19,552 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-28 22:57:20,049 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-28 22:57:31,361 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-28 22:57:54,120 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
