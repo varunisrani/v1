@@ -44,7 +44,7 @@ DEFAULT_CONFIG = {
     'font': 'Poppins-Medium',
     'bgco': '#FFFFFF',
     'textco': '#000000',
-    'imagesize': (1400, 900),
+    'imagesize': (1080, 1080),
     'fontsize': 48,
     'accent': '#FF4081'
 }
@@ -57,11 +57,11 @@ def load_design_configurations(csv_file_path):
         for row in reader:
             try:
                 configurations.append({
-                    'font': DEFAULT_CONFIG['font'],  # Use default font
+                    'font': DEFAULT_CONFIG['font'],
                     'bgco': f"#{row['bgco']}",
                     'textco': f"#{row['textco']}",
-                    'imagesize': DEFAULT_CONFIG['imagesize'],  # Use default image size
-                    'fontsize': DEFAULT_CONFIG['fontsize'],  # Use default font size
+                    'imagesize': (1080, 1080),
+                    'fontsize': DEFAULT_CONFIG['fontsize'],
                     'accent': f"#{row['accent']}"
                 })
             except (ValueError, SyntaxError, KeyError) as e:
@@ -129,9 +129,9 @@ class SVGShapeGenerator:
     @staticmethod
     def validate_color(color):
         """Validate and format color string"""
-        if not color or len(color) < 7:  # Check if color is empty or too short
-            return "#000000"  # Return default color
-        return color if color.startswith('#') else f"#{color}"
+        if not color.startswith('#'):
+            color = f'#{color}'
+        return color
 
     @staticmethod
     def draw_circles(dwg, width, height, color, opacity=0.5):
@@ -196,59 +196,96 @@ class SVGShapeGenerator:
 
     @staticmethod
     def draw_square(dwg, width, height, color, opacity=0.5):
-        """Draw a centered rectangular card with shadow effect"""
-        color = SVGShapeGenerator.validate_color(color)
-        
-        # Calculate card dimensions
-        card_width = width * 0.8  # 80% of width
-        card_height = height * 0.6  # 60% of height
-        x = (width - card_width) / 2  # Center horizontally
-        y = (height - card_height) / 2  # Center vertically
-        
-        # Draw shadow
-        dwg.add(dwg.rect(
-            insert=(x + 4, y + 4),  # Offset for shadow
-            size=(card_width, card_height),
-            fill='#000000',
-            fill_opacity=0.1,
-            rx=20,  # Rounded corners
-            ry=20
-        ))
-        
-        # Draw main card
-        dwg.add(dwg.rect(
-            insert=(x, y),
-            size=(card_width, card_height),
-            fill='#FFFFFF',  # Always white background
-            stroke=color,    # Accent color border
-            stroke_width=2,
-            stroke_opacity=opacity,
-            rx=20,  # Rounded corners
-            ry=20
-        ))
-        
-        # Add decorative stars
-        star_color = svgwrite.rgb(int(color[1:3], 16), int(color[3:5], 16), int(color[5:7], 16))
-        star_y = y + 30  # Position stars at top of card
-        star_spacing = 40
-        num_stars = 5
-        star_start_x = (width - (num_stars - 1) * star_spacing) / 2
-        
-        for i in range(num_stars):
-            star_x = star_start_x + (i * star_spacing)
-            # Draw a simple star shape
-            points = []
-            for j in range(5):
-                angle = (j * 4 * math.pi / 5) - math.pi / 2
-                points.append((
-                    star_x + 10 * math.cos(angle),
-                    star_y + 10 * math.sin(angle)
-                ))
-            dwg.add(dwg.polygon(
-                points=points,
-                fill=star_color,
-                fill_opacity=opacity
+        """Draw a centered square card with shadow effect"""
+        try:
+            color = SVGShapeGenerator.validate_color(color)
+            logger.info(f"Drawing square with color: {color}")
+            
+            # Calculate card dimensions for perfect centering
+            card_size = min(width, height) * 0.85  # 85% of the smallest dimension
+            x = (width - card_size) / 2  # Center horizontally
+            y = (height - card_size) / 2  # Center vertically
+            
+            # Draw shadow
+            dwg.add(dwg.rect(
+                insert=(x + 4, y + 4),
+                size=(card_size, card_size),
+                fill='#000000',
+                fill_opacity=0.1,
+                rx=20,
+                ry=20
             ))
+            
+            # Draw main card with shape color as background
+            dwg.add(dwg.rect(
+                insert=(x, y),
+                size=(card_size, card_size),
+                fill=color,  # Use shape color as fill
+                stroke='none',  # Remove border
+                fill_opacity=opacity,  # Add some transparency
+                rx=20,
+                ry=20
+            ))
+            
+            # Add a white inner card for contrast
+            inner_margin = card_size * 0.05  # 5% margin
+            inner_size = card_size * 0.9   # 90% of card size
+            dwg.add(dwg.rect(
+                insert=(x + inner_margin, y + inner_margin),
+                size=(inner_size, inner_size),
+                fill='#FFFFFF',  # White background
+                stroke='none',
+                rx=15,  # Slightly smaller border radius
+                ry=15
+            ))
+            
+            logger.info("Square drawn successfully")
+            return True
+        except Exception as e:
+            logger.error(f"Error drawing square: {str(e)}")
+            return False
+
+    def render_text_svg(self, text, color, font_size=32, has_quotes=True):
+        """Render text centered in SVG"""
+        width, height = self.design_style['imagesize']
+        dwg = svgwrite.Drawing(size=self.design_style['imagesize'])
+        
+        # Calculate text position for center alignment
+        text_x = width / 2  # Center horizontally
+        text_y = height / 2  # Center vertically
+        
+        # Create text group for centering
+        text_group = dwg.g(
+            style=f"font-family: {self.font_path}; font-size: {font_size}px; text-anchor: middle; dominant-baseline: middle;"
+        )
+        
+        if has_quotes:
+            # Add quotes with proper positioning
+            quote_size = font_size * 1.5
+            text_group.add(dwg.text(
+                """,
+                insert=(text_x - quote_size/2, text_y - quote_size/4),
+                fill=color,
+                style=f"font-size: {quote_size}px; opacity: 0.3"
+            ))
+            text_group.add(dwg.text(
+                """,
+                insert=(text_x + quote_size/2, text_y + quote_size/4),
+                fill=color,
+                style=f"font-size: {quote_size}px; opacity: 0.3"
+            ))
+        
+        # Add main text
+        text_group.add(dwg.text(
+            text,
+            insert=(text_x, text_y),
+            fill=color,
+            text_anchor="middle",
+            alignment_baseline="middle"
+        ))
+        
+        dwg.add(text_group)
+        return dwg.tostring()
 
 class TestimonialGenerator:
     def __init__(self):
@@ -256,7 +293,7 @@ class TestimonialGenerator:
         self.client = client
         self.design_style = {
             'font': 'Poppins-Medium',
-            'imagesize': (1400, 900),
+            'imagesize': (1080, 1080),  # Updated to square dimensions
             'fontsize': 48,
             'bgco': '#FFFFFF',
             'textco': '#000000',
@@ -264,6 +301,7 @@ class TestimonialGenerator:
         }
         self.font_path = None
         self._download_font()
+        self.shape_generator = SVGShapeGenerator()  # Create instance of SVGShapeGenerator
         
         # Validate CSV structure on initialization
         if not self.validate_csv_structure():
@@ -439,22 +477,20 @@ class TestimonialGenerator:
             logger.error(f"Error rendering background SVG: {str(e)}")
             return None
 
-    def render_shapes_svg(self, accent_color, selected_shapes):
+    def render_shapes_svg(self, color, selected_shapes):
+        """Render shapes with color from CSV"""
         try:
             width, height = self.design_style['imagesize']
             dwg = svgwrite.Drawing(size=(width, height))
             
+            # Get shape color from design style if available
+            shape_color = self.design_style.get('shape_color', color)
+            logger.info(f"Using shape color: {shape_color}")
+            
             for shape in selected_shapes:
-                if shape == "Circles":
-                    SVGShapeGenerator.draw_circles(dwg, width, height, accent_color)
-                elif shape == "Dots":
-                    SVGShapeGenerator.draw_dots(dwg, width, height, accent_color)
-                elif shape == "Waves":
-                    SVGShapeGenerator.draw_waves(dwg, width, height, accent_color)
-                elif shape == "Corners":
-                    SVGShapeGenerator.draw_corners(dwg, width, height, accent_color)
-                elif shape == "Square":  # Add the new shape condition
-                    SVGShapeGenerator.draw_square(dwg, width, height, accent_color)
+                if shape.lower() == 'square':
+                    # Use the static method from SVGShapeGenerator with proper opacity
+                    SVGShapeGenerator.draw_square(dwg, width, height, shape_color, opacity=0.9)
             
             return dwg.tostring()
         except Exception as e:

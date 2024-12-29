@@ -116,19 +116,23 @@ async def generate_testimonial(request: TestimonialRequest):
                 "accent": request.colors.get("accent", "#2196F3")
             }
         
-        # Update generator design style
+        # Update generator design style with shape color
         generator.design_style.update({
             'fontsize': request.font_size,
             'bgco': colors['bg'],
             'textco': colors['text'],
-            'accent': colors['accent']
+            'accent': colors['accent'],
+            'imagesize': (1080, 1080),
+            'text_align': 'center',
+            'vertical_align': 'middle',
+            'shape_color': colors.get('shape_color', colors['accent'])  # Use shape color or accent as fallback
         })
         
-        # Generate SVG components
+        # Generate SVG components with proper opacity for shape color
         background_svg = generator.render_background_svg(colors['bg']) or ''
         shapes_svg = generator.render_shapes_svg(
-            colors['accent'],
-            ['Square']  # Always use Square shape
+            colors.get('shape_color', colors['accent']),
+            request.selected_shapes
         ) or ''
         text_svg = generator.render_text_svg(
             testimonial_text,
@@ -138,7 +142,7 @@ async def generate_testimonial(request: TestimonialRequest):
         ) or ''
         combined_svg = generator.render_svg(
             testimonial_text,
-            ['Square'],
+            request.selected_shapes,
             request.has_quotes
         ) or ''
         

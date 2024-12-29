@@ -1,0 +1,38 @@
+2024-12-30 00:10:55,244 - INFO - Initializing application
+2024-12-30 00:10:55,357 - INFO - Initializing TestimonialGenerator
+2024-12-30 00:10:55,357 - INFO - Font downloaded successfully
+2024-12-30 00:10:55,358 - INFO - CSV columns found: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square', '#7A7A6D']
+2024-12-30 00:10:55,358 - ERROR - Missing required columns: {'bgco', 'accent', 'textco'}
+2024-12-30 00:10:55,358 - WARNING - CSV validation failed, using default color schemes
+2024-12-30 00:10:55,358 - INFO - TestimonialGenerator initialized successfully
+2024-12-30 00:10:55,482 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-30 00:10:56,695 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-30 00:11:02,810 - INFO - Selected row: ['Poppins-Medium', '15110B', 'E8DFD4', '(1400', ' 900)', '48', '#FFAB91', 'square', '#D4C7BE']
+2024-12-30 00:11:02,811 - INFO - Generated theme: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-30 00:11:03,543 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-30 00:11:03,545 - INFO - Selected row: ['Poppins-Medium', '4D3329', 'F8EEE5', '(1400', ' 900)', '48', '#FF8A65', 'square', '#E5D6CD']
+2024-12-30 00:11:03,545 - INFO - Generated theme: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-30 00:11:03,545 - INFO - Using random colors: {'bg': '#4D3329', 'text': '#F8EEE5', 'accent': '#FF8A65'}
+2024-12-30 00:11:03,545 - ERROR - Error in generate_testimonial: 'TestimonialGenerator' object has no attribute 'draw_square'
+2024-12-30 00:11:07,581 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'square', '#3A3A39']
+2024-12-30 00:11:07,582 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-30 00:11:08,058 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-30 00:11:08,059 - INFO - Selected row: ['Poppins-Medium', 'F6EFE5', '393938', '(1400', ' 900)', '48', '#FF7043', 'square', '#3A3A39']
+2024-12-30 00:11:08,059 - INFO - Generated theme: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-30 00:11:08,060 - INFO - Using random colors: {'bg': '#F6EFE5', 'text': '#393938', 'accent': '#FF7043'}
+2024-12-30 00:11:08,060 - ERROR - Error in generate_testimonial: 'TestimonialGenerator' object has no attribute 'draw_square'
+2024-12-30 00:11:08,675 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square', '#7A7A6D']
+2024-12-30 00:11:08,675 - INFO - Generated theme: {'bg': '#F3F3EB', 'text': '#818174', 'accent': '#FF6F61'}
+2024-12-30 00:11:09,173 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-30 00:11:09,173 - INFO - Selected row: ['Poppins-Medium', '15110B', 'E8DFD4', '(1400', ' 900)', '48', '#FFAB91', 'square', '#D4C7BE']
+2024-12-30 00:11:09,173 - INFO - Generated theme: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-30 00:11:09,173 - INFO - Using random colors: {'bg': '#15110B', 'text': '#E8DFD4', 'accent': '#FFAB91'}
+2024-12-30 00:11:09,173 - ERROR - Error in generate_testimonial: 'TestimonialGenerator' object has no attribute 'draw_square'
+2024-12-30 00:11:52,054 - INFO - Selected row: ['Poppins-Medium', 'ECDE61', '333333', '(1400', ' 900)', '48', '#FFEB3B', 'square', '#333333']
+2024-12-30 00:11:52,055 - INFO - Generated theme: {'bg': '#ECDE61', 'text': '#333333', 'accent': '#FFEB3B'}
+2024-12-30 00:11:52,696 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-30 00:11:52,711 - ERROR - Error in generate_testimonial: 'TestimonialGenerator' object has no attribute 'draw_square'
+2024-12-30 00:11:54,190 - INFO - Selected row: ['Poppins-Medium', 'E2D4C6', '462717', '(1400', ' 900)', '48', '#FF7043', 'square', '#442618']
+2024-12-30 00:11:54,191 - INFO - Generated theme: {'bg': '#E2D4C6', 'text': '#462717', 'accent': '#FF7043'}
+2024-12-30 00:11:54,844 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-30 00:11:54,846 - ERROR - Error in generate_testimonial: 'TestimonialGenerator' object has no attribute 'draw_square'

@@ -429,26 +429,39 @@ export default function Home() {
         console.log("Received shape data:", response.data);
         
         if (response.data) {
-            // Verify shape data
             const shape = response.data.shape;
             const shapeColor = response.data.shape_color;
             
             console.log(`Setting shape: ${shape}, color: ${shapeColor}`);
             
-            // Update shape selection
+            // Update shape selection and colors
             setSelectedShapes([shape]);
-            
-            // Update shape color
             setCustomColors(prev => ({
                 ...prev,
-                accent: shapeColor
+                accent: shapeColor,
+                shape_color: shapeColor  // Add shape_color to customColors
             }));
             
-            // Update the design
-            console.log("Updating design with new shape...");
-            await updateDesign();
-            
-            console.log("Shape update complete");
+            // Update the design with new shape and color
+            const designResponse = await axios.post(`${API_BASE_URL}/update-design`, {
+                text: testimonialText,
+                selected_shapes: [shape],
+                font_size: fontSize,
+                has_quotes: hasQuotes,
+                colors: {
+                    ...customColors,
+                    shape_color: shapeColor
+                }
+            });
+
+            if (designResponse.data) {
+                setSvgPreviews({
+                    background: designResponse.data.background_svg || '',
+                    shapes: designResponse.data.shapes_svg || '',
+                    text: designResponse.data.text_svg || '',
+                    combined: designResponse.data.combined_svg || ''
+                });
+            }
         }
     } catch (error) {
         console.error('Error fetching random shape:', error);
@@ -463,11 +476,11 @@ export default function Home() {
     console.log(`Rendering shape: ${shape} with color: ${color}`);
     return (
         <div 
-            className="absolute inset-0"
+            className="absolute inset-0 flex items-center justify-center"
             dangerouslySetInnerHTML={{ 
                 __html: svgPreviews[activePreview]?.replace(
                     '<svg',
-                    `<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet" data-shape="${shape}" data-color="${color}"`
+                    `<svg width="100%" height="100%" viewBox="0 0 1080 1080" preserveAspectRatio="xMidYMid meet" data-shape="${shape}" data-color="${color}"`
                 ) || ''
             }}
         />
@@ -730,7 +743,7 @@ export default function Home() {
                         <span className="text-sm font-medium">{shape}</span>
                         <div 
                             className="w-4 h-4 rounded-full" 
-                            style={{ backgroundColor: customColors.accent }}
+                            style={{ backgroundColor: customColors.shape_color || customColors.accent }}
                         />
                     </div>
                 ))}
@@ -819,7 +832,7 @@ export default function Home() {
 
             {/* Main Preview */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="aspect-[3/2] relative">
+              <div className="aspect-square relative">
                 {activePreview === 'text' ? (
                   <div className="absolute inset-0 flex flex-col">
                     {/* Text Editor Header */}
@@ -848,14 +861,14 @@ export default function Home() {
                     </div>
 
                     {/* Text Editor Body */}
-                    <div className="flex-1 p-4">
+                    <div className="flex-1 p-4 flex items-center justify-center">
                       {isEditingText ? (
                         <textarea
                           value={testimonialText}
                           onChange={(e) => setTestimonialText(e.target.value)}
                           className="w-full h-full p-4 text-lg border border-gray-200 rounded-lg 
                                     resize-none focus:ring-2 focus:ring-purple-500 
-                                    focus:border-transparent"
+                                    focus:border-transparent text-center"
                           placeholder="Enter your testimonial text..."
                           style={{
                             fontSize: `${fontSize}px`,
@@ -864,11 +877,11 @@ export default function Home() {
                         />
                       ) : (
                         <div 
-                          className="w-full h-full"
+                          className="w-full h-full flex items-center justify-center"
                           dangerouslySetInnerHTML={{ 
                             __html: svgPreviews.text?.replace(
                               '<svg',
-                              '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet"'
+                              '<svg width="100%" height="100%" viewBox="0 0 1080 1080" preserveAspectRatio="xMidYMid meet"'
                             ) || ''
                           }}
                         />
@@ -903,11 +916,11 @@ export default function Home() {
                   </div>
                 ) : (
                   <div 
-                    className="absolute inset-0"
+                    className="absolute inset-0 flex items-center justify-center"
                     dangerouslySetInnerHTML={{ 
                       __html: svgPreviews[activePreview]?.replace(
                         '<svg',
-                        '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet"'
+                        '<svg width="100%" height="100%" viewBox="0 0 1080 1080" preserveAspectRatio="xMidYMid meet"'
                       ) || ''
                     }}
                   />
@@ -928,13 +941,13 @@ export default function Home() {
                     <div className="p-2 border-b border-gray-200">
                       <h3 className="text-sm font-medium text-gray-700 capitalize">{key}</h3>
                     </div>
-                    <div className="aspect-[3/2] relative">
+                    <div className="aspect-square relative">
                       <div 
                         className="absolute inset-0"
                         dangerouslySetInnerHTML={{ 
                           __html: svg?.replace(
                             '<svg',
-                            '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet"'
+                            '<svg width="100%" height="100%" viewBox="0 0 1080 1080" preserveAspectRatio="xMidYMid meet"'
                           ) || ''
                         }}
                       />
