@@ -1,0 +1,8 @@
+2024-12-29 22:49:46,508 - INFO - Initializing application
+2024-12-29 22:49:46,666 - INFO - Initializing TestimonialGenerator
+2024-12-29 22:49:46,666 - INFO - Font downloaded successfully
+2024-12-29 22:49:46,666 - INFO - CSV columns found: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square', '#7A7A6D']
+2024-12-29 22:49:46,666 - ERROR - Missing required columns: {'accent', 'bgco', 'textco'}
+2024-12-29 22:49:46,666 - WARNING - CSV validation failed, using default color schemes
+2024-12-29 22:49:46,666 - INFO - TestimonialGenerator initialized successfully
+2024-12-29 22:49:48,161 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"

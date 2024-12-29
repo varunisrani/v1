@@ -136,27 +136,27 @@ export default function Home() {
         // Prepare request data based on color mode
         let requestData = {
             topic: topic || "general product",
-            selected_shapes: ['Square'],
+            selected_shapes: selectedShapes,
             font_size: fontSize,
             has_quotes: hasQuotes,
+            colors: colorMode === 'random' 
+                ? { random: true }
+                : colorMode === 'preset'
+                ? COLOR_SCHEMES[presetScheme]
+                : customColors
         };
 
-        // Handle different color modes
-        switch (colorMode) {
-            case 'random':
-                requestData.colors = { random: true };
-                break;
-            case 'preset':
-                requestData.colors = COLOR_SCHEMES[presetScheme];
-                break;
-            case 'custom':
-                requestData.colors = customColors;
-                break;
-            default:
-                requestData.colors = customColors;
-        }
-
-        const response = await axios.post(`${API_BASE_URL}/generate-testimonial`, requestData);
+        const response = await axios.post(
+            `${API_BASE_URL}/generate-testimonial`,
+            requestData,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                withCredentials: false  // Set this to false if you don't need credentials
+            }
+        );
 
         if (response.data) {
             setTestimonialText(response.data.text_content);
@@ -167,7 +167,6 @@ export default function Home() {
                 combined: response.data.combined_svg || ''
             });
             
-            // Only update colors if in random mode
             if (colorMode === 'random' && response.data.colors) {
                 setCustomColors(response.data.colors);
             }
@@ -183,45 +182,37 @@ export default function Home() {
   // Update design
   const updateDesign = async () => {
     try {
-      setLoading(true);
-      setError(null);
+        setLoading(true);
+        setError(null);
 
-      // Get current active colors (either pending or current)
-      const currentColors = pendingColors || customColors;
+        console.log("Current shape:", selectedShapes[0]);
+        console.log("Current shape color:", customColors.accent);
 
-      const response = await axios.post(`${API_BASE_URL}/update-design`, {
-        text: testimonialText,
-        selected_shapes: selectedShapes,
-        shapes_config: shapes.map(shape => ({
-          type: shape.type,
-          position: shape.position,
-          size: shape.size,
-          rotation: shape.rotation
-        })),
-        font_size: fontSize,
-        has_quotes: hasQuotes,
-        colors: currentColors
-      });
-
-      if (response.data) {
-        setSvgPreviews({
-          background: response.data.background_svg || '',
-          shapes: response.data.shapes_svg || '',
-          text: response.data.text_svg || '',
-          combined: response.data.combined_svg || ''
+        const response = await axios.post(`${API_BASE_URL}/update-design`, {
+            text: testimonialText,
+            selected_shapes: selectedShapes,
+            font_size: fontSize,
+            has_quotes: hasQuotes,
+            colors: {
+                ...customColors,
+                shape_color: customColors.accent // Ensure shape color is passed
+            }
         });
 
-        // If there were pending colors, apply them now
-        if (pendingColors) {
-          setCustomColors(pendingColors);
-          setPendingColors(null);
+        if (response.data) {
+            console.log("Design updated with shape:", selectedShapes[0]);
+            setSvgPreviews({
+                background: response.data.background_svg || '',
+                shapes: response.data.shapes_svg || '',
+                text: response.data.text_svg || '',
+                combined: response.data.combined_svg || ''
+            });
         }
-      }
     } catch (error) {
-      console.error('Error updating design:', error);
-      setError(error.response?.data?.detail || 'Failed to update design');
+        console.error('Error updating design:', error);
+        setError(error.response?.data?.detail || 'Failed to update design');
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
   };
 
@@ -427,6 +418,61 @@ export default function Home() {
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, []);
+
+  // Add this function near your other handlers
+  const handleRandomShape = async () => {
+    try {
+        setLoading(true);
+        console.log("Fetching random shape from backend...");
+        
+        const response = await axios.get(`${API_BASE_URL}/random-shape`);
+        console.log("Received shape data:", response.data);
+        
+        if (response.data) {
+            // Verify shape data
+            const shape = response.data.shape;
+            const shapeColor = response.data.shape_color;
+            
+            console.log(`Setting shape: ${shape}, color: ${shapeColor}`);
+            
+            // Update shape selection
+            setSelectedShapes([shape]);
+            
+            // Update shape color
+            setCustomColors(prev => ({
+                ...prev,
+                accent: shapeColor
+            }));
+            
+            // Update the design
+            console.log("Updating design with new shape...");
+            await updateDesign();
+            
+            console.log("Shape update complete");
+        }
+    } catch (error) {
+        console.error('Error fetching random shape:', error);
+        setError('Failed to get random shape');
+    } finally {
+        setLoading(false);
+    }
+  };
+
+  // Update the SVG rendering to properly use the shape from CSV
+  const renderShape = (shape, color) => {
+    console.log(`Rendering shape: ${shape} with color: ${color}`);
+    return (
+        <div 
+            className="absolute inset-0"
+            dangerouslySetInnerHTML={{ 
+                __html: svgPreviews[activePreview]?.replace(
+                    '<svg',
+                    `<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet" data-shape="${shape}" data-color="${color}"`
+                ) || ''
+            }}
+        />
+    );
+  };
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -666,29 +712,27 @@ export default function Home() {
             {/* Shape Patterns */}
             <div className="space-y-4">
               <h3 className="text-sm font-medium text-gray-900">Shapes</h3>
+              <div className="flex justify-between items-center mb-2">
+                <button
+                  onClick={handleRandomShape}
+                  className="w-full px-4 py-2 bg-purple-600 text-white rounded-lg 
+                            hover:bg-purple-700 transition-colors flex items-center justify-center gap-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  Random Shape
+                </button>
+              </div>
               <div className="grid grid-cols-2 gap-2">
-                {["Circles", "Dots", "Waves", "Corners", "Square"].map((shape) => (
-                  <label
-                    key={shape}
-                    className={`flex items-center justify-center p-3 border rounded-lg cursor-pointer
-                              ${selectedShapes.includes(shape) 
-                                ? 'border-purple-500 bg-purple-50 text-purple-700' 
-                                : 'border-gray-200 hover:bg-gray-50'}`}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={selectedShapes.includes(shape)}
-                      onChange={(e) => {
-                        if (e.target.checked) {
-                          setSelectedShapes([...selectedShapes, shape]);
-                        } else {
-                          setSelectedShapes(selectedShapes.filter(s => s !== shape));
-                        }
-                      }}
-                      className="hidden"
-                    />
-                    <span className="text-sm">{shape}</span>
-                  </label>
+                {selectedShapes.map((shape) => (
+                    <div key={shape} className="flex items-center justify-between p-2 bg-purple-50 rounded-lg">
+                        <span className="text-sm font-medium">{shape}</span>
+                        <div 
+                            className="w-4 h-4 rounded-full" 
+                            style={{ backgroundColor: customColors.accent }}
+                        />
+                    </div>
                 ))}
               </div>
             </div>
@@ -824,7 +868,7 @@ export default function Home() {
                           dangerouslySetInnerHTML={{ 
                             __html: svgPreviews.text?.replace(
                               '<svg',
-                              '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid contain"'
+                              '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet"'
                             ) || ''
                           }}
                         />
@@ -863,7 +907,7 @@ export default function Home() {
                     dangerouslySetInnerHTML={{ 
                       __html: svgPreviews[activePreview]?.replace(
                         '<svg',
-                        '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid contain"'
+                        '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet"'
                       ) || ''
                     }}
                   />
@@ -890,7 +934,7 @@ export default function Home() {
                         dangerouslySetInnerHTML={{ 
                           __html: svg?.replace(
                             '<svg',
-                            '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid contain"'
+                            '<svg width="100%" height="100%" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet"'
                           ) || ''
                         }}
                       />

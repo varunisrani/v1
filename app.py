@@ -26,10 +26,20 @@ app = FastAPI(title="Testimonial Generator API")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:5000"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=[
+        "Content-Type",
+        "Authorization",
+        "Accept",
+        "Origin",
+        "X-Requested-With"
+    ],
 )
 
 # Initialize TestimonialGenerator
@@ -75,6 +85,13 @@ class SVGResponse(BaseModel):
 @app.post("/generate-testimonial", response_model=SVGResponse)
 async def generate_testimonial(request: TestimonialRequest):
     try:
+        # Add CORS headers to the response
+        headers = {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST, OPTIONS",
+            "Access-Control-Allow-Headers": "Content-Type",
+        }
+        
         # Generate testimonial text
         testimonial_text = generator.generate_testimonial(request.topic)
         
@@ -125,13 +142,17 @@ async def generate_testimonial(request: TestimonialRequest):
             request.has_quotes
         ) or ''
         
-        return SVGResponse(
-            background_svg=background_svg,
-            shapes_svg=shapes_svg,
-            text_svg=text_svg,
-            combined_svg=combined_svg,
-            text_content=testimonial_text,
-            colors=colors
+        # Return response with headers
+        return JSONResponse(
+            content=SVGResponse(
+                background_svg=background_svg,
+                shapes_svg=shapes_svg,
+                text_svg=text_svg,
+                combined_svg=combined_svg,
+                text_content=testimonial_text,
+                colors=colors
+            ).dict(),
+            headers=headers
         )
     except Exception as e:
         logger.error(f"Error in generate_testimonial: {str(e)}")
@@ -287,6 +308,22 @@ async def global_exception_handler(request, exc):
             "type": type(exc).__name__
         }
     )
+
+@app.get("/random-shape")
+async def get_random_shape():
+    """Get random shape and color from CSV"""
+    try:
+        logger.info("Fetching random shape from CSV")
+        # Use the generator to get random shape data
+        shape_data = generator.get_random_shape_from_csv()
+        logger.info(f"Successfully fetched shape: {shape_data['shape']} with color: {shape_data['shape_color']}")
+        return {
+            "shape": shape_data['shape'],
+            "shape_color": shape_data['shape_color']
+        }
+    except Exception as e:
+        logger.error(f"Error getting random shape: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000) 

@@ -11,6 +11,7 @@ from groq import Groq
 import svgwrite
 from IPython.display import display, HTML
 import ast  # Import ast for safe evaluation
+import pandas as pd
 
 # Set up logging
 logging.basicConfig(
@@ -531,6 +532,30 @@ class TestimonialGenerator:
         except Exception as e:
             logger.error(f"Error validating CSV: {str(e)}")
             return False
+
+    def get_random_shape_from_csv(self):
+        """Get random shape and color from CSV"""
+        try:
+            logger.info("Reading ss11.csv for random shape selection")
+            # Read the CSV file
+            df = pd.read_csv('ss11.csv')
+            logger.info(f"Found {len(df)} rows in CSV")
+            
+            # Randomly select a row
+            random_row = df.sample(n=1).iloc[0]
+            logger.info(f"Selected row: Shape={random_row['shapes']}, Color={random_row['shape_color']}")
+            
+            return {
+                'shape': random_row['shapes'],
+                'shape_color': random_row['shape_color']
+            }
+        except Exception as e:
+            logger.error(f"Error getting random shape from CSV: {str(e)}")
+            logger.error("Falling back to default shape and color")
+            return {
+                'shape': 'square',
+                'shape_color': '#000000'
+            }
 
 # Add this to store the current design state
 class DesignState:
