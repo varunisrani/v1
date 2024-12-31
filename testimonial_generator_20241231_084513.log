@@ -1,0 +1,1106 @@
+2024-12-31 08:45:13,863 - INFO - Initializing application
+2024-12-31 08:45:13,869 - DEBUG - Loading design configurations from ss11.csv
+2024-12-31 08:45:13,869 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F3F4F6', 'textco': '2C3E50', 'imagesize': '1080', 'fontsize': '48', 'accent': '#E74C3C', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#7D3C98', 'grid_pos1': 'center', 'grid_pos2': 'corners', 'style_description': 'Professional and modern'}
+2024-12-31 08:45:13,869 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F3F4F6', 'textco': '#2C3E50', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##E74C3C'}
+2024-12-31 08:45:13,869 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F6FA', 'textco': '34495E', 'imagesize': '1080', 'fontsize': '48', 'accent': '#2980B9', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#16A085', 'grid_pos1': '4', 'grid_pos2': '1', 'style_description': 'Clean and minimal'}
+2024-12-31 08:45:13,869 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F6FA', 'textco': '#34495E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##2980B9'}
+2024-12-31 08:45:13,869 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'FDF6F0', 'textco': '8E44AD', 'imagesize': '1080', 'fontsize': '48', 'accent': '#F39C12', 'shape1': 'square', 'shape2': 'square', 'shape_color': '#D35400', 'grid_pos1': '5', 'grid_pos2': '7', 'style_description': 'Bold and energetic'}
+2024-12-31 08:45:13,870 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#FDF6F0', 'textco': '#8E44AD', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##F39C12'}
+2024-12-31 08:45:13,870 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F0E5D8', 'textco': '4B3C3C', 'imagesize': '1080', 'fontsize': '48', 'accent': '#C0392B', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#7D3C98', 'grid_pos1': '2', 'grid_pos2': '8', 'style_description': 'Warm and inviting'}
+2024-12-31 08:45:13,870 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F0E5D8', 'textco': '#4B3C3C', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##C0392B'}
+2024-12-31 08:45:13,870 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'E8D8D0', 'textco': '3C2B2B', 'imagesize': '1080', 'fontsize': '48', 'accent': '#8E44AD', 'shape1': 'circle', 'shape2': 'circle', 'shape_color': '#2980B9', 'grid_pos1': '1', 'grid_pos2': '9', 'style_description': 'Elegant and sophisticated'}
+2024-12-31 08:45:13,870 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#E8D8D0', 'textco': '#3C2B2B', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##8E44AD'}
+2024-12-31 08:45:13,870 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F0E1', 'textco': '5E4D3E', 'imagesize': '1080', 'fontsize': '48', 'accent': '#27AE60', 'shape1': 'circle', 'shape2': 'square', 'shape_color': '#16A085', 'grid_pos1': '6', 'grid_pos2': '3', 'style_description': 'Natural and organic'}
+2024-12-31 08:45:13,870 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F0E1', 'textco': '#5E4D3E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##27AE60'}
+2024-12-31 08:45:13,870 - DEBUG - Total configurations loaded: 6
+2024-12-31 08:45:13,872 - DEBUG - Using selector: KqueueSelector
+2024-12-31 08:45:13,913 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2024-12-31 08:45:13,932 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-31 08:45:13,935 - DEBUG - send_request_headers.complete
+2024-12-31 08:45:13,935 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-31 08:45:13,935 - DEBUG - send_request_body.complete
+2024-12-31 08:45:13,935 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-31 08:45:13,936 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-31 08:45:13,972 - INFO - Initializing TestimonialGenerator
+2024-12-31 08:45:13,972 - INFO - Font downloaded successfully
+2024-12-31 08:45:13,972 - INFO - Validating CSV structure
+2024-12-31 08:45:13,972 - INFO - CSV columns found: ['Poppins-Medium', 'F3F4F6', '2C3E50', '1080', '48', '#E74C3C', 'square', 'circle', '#7D3C98', 'center', 'corners', 'Professional and modern']
+2024-12-31 08:45:13,972 - ERROR - Missing required columns: {'bgco', 'accent', 'textco'}
+2024-12-31 08:45:13,972 - WARNING - CSV validation failed, using default color schemes
+2024-12-31 08:45:13,972 - INFO - TestimonialGenerator initialized successfully
+2024-12-31 08:45:13,977 - DEBUG - Using selector: KqueueSelector
+2024-12-31 08:45:14,208 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c542f90>
+2024-12-31 08:45:14,208 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c5dc7a0> server_hostname='api.gradio.app' timeout=3
+2024-12-31 08:45:14,213 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:15:14 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'3'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2024-12-31 08:45:14,214 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-31 08:45:14,214 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-31 08:45:14,214 - DEBUG - receive_response_body.complete
+2024-12-31 08:45:14,214 - DEBUG - response_closed.started
+2024-12-31 08:45:14,214 - DEBUG - response_closed.complete
+2024-12-31 08:45:14,214 - DEBUG - close.started
+2024-12-31 08:45:14,214 - DEBUG - close.complete
+2024-12-31 08:45:14,681 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2024-12-31 08:45:14,859 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c543090>
+2024-12-31 08:45:14,860 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-31 08:45:14,860 - DEBUG - send_request_headers.complete
+2024-12-31 08:45:14,861 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-31 08:45:14,861 - DEBUG - send_request_body.complete
+2024-12-31 08:45:14,861 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-31 08:45:15,136 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:15:15 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2024-12-31 08:45:15,138 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-31 08:45:15,138 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-31 08:45:15,139 - DEBUG - receive_response_body.complete
+2024-12-31 08:45:15,139 - DEBUG - response_closed.started
+2024-12-31 08:45:15,139 - DEBUG - response_closed.complete
+2024-12-31 08:45:15,139 - DEBUG - close.started
+2024-12-31 08:45:15,140 - DEBUG - close.complete
+2024-12-31 08:45:19,419 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:19,419 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:45:19,419 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:19,430 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Professional and modern\n            Colors: Background (#F3F4F6), Text (#2C3E50), Accent (#E74C3C)\n            Shapes: square and circle\n            Grid Positions: Position 1 at center, Position 2 at corners\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:45:19,469 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:45:19,470 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-31 08:45:19,539 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c8cf2d0>
+2024-12-31 08:45:19,539 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c5dc680> server_hostname='api.groq.com' timeout=5.0
+2024-12-31 08:45:19,553 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c876450>
+2024-12-31 08:45:19,554 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:45:19,554 - DEBUG - send_request_headers.complete
+2024-12-31 08:45:19,554 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:45:19,554 - DEBUG - send_request_body.complete
+2024-12-31 08:45:19,554 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:45:20,221 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:15:20 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71abf5a4d032e-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4783'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'2.604s'), (b'x-request-id', b'req_01jgdbbx3efztb5baatzd3pt5j'), (b'Set-Cookie', b'__cf_bm=TM8ntCp6PObB25ivoJqXtnQFzs.SOeFD8o1A1AfCxOM-1735614920-1.0.1.1-IvxWoLuenSy1E7XUcD.Ph1z63xA66gPLMaKAzaYfqVvgT_sRj7mp.vupYLLqhpyhCJVYPZv_tRzboEPSfn7CIw; path=/; expires=Tue, 31-Dec-24 03:45:20 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:45:20,224 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:45:20,224 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:45:20,225 - DEBUG - receive_response_body.complete
+2024-12-31 08:45:20,225 - DEBUG - response_closed.started
+2024-12-31 08:45:20,225 - DEBUG - response_closed.complete
+2024-12-31 08:45:20,225 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:15:20 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71abf5a4d032e-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4783', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '2.604s', 'x-request-id': 'req_01jgdbbx3efztb5baatzd3pt5j', 'set-cookie': '__cf_bm=TM8ntCp6PObB25ivoJqXtnQFzs.SOeFD8o1A1AfCxOM-1735614920-1.0.1.1-IvxWoLuenSy1E7XUcD.Ph1z63xA66gPLMaKAzaYfqVvgT_sRj7mp.vupYLLqhpyhCJVYPZv_tRzboEPSfn7CIw; path=/; expires=Tue, 31-Dec-24 03:45:20 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:45:20,229 - INFO - ║ Generated testimonial: Testimonial:
+
+iPhone has revolutionized the way I work and live. Its sleek design and intuitive interface make every task seamless and efficient. The professional tools, like the high-quality camera and advanced security features, have given me the confidence to tackle any challenge. I'm grateful for a device that combines modern technology with a personal touch. #F3F4F6 #2C3E50 #E74C3C
+
+Design:
+[Circle shape, Position 1 at center]
+[Testimonial text in #2C3E50 color]
+[iPhone image in square shape, Position 2 at corners, Accent color #E7
+2024-12-31 08:45:20,230 - DEBUG - Generating SVG components...
+2024-12-31 08:45:20,231 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:20,231 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:45:20,231 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:20,231 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:45:20,231 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:45:20,231 - INFO - ║   → Using color: #7D3C98
+2024-12-31 08:45:20,231 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:45:20,232 - INFO - ║   → Using provided shape list: ['square', 'circle']
+2024-12-31 08:45:20,232 - INFO - ║   → Final shape list: ['square', 'circle']
+2024-12-31 08:45:20,232 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:45:20,232 - INFO - ║   → Drawing square in center
+2024-12-31 08:45:20,232 - INFO - Drawing square with color: #7D3C98
+2024-12-31 08:45:20,232 - INFO - Square drawn successfully
+2024-12-31 08:45:20,232 - INFO - ║   → Square drawn successfully
+2024-12-31 08:45:20,232 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:45:20,232 - INFO - Drawing circle with color: #7D3C98
+2024-12-31 08:45:20,233 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:45:20,233 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:45:20,233 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:20,233 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:45:20,233 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:20,237 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:20,237 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:45:20,237 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:20,237 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:45:20,237 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:45:20,237 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:45:20,237 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:45:20,237 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:45:20,237 - INFO - ║   → Final shape list: []
+2024-12-31 08:45:20,237 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:45:20,237 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:20,237 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:45:20,237 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:20,239 - DEBUG - SVG components generated successfully.
+2024-12-31 08:45:43,579 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:43,579 - INFO - ║ SHAPE FETCH PROCESS INITIATED
+2024-12-31 08:45:43,579 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:43,579 - INFO - ║ 1. Reading CSV file...
+2024-12-31 08:45:43,590 - INFO - ║   → Found 6 designs in database
+2024-12-31 08:45:43,590 - INFO - ║ 2. Selecting random design...
+2024-12-31 08:45:43,601 - INFO - ║   → Raw row data: {'font': 'Poppins-Medium', 'bgco': 'F5F6FA', 'textco': '34495E', 'imagesize': np.int64(1080), 'fontsize': np.int64(48), 'accent': '#2980B9', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#16A085', 'grid_pos1': '4', 'grid_pos2': '1', 'style_description': 'Clean and minimal'}
+2024-12-31 08:45:43,601 - INFO - ║ 3. Processing shape information...
+2024-12-31 08:45:43,601 - INFO - ║   → Parsed shapes: ['square', 'circle']
+2024-12-31 08:45:43,601 - INFO - ║   → Total shapes found: 2
+2024-12-31 08:45:43,601 - INFO - ║ 4. Extracting color information...
+2024-12-31 08:45:43,601 - INFO - ║   → Shape color: #16A085
+2024-12-31 08:45:43,601 - INFO - ║   → Background: #F5F6FA
+2024-12-31 08:45:43,601 - INFO - ║ 5. Final data package prepared
+2024-12-31 08:45:43,601 - INFO - ║   → Package: {'shapes': ['square', 'circle'], 'shape_color': '#16A085', 'bgco': '#F5F6FA'}
+2024-12-31 08:45:43,601 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:43,601 - INFO - ║ SHAPE FETCH PROCESS COMPLETED
+2024-12-31 08:45:43,601 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:44,258 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:44,259 - INFO - ║ SHAPE FETCH PROCESS INITIATED
+2024-12-31 08:45:44,259 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:44,259 - INFO - ║ 1. Reading CSV file...
+2024-12-31 08:45:44,263 - INFO - ║   → Found 6 designs in database
+2024-12-31 08:45:44,263 - INFO - ║ 2. Selecting random design...
+2024-12-31 08:45:44,264 - INFO - ║   → Raw row data: {'font': 'Poppins-Medium', 'bgco': 'F5F0E1', 'textco': '5E4D3E', 'imagesize': np.int64(1080), 'fontsize': np.int64(48), 'accent': '#27AE60', 'shape1': 'circle', 'shape2': 'square', 'shape_color': '#16A085', 'grid_pos1': '6', 'grid_pos2': '3', 'style_description': 'Natural and organic'}
+2024-12-31 08:45:44,264 - INFO - ║ 3. Processing shape information...
+2024-12-31 08:45:44,264 - INFO - ║   → Parsed shapes: ['circle', 'square']
+2024-12-31 08:45:44,264 - INFO - ║   → Total shapes found: 2
+2024-12-31 08:45:44,264 - INFO - ║ 4. Extracting color information...
+2024-12-31 08:45:44,264 - INFO - ║   → Shape color: #16A085
+2024-12-31 08:45:44,264 - INFO - ║   → Background: #F5F0E1
+2024-12-31 08:45:44,264 - INFO - ║ 5. Final data package prepared
+2024-12-31 08:45:44,264 - INFO - ║   → Package: {'shapes': ['circle', 'square'], 'shape_color': '#16A085', 'bgco': '#F5F0E1'}
+2024-12-31 08:45:44,265 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:44,265 - INFO - ║ SHAPE FETCH PROCESS COMPLETED
+2024-12-31 08:45:44,265 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:44,507 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:44,508 - INFO - ║ SHAPE FETCH PROCESS INITIATED
+2024-12-31 08:45:44,508 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:44,508 - INFO - ║ 1. Reading CSV file...
+2024-12-31 08:45:44,511 - INFO - ║   → Found 6 designs in database
+2024-12-31 08:45:44,512 - INFO - ║ 2. Selecting random design...
+2024-12-31 08:45:44,512 - INFO - ║   → Raw row data: {'font': 'Poppins-Medium', 'bgco': 'F0E5D8', 'textco': '4B3C3C', 'imagesize': np.int64(1080), 'fontsize': np.int64(48), 'accent': '#C0392B', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#7D3C98', 'grid_pos1': '2', 'grid_pos2': '8', 'style_description': 'Warm and inviting'}
+2024-12-31 08:45:44,512 - INFO - ║ 3. Processing shape information...
+2024-12-31 08:45:44,513 - INFO - ║   → Parsed shapes: ['square', 'circle']
+2024-12-31 08:45:44,513 - INFO - ║   → Total shapes found: 2
+2024-12-31 08:45:44,513 - INFO - ║ 4. Extracting color information...
+2024-12-31 08:45:44,513 - INFO - ║   → Shape color: #7D3C98
+2024-12-31 08:45:44,513 - INFO - ║   → Background: #F0E5D8
+2024-12-31 08:45:44,513 - INFO - ║ 5. Final data package prepared
+2024-12-31 08:45:44,513 - INFO - ║   → Package: {'shapes': ['square', 'circle'], 'shape_color': '#7D3C98', 'bgco': '#F0E5D8'}
+2024-12-31 08:45:44,513 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:44,513 - INFO - ║ SHAPE FETCH PROCESS COMPLETED
+2024-12-31 08:45:44,513 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:46,181 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:46,181 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:45:46,181 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:46,184 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Bold and energetic\n            Colors: Background (#FDF6F0), Text (#8E44AD), Accent (#F39C12)\n            Shapes: square and square\n            Grid Positions: Position 1 at 5, Position 2 at 7\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:45:46,185 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:45:46,186 - DEBUG - close.started
+2024-12-31 08:45:46,186 - DEBUG - close.complete
+2024-12-31 08:45:46,186 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-31 08:45:46,200 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c8e9b90>
+2024-12-31 08:45:46,201 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c5dc680> server_hostname='api.groq.com' timeout=5.0
+2024-12-31 08:45:46,214 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c8e8050>
+2024-12-31 08:45:46,214 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:45:46,215 - DEBUG - send_request_headers.complete
+2024-12-31 08:45:46,215 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:45:46,215 - DEBUG - send_request_body.complete
+2024-12-31 08:45:46,215 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:45:47,561 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:15:47 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71b65ff8e032f-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4781'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'2.628s'), (b'x-request-id', b'req_01jgdbcqsve1ntnw6j0nztc30b'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:45:47,562 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:45:47,562 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:45:47,563 - DEBUG - receive_response_body.complete
+2024-12-31 08:45:47,563 - DEBUG - response_closed.started
+2024-12-31 08:45:47,563 - DEBUG - response_closed.complete
+2024-12-31 08:45:47,563 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:15:47 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71b65ff8e032f-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4781', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '2.628s', 'x-request-id': 'req_01jgdbcqsve1ntnw6j0nztc30b', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:45:47,564 - INFO - ║ Generated testimonial: Testimonial: "The iPhone has completely transformed the way I work and play. Its sleek design and powerful capabilities make every task seamless and enjoyable. I feel confident and energized using a device that's both professional and personally tailored to my needs." #FDF6F0 #8E44AD #F39C12 
+
+Design style: Bold and energetic shapes with a personal touch.
+
+Note: I avoided using complex language or jargon to ensure the testimonial feels authentic, relatable, and professional. I also made sure to match the visual style by incorporating the specified colors, shapes, and grid positions. Lastly, I focused on conveying a genuine and personal
+2024-12-31 08:45:47,564 - DEBUG - Generating SVG components...
+2024-12-31 08:45:47,565 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:47,565 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:45:47,565 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:47,565 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:45:47,565 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:45:47,565 - INFO - ║   → Using color: #D35400
+2024-12-31 08:45:47,565 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:45:47,565 - INFO - ║   → Using provided shape list: ['square', 'square']
+2024-12-31 08:45:47,565 - INFO - ║   → Final shape list: ['square', 'square']
+2024-12-31 08:45:47,565 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:45:47,565 - INFO - ║   → Drawing square in center
+2024-12-31 08:45:47,566 - INFO - Drawing square with color: #D35400
+2024-12-31 08:45:47,566 - INFO - Square drawn successfully
+2024-12-31 08:45:47,566 - INFO - ║   → Square drawn successfully
+2024-12-31 08:45:47,566 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:47,566 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:45:47,566 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:47,570 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:47,570 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:45:47,570 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:47,570 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:45:47,570 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:45:47,570 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:45:47,570 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:45:47,570 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:45:47,570 - INFO - ║   → Final shape list: []
+2024-12-31 08:45:47,570 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:45:47,570 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:47,570 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:45:47,570 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:47,574 - DEBUG - SVG components generated successfully.
+2024-12-31 08:45:53,178 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:53,178 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:45:53,178 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:53,179 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Natural and organic\n            Colors: Background (#F5F0E1), Text (#5E4D3E), Accent (#27AE60)\n            Shapes: circle and square\n            Grid Positions: Position 1 at 6, Position 2 at 3\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:45:53,179 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:45:53,179 - DEBUG - close.started
+2024-12-31 08:45:53,179 - DEBUG - close.complete
+2024-12-31 08:45:53,179 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-31 08:45:53,186 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c6feed0>
+2024-12-31 08:45:53,186 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c5dc680> server_hostname='api.groq.com' timeout=5.0
+2024-12-31 08:45:53,197 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c6ff550>
+2024-12-31 08:45:53,197 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:45:53,198 - DEBUG - send_request_headers.complete
+2024-12-31 08:45:53,198 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:45:53,198 - DEBUG - send_request_body.complete
+2024-12-31 08:45:53,198 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:45:54,523 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:15:54 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71b91af280333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4782'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'2.616s'), (b'x-request-id', b'req_01jgdbcykhfj6t62a6makz09f9'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:45:54,525 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:45:54,525 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:45:54,526 - DEBUG - receive_response_body.complete
+2024-12-31 08:45:54,526 - DEBUG - response_closed.started
+2024-12-31 08:45:54,526 - DEBUG - response_closed.complete
+2024-12-31 08:45:54,526 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:15:54 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71b91af280333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4782', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '2.616s', 'x-request-id': 'req_01jgdbcykhfj6t62a6makz09f9', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:45:54,527 - INFO - ║ Generated testimonial: Testimonial 1:
+"The iPhone has seamlessly integrated into my everyday life, feeling like a natural extension of myself. Its sleek design and intuitive interface make every interaction a joy. I'm constantly amazed by its capabilities and the peace of mind it brings." #5E4D3E
+
+Testimonial 2:
+"My iPhone has become an essential tool, both professionally and personally. Its organic feel and reliable performance have made it a trusted companion on my journey. I'm grateful for its role in simplifying and enriching my life." #5E4D3E
+
+Both testimonials are concise, genuine, and personal, aligning with the visual style
+2024-12-31 08:45:54,527 - DEBUG - Generating SVG components...
+2024-12-31 08:45:54,527 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:54,527 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:45:54,527 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:54,528 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:45:54,528 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:45:54,528 - INFO - ║   → Using color: #16A085
+2024-12-31 08:45:54,528 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:45:54,528 - INFO - ║   → Using provided shape list: ['circle', 'square']
+2024-12-31 08:45:54,528 - INFO - ║   → Final shape list: ['circle', 'square']
+2024-12-31 08:45:54,528 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:45:54,528 - INFO - ║   → Drawing square in center
+2024-12-31 08:45:54,528 - INFO - Drawing square with color: #16A085
+2024-12-31 08:45:54,528 - INFO - Square drawn successfully
+2024-12-31 08:45:54,528 - INFO - ║   → Square drawn successfully
+2024-12-31 08:45:54,529 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:45:54,529 - INFO - Drawing circle with color: #16A085
+2024-12-31 08:45:54,529 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:45:54,529 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:45:54,529 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:54,529 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:45:54,529 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:54,533 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:45:54,533 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:45:54,533 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:54,533 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:45:54,533 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:45:54,533 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:45:54,533 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:45:54,533 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:45:54,533 - INFO - ║   → Final shape list: []
+2024-12-31 08:45:54,533 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:45:54,534 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:45:54,534 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:45:54,534 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:45:54,537 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:06,714 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:06,715 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:06,715 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:06,718 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Bold and energetic\n            Colors: Background (#FDF6F0), Text (#8E44AD), Accent (#F39C12)\n            Shapes: square and square\n            Grid Positions: Position 1 at 5, Position 2 at 7\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:06,720 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:06,721 - DEBUG - close.started
+2024-12-31 08:46:06,722 - DEBUG - close.complete
+2024-12-31 08:46:06,722 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-31 08:46:06,735 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c8e8a50>
+2024-12-31 08:46:06,735 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c5dc680> server_hostname='api.groq.com' timeout=5.0
+2024-12-31 08:46:06,751 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c8eb5d0>
+2024-12-31 08:46:06,752 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:06,752 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:06,753 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:06,753 - DEBUG - send_request_body.complete
+2024-12-31 08:46:06,753 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:07,427 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:07 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71be65e55032c-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4781'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'2.628s'), (b'x-request-id', b'req_01jgdbdb80fzysfanr2e353j69'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:07,428 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:07,428 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:07,429 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:07,429 - DEBUG - response_closed.started
+2024-12-31 08:46:07,429 - DEBUG - response_closed.complete
+2024-12-31 08:46:07,429 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:07 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71be65e55032c-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4781', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '2.628s', 'x-request-id': 'req_01jgdbdb80fzysfanr2e353j69', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:07,430 - INFO - ║ Generated testimonial: Testimonial: "The iPhone has truly revolutionized my life. Its bold features and energetic performance have made every task seamless and enjoyable. I can't imagine going back to anything else - it's like having a piece of the future in my hands." #8E44AD
+
+Complimentary Design Element: Square shape highlighting the Apple logo in accent color #F39C12.
+2024-12-31 08:46:07,430 - DEBUG - Generating SVG components...
+2024-12-31 08:46:07,431 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:07,431 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:07,431 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:07,431 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:07,431 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:07,431 - INFO - ║   → Using color: #D35400
+2024-12-31 08:46:07,431 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:07,431 - INFO - ║   → Using provided shape list: ['square', 'square']
+2024-12-31 08:46:07,431 - INFO - ║   → Final shape list: ['square', 'square']
+2024-12-31 08:46:07,432 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:07,432 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:07,432 - INFO - Drawing square with color: #D35400
+2024-12-31 08:46:07,432 - INFO - Square drawn successfully
+2024-12-31 08:46:07,432 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:07,432 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:07,432 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:07,432 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:07,434 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:07,434 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:07,434 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:07,434 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:07,434 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:07,434 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:07,434 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:07,435 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:07,435 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:07,435 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:07,435 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:07,435 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:07,435 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:07,437 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:08,094 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:08,094 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:08,094 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:08,096 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Natural and organic\n            Colors: Background (#F5F0E1), Text (#5E4D3E), Accent (#27AE60)\n            Shapes: circle and square\n            Grid Positions: Position 1 at 6, Position 2 at 3\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:08,098 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:08,098 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:08,099 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:08,099 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:08,101 - DEBUG - send_request_body.complete
+2024-12-31 08:46:08,101 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:08,860 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:08 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71beec991032c-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14398'), (b'x-ratelimit-remaining-tokens', b'4587'), (b'x-ratelimit-reset-requests', b'10.624s'), (b'x-ratelimit-reset-tokens', b'4.947s'), (b'x-request-id', b'req_01jgdbdck2ef4r64h6282xabmk'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:08,861 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:08,862 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:08,862 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:08,863 - DEBUG - response_closed.started
+2024-12-31 08:46:08,863 - DEBUG - response_closed.complete
+2024-12-31 08:46:08,863 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:08 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71beec991032c-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14398', 'x-ratelimit-remaining-tokens': '4587', 'x-ratelimit-reset-requests': '10.624s', 'x-ratelimit-reset-tokens': '4.947s', 'x-request-id': 'req_01jgdbdck2ef4r64h6282xabmk', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:08,863 - INFO - ║ Generated testimonial: Testimonial 1:
+"The iPhone has become an essential part of my daily routine, seamlessly blending technology with nature. Its sleek design and intuitive interface make it a joy to use, all while feeling connected to the world around me." #5E4D3E
+
+Testimonial 2:
+"From capturing breathtaking sunsets to staying organized on-the-go, my iPhone is my trusty companion. Its natural and organic design allows me to stay productive, without sacrificing style or my love for the great outdoors." #27AE60
+
+Both testimonials focus on the iPhone's seamless integration of technology and nature, aligning with the visual
+2024-12-31 08:46:08,864 - DEBUG - Generating SVG components...
+2024-12-31 08:46:08,864 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:08,864 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:08,864 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:08,864 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:08,864 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:08,864 - INFO - ║   → Using color: #16A085
+2024-12-31 08:46:08,864 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:08,865 - INFO - ║   → Using provided shape list: ['circle', 'square']
+2024-12-31 08:46:08,865 - INFO - ║   → Final shape list: ['circle', 'square']
+2024-12-31 08:46:08,865 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:08,865 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:08,865 - INFO - Drawing square with color: #16A085
+2024-12-31 08:46:08,865 - INFO - Square drawn successfully
+2024-12-31 08:46:08,865 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:08,865 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:08,865 - INFO - Drawing circle with color: #16A085
+2024-12-31 08:46:08,866 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:08,866 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:08,866 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:08,867 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:08,867 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:08,870 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:08,870 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:08,871 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:08,871 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:08,871 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:08,871 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:08,871 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:08,871 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:08,872 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:08,872 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:08,872 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:08,872 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:08,872 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:08,875 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:09,361 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:09,362 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:09,362 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:09,364 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Bold and energetic\n            Colors: Background (#FDF6F0), Text (#8E44AD), Accent (#F39C12)\n            Shapes: square and square\n            Grid Positions: Position 1 at 5, Position 2 at 7\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:09,366 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:09,366 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:09,368 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:09,368 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:09,368 - DEBUG - send_request_body.complete
+2024-12-31 08:46:09,368 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:10,191 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:10 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71bf6bc84032c-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14397'), (b'x-ratelimit-remaining-tokens', b'4320'), (b'x-ratelimit-reset-requests', b'16.755999999s'), (b'x-ratelimit-reset-tokens', b'8.156s'), (b'x-request-id', b'req_01jgdbddstffcv7x4jg1w5w32p'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:10,192 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:10,192 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:10,193 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:10,193 - DEBUG - response_closed.started
+2024-12-31 08:46:10,193 - DEBUG - response_closed.complete
+2024-12-31 08:46:10,193 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:10 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71bf6bc84032c-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14397', 'x-ratelimit-remaining-tokens': '4320', 'x-ratelimit-reset-requests': '16.755999999s', 'x-ratelimit-reset-tokens': '8.156s', 'x-request-id': 'req_01jgdbddstffcv7x4jg1w5w32p', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:10,194 - INFO - ║ Generated testimonial: Testimonial: "The iPhone has revolutionized my life. Its bold design and energetic performance have made every task seamless and enjoyable. I can't imagine going back to my old phone – the iPhone is truly a game-changer." #FDF6F0 (Background) #8E44AD (Text) #F39C12 (Accent)
+
+Design Notes: The square shapes and grid positions reflect the bold and energetic design style, while the color scheme adds a touch of professionalism with a pop of accent color for emphasis. The testimonial itself is concise, genuine, and personal, aligning perfectly with the desired tone and mood.
+2024-12-31 08:46:10,194 - DEBUG - Generating SVG components...
+2024-12-31 08:46:10,194 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:10,195 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:10,195 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:10,195 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:10,195 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:10,195 - INFO - ║   → Using color: #D35400
+2024-12-31 08:46:10,195 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:10,195 - INFO - ║   → Using provided shape list: ['square', 'square']
+2024-12-31 08:46:10,195 - INFO - ║   → Final shape list: ['square', 'square']
+2024-12-31 08:46:10,195 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:10,195 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:10,195 - INFO - Drawing square with color: #D35400
+2024-12-31 08:46:10,195 - INFO - Square drawn successfully
+2024-12-31 08:46:10,196 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:10,196 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:10,196 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:10,196 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:10,199 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:10,200 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:10,200 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:10,200 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:10,200 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:10,200 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:10,200 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:10,200 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:10,200 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:10,200 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:10,200 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:10,200 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:10,200 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:10,203 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:10,686 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:10,686 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:10,686 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:10,688 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Natural and organic\n            Colors: Background (#F5F0E1), Text (#5E4D3E), Accent (#27AE60)\n            Shapes: circle and square\n            Grid Positions: Position 1 at 6, Position 2 at 3\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:10,689 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:10,690 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:10,690 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:10,690 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:10,691 - DEBUG - send_request_body.complete
+2024-12-31 08:46:10,691 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:11,349 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:11 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71bfeffc7032c-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14396'), (b'x-ratelimit-remaining-tokens', b'4066'), (b'x-ratelimit-reset-requests', b'22.707999999s'), (b'x-ratelimit-reset-tokens', b'11.201s'), (b'x-request-id', b'req_01jgdbdf27ft9a14g060phfym6'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:11,350 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:11,350 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:11,351 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:11,351 - DEBUG - response_closed.started
+2024-12-31 08:46:11,351 - DEBUG - response_closed.complete
+2024-12-31 08:46:11,351 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:11 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71bfeffc7032c-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14396', 'x-ratelimit-remaining-tokens': '4066', 'x-ratelimit-reset-requests': '22.707999999s', 'x-ratelimit-reset-tokens': '11.201s', 'x-request-id': 'req_01jgdbdf27ft9a14g060phfym6', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:11,352 - INFO - ║ Generated testimonial: Testimonial 1:
+"The iPhone has become an essential part of my daily routine, seamlessly integrating technology into my organic lifestyle. Its natural design and intuitive interface make it a joy to use, while the vibrant display brings my photos to life." #5E4D3E
+
+Testimonial 2:
+"I've always been drawn to the simplicity and elegance of the iPhone. Its circular and square shapes fit perfectly in my hand, and the natural color palette aligns with my aesthetic. I trust it to capture my memories and keep me connected." #27AE60
+
+Avoid previous testimonial styles that are overly promotional or lack a personal touch. Focus on
+2024-12-31 08:46:11,353 - DEBUG - Generating SVG components...
+2024-12-31 08:46:11,353 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:11,353 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:11,353 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:11,353 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:11,353 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:11,353 - INFO - ║   → Using color: #16A085
+2024-12-31 08:46:11,353 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:11,354 - INFO - ║   → Using provided shape list: ['circle', 'square']
+2024-12-31 08:46:11,354 - INFO - ║   → Final shape list: ['circle', 'square']
+2024-12-31 08:46:11,354 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:11,354 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:11,354 - INFO - Drawing square with color: #16A085
+2024-12-31 08:46:11,354 - INFO - Square drawn successfully
+2024-12-31 08:46:11,354 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:11,354 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:11,354 - INFO - Drawing circle with color: #16A085
+2024-12-31 08:46:11,355 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:11,356 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:11,356 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:11,356 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:11,357 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:11,360 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:11,360 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:11,360 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:11,360 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:11,360 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:11,360 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:11,360 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:11,360 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:11,360 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:11,361 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:11,361 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:11,361 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:11,361 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:11,364 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:11,688 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:11,688 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:11,688 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:11,691 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Clean and minimal\n            Colors: Background (#F5F6FA), Text (#34495E), Accent (#2980B9)\n            Shapes: square and circle\n            Grid Positions: Position 1 at 4, Position 2 at 1\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:11,692 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:11,693 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:11,693 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:11,695 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:11,696 - DEBUG - send_request_body.complete
+2024-12-31 08:46:11,696 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:12,359 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:12 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71c0549da032c-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14395'), (b'x-ratelimit-remaining-tokens', b'3779'), (b'x-ratelimit-reset-requests', b'29.006s'), (b'x-ratelimit-reset-tokens', b'14.648s'), (b'x-request-id', b'req_01jgdbdg19e5mb19ckbchykkas'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:12,360 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:12,360 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:12,361 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:12,361 - DEBUG - response_closed.started
+2024-12-31 08:46:12,362 - DEBUG - response_closed.complete
+2024-12-31 08:46:12,362 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:12 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71c0549da032c-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14395', 'x-ratelimit-remaining-tokens': '3779', 'x-ratelimit-reset-requests': '29.006s', 'x-ratelimit-reset-tokens': '14.648s', 'x-request-id': 'req_01jgdbdg19e5mb19ckbchykkas', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:12,362 - INFO - ║ Generated testimonial: Testimonial: "The iPhone has transformed my life, making it seamless and organized. Its sleek design and intuitive interface are a joy to use daily. I feel more connected and productive, thanks to Apple's remarkable innovation."
+
+Design style:
+- Background: #F5F6FA
+- Text: #34495E
+- Accent: #2980B9
+- Shapes: Square and circle
+- Grid Positions: Position 1 at 4, Position 2 at 1
+
+This testimonial matches the clean and minimal design style. The text is concise, genuine, and professional, appealing to a wide audience. The color scheme, shapes, and
+2024-12-31 08:46:12,363 - DEBUG - Generating SVG components...
+2024-12-31 08:46:12,363 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:12,363 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:12,363 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:12,363 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:12,363 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:12,363 - INFO - ║   → Using color: #16A085
+2024-12-31 08:46:12,363 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:12,363 - INFO - ║   → Using provided shape list: ['square', 'circle']
+2024-12-31 08:46:12,363 - INFO - ║   → Final shape list: ['square', 'circle']
+2024-12-31 08:46:12,363 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:12,364 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:12,364 - INFO - Drawing square with color: #16A085
+2024-12-31 08:46:12,364 - INFO - Square drawn successfully
+2024-12-31 08:46:12,364 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:12,364 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:12,364 - INFO - Drawing circle with color: #16A085
+2024-12-31 08:46:12,365 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:12,365 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:12,365 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:12,365 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:12,365 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:12,368 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:12,368 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:12,368 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:12,369 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:12,369 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:12,369 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:12,369 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:12,369 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:12,369 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:12,369 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:12,369 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:12,369 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:12,369 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:12,373 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:15,908 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:15,909 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:15,909 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:15,911 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Bold and energetic\n            Colors: Background (#FDF6F0), Text (#8E44AD), Accent (#F39C12)\n            Shapes: square and square\n            Grid Positions: Position 1 at 5, Position 2 at 7\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:15,912 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:15,913 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:15,913 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:15,913 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:15,913 - DEBUG - send_request_body.complete
+2024-12-31 08:46:15,913 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:17,359 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:17 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71c1f9bfc032c-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14394'), (b'x-ratelimit-remaining-tokens', b'3808'), (b'x-ratelimit-reset-requests', b'31.201s'), (b'x-ratelimit-reset-tokens', b'14.298s'), (b'x-request-id', b'req_01jgdbdmqae5naxq5gjmzrhsg4'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:17,360 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:17,360 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:17,361 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:17,361 - DEBUG - response_closed.started
+2024-12-31 08:46:17,361 - DEBUG - response_closed.complete
+2024-12-31 08:46:17,361 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:17 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71c1f9bfc032c-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14394', 'x-ratelimit-remaining-tokens': '3808', 'x-ratelimit-reset-requests': '31.201s', 'x-ratelimit-reset-tokens': '14.298s', 'x-request-id': 'req_01jgdbdmqae5naxq5gjmzrhsg4', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:17,362 - INFO - ║ Generated testimonial: Testimonial: "The iPhone has revolutionized my life. Its bold design and energetic performance make every task a joy to accomplish. I can't imagine going back to anything else – it's simply perfect for me." #8E44AD
+
+Accent: "From the moment I picked it up, I knew it was special. The sleek, square design and vibrant accent colors drew me in, and the powerful features kept me coming back for more." #F39C12
+
+Position 1 at 5, Position 2 at 7.
+
+This testimonial focuses on the authentic and personal experience of the iPhone user, while also incorporating the bold and energetic visual style of
+2024-12-31 08:46:17,362 - DEBUG - Generating SVG components...
+2024-12-31 08:46:17,363 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:17,363 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:17,363 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:17,363 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:17,363 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:17,363 - INFO - ║   → Using color: #D35400
+2024-12-31 08:46:17,364 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:17,364 - INFO - ║   → Using provided shape list: ['square', 'square']
+2024-12-31 08:46:17,364 - INFO - ║   → Final shape list: ['square', 'square']
+2024-12-31 08:46:17,364 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:17,365 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:17,365 - INFO - Drawing square with color: #D35400
+2024-12-31 08:46:17,365 - INFO - Square drawn successfully
+2024-12-31 08:46:17,365 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:17,365 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:17,365 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:17,365 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:17,368 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:17,368 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:17,368 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:17,368 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:17,368 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:17,368 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:17,368 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:17,368 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:17,369 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:17,369 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:17,369 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:17,369 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:17,369 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:17,372 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:18,314 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:18,315 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:18,315 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:18,317 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Warm and inviting\n            Colors: Background (#F0E5D8), Text (#4B3C3C), Accent (#C0392B)\n            Shapes: square and circle\n            Grid Positions: Position 1 at 2, Position 2 at 8\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:18,318 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:18,318 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:18,319 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:18,319 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:18,319 - DEBUG - send_request_body.complete
+2024-12-31 08:46:18,319 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:19,715 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:19 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71c2eaa83032c-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14393'), (b'x-ratelimit-remaining-tokens', b'3637'), (b'x-ratelimit-reset-requests', b'39.568999999s'), (b'x-ratelimit-reset-tokens', b'16.346s'), (b'x-request-id', b'req_01jgdbdq39ft9twqb2gn43qbfj'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:19,716 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:19,717 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:19,717 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:19,717 - DEBUG - response_closed.started
+2024-12-31 08:46:19,717 - DEBUG - response_closed.complete
+2024-12-31 08:46:19,717 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:19 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71c2eaa83032c-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14393', 'x-ratelimit-remaining-tokens': '3637', 'x-ratelimit-reset-requests': '39.568999999s', 'x-ratelimit-reset-tokens': '16.346s', 'x-request-id': 'req_01jgdbdq39ft9twqb2gn43qbfj', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:19,718 - INFO - ║ Generated testimonial: Testimonial:
+
+"The iPhone has become an integral part of my daily life. Its sleek design and intuitive interface make every interaction a joy. I feel a sense of warmth and connection knowing I can reach out to loved ones anytime, anywhere. The iPhone is truly a game-changer." #F0E5D8 #4B3C3C #C0392B
+
+Design Notes:
+
+1. Genuine and personal: The testimonial focuses on the emotional connection the user has with their iPhone, highlighting how it brings warmth and connection to their life.
+2. Aligned with the visual style: The warm color palette, square and circle shapes, and grid positions create
+2024-12-31 08:46:19,718 - DEBUG - Generating SVG components...
+2024-12-31 08:46:19,719 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:19,719 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:19,719 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:19,719 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:19,719 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:19,719 - INFO - ║   → Using color: #7D3C98
+2024-12-31 08:46:19,719 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:19,720 - INFO - ║   → Using provided shape list: ['square', 'circle']
+2024-12-31 08:46:19,720 - INFO - ║   → Final shape list: ['square', 'circle']
+2024-12-31 08:46:19,720 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:19,720 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:19,720 - INFO - Drawing square with color: #7D3C98
+2024-12-31 08:46:19,720 - INFO - Square drawn successfully
+2024-12-31 08:46:19,720 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:19,720 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:19,720 - INFO - Drawing circle with color: #7D3C98
+2024-12-31 08:46:19,721 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:19,721 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:19,721 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:19,721 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:19,721 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:19,726 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:19,726 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:19,726 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:19,726 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:19,726 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:19,726 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:19,726 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:19,726 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:19,726 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:19,726 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:19,726 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:19,726 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:19,726 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:19,729 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:20,996 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:20,996 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:20,996 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:20,999 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Elegant and sophisticated\n            Colors: Background (#E8D8D0), Text (#3C2B2B), Accent (#8E44AD)\n            Shapes: circle and circle\n            Grid Positions: Position 1 at 1, Position 2 at 9\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:21,000 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:21,001 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:21,001 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:21,001 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:21,001 - DEBUG - send_request_body.complete
+2024-12-31 08:46:21,001 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:21,659 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:21 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71c3f79db032c-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14392'), (b'x-ratelimit-remaining-tokens', b'3438'), (b'x-ratelimit-reset-requests', b'45.921s'), (b'x-ratelimit-reset-tokens', b'18.736s'), (b'x-request-id', b'req_01jgdbds4ae1rrrn9vj431tdhc'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:21,660 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:21,661 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:21,661 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:21,662 - DEBUG - response_closed.started
+2024-12-31 08:46:21,662 - DEBUG - response_closed.complete
+2024-12-31 08:46:21,662 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:21 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71c3f79db032c-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14392', 'x-ratelimit-remaining-tokens': '3438', 'x-ratelimit-reset-requests': '45.921s', 'x-ratelimit-reset-tokens': '18.736s', 'x-request-id': 'req_01jgdbds4ae1rrrn9vj431tdhc', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:21,663 - INFO - ║ Generated testimonial: Position 1 at 1:
+In the world of elegance and sophistication, my iPhone stands out as a true masterpiece. Its sleek design and intuitive interface make every interaction a delight. #3C2B2B
+
+Position 2 at 9:
+With a background as timeless as #E8D8D0, my iPhone brings style and substance to my daily life. The perfect blend of professionalism and relatability, it's simply captivating. #8E44AD
+2024-12-31 08:46:21,663 - DEBUG - Generating SVG components...
+2024-12-31 08:46:21,663 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:21,663 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:21,663 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:21,664 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:21,664 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:21,664 - INFO - ║   → Using color: #2980B9
+2024-12-31 08:46:21,664 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:21,664 - INFO - ║   → Using provided shape list: ['circle', 'circle']
+2024-12-31 08:46:21,664 - INFO - ║   → Final shape list: ['circle', 'circle']
+2024-12-31 08:46:21,664 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:21,664 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:21,664 - INFO - Drawing circle with color: #2980B9
+2024-12-31 08:46:21,665 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:21,665 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:21,665 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:21,665 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:21,665 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:21,668 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:21,668 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:21,668 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:21,668 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:21,668 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:21,668 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:21,668 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:21,669 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:21,669 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:21,669 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:21,669 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:21,669 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:21,669 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:21,671 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:45,981 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:45,982 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:45,982 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:45,982 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:45,982 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:45,982 - INFO - ║   → Using color: #000000
+2024-12-31 08:46:45,982 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:45,982 - INFO - ║   → Using provided shape list: ['square']
+2024-12-31 08:46:45,982 - INFO - ║   → Final shape list: ['square']
+2024-12-31 08:46:45,982 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:45,982 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:45,982 - INFO - Drawing square with color: #000000
+2024-12-31 08:46:45,983 - INFO - Square drawn successfully
+2024-12-31 08:46:45,983 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:45,983 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:45,983 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:45,983 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:45,983 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:45,983 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:45,983 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:45,983 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:45,983 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:45,983 - INFO - ║   → Using color: #000000
+2024-12-31 08:46:45,983 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:45,984 - INFO - ║   → Using provided shape list: ['circle']
+2024-12-31 08:46:45,984 - INFO - ║   → Final shape list: ['circle']
+2024-12-31 08:46:45,984 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:45,984 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:45,984 - INFO - Drawing circle with color: #000000
+2024-12-31 08:46:45,984 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:45,984 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:45,984 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:45,984 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:45,984 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:50,440 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:50,441 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:50,441 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:50,446 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Clean and minimal\n            Colors: Background (#F5F6FA), Text (#34495E), Accent (#2980B9)\n            Shapes: square and circle\n            Grid Positions: Position 1 at 4, Position 2 at 1\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:50,449 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:50,450 - DEBUG - close.started
+2024-12-31 08:46:50,450 - DEBUG - close.complete
+2024-12-31 08:46:50,451 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-31 08:46:50,467 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c8f1110>
+2024-12-31 08:46:50,472 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10c5dc680> server_hostname='api.groq.com' timeout=5.0
+2024-12-31 08:46:50,491 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10c758bd0>
+2024-12-31 08:46:50,492 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:50,492 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:50,492 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:50,493 - DEBUG - send_request_body.complete
+2024-12-31 08:46:50,493 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:51,153 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:51 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71cf7bf80032f-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14395'), (b'x-ratelimit-remaining-tokens', b'4782'), (b'x-ratelimit-reset-requests', b'24.570999999s'), (b'x-ratelimit-reset-tokens', b'2.616s'), (b'x-request-id', b'req_01jgdbenw0f8es1hy4bzyhb4vw'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:51,155 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:51,156 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:51,157 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:51,157 - DEBUG - response_closed.started
+2024-12-31 08:46:51,157 - DEBUG - response_closed.complete
+2024-12-31 08:46:51,157 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:51 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71cf7bf80032f-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14395', 'x-ratelimit-remaining-tokens': '4782', 'x-ratelimit-reset-requests': '24.570999999s', 'x-ratelimit-reset-tokens': '2.616s', 'x-request-id': 'req_01jgdbenw0f8es1hy4bzyhb4vw', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:51,159 - INFO - ║ Generated testimonial: Testimonial: "The iPhone has transformed my life, making it simpler and more organized. With its sleek design and intuitive interface, I can't imagine going back to any other device. #iPhoneForLife"
+
+Design:
+[#F5F6FA]
+----------------------------------
+[#34495E] The iPhone has transformed my life, making it simpler and more organized.
+----------------------------------
+[#2980B9] With its sleek design and intuitive interface, I can't imagine going back to any other device. #iPhoneForLife
+----------------------------------
+2024-12-31 08:46:51,159 - DEBUG - Generating SVG components...
+2024-12-31 08:46:51,160 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:51,160 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:51,160 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:51,160 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:51,160 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:51,160 - INFO - ║   → Using color: #16A085
+2024-12-31 08:46:51,160 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:51,160 - INFO - ║   → Using provided shape list: ['square', 'circle']
+2024-12-31 08:46:51,160 - INFO - ║   → Final shape list: ['square', 'circle']
+2024-12-31 08:46:51,160 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:51,160 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:51,160 - INFO - Drawing square with color: #16A085
+2024-12-31 08:46:51,161 - INFO - Square drawn successfully
+2024-12-31 08:46:51,161 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:51,161 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:51,161 - INFO - Drawing circle with color: #16A085
+2024-12-31 08:46:51,161 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:51,162 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:51,162 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:51,162 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:51,162 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:51,166 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:51,167 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:51,167 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:51,167 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:51,167 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:51,167 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:51,167 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:51,167 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:51,167 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:51,167 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:51,167 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:51,167 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:51,167 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:51,170 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:55,387 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:55,388 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:55,388 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:55,390 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Clean and minimal\n            Colors: Background (#F5F6FA), Text (#34495E), Accent (#2980B9)\n            Shapes: square and circle\n            Grid Positions: Position 1 at 4, Position 2 at 1\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:55,391 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:55,392 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:55,392 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:55,392 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:55,393 - DEBUG - send_request_body.complete
+2024-12-31 08:46:55,393 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:56,169 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:56 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71d166d59032f-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14394'), (b'x-ratelimit-remaining-tokens', b'4782'), (b'x-ratelimit-reset-requests', b'31.010999999s'), (b'x-ratelimit-reset-tokens', b'2.616s'), (b'x-request-id', b'req_01jgdbetqzffjaqh8wd6e770xq'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:56,170 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:56,170 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:56,170 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:56,171 - DEBUG - response_closed.started
+2024-12-31 08:46:56,171 - DEBUG - response_closed.complete
+2024-12-31 08:46:56,171 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:56 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71d166d59032f-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14394', 'x-ratelimit-remaining-tokens': '4782', 'x-ratelimit-reset-requests': '31.010999999s', 'x-ratelimit-reset-tokens': '2.616s', 'x-request-id': 'req_01jgdbetqzffjaqh8wd6e770xq', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:56,172 - INFO - ║ Generated testimonial: Testimonial: "The iPhone has truly transformed my life. Its sleek design and intuitive interface make every interaction a joy. I feel more connected and productive, all while loving the clean, minimal style. #F5F6FA #34495E #2980B9"
+
+Design Elements:
+- Style: Clean and minimal, focusing on simplicity and elegance.
+- Colors: Background (#F5F6FA), Text (#34495E), Accent (#2980B9) - These colors give a professional yet approachable feel to the testimonial.
+- Shapes: Square and circle - The square shape is used for the
+2024-12-31 08:46:56,172 - DEBUG - Generating SVG components...
+2024-12-31 08:46:56,173 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:56,173 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:56,173 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:56,173 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:56,173 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:56,173 - INFO - ║   → Using color: #16A085
+2024-12-31 08:46:56,173 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:56,173 - INFO - ║   → Using provided shape list: ['square', 'circle']
+2024-12-31 08:46:56,173 - INFO - ║   → Final shape list: ['square', 'circle']
+2024-12-31 08:46:56,173 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:56,173 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:56,173 - INFO - Drawing square with color: #16A085
+2024-12-31 08:46:56,174 - INFO - Square drawn successfully
+2024-12-31 08:46:56,174 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:56,174 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:56,174 - INFO - Drawing circle with color: #16A085
+2024-12-31 08:46:56,175 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:56,175 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:56,175 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:56,176 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:56,176 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:56,179 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:56,179 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:56,179 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:56,179 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:56,179 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:56,179 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:56,179 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:56,179 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:56,179 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:56,179 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:56,179 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:56,179 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:56,180 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:56,182 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:56,727 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:56,727 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:56,727 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:56,730 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Clean and minimal\n            Colors: Background (#F5F6FA), Text (#34495E), Accent (#2980B9)\n            Shapes: square and circle\n            Grid Positions: Position 1 at 4, Position 2 at 1\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:56,731 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:56,731 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:56,732 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:56,732 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:56,732 - DEBUG - send_request_body.complete
+2024-12-31 08:46:56,732 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:57,501 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:57 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71d1ec8d9032f-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14393'), (b'x-ratelimit-remaining-tokens', b'4525'), (b'x-ratelimit-reset-requests', b'40.652999999s'), (b'x-ratelimit-reset-tokens', b'5.699s'), (b'x-request-id', b'req_01jgdbew26ef9t5ba0bs4abnwp'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:57,502 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:57,502 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:57,503 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:57,503 - DEBUG - response_closed.started
+2024-12-31 08:46:57,503 - DEBUG - response_closed.complete
+2024-12-31 08:46:57,503 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:57 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71d1ec8d9032f-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14393', 'x-ratelimit-remaining-tokens': '4525', 'x-ratelimit-reset-requests': '40.652999999s', 'x-ratelimit-reset-tokens': '5.699s', 'x-request-id': 'req_01jgdbew26ef9t5ba0bs4abnwp', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:57,504 - INFO - ║ Generated testimonial: Testimonial:
+
+"The iPhone has become an essential part of my daily life. Its sleek design and intuitive interface make every interaction seamless. I can't imagine going back to anything else."
+
+Design:
+[#F5F6FA]
+----------------------------------
+[#34495E] The iPhone has become an essential part of my daily life.
+----------------------------------
+[#2980B9] Its sleek design and intuitive interface make every interaction seamless.
+----------------------------------
+[#34495E] I can't imagine going back to anything else.
+----------------------------------
+2024-12-31 08:46:57,505 - DEBUG - Generating SVG components...
+2024-12-31 08:46:57,505 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:57,505 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:57,505 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:57,505 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:57,506 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:57,506 - INFO - ║   → Using color: #16A085
+2024-12-31 08:46:57,506 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:57,506 - INFO - ║   → Using provided shape list: ['square', 'circle']
+2024-12-31 08:46:57,506 - INFO - ║   → Final shape list: ['square', 'circle']
+2024-12-31 08:46:57,506 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:57,507 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:57,507 - INFO - Drawing square with color: #16A085
+2024-12-31 08:46:57,508 - INFO - Square drawn successfully
+2024-12-31 08:46:57,508 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:57,508 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:57,508 - INFO - Drawing circle with color: #16A085
+2024-12-31 08:46:57,509 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:57,509 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:57,509 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:57,509 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:57,509 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:57,512 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:57,512 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:57,512 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:57,512 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:57,512 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:57,512 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:57,513 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:57,513 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:57,513 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:57,513 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:57,513 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:57,513 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:57,513 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:57,516 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:57,953 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:57,954 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:57,954 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:57,956 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Natural and organic\n            Colors: Background (#F5F0E1), Text (#5E4D3E), Accent (#27AE60)\n            Shapes: circle and square\n            Grid Positions: Position 1 at 6, Position 2 at 3\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:57,957 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:57,958 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:57,958 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:57,958 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:57,959 - DEBUG - send_request_body.complete
+2024-12-31 08:46:57,959 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:58,626 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:58 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71d266c29032f-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14392'), (b'x-ratelimit-remaining-tokens', b'4259'), (b'x-ratelimit-reset-requests', b'46.867999999s'), (b'x-ratelimit-reset-tokens', b'8.882s'), (b'x-request-id', b'req_01jgdbex5he03r9qq70jpjh2e4'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:58,627 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:58,627 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:58,628 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:58,628 - DEBUG - response_closed.started
+2024-12-31 08:46:58,628 - DEBUG - response_closed.complete
+2024-12-31 08:46:58,628 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:58 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71d266c29032f-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14392', 'x-ratelimit-remaining-tokens': '4259', 'x-ratelimit-reset-requests': '46.867999999s', 'x-ratelimit-reset-tokens': '8.882s', 'x-request-id': 'req_01jgdbex5he03r9qq70jpjh2e4', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:58,629 - INFO - ║ Generated testimonial: Testimonial 1:
+"The iPhone has become an integral part of my daily life, seamlessly blending technology and nature. Its sleek design and intuitive interface are a joy to use, much like a smooth stone in the palm of my hand. I'm constantly inspired by its ability to connect me to the world while keeping me grounded in the present moment." #F5F0E1, #5E4D3E, #27AE60
+
+Testimonial 2:
+"My iPhone is like a breath of fresh air, always there to help me navigate through life's challenges with ease and grace. The circular and square shapes in its design remind me of the organic patterns found
+2024-12-31 08:46:58,629 - DEBUG - Generating SVG components...
+2024-12-31 08:46:58,630 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:58,630 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:58,630 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:58,630 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:58,630 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:58,630 - INFO - ║   → Using color: #16A085
+2024-12-31 08:46:58,630 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:58,630 - INFO - ║   → Using provided shape list: ['circle', 'square']
+2024-12-31 08:46:58,630 - INFO - ║   → Final shape list: ['circle', 'square']
+2024-12-31 08:46:58,630 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:58,630 - INFO - ║   → Drawing square in center
+2024-12-31 08:46:58,630 - INFO - Drawing square with color: #16A085
+2024-12-31 08:46:58,631 - INFO - Square drawn successfully
+2024-12-31 08:46:58,631 - INFO - ║   → Square drawn successfully
+2024-12-31 08:46:58,631 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:58,631 - INFO - Drawing circle with color: #16A085
+2024-12-31 08:46:58,632 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:58,632 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:58,632 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:58,632 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:58,632 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:58,636 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:58,636 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:58,636 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:58,636 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:58,636 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:58,636 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:58,636 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:58,636 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:58,636 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:58,636 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:58,636 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:58,636 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:58,636 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:58,640 - DEBUG - SVG components generated successfully.
+2024-12-31 08:46:58,987 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:58,987 - INFO - ║ GENERATING STYLED TESTIMONIAL
+2024-12-31 08:46:58,987 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:58,990 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles.'}, {'role': 'user', 'content': 'Generate a unique and compelling testimonial about iphone.\n            Consider this design style:\n            Style: Elegant and sophisticated\n            Colors: Background (#E8D8D0), Text (#3C2B2B), Accent (#8E44AD)\n            Shapes: circle and circle\n            Grid Positions: Position 1 at 1, Position 2 at 9\n            \n            Make the testimonial match the mood and tone of the design.\n            Keep it concise (2-3 sentences) but impactful.\n            Focus on authenticity and emotional resonance.\n            \n            The testimonial should feel:\n            1. Genuine and personal\n            2. Aligned with the visual style\n            3. Professional yet relatable\n            \n            Previous testimonial styles to avoid: [List of recent testimonials]'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'stream': False, 'temperature': 0.7, 'top_p': 1}}
+2024-12-31 08:46:58,991 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 08:46:58,991 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:58,992 - DEBUG - send_request_headers.complete
+2024-12-31 08:46:58,992 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 08:46:58,992 - DEBUG - send_request_body.complete
+2024-12-31 08:46:58,993 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 08:46:59,551 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:16:59 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa71d2ceecc032f-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14391'), (b'x-ratelimit-remaining-tokens', b'3973'), (b'x-ratelimit-reset-requests', b'52.977999999s'), (b'x-ratelimit-reset-tokens', b'12.324s'), (b'x-request-id', b'req_01jgdbey5hf159rafmdj92wng0'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 08:46:59,551 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 08:46:59,552 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 08:46:59,552 - DEBUG - receive_response_body.complete
+2024-12-31 08:46:59,552 - DEBUG - response_closed.started
+2024-12-31 08:46:59,552 - DEBUG - response_closed.complete
+2024-12-31 08:46:59,552 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Tue, 31 Dec 2024 03:16:59 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa71d2ceecc032f-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14391', 'x-ratelimit-remaining-tokens': '3973', 'x-ratelimit-reset-requests': '52.977999999s', 'x-ratelimit-reset-tokens': '12.324s', 'x-request-id': 'req_01jgdbey5hf159rafmdj92wng0', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 08:46:59,553 - INFO - ║ Generated testimonial: Position 1 at 1:
+"The iPhone has become an essential part of my sophisticated lifestyle. Its elegant design and seamless functionality make every interaction a delight. I feel confident and connected with this remarkable device in my hand."
+
+Position 2 at 9:
+"From capturing precious moments to staying organized, my iPhone has elevated my daily experiences. Its sleek design and powerful features beautifully complement my refined taste, ensuring I'm always one step ahead in style and productivity."
+2024-12-31 08:46:59,554 - DEBUG - Generating SVG components...
+2024-12-31 08:46:59,554 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:59,554 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:59,554 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:59,554 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:59,554 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:59,555 - INFO - ║   → Using color: #2980B9
+2024-12-31 08:46:59,555 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:59,555 - INFO - ║   → Using provided shape list: ['circle', 'circle']
+2024-12-31 08:46:59,555 - INFO - ║   → Final shape list: ['circle', 'circle']
+2024-12-31 08:46:59,555 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:59,555 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:46:59,555 - INFO - Drawing circle with color: #2980B9
+2024-12-31 08:46:59,556 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:46:59,556 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:46:59,556 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:59,556 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:59,556 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:59,561 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:46:59,562 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:46:59,562 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:59,562 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:46:59,562 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:46:59,562 - INFO - ║   → Using color: #2196F3
+2024-12-31 08:46:59,562 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:46:59,562 - INFO - ║   → Using shapes from design style: []
+2024-12-31 08:46:59,562 - INFO - ║   → Final shape list: []
+2024-12-31 08:46:59,562 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:46:59,562 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:46:59,562 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:46:59,562 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:46:59,565 - DEBUG - SVG components generated successfully.
+2024-12-31 08:48:00,984 - DEBUG - close.started
+2024-12-31 08:48:00,985 - DEBUG - close.complete

@@ -1,0 +1,86 @@
+2024-12-31 08:43:47,349 - INFO - Initializing application
+2024-12-31 08:43:47,355 - DEBUG - Loading design configurations from ss11.csv
+2024-12-31 08:43:47,355 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F3F4F6', 'textco': '2C3E50', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#E74C3C', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#7D3C98', 'grid_pos2': 'center', 'style_description': 'corners', None: ['Professional and modern']}
+2024-12-31 08:43:47,355 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F3F4F6', 'textco': '#2C3E50', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 08:43:47,355 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F6FA', 'textco': '34495E', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#2980B9', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#16A085', 'grid_pos2': '4', 'style_description': '1', None: ['Clean and minimal']}
+2024-12-31 08:43:47,355 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F6FA', 'textco': '#34495E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 08:43:47,355 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'FDF6F0', 'textco': '8E44AD', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#F39C12', 'shape2': 'square', 'shape_color': 'square', 'grid_pos1': '#D35400', 'grid_pos2': '5', 'style_description': '7', None: ['Bold and energetic']}
+2024-12-31 08:43:47,355 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#FDF6F0', 'textco': '#8E44AD', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 08:43:47,355 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F0E5D8', 'textco': '4B3C3C', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#C0392B', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#7D3C98', 'grid_pos2': '2', 'style_description': '8', None: ['Warm and inviting']}
+2024-12-31 08:43:47,355 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F0E5D8', 'textco': '#4B3C3C', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 08:43:47,355 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'E8D8D0', 'textco': '3C2B2B', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#8E44AD', 'shape2': 'circle', 'shape_color': 'circle', 'grid_pos1': '#2980B9', 'grid_pos2': '1', 'style_description': '9', None: ['Elegant and sophisticated']}
+2024-12-31 08:43:47,355 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#E8D8D0', 'textco': '#3C2B2B', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 08:43:47,355 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F0E1', 'textco': '5E4D3E', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#27AE60', 'shape2': 'circle', 'shape_color': 'square', 'grid_pos1': '#16A085', 'grid_pos2': '6', 'style_description': '3', None: ['Natural and organic']}
+2024-12-31 08:43:47,355 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F0E1', 'textco': '#5E4D3E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 08:43:47,355 - DEBUG - Total configurations loaded: 6
+2024-12-31 08:43:47,357 - DEBUG - Using selector: KqueueSelector
+2024-12-31 08:43:47,398 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2024-12-31 08:43:47,424 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-31 08:43:47,459 - INFO - Initializing TestimonialGenerator
+2024-12-31 08:43:47,459 - INFO - Font downloaded successfully
+2024-12-31 08:43:47,459 - INFO - Validating CSV structure
+2024-12-31 08:43:47,459 - INFO - CSV columns found: ['Poppins-Medium', 'F3F4F6', '2C3E50', '(1080', '1080)', '48', '#E74C3C', 'square', 'circle', '#7D3C98', 'center', 'corners', 'Professional and modern']
+2024-12-31 08:43:47,459 - ERROR - Missing required columns: {'textco', 'bgco', 'accent'}
+2024-12-31 08:43:47,459 - WARNING - CSV validation failed, using default color schemes
+2024-12-31 08:43:47,459 - INFO - TestimonialGenerator initialized successfully
+2024-12-31 08:43:47,464 - DEBUG - Using selector: KqueueSelector
+2024-12-31 08:43:47,619 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-31 08:43:47,620 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-31 08:43:47,620 - DEBUG - receive_response_body.complete
+2024-12-31 08:43:47,620 - DEBUG - response_closed.started
+2024-12-31 08:43:47,620 - DEBUG - response_closed.complete
+2024-12-31 08:43:47,620 - DEBUG - close.started
+2024-12-31 08:43:47,620 - DEBUG - close.complete
+2024-12-31 08:43:47,709 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10bcdc5d0>
+2024-12-31 08:43:47,709 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10bca4680> server_hostname='api.gradio.app' timeout=3
+2024-12-31 08:43:48,173 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2024-12-31 08:43:49,081 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x108202d50>
+2024-12-31 08:43:49,081 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-31 08:43:49,081 - DEBUG - send_request_headers.complete
+2024-12-31 08:43:49,081 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-31 08:43:49,082 - DEBUG - send_request_body.complete
+2024-12-31 08:43:49,082 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-31 08:43:49,387 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Tue, 31 Dec 2024 03:13:49 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2024-12-31 08:43:49,389 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-31 08:43:49,389 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-31 08:43:49,389 - DEBUG - receive_response_body.complete
+2024-12-31 08:43:49,389 - DEBUG - response_closed.started
+2024-12-31 08:43:49,390 - DEBUG - response_closed.complete
+2024-12-31 08:43:49,390 - DEBUG - close.started
+2024-12-31 08:43:49,390 - DEBUG - close.complete
+2024-12-31 08:43:52,294 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:43:52,294 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:43:52,294 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:43:52,295 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:43:52,295 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:43:52,295 - INFO - ║   → Using color: #000000
+2024-12-31 08:43:52,295 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:43:52,295 - INFO - ║   → Using provided shape list: ['square']
+2024-12-31 08:43:52,296 - INFO - ║   → Final shape list: ['square']
+2024-12-31 08:43:52,296 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:43:52,296 - INFO - ║   → Drawing square in center
+2024-12-31 08:43:52,296 - INFO - Drawing square with color: #000000
+2024-12-31 08:43:52,296 - INFO - Square drawn successfully
+2024-12-31 08:43:52,297 - INFO - ║   → Square drawn successfully
+2024-12-31 08:43:52,297 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:43:52,297 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:43:52,297 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:43:52,297 - INFO - ╔══════════════════════════════════════
+2024-12-31 08:43:52,297 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 08:43:52,297 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:43:52,297 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 08:43:52,297 - INFO - ║ 2. Processing color settings...
+2024-12-31 08:43:52,297 - INFO - ║   → Using color: #000000
+2024-12-31 08:43:52,297 - INFO - ║ 3. Validating shape data...
+2024-12-31 08:43:52,297 - INFO - ║   → Using provided shape list: ['circle']
+2024-12-31 08:43:52,297 - INFO - ║   → Final shape list: ['circle']
+2024-12-31 08:43:52,297 - INFO - ║ 4. Drawing shapes...
+2024-12-31 08:43:52,297 - INFO - ║   → Drawing circle in corners
+2024-12-31 08:43:52,297 - INFO - Drawing circle with color: #000000
+2024-12-31 08:43:52,298 - INFO - Circle and mini circles drawn successfully
+2024-12-31 08:43:52,298 - INFO - ║   → Circle drawn successfully
+2024-12-31 08:43:52,298 - INFO - ╠══════════════════════════════════════
+2024-12-31 08:43:52,298 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 08:43:52,298 - INFO - ╚══════════════════════════════════════
+2024-12-31 08:43:59,595 - ERROR - Error getting style from CSV: invalid literal for int() with base 10: '1080)'
+2024-12-31 08:43:59,595 - ERROR - Error in generate_testimonial: 500: Failed to get style data

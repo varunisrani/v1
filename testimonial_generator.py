@@ -874,6 +874,104 @@ class TestimonialGenerator:
                 'bgco': '#FFFFFF'
             }
 
+    def generate_testimonial_with_style(self, topic, style_data):
+        """Generate testimonial with specific style from CSV data"""
+        try:
+            logger.info("╔══════════════════════════════════════")
+            logger.info("║ GENERATING STYLED TESTIMONIAL")
+            logger.info("╠══════════════════════════════════════")
+            
+            # Prepare style description for Groq
+            style_prompt = f"""Style: {style_data['style_description']}
+            Colors: Background ({style_data['bgco']}), Text ({style_data['textco']}), Accent ({style_data['accent']})
+            Shapes: {style_data['shape1']} and {style_data['shape2']}
+            Grid Positions: Position 1 at {style_data['grid_pos1']}, Position 2 at {style_data['grid_pos2']}"""
+            
+            # Create Groq prompt
+            prompt = f"""Generate a unique and compelling testimonial about {topic}.
+            Consider this design style:
+            {style_prompt}
+            
+            Make the testimonial match the mood and tone of the design.
+            Keep it concise (2-3 sentences) but impactful.
+            Focus on authenticity and emotional resonance.
+            
+            The testimonial should feel:
+            1. Genuine and personal
+            2. Aligned with the visual style
+            3. Professional yet relatable
+            
+            Previous testimonial styles to avoid: [List of recent testimonials]"""
+            
+            # Call Groq API
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles."
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                model="mixtral-8x7b-32768",
+                temperature=0.7,
+                max_tokens=150,
+                top_p=1,
+                stream=False
+            )
+            
+            testimonial = chat_completion.choices[0].message.content.strip()
+            logger.info(f"║ Generated testimonial: {testimonial}")
+            
+            return testimonial
+            
+        except Exception as e:
+            logger.error(f"Error generating styled testimonial: {str(e)}")
+            return None
+
+    def get_random_style_from_csv(self):
+        """Get random style configuration from CSV"""
+        try:
+            with open('ss11.csv', mode='r') as file:
+                reader = csv.DictReader(file)
+                styles = list(reader)
+                selected_style = random.choice(styles)
+                
+                # Process the style data
+                return {
+                    'font': selected_style['font'],
+                    'bgco': f"#{selected_style['bgco']}",
+                    'textco': f"#{selected_style['textco']}",
+                    'accent': selected_style['accent'],
+                    'shape1': selected_style['shape1'],
+                    'shape2': selected_style['shape2'],
+                    'shape_color': selected_style['shape_color'],
+                    'grid_pos1': selected_style['grid_pos1'],
+                    'grid_pos2': selected_style['grid_pos2'],
+                    'style_description': selected_style['style_description'],
+                    'fontsize': int(selected_style['fontsize']),
+                    'imagesize': (int(selected_style['imagesize']), int(selected_style['imagesize']))  # Square image
+                }
+        except Exception as e:
+            logger.error(f"Error getting style from CSV: {str(e)}")
+            # Provide default values if there's an error
+            return {
+                'font': 'Poppins-Medium',
+                'bgco': '#FFFFFF',
+                'textco': '#000000',
+                'accent': '#2196F3',
+                'shape1': 'square',
+                'shape2': 'circle',
+                'shape_color': '#2196F3',
+                'grid_pos1': 'center',
+                'grid_pos2': 'corners',
+                'style_description': 'Default professional style',
+                'fontsize': 48,
+                'imagesize': (1080, 1080)
+            }
+
 # Add this to store the current design state
 class DesignState:
     def __init__(self):

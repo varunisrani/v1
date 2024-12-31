@@ -214,48 +214,48 @@ export default function Home() {
     try {
         setLoading(true);
         setError(null);
-
-        // Prepare request data based on color mode
-        let requestData = {
-            topic: topic || "general product",
-            selected_shapes: selectedShapes,
+        
+        console.log("=== GENERATING TESTIMONIAL ===");
+        console.log("Topic:", topic);
+        
+        const response = await axios.post(`${API_BASE_URL}/generate-testimonial`, {
+            topic,
             font_size: fontSize,
             has_quotes: hasQuotes,
-            colors: colorMode === 'random' 
-                ? { random: true }
-                : colorMode === 'preset'
-                ? COLOR_SCHEMES[presetScheme]
-                : customColors
-        };
-
-        const response = await axios.post(
-            `${API_BASE_URL}/generate-testimonial`,
-            requestData,
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-                withCredentials: false  // Set this to false if you don't need credentials
+            colors: {
+                random: true  // Always use random style from CSV
             }
-        );
-
+        });
+        
         if (response.data) {
+            // Update all states with the received style
             setTestimonialText(response.data.text_content);
-            setSvgPreviews({
-                background: response.data.background_svg || '',
-                shapes: response.data.shapes_svg || '',
-                text: response.data.text_svg || '',
-                combined: response.data.combined_svg || ''
+            setCustomColors({
+                bg: response.data.colors.bg,
+                text: response.data.colors.text,
+                accent: response.data.colors.accent,
+                shape_color: response.data.colors.shape_color
             });
-            
-            if (colorMode === 'random' && response.data.colors) {
-                setCustomColors(response.data.colors);
-            }
+            setSelectedShapes([
+                {
+                    type: response.data.colors.shape1,
+                    position: response.data.colors.grid_pos1
+                },
+                {
+                    type: response.data.colors.shape2,
+                    position: response.data.colors.grid_pos2
+                }
+            ]);
+            setSvgPreviews({
+                background: response.data.background_svg,
+                shapes: response.data.shapes_svg,
+                text: response.data.text_svg,
+                combined: response.data.combined_svg
+            });
         }
     } catch (error) {
-        console.error('Error generating testimonial:', error);
-        setError(error.response?.data?.detail || 'Failed to generate testimonial');
+        console.error('Error:', error);
+        setError('Failed to generate testimonial');
     } finally {
         setLoading(false);
     }

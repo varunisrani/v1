@@ -77,65 +77,52 @@ class SVGResponse(BaseModel):
 @app.post("/generate-testimonial", response_model=SVGResponse)
 async def generate_testimonial(request: TestimonialRequest):
     try:
+        # Get random style from CSV
+        style_data = generator.get_random_style_from_csv()
+        if not style_data:
+            logger.error("Failed to get style data, using default style")
+            style_data = {
+                'font': 'Poppins-Medium',
+                'bgco': '#FFFFFF',
+                'textco': '#000000',
+                'accent': '#2196F3',
+                'shape1': 'square',
+                'shape2': 'circle',
+                'shape_color': '#2196F3',
+                'grid_pos1': 'center',
+                'grid_pos2': 'corners',
+                'style_description': 'Default professional style',
+                'fontsize': 48,
+                'imagesize': (1080, 1080)
+            }
+            
+        # Generate testimonial with style
+        testimonial_text = generator.generate_testimonial_with_style(
+            request.topic, 
+            style_data
+        )
+        
+        if not testimonial_text:
+            raise HTTPException(status_code=500, detail="Failed to generate testimonial")
+            
+        # Update colors with style data
+        colors = {
+            "bg": style_data['bgco'],
+            "text": style_data['textco'],
+            "accent": style_data['accent'],
+            "shape_color": style_data['shape_color'],
+            "shape1": style_data['shape1'],
+            "shape2": style_data['shape2'],
+            "grid_pos1": style_data['grid_pos1'],
+            "grid_pos2": style_data['grid_pos2']
+        }
+        
         # Add CORS headers to the response
         headers = {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "POST, OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type",
         }
-        
-        # Generate testimonial text
-        logger.debug("Generating testimonial text for topic: %s", request.topic)
-        testimonial_text = generator.generate_testimonial(request.topic)
-        
-        # Handle colors based on request
-        if isinstance(request.colors, dict) and request.colors.get('random', False):
-            # Random mode
-            try:
-                colors = generator.get_random_color_theme()
-                logger.info(f"Using random colors: {colors}")
-            except Exception as color_error:
-                logger.error(f"Error getting random colors: {str(color_error)}")
-                colors = {
-                    "bg": "#FFF5EE",
-                    "text": "#8B4513",
-                    "accent": "#DEB887"
-                }
-        else:
-            # Preset or Custom mode
-            colors = {
-                "bg": request.colors.get("bg", "#FFFFFF"),
-                "text": request.colors.get("text", "#000000"),
-                "accent": request.colors.get("accent", "#2196F3")
-            }
-        
-        logger.debug("Colors determined: %s", colors)
-        
-        # Update generator design style with shape color and other data
-        generator.design_style.update({
-            'fontsize': request.font_size,
-            'bgco': colors['bg'],
-            'textco': colors['text'],
-            'accent': colors['accent'],
-            'imagesize': (1080, 1080),
-            'text_align': 'center',
-            'vertical_align': 'middle',
-            'shape_color': colors.get('shape_color', colors['accent']),
-            'shape1': colors.get('shape1'),  # Get shape1 from colors
-            'shape2': colors.get('shape2'),  # Get shape2 from colors
-            'font': colors.get('font', 'Poppins-Medium')  # Get font from colors
-        })
-        
-        logger.debug(f"Generator design style updated: {generator.design_style}")
-        
-        # Update colors dictionary to include all theme data
-        colors.update({
-            'font': generator.design_style.get('font', 'Poppins-Medium'),
-            'fontsize': request.font_size,  # Use the requested font size
-            'shape1': generator.design_style.get('shape1'),
-            'shape2': generator.design_style.get('shape2'),
-            'shape_color': generator.design_style.get('shape_color', colors['accent'])
-        })
         
         # Generate SVG components with proper opacity for shape color
         logger.debug("Generating SVG components...")
