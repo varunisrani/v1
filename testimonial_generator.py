@@ -375,6 +375,105 @@ class SVGShapeGenerator:
         dwg.add(text_group)
         return dwg.tostring()
 
+    @staticmethod
+    def get_grid_position(position, width, height, shape_size):
+        """Calculate position based on 3x3 grid"""
+        # Grid cell size
+        cell_width = width / 3
+        cell_height = height / 3
+        
+        # Center offset within cell
+        offset_x = (cell_width - shape_size) / 2
+        offset_y = (cell_height - shape_size) / 2
+        
+        # Grid positions (1-9, left to right, top to bottom)
+        grid_positions = {
+            1: (offset_x, offset_y),  # Top-left
+            2: (cell_width + offset_x, offset_y),  # Top-center
+            3: (2 * cell_width + offset_x, offset_y),  # Top-right
+            4: (offset_x, cell_height + offset_y),  # Middle-left
+            5: (cell_width + offset_x, cell_height + offset_y),  # Center
+            6: (2 * cell_width + offset_x, cell_height + offset_y),  # Middle-right
+            7: (offset_x, 2 * cell_height + offset_y),  # Bottom-left
+            8: (cell_width + offset_x, 2 * cell_height + offset_y),  # Bottom-center
+            9: (2 * cell_width + offset_x, 2 * cell_height + offset_y),  # Bottom-right
+            'center': (width/2 - shape_size/2, height/2 - shape_size/2),  # Center
+            'corners': None  # Special case for corner circles
+        }
+        
+        return grid_positions.get(position)
+
+    @staticmethod
+    def draw_shape_at_position(dwg, shape_type, position, width, height, color, opacity=0.5):
+        """Draw shape at specified grid position"""
+        try:
+            shape_size = min(width, height) * 0.25  # 25% of smallest dimension
+            
+            if position == 'corners':
+                return SVGShapeGenerator.draw_corner_circles(dwg, width, height, color, opacity)
+            
+            pos = SVGShapeGenerator.get_grid_position(position, width, height, shape_size)
+            if not pos:
+                return False
+                
+            x, y = pos
+            
+            if shape_type == 'square':
+                # Draw square
+                SVGShapeGenerator.draw_square(dwg, width, height, color, opacity, x, y, shape_size)
+            elif shape_type == 'circle':
+                # Draw circle
+                SVGShapeGenerator.draw_circle(dwg, width, height, color, opacity, x, y, shape_size)
+                
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error drawing shape at position: {str(e)}")
+            return False
+
+    @staticmethod
+    def draw_corner_circles(dwg, width, height, color, opacity=0.5):
+        """Draw circles in corners"""
+        try:
+            radius = min(width, height) * 0.1  # 10% of smallest dimension
+            corners = [
+                (radius, radius),  # Top-left
+                (width - radius, radius),  # Top-right
+                (radius, height - radius),  # Bottom-left
+                (width - radius, height - radius)  # Bottom-right
+            ]
+            
+            for cx, cy in corners:
+                # Draw shadow
+                dwg.add(dwg.circle(
+                    center=(cx + 2, cy + 2),
+                    r=radius,
+                    fill='#000000',
+                    fill_opacity=0.1
+                ))
+                
+                # Draw circle
+                dwg.add(dwg.circle(
+                    center=(cx, cy),
+                    r=radius,
+                    fill=color,
+                    fill_opacity=opacity
+                ))
+                
+                # Draw inner white circle
+                dwg.add(dwg.circle(
+                    center=(cx, cy),
+                    r=radius * 0.7,
+                    fill='#FFFFFF',
+                    stroke='none'
+                ))
+                
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error drawing corner circles: {str(e)}")
+            return False
+
 class TestimonialGenerator:
     def __init__(self):
         logger.info("Initializing TestimonialGenerator")

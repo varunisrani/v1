@@ -142,6 +142,7 @@ export default function Home() {
   const [shapes, setShapes] = useState([]);
   const [draggedShape, setDraggedShape] = useState(null);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+  const [showGrid, setShowGrid] = useState(false);
 
   // Fetch initial data
   useEffect(() => {
@@ -574,49 +575,90 @@ export default function Home() {
 
   // Update the shape preview rendering
   const renderShapePreview = (shapes, color) => {
-    if (!shapes || shapes.length === 0) {
-        return (
-            <div className="text-sm text-gray-500 italic">
-                No shapes selected from CSV
-            </div>
-        );
-    }
+    const gridCells = Array(9).fill(null);
+    
+    // Map shapes to grid
+    shapes.forEach((shape, index) => {
+        if (shape.position === 'corners' && shape.type === 'circle') {
+            gridCells[0] = 'circle';
+            gridCells[2] = 'circle';
+            gridCells[6] = 'circle';
+            gridCells[8] = 'circle';
+        } else if (shape.position === 'center') {
+            gridCells[4] = shape.type;
+        } else if (typeof shape.position === 'number') {
+            gridCells[shape.position - 1] = shape.type;
+        }
+    });
 
     return (
         <div className="space-y-2">
-            {shapes.map((shape) => (
-                <div key={shape} className="flex items-center justify-between p-2 bg-purple-50 rounded-lg">
-                    <div className="flex items-center gap-2">
-                        <span className="text-sm font-medium capitalize">{shape}</span>
-                        {shape === 'circle' && (
-                            <span className="text-xs text-gray-500">(with mini corners)</span>
+            {/* Add Grid Toggle Button */}
+            <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-gray-600">Grid View</span>
+                <button
+                    onClick={() => setShowGrid(!showGrid)}
+                    className={`px-3 py-1 text-sm rounded-lg transition-colors ${
+                        showGrid 
+                            ? 'bg-purple-100 text-purple-700' 
+                            : 'bg-gray-100 text-gray-600'
+                    }`}
+                >
+                    {showGrid ? 'Hide Grid' : 'Show Grid'}
+                </button>
+            </div>
+            
+            {/* Grid Preview */}
+            <div className={`grid grid-cols-3 gap-1 w-full aspect-square bg-gray-100 p-1 rounded-lg relative ${
+                showGrid ? 'before:border-gray-300 before:border before:absolute before:inset-0 before:grid before:grid-cols-3 before:pointer-events-none' : ''
+            }`}>
+                {gridCells.map((cell, index) => (
+                    <div 
+                        key={index} 
+                        className={`aspect-square bg-white rounded flex items-center justify-center relative ${
+                            showGrid ? 'border border-gray-200' : ''
+                        }`}
+                    >
+                        {/* Grid Position Number */}
+                        {showGrid && (
+                            <span className="absolute top-1 left-1 text-xs text-gray-400">
+                                {index + 1}
+                            </span>
+                        )}
+                        
+                        {/* Shape */}
+                        {cell && (
+                            <div 
+                                className={`w-2/3 h-2/3 ${
+                                    cell === 'circle' ? 'rounded-full' : 'rounded-lg'
+                                }`}
+                                style={{ 
+                                    backgroundColor: color,
+                                    boxShadow: 'inset 0 0 0 2px white'
+                                }}
+                            />
                         )}
                     </div>
-                    <div className="flex items-center gap-2">
-                        {shape === 'circle' && (
-                            <div className="flex -space-x-1">
-                                {[...Array(4)].map((_, i) => (
-                                    <div
-                                        key={i}
-                                        className="w-2 h-2 rounded-full border border-white bg-white"
-                                        style={{ 
-                                            backgroundColor: color,
-                                            boxShadow: 'inset 0 0 0 2px ' + color 
-                                        }}
-                                    />
-                                ))}
-                            </div>
-                        )}
-                        <div 
-                            className={`w-4 h-4 ${shape === 'circle' ? 'rounded-full' : 'rounded-lg'} bg-white`}
-                            style={{ 
-                                backgroundColor: color,
-                                boxShadow: 'inset 0 0 0 2px ' + color 
-                            }}
-                        />
+                ))}
+            </div>
+            
+            {/* Grid Position Legend */}
+            {showGrid && (
+                <div className="mt-2 p-2 bg-gray-50 rounded-lg">
+                    <p className="text-xs text-gray-500 mb-1">Grid Positions:</p>
+                    <div className="grid grid-cols-3 gap-1 text-xs text-gray-400">
+                        <div>1: Top-Left</div>
+                        <div>2: Top-Center</div>
+                        <div>3: Top-Right</div>
+                        <div>4: Middle-Left</div>
+                        <div>5: Center</div>
+                        <div>6: Middle-Right</div>
+                        <div>7: Bottom-Left</div>
+                        <div>8: Bottom-Center</div>
+                        <div>9: Bottom-Right</div>
                     </div>
                 </div>
-            ))}
+            )}
         </div>
     );
   };
@@ -865,7 +907,7 @@ export default function Home() {
             {/* Shape Patterns */}
             <div className="space-y-4">
               <h3 className="text-sm font-medium text-gray-900">Shapes</h3>
-              <div className="flex justify-between items-center mb-2">
+              <div className="flex flex-col gap-2">
                 <button
                   onClick={handleRandomShape}
                   className="w-full px-4 py-2 bg-purple-600 text-white rounded-lg 
@@ -876,9 +918,10 @@ export default function Home() {
                   </svg>
                   Random Shape
                 </button>
+                
+                {/* Shape Preview with Grid */}
+                {renderShapePreview(selectedShapes, customColors.shape_color)}
               </div>
-              {/* Show all selected shapes */}
-              {renderShapePreview(selectedShapes, customColors.shape_color)}
             </div>
 
             {/* Font Settings */}

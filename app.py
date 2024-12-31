@@ -331,49 +331,23 @@ async def global_exception_handler(request, exc):
 async def get_random_shape():
     """Get random shape and color from CSV"""
     try:
-        logger.info("╔══════════════════════════════════════")
-        logger.info("║ API: RANDOM SHAPE REQUEST STARTED")
-        logger.info("╠══════════════════════════════════════")
-        
-        logger.info("║ 1. Requesting shape from generator...")
         shape_data = generator.get_random_shape_from_csv()
-        logger.debug(f"║   → Received data: {shape_data}")
         
-        logger.info("║ 2. Validating response...")
-        if not shape_data or 'shapes' not in shape_data:
-            logger.error("║   → Missing shape data")
-            raise HTTPException(status_code=400, detail="Invalid shape data structure")
-        
-        # Extract shape1 and shape2 from the shapes list
-        shapes = shape_data['shapes']
-        shape1 = shapes[0] if len(shapes) > 0 else None
-        shape2 = shapes[1] if len(shapes) > 1 else None
-        
-        logger.info(f"║   → Shape1: {shape1}")
-        logger.info(f"║   → Shape2: {shape2}")
-        logger.info(f"║   → Shape color: {shape_data['shape_color']}")
-        logger.info(f"║   → Background: {shape_data['bgco']}")
-        
-        logger.info("║ 3. Preparing API response...")
-        response_data = {
-            "shape1": shape1,
-            "shape2": shape2,
-            "shape_color": shape_data['shape_color'],
-            "bgco": shape_data['bgco']
+        return {
+            "shape1": {
+                "type": shape_data.get('shape1'),
+                "position": shape_data.get('grid_pos1')
+            },
+            "shape2": {
+                "type": shape_data.get('shape2'),
+                "position": shape_data.get('grid_pos2')
+            },
+            "shape_color": shape_data.get('shape_color'),
+            "bgco": shape_data.get('bgco')
         }
-        logger.debug(f"║   → Response data: {response_data}")
-        logger.info("╠══════════════════════════════════════")
-        logger.info("║ API: RANDOM SHAPE REQUEST COMPLETED")
-        logger.info("╚══════════════════════════════════════")
-        return response_data
         
     except Exception as e:
-        logger.error("╔══════════════════════════════════════")
-        logger.error("║ API: RANDOM SHAPE REQUEST FAILED")
-        logger.error("╠══════════════════════════════════════")
-        logger.error(f"║ Error: {str(e)}")
-        logger.error("║ Stack trace:", exc_info=True)
-        logger.error("╚══════════════════════════════════════")
+        logger.error(f"Error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
