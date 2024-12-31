@@ -26,20 +26,10 @@ app = FastAPI(title="Testimonial Generator API")
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "http://localhost:5000"
-    ],
+    allow_origins=["*"],  # Allow all origins in development
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allow_headers=[
-        "Content-Type",
-        "Authorization",
-        "Accept",
-        "Origin",
-        "X-Requested-With"
-    ],
+    allow_methods=["*"],  # Allow all methods
+    allow_headers=["*"],  # Allow all headers
 )
 
 # Initialize TestimonialGenerator
@@ -47,7 +37,7 @@ generator = TestimonialGenerator()
 
 class TestimonialRequest(BaseModel):
     topic: str
-    selected_shapes: List[str] = Field(default=['Square'])
+    selected_shapes: List[str] = Field(default=[])
     font_size: int = Field(default=32, ge=24, le=48)
     has_quotes: bool = Field(default=True)
     colors: Union[Dict[str, str], Dict[str, bool]] = Field(
@@ -60,27 +50,29 @@ class TestimonialRequest(BaseModel):
 
 class UpdateDesignRequest(BaseModel):
     text: str
-    selected_shapes: List[str] = Field(default=['Square'])
+    selected_shapes: List[str] = Field(default=[])
     font_size: int = Field(default=32, ge=24, le=48)
     has_quotes: bool = Field(default=True)
     colors: Dict[str, str] = Field(
         default={
             "bg": "#FFF5EE",
             "text": "#8B4513",
-            "accent": "#DEB887"
+            "accent": "#DEB887",
+            "shape_color": "#DEB887",
+            "bgco": "#FFF5EE"
         }
     )
 
 class SVGResponse(BaseModel):
-    background_svg: str = ''
-    shapes_svg: str = ''
-    text_svg: str = ''
-    combined_svg: str = ''
-    text_content: Optional[str] = None
-    colors: Dict[str, str]
+    background_svg: str
+    shapes_svg: str
+    text_svg: str
+    combined_svg: str
+    text_content: str
+    colors: Dict[str, Optional[Union[str, int]]]
 
     class Config:
-        arbitrary_types_allowed = True
+        from_attributes = True
 
 @app.post("/generate-testimonial", response_model=SVGResponse)
 async def generate_testimonial(request: TestimonialRequest):
@@ -93,6 +85,7 @@ async def generate_testimonial(request: TestimonialRequest):
         }
         
         # Generate testimonial text
+        logger.debug("Generating testimonial text for topic: %s", request.topic)
         testimonial_text = generator.generate_testimonial(request.topic)
         
         # Handle colors based on request
@@ -116,7 +109,9 @@ async def generate_testimonial(request: TestimonialRequest):
                 "accent": request.colors.get("accent", "#2196F3")
             }
         
-        # Update generator design style with shape color
+        logger.debug("Colors determined: %s", colors)
+        
+        # Update generator design style with shape color and other data
         generator.design_style.update({
             'fontsize': request.font_size,
             'bgco': colors['bg'],
@@ -125,14 +120,29 @@ async def generate_testimonial(request: TestimonialRequest):
             'imagesize': (1080, 1080),
             'text_align': 'center',
             'vertical_align': 'middle',
-            'shape_color': colors.get('shape_color', colors['accent'])  # Use shape color or accent as fallback
+            'shape_color': colors.get('shape_color', colors['accent']),
+            'shape1': colors.get('shape1'),  # Get shape1 from colors
+            'shape2': colors.get('shape2'),  # Get shape2 from colors
+            'font': colors.get('font', 'Poppins-Medium')  # Get font from colors
+        })
+        
+        logger.debug(f"Generator design style updated: {generator.design_style}")
+        
+        # Update colors dictionary to include all theme data
+        colors.update({
+            'font': generator.design_style.get('font', 'Poppins-Medium'),
+            'fontsize': request.font_size,  # Use the requested font size
+            'shape1': generator.design_style.get('shape1'),
+            'shape2': generator.design_style.get('shape2'),
+            'shape_color': generator.design_style.get('shape_color', colors['accent'])
         })
         
         # Generate SVG components with proper opacity for shape color
+        logger.debug("Generating SVG components...")
         background_svg = generator.render_background_svg(colors['bg']) or ''
         shapes_svg = generator.render_shapes_svg(
-            colors.get('shape_color', colors['accent']),
-            request.selected_shapes
+            colors['shape_color'],
+            [s for s in [colors.get('shape1'), colors.get('shape2')] if s]  # Use shapes from colors
         ) or ''
         text_svg = generator.render_text_svg(
             testimonial_text,
@@ -146,6 +156,8 @@ async def generate_testimonial(request: TestimonialRequest):
             request.has_quotes
         ) or ''
         
+        logger.debug("SVG components generated successfully.")
+        
         # Return response with headers
         return JSONResponse(
             content=SVGResponse(
@@ -155,7 +167,7 @@ async def generate_testimonial(request: TestimonialRequest):
                 combined_svg=combined_svg,
                 text_content=testimonial_text,
                 colors=colors
-            ).dict(),
+            ).model_dump(),  # Use model_dump instead of dict
             headers=headers
         )
     except Exception as e:
@@ -164,101 +176,103 @@ async def generate_testimonial(request: TestimonialRequest):
 
 @app.post("/update-design", response_model=SVGResponse)
 async def update_design(request: UpdateDesignRequest):
+    """Update design with new shapes and colors"""
     try:
+        logger.info("=== API: DESIGN UPDATE STARTED ===")
+        logger.info(f"1. Received shapes: {request.selected_shapes}")
+        logger.info(f"2. Received colors: {request.colors}")
+        
         # Update generator design style
         generator.design_style.update({
             'fontsize': request.font_size,
-            'bgco': request.colors['bg'],
+            'bgco': request.colors['bgco'],
             'textco': request.colors['text'],
-            'accent': request.colors['accent']
+            'accent': request.colors['accent'],
+            'shape_color': request.colors.get('shape_color', request.colors['accent']),
+            'imagesize': (1080, 1080),
+            'shape1': request.selected_shapes[0] if len(request.selected_shapes) > 0 else None,
+            'shape2': request.selected_shapes[1] if len(request.selected_shapes) > 1 else None
         })
+        logger.info("→ Updated generator design style")
         
         # Generate SVG components
-        background_svg = generator.render_background_svg(request.colors['bg']) or ''
+        logger.info("3. Generating SVG components...")
+        background_svg = generator.render_background_svg(request.colors['bg'])
         shapes_svg = generator.render_shapes_svg(
-            request.colors['accent'],
+            request.colors.get('shape_color', request.colors['accent']),
             request.selected_shapes
-        ) or ''
+        )
         text_svg = generator.render_text_svg(
             request.text,
             request.colors['text'],
             request.font_size,
             request.has_quotes
-        ) or ''
+        )
         combined_svg = generator.render_svg(
             request.text,
             request.selected_shapes,
             request.has_quotes
-        ) or ''
+        )
+        
+        logger.info("→ Successfully generated SVG components")
+        logger.info("=== API: DESIGN UPDATE COMPLETED ===")
         
         return SVGResponse(
-            background_svg=background_svg,
-            shapes_svg=shapes_svg,
-            text_svg=text_svg,
-            combined_svg=combined_svg,
+            background_svg=background_svg or '',
+            shapes_svg=shapes_svg or '',
+            text_svg=text_svg or '',
+            combined_svg=combined_svg or '',
             text_content=request.text,
-            colors=request.colors
+            colors={
+                **request.colors,
+                'shape1': request.selected_shapes[0] if len(request.selected_shapes) > 0 else None,
+                'shape2': request.selected_shapes[1] if len(request.selected_shapes) > 1 else None
+            }
         )
+        
     except Exception as e:
-        print(f"Error in update_design: {str(e)}")
+        logger.error("=== API: DESIGN UPDATE FAILED ===")
+        logger.error(f"→ Error: {str(e)}")
+        logger.error("→ Stack trace:", exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/color-schemes")
 async def get_color_schemes():
-    """Get all available color schemes and color wheel options"""
+    """Get all available color schemes"""
     return {
-        "preset_schemes": COLOR_SCHEMES,
-        "color_wheel": COLOR_WHEEL,
-        "palettes": {
-            "Light": [
-                {"bg": "#FFFFFF", "text": "#000000", "accent": "#FF4081"},
-                {"bg": "#F5F5F5", "text": "#333333", "accent": "#2196F3"},
-                {"bg": "#E8F4F9", "text": "#1B4965", "accent": "#FFC107"},
-                {"bg": "#FFF5E6", "text": "#8B4513", "accent": "#4CAF50"}
-            ],
-            "Dark": [
-                {"bg": "#1A1A1A", "text": "#FFFFFF", "accent": "#FF6B6B"},
-                {"bg": "#2C3E50", "text": "#ECF0F1", "accent": "#3498DB"},
-                {"bg": "#2D2D2D", "text": "#E0E0E0", "accent": "#00BFA5"},
-                {"bg": "#1E1E1E", "text": "#FAFAFA", "accent": "#FFD700"}
-            ],
-            "Colorful": [
-                {"bg": "#FFE5E5", "text": "#FF0000", "accent": "#4A90E2"},
-                {"bg": "#E8F5E9", "text": "#2E7D32", "accent": "#FFA000"},
-                {"bg": "#E3F2FD", "text": "#1565C0", "accent": "#FF4081"},
-                {"bg": "#FFF3E0", "text": "#E65100", "accent": "#9C27B0"}
-            ]
-        }
+        "preset_schemes": [
+            {
+                "name": "Professional",
+                "colors": {
+                    "bg": "#FFFFFF",
+                    "text": "#000000",
+                    "accent": "#2196F3"
+                }
+            },
+            {
+                "name": "Warm",
+                "colors": {
+                    "bg": "#FFF5EE",
+                    "text": "#8B4513",
+                    "accent": "#DEB887"
+                }
+            }
+        ]
     }
 
 @app.get("/shape-patterns")
 async def get_shape_patterns():
-    """Get available shape patterns with descriptions"""
+    """Get available shape patterns"""
     return [
         {
-            "name": "Circles",
-            "description": "Circular decorative elements",
-            "preview": generator.render_shapes_svg("#000000", ["Circles"])
-        },
-        {
-            "name": "Dots",
-            "description": "Scattered dot pattern",
-            "preview": generator.render_shapes_svg("#000000", ["Dots"])
-        },
-        {
-            "name": "Waves",
-            "description": "Wavy line patterns",
-            "preview": generator.render_shapes_svg("#000000", ["Waves"])
-        },
-        {
-            "name": "Corners",
-            "description": "Corner decorative elements",
-            "preview": generator.render_shapes_svg("#000000", ["Corners"])
-        },
-        {
             "name": "Square",
-            "description": "Centered square with text",
-            "preview": generator.render_shapes_svg("#000000", ["Square"])
+            "description": "Centered square with shadow",
+            "preview": generator.render_shapes_svg("#000000", ["square"]) or ''
+        },
+        {
+            "name": "Circle",
+            "description": "Circle with mini circles in corners",
+            "preview": generator.render_shapes_svg("#000000", ["circle"]) or ''
         }
     ]
 
@@ -317,16 +331,49 @@ async def global_exception_handler(request, exc):
 async def get_random_shape():
     """Get random shape and color from CSV"""
     try:
-        logger.info("Fetching random shape from CSV")
-        # Use the generator to get random shape data
+        logger.info("╔══════════════════════════════════════")
+        logger.info("║ API: RANDOM SHAPE REQUEST STARTED")
+        logger.info("╠══════════════════════════════════════")
+        
+        logger.info("║ 1. Requesting shape from generator...")
         shape_data = generator.get_random_shape_from_csv()
-        logger.info(f"Successfully fetched shape: {shape_data['shape']} with color: {shape_data['shape_color']}")
-        return {
-            "shape": shape_data['shape'],
-            "shape_color": shape_data['shape_color']
+        logger.debug(f"║   → Received data: {shape_data}")
+        
+        logger.info("║ 2. Validating response...")
+        if not shape_data or 'shapes' not in shape_data:
+            logger.error("║   → Missing shape data")
+            raise HTTPException(status_code=400, detail="Invalid shape data structure")
+        
+        # Extract shape1 and shape2 from the shapes list
+        shapes = shape_data['shapes']
+        shape1 = shapes[0] if len(shapes) > 0 else None
+        shape2 = shapes[1] if len(shapes) > 1 else None
+        
+        logger.info(f"║   → Shape1: {shape1}")
+        logger.info(f"║   → Shape2: {shape2}")
+        logger.info(f"║   → Shape color: {shape_data['shape_color']}")
+        logger.info(f"║   → Background: {shape_data['bgco']}")
+        
+        logger.info("║ 3. Preparing API response...")
+        response_data = {
+            "shape1": shape1,
+            "shape2": shape2,
+            "shape_color": shape_data['shape_color'],
+            "bgco": shape_data['bgco']
         }
+        logger.debug(f"║   → Response data: {response_data}")
+        logger.info("╠══════════════════════════════════════")
+        logger.info("║ API: RANDOM SHAPE REQUEST COMPLETED")
+        logger.info("╚══════════════════════════════════════")
+        return response_data
+        
     except Exception as e:
-        logger.error(f"Error getting random shape: {str(e)}")
+        logger.error("╔══════════════════════════════════════")
+        logger.error("║ API: RANDOM SHAPE REQUEST FAILED")
+        logger.error("╠══════════════════════════════════════")
+        logger.error(f"║ Error: {str(e)}")
+        logger.error("║ Stack trace:", exc_info=True)
+        logger.error("╚══════════════════════════════════════")
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":

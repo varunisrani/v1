@@ -1,0 +1,136 @@
+2024-12-31 05:26:35,799 - INFO - Initializing application
+2024-12-31 05:26:35,805 - DEBUG - Loading design configurations from ss11.csv
+2024-12-31 05:26:35,805 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F3F3EB', 'textco': '818174', 'imagesize': '(1400', 'fontsize': ' 900)', 'accent': '48', 'shape1': '#FF6F61', 'shape2': 'square', 'shape_color': 'circle', None: ['#7A7A6D']}
+2024-12-31 05:26:35,805 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F3F3EB', 'textco': '#818174', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 05:26:35,805 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5EFE9', 'textco': '5E523E', 'imagesize': '(1400', 'fontsize': ' 900)', 'accent': '48', 'shape1': '#FF8C42', 'shape2': 'square', 'shape_color': 'circle', None: ['#584D3E']}
+2024-12-31 05:26:35,805 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5EFE9', 'textco': '#5E523E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 05:26:35,805 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'FDF6F0', 'textco': '8C551E', 'imagesize': '(1400', 'fontsize': ' 900)', 'accent': '48', 'shape1': '#FFB74D', 'shape2': 'square', 'shape_color': 'circle', None: ['#8A5520']}
+2024-12-31 05:26:35,805 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#FDF6F0', 'textco': '#8C551E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 05:26:35,805 - DEBUG - Total configurations loaded: 3
+2024-12-31 05:26:35,807 - DEBUG - Using selector: KqueueSelector
+2024-12-31 05:26:35,847 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2024-12-31 05:26:35,869 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-31 05:26:35,905 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-31 05:26:35,905 - INFO - Initializing TestimonialGenerator
+2024-12-31 05:26:35,905 - INFO - Font downloaded successfully
+2024-12-31 05:26:35,905 - INFO - Validating CSV structure
+2024-12-31 05:26:35,905 - DEBUG - send_request_headers.complete
+2024-12-31 05:26:35,905 - INFO - CSV columns found: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square', 'circle', '#7A7A6D']
+2024-12-31 05:26:35,905 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-31 05:26:35,905 - ERROR - Missing required columns: {'bgco', 'accent', 'textco'}
+2024-12-31 05:26:35,905 - DEBUG - send_request_body.complete
+2024-12-31 05:26:35,905 - WARNING - CSV validation failed, using default color schemes
+2024-12-31 05:26:35,905 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-31 05:26:35,906 - INFO - TestimonialGenerator initialized successfully
+2024-12-31 05:26:35,910 - DEBUG - Using selector: KqueueSelector
+2024-12-31 05:26:36,148 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x113ac85d0>
+2024-12-31 05:26:36,149 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x113b604d0> server_hostname='api.gradio.app' timeout=3
+2024-12-31 05:26:36,214 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2024-12-31 05:26:36,222 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 30 Dec 2024 23:56:36 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'3'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2024-12-31 05:26:36,223 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-31 05:26:36,223 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-31 05:26:36,223 - DEBUG - receive_response_body.complete
+2024-12-31 05:26:36,224 - DEBUG - response_closed.started
+2024-12-31 05:26:36,224 - DEBUG - response_closed.complete
+2024-12-31 05:26:36,224 - DEBUG - close.started
+2024-12-31 05:26:36,224 - DEBUG - close.complete
+2024-12-31 05:26:36,692 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1080bc110>
+2024-12-31 05:26:36,692 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-31 05:26:36,693 - DEBUG - send_request_headers.complete
+2024-12-31 05:26:36,693 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-31 05:26:36,694 - DEBUG - send_request_body.complete
+2024-12-31 05:26:36,694 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-31 05:26:36,967 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 30 Dec 2024 23:56:36 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2024-12-31 05:26:36,967 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-31 05:26:36,968 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-31 05:26:36,968 - DEBUG - receive_response_body.complete
+2024-12-31 05:26:36,968 - DEBUG - response_closed.started
+2024-12-31 05:26:36,968 - DEBUG - response_closed.complete
+2024-12-31 05:26:36,969 - DEBUG - close.started
+2024-12-31 05:26:36,969 - DEBUG - close.complete
+2024-12-31 05:26:41,610 - DEBUG - Generating testimonial text for topic: iphone
+2024-12-31 05:26:41,611 - INFO - Fetching random color theme from CSV
+2024-12-31 05:26:41,611 - INFO - Selected row: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square', 'circle', '#7A7A6D']
+2024-12-31 05:26:41,611 - INFO - Generated theme: {'font': 'Poppins-Medium', 'bg': '#F3F3EB', 'text': '#818174', 'fontsize': 48, 'accent': '#FF6F61', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#7A7A6D'}
+2024-12-31 05:26:41,611 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#F3F3EB', 'textco': '#818174', 'accent': '#FF6F61', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#7A7A6D', 'shape1': 'square', 'shape2': 'circle'}
+2024-12-31 05:26:41,624 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Generate a positive testimonial (2-3 sentences) about iphone.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'temperature': 0.7}}
+2024-12-31 05:26:41,662 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 05:26:41,663 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-31 05:26:41,670 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115369290>
+2024-12-31 05:26:41,670 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x113b60440> server_hostname='api.groq.com' timeout=5.0
+2024-12-31 05:26:41,681 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x115369390>
+2024-12-31 05:26:41,681 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 05:26:41,682 - DEBUG - send_request_headers.complete
+2024-12-31 05:26:41,682 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 05:26:41,682 - DEBUG - send_request_body.complete
+2024-12-31 05:26:41,682 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 05:26:42,200 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 30 Dec 2024 23:56:42 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa5f7c89b86032f-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4976'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'288ms'), (b'x-request-id', b'req_01jgd006jyfvm9nx10s84ywqdw'), (b'Set-Cookie', b'__cf_bm=j3gG8D13K38WXIBn1_Aszh4RmoE5qp5m5sEflTJaWTk-1735603002-1.0.1.1-F1TemraabyHjeINBlhMbj3Kk.KBVAi1e9jrrSypS2cK6H4Vm2AJZrnHA8iKMqqyOomgiggvOwqFk2ZDzFijxtA; path=/; expires=Tue, 31-Dec-24 00:26:42 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 05:26:42,202 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 05:26:42,203 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 05:26:42,203 - DEBUG - receive_response_body.complete
+2024-12-31 05:26:42,203 - DEBUG - response_closed.started
+2024-12-31 05:26:42,203 - DEBUG - response_closed.complete
+2024-12-31 05:26:42,204 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Mon, 30 Dec 2024 23:56:42 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa5f7c89b86032f-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4976', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '288ms', 'x-request-id': 'req_01jgd006jyfvm9nx10s84ywqdw', 'set-cookie': '__cf_bm=j3gG8D13K38WXIBn1_Aszh4RmoE5qp5m5sEflTJaWTk-1735603002-1.0.1.1-F1TemraabyHjeINBlhMbj3Kk.KBVAi1e9jrrSypS2cK6H4Vm2AJZrnHA8iKMqqyOomgiggvOwqFk2ZDzFijxtA; path=/; expires=Tue, 31-Dec-24 00:26:42 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 05:26:42,211 - INFO - Fetching random color theme from CSV
+2024-12-31 05:26:42,212 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8C551E', '(1400', ' 900)', '48', '#FFB74D', 'square', 'circle', '#8A5520']
+2024-12-31 05:26:42,212 - INFO - Generated theme: {'font': 'Poppins-Medium', 'bg': '#FDF6F0', 'text': '#8C551E', 'fontsize': 48, 'accent': '#FFB74D', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#8A5520'}
+2024-12-31 05:26:42,212 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#FDF6F0', 'textco': '#8C551E', 'accent': '#FFB74D', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#8A5520', 'shape1': 'square', 'shape2': 'circle'}
+2024-12-31 05:26:42,212 - INFO - Using random colors: {'font': 'Poppins-Medium', 'bg': '#FDF6F0', 'text': '#8C551E', 'fontsize': 48, 'accent': '#FFB74D', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#8A5520'}
+2024-12-31 05:26:42,212 - DEBUG - Colors determined: {'font': 'Poppins-Medium', 'bg': '#FDF6F0', 'text': '#8C551E', 'fontsize': 48, 'accent': '#FFB74D', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#8A5520'}
+2024-12-31 05:26:42,212 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 32, 'bgco': '#FDF6F0', 'textco': '#8C551E', 'accent': '#FFB74D', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#8A5520', 'shape1': 'square', 'shape2': 'circle'}
+2024-12-31 05:26:42,212 - DEBUG - Generating SVG components...
+2024-12-31 05:26:42,213 - INFO - ╔══════════════════════════════════════
+2024-12-31 05:26:42,213 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 05:26:42,213 - INFO - ╠══════════════════════════════════════
+2024-12-31 05:26:42,213 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 05:26:42,213 - INFO - ║ 2. Processing color settings...
+2024-12-31 05:26:42,214 - INFO - ║   → Using color: #8A5520
+2024-12-31 05:26:42,214 - INFO - ║ 3. Validating shape data...
+2024-12-31 05:26:42,214 - INFO - ║   → Using provided shape list: ['square', 'circle']
+2024-12-31 05:26:42,214 - INFO - ║   → Final shape list: ['square', 'circle']
+2024-12-31 05:26:42,214 - INFO - ║ 4. Drawing shapes...
+2024-12-31 05:26:42,214 - INFO - ║   → Drawing square in center
+2024-12-31 05:26:42,214 - INFO - Drawing square with color: #8A5520
+2024-12-31 05:26:42,214 - INFO - Square drawn successfully
+2024-12-31 05:26:42,214 - INFO - ║   → Drawing circle in corners
+2024-12-31 05:26:42,216 - INFO - ╔══════════════════════════════════════
+2024-12-31 05:26:42,217 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 05:26:42,217 - INFO - ╠══════════════════════════════════════
+2024-12-31 05:26:42,217 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 05:26:42,217 - INFO - ║ 2. Processing color settings...
+2024-12-31 05:26:42,217 - INFO - ║   → Using color: #8A5520
+2024-12-31 05:26:42,217 - INFO - ║ 3. Validating shape data...
+2024-12-31 05:26:42,217 - INFO - ║   → Using shapes from design style: ['square', 'circle']
+2024-12-31 05:26:42,217 - INFO - ║   → Final shape list: ['square', 'circle']
+2024-12-31 05:26:42,217 - INFO - ║ 4. Drawing shapes...
+2024-12-31 05:26:42,217 - INFO - ║   → Drawing square in center
+2024-12-31 05:26:42,217 - INFO - Drawing square with color: #8A5520
+2024-12-31 05:26:42,217 - INFO - Square drawn successfully
+2024-12-31 05:26:42,217 - INFO - ║   → Drawing circle in corners
+2024-12-31 05:26:42,219 - DEBUG - SVG components generated successfully.
+2024-12-31 05:27:33,454 - INFO - ╔══════════════════════════════════════
+2024-12-31 05:27:33,454 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 05:27:33,454 - INFO - ╠══════════════════════════════════════
+2024-12-31 05:27:33,454 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 05:27:33,454 - INFO - ║ 2. Processing color settings...
+2024-12-31 05:27:33,454 - INFO - ║   → Using color: #8A5520
+2024-12-31 05:27:33,454 - INFO - ║ 3. Validating shape data...
+2024-12-31 05:27:33,454 - INFO - ║   → Using provided shape list: ['square']
+2024-12-31 05:27:33,454 - INFO - ║   → Final shape list: ['square']
+2024-12-31 05:27:33,454 - INFO - ║ 4. Drawing shapes...
+2024-12-31 05:27:33,454 - INFO - ║   → Drawing square in center
+2024-12-31 05:27:33,454 - INFO - Drawing square with color: #8A5520
+2024-12-31 05:27:33,455 - INFO - Square drawn successfully
+2024-12-31 05:27:33,455 - INFO - ╔══════════════════════════════════════
+2024-12-31 05:27:33,455 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 05:27:33,455 - INFO - ╠══════════════════════════════════════
+2024-12-31 05:27:33,455 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 05:27:33,455 - INFO - ║ 2. Processing color settings...
+2024-12-31 05:27:33,455 - INFO - ║   → Using color: #8A5520
+2024-12-31 05:27:33,455 - INFO - ║ 3. Validating shape data...
+2024-12-31 05:27:33,455 - INFO - ║   → Using provided shape list: ['circle']
+2024-12-31 05:27:33,455 - INFO - ║   → Final shape list: ['circle']
+2024-12-31 05:27:33,455 - INFO - ║ 4. Drawing shapes...
+2024-12-31 05:27:33,455 - INFO - ║   → Drawing circle in corners
+2024-12-31 05:27:41,221 - DEBUG - close.started
+2024-12-31 05:27:41,221 - DEBUG - close.complete

@@ -15,7 +15,7 @@ import pandas as pd
 
 # Set up logging
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,  # Changed to DEBUG for deep logging
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler(f'testimonial_generator_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log'),
@@ -27,7 +27,6 @@ logger = logging.getLogger(__name__)
 logger.info("Initializing application")
 
 # Initialize Groq client
-# Replace with your actual Groq API key
 client = Groq(api_key="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")
 
 # Create directories
@@ -52,9 +51,11 @@ DEFAULT_CONFIG = {
 # Load design configurations from CSV
 def load_design_configurations(csv_file_path):
     configurations = []
+    logger.debug(f"Loading design configurations from {csv_file_path}")
     with open(csv_file_path, mode='r') as file:
         reader = csv.DictReader(file)
         for row in reader:
+            logger.debug(f"Processing row: {row}")
             try:
                 configurations.append({
                     'font': DEFAULT_CONFIG['font'],
@@ -64,9 +65,11 @@ def load_design_configurations(csv_file_path):
                     'fontsize': DEFAULT_CONFIG['fontsize'],
                     'accent': f"#{row['accent']}"
                 })
+                logger.debug(f"Configuration added: {configurations[-1]}")
             except (ValueError, SyntaxError, KeyError) as e:
                 logger.warning(f"Error parsing row {row}: {e}. Using default configuration.")
                 configurations.append(DEFAULT_CONFIG)
+    logger.debug(f"Total configurations loaded: {len(configurations)}")
     return configurations
 
 # Load configurations from ss11.csv
@@ -243,6 +246,91 @@ class SVGShapeGenerator:
             return True
         except Exception as e:
             logger.error(f"Error drawing square: {str(e)}")
+            return False
+
+    @staticmethod
+    def draw_circle(dwg, width, height, color, opacity=0.5):
+        """Draw a centered circle with mini circles in corners"""
+        try:
+            color = SVGShapeGenerator.validate_color(color)
+            logger.info(f"Drawing circle with color: {color}")
+            
+            # Calculate main circle dimensions
+            circle_size = min(width, height) * 0.85  # 85% of smallest dimension
+            x = width / 2   # Center x
+            y = height / 2  # Center y
+            radius = circle_size / 2
+            
+            # Draw shadow for main circle
+            dwg.add(dwg.circle(
+                center=(x + 4, y + 4),
+                r=radius,
+                fill='#000000',
+                fill_opacity=0.1
+            ))
+            
+            # Draw main circle with shape color
+            dwg.add(dwg.circle(
+                center=(x, y),
+                r=radius,
+                fill=color,
+                fill_opacity=opacity,
+                stroke='none'  # Remove border
+            ))
+            
+            # Add inner white circle for contrast
+            inner_radius = radius * 0.9  # 90% of main circle
+            dwg.add(dwg.circle(
+                center=(x, y),
+                r=inner_radius,
+                fill='#FFFFFF',  # White background
+                stroke='none'
+            ))
+            
+            # Add mini circles in corners
+            mini_circle_radius = radius * 0.15  # 15% of main circle radius
+            corner_margin = mini_circle_radius * 1.5  # Margin from edges
+            
+            # Corner positions
+            corners = [
+                (corner_margin, corner_margin),  # Top-left
+                (width - corner_margin, corner_margin),  # Top-right
+                (corner_margin, height - corner_margin),  # Bottom-left
+                (width - corner_margin, height - corner_margin)  # Bottom-right
+            ]
+            
+            # Draw mini circles in corners
+            for cx, cy in corners:
+                # Draw shadow for mini circle
+                dwg.add(dwg.circle(
+                    center=(cx + 2, cy + 2),
+                    r=mini_circle_radius,
+                    fill='#000000',
+                    fill_opacity=0.1
+                ))
+                
+                # Draw mini circle with same color as main circle
+                dwg.add(dwg.circle(
+                    center=(cx, cy),
+                    r=mini_circle_radius,
+                    fill=color,
+                    fill_opacity=opacity,
+                    stroke='none'  # Remove border
+                ))
+                
+                # Add inner white circle for mini circles
+                dwg.add(dwg.circle(
+                    center=(cx, cy),
+                    r=mini_circle_radius * 0.7,  # 70% of mini circle
+                    fill='#FFFFFF',  # White background
+                    stroke='none'
+                ))
+            
+            logger.info("Circle and mini circles drawn successfully")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error drawing circle: {str(e)}")
             return False
 
     def render_text_svg(self, text, color, font_size=32, has_quotes=True):
@@ -477,29 +565,69 @@ class TestimonialGenerator:
             logger.error(f"Error rendering background SVG: {str(e)}")
             return None
 
-    def render_shapes_svg(self, color, selected_shapes):
-        """Render shapes with color from CSV"""
+    def render_shapes_svg(self, color, selected_shapes=None):
+        """Render shapes in SVG"""
         try:
+            logger.info("╔══════════════════════════════════════")
+            logger.info("║ SHAPE RENDERING PROCESS INITIATED")
+            logger.info("╠══════════════════════════════════════")
+            
             width, height = self.design_style['imagesize']
             dwg = svgwrite.Drawing(size=(width, height))
+            logger.info(f"║   → Canvas size: {width}x{height}")
             
-            # Get shape color from design style if available
+            logger.info("║ 2. Processing color settings...")
             shape_color = self.design_style.get('shape_color', color)
-            logger.info(f"Using shape color: {shape_color}")
+            logger.info(f"║   → Using color: {shape_color}")
             
-            for shape in selected_shapes:
-                if shape.lower() == 'square':
-                    # Use the static method from SVGShapeGenerator with proper opacity
-                    SVGShapeGenerator.draw_square(dwg, width, height, shape_color, opacity=0.9)
+            logger.info("║ 3. Validating shape data...")
+            # Use shapes from design_style if no shapes provided
+            if not selected_shapes:
+                shapes_list = [s for s in [self.design_style.get('shape1'), self.design_style.get('shape2')] if s]
+                logger.info(f"║   → Using shapes from design style: {shapes_list}")
+            elif isinstance(selected_shapes, str):
+                shapes_list = [s.strip().lower() for s in selected_shapes.split(',') if s.strip()]
+                logger.info(f"║   → Converted string to list: {shapes_list}")
+            elif isinstance(selected_shapes, list):
+                shapes_list = [s.strip().lower() for s in selected_shapes if s.strip()]
+                logger.info(f"║   → Using provided shape list: {shapes_list}")
+            else:
+                logger.error(f"║   → Invalid shape type: {type(selected_shapes)}")
+                return None
+            
+            logger.info(f"║   → Final shape list: {shapes_list}")
+            
+            # Draw shapes
+            logger.info("║ 4. Drawing shapes...")
+            if 'square' in shapes_list:
+                logger.info("║   → Drawing square in center")
+                if SVGShapeGenerator.draw_square(dwg, width, height, shape_color, opacity=0.9):
+                    logger.info("║   → Square drawn successfully")
+            
+            if 'circle' in shapes_list:
+                logger.info("║   → Drawing circle in corners")
+                if SVGShapeGenerator.draw_circle(dwg, width, height, shape_color, opacity=0.9):
+                    logger.info("║   → Circle drawn successfully")
+            
+            logger.info("╠══════════════════════════════════════")
+            logger.info("║ SHAPE RENDERING PROCESS COMPLETED")
+            logger.info("╚══════════════════════════════════════")
             
             return dwg.tostring()
+            
         except Exception as e:
-            logger.error(f"Error rendering shapes SVG: {str(e)}")
+            logger.error("╔══════════════════════════════════════")
+            logger.error("║ SHAPE RENDERING PROCESS FAILED")
+            logger.error("╠══════════════════════════════════════")
+            logger.error(f"║ Error: {str(e)}")
+            logger.error("║ Stack trace:", exc_info=True)
+            logger.error("╚══════════════════════════════════════")
             return None
 
     def get_random_color_theme(self):
         """Get random color theme from CSV file"""
         try:
+            logger.info("Fetching random color theme from CSV")
             with open('ss11.csv', mode='r', encoding='utf-8') as file:
                 # Read CSV file
                 csv_reader = csv.reader(file)
@@ -515,23 +643,37 @@ class TestimonialGenerator:
                 selected_row = random.choice(all_rows)
                 logger.info(f"Selected row: {selected_row}")
                 
-                # Make sure we have enough columns
-                if len(selected_row) < 7:
-                    raise ValueError(f"Invalid row format: {selected_row}")
-                
-                # Remove any '#' if present and ensure valid hex colors
-                bg_color = selected_row[1].strip('#')
-                text_color = selected_row[2].strip('#')
-                accent_color = selected_row[6].strip('#')
-                
-                # Create color theme
+                # Extract all data from the row
                 theme = {
-                    "bg": f"#{bg_color}",
-                    "text": f"#{text_color}",
-                    "accent": f"#{accent_color}"
+                    "font": selected_row[0],                    # Poppins-Medium
+                    "bg": f"#{selected_row[1].strip('#')}",    # F3F3EB
+                    "text": f"#{selected_row[2].strip('#')}",  # 818174
+                    "fontsize": int(selected_row[5]),          # 48
+                    "accent": selected_row[6],                 # #FF6F61
+                    "shape1": selected_row[7].lower() if selected_row[7] else None,  # square
+                    "shape2": selected_row[8].lower() if selected_row[8] else None,  # circle
+                    "shape_color": selected_row[9]             # #7A7A6D
                 }
                 
                 logger.info(f"Generated theme: {theme}")
+                
+                # Update the design style with all the data
+                self.design_style.update({
+                    'font': theme['font'],
+                    'imagesize': (1080, 1080),
+                    'fontsize': theme['fontsize'],
+                    'bgco': theme['bg'],
+                    'textco': theme['text'],
+                    'accent': theme['accent'],
+                    'text_align': 'center',
+                    'vertical_align': 'middle',
+                    'shape_color': theme['shape_color'],
+                    'shape1': theme['shape1'],
+                    'shape2': theme['shape2']
+                })
+                
+                logger.debug(f"Generator design style updated: {self.design_style}")
+                
                 return theme
                 
         except Exception as e:
@@ -541,12 +683,16 @@ class TestimonialGenerator:
             return {
                 "bg": "#FFF5EE",
                 "text": "#8B4513",
-                "accent": "#DEB887"
+                "accent": "#DEB887",
+                "shape1": None,
+                "shape2": None,
+                "shape_color": "#DEB887"
             }
 
     def validate_csv_structure(self):
         """Validate the CSV file structure and log column information"""
         try:
+            logger.info("Validating CSV structure")
             with open('ss11.csv', mode='r') as file:
                 # Read header
                 header = next(file)
@@ -572,25 +718,61 @@ class TestimonialGenerator:
     def get_random_shape_from_csv(self):
         """Get random shape and color from CSV"""
         try:
-            logger.info("Reading ss11.csv for random shape selection")
-            # Read the CSV file
+            logger.info("╔══════════════════════════════════════")
+            logger.info("║ SHAPE FETCH PROCESS INITIATED")
+            logger.info("╠══════════════════════════════════════")
+            
+            logger.info("║ 1. Reading CSV file...")
             df = pd.read_csv('ss11.csv')
-            logger.info(f"Found {len(df)} rows in CSV")
+            logger.info(f"║   → Found {len(df)} designs in database")
             
-            # Randomly select a row
+            logger.info("║ 2. Selecting random design...")
             random_row = df.sample(n=1).iloc[0]
-            logger.info(f"Selected row: Shape={random_row['shapes']}, Color={random_row['shape_color']}")
+            logger.info(f"║   → Raw row data: {dict(random_row)}")
             
-            return {
-                'shape': random_row['shapes'],
-                'shape_color': random_row['shape_color']
+            logger.info("║ 3. Processing shape information...")
+            # Collect shapes from separate columns
+            shape1 = str(random_row['shape1']).strip().lower() if pd.notna(random_row['shape1']) else None
+            shape2 = str(random_row['shape2']).strip().lower() if pd.notna(random_row['shape2']) else None
+            shapes = [shape for shape in [shape1, shape2] if shape]
+            logger.info(f"║   → Parsed shapes: {shapes}")
+            logger.info(f"║   → Total shapes found: {len(shapes)}")
+            
+            logger.info("║ 4. Extracting color information...")
+            shape_color = random_row['shape_color'].strip()
+            if not shape_color.startswith('#'):
+                shape_color = f"#{shape_color}"
+            
+            bgco = random_row['bgco'].strip()
+            if not bgco.startswith('#'):
+                bgco = f"#{bgco}"
+            
+            logger.info(f"║   → Shape color: {shape_color}")
+            logger.info(f"║   → Background: {bgco}")
+            
+            result = {
+                'shapes': shapes,
+                'shape_color': shape_color,
+                'bgco': bgco
             }
+            logger.info("║ 5. Final data package prepared")
+            logger.info(f"║   → Package: {result}")
+            logger.info("╠══════════════════════════════════════")
+            logger.info("║ SHAPE FETCH PROCESS COMPLETED")
+            logger.info("╚══════════════════════════════════════")
+            return result
+            
         except Exception as e:
-            logger.error(f"Error getting random shape from CSV: {str(e)}")
-            logger.error("Falling back to default shape and color")
+            logger.error("╔══════════════════════════════════════")
+            logger.error("║ SHAPE FETCH PROCESS FAILED")
+            logger.error("╠══════════════════════════════════════")
+            logger.error(f"║ Error: {str(e)}")
+            logger.error("║ Stack trace:", exc_info=True)
+            logger.error("╚══════════════════════════════════════")
             return {
-                'shape': 'square',
-                'shape_color': '#000000'
+                'shapes': [],
+                'shape_color': '#000000',
+                'bgco': '#FFFFFF'
             }
 
 # Add this to store the current design state

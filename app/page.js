@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
 // Color Palettes
 const COLOR_PALETTES = {
@@ -50,11 +50,71 @@ const COLOR_SCHEMES = {
 
 const SHAPE_PATTERNS = ["Circles", "Dots", "Waves", "Corners"];
 
+// Color picker component
+const ColorPicker = ({ label, value, onChange }) => {
+    return (
+        <div className="space-y-1">
+            <label className="block text-sm font-medium text-gray-700">
+                {label}
+            </label>
+            <div className="flex items-center space-x-2">
+                <div
+                    className="w-8 h-8 rounded-lg border border-gray-200 cursor-pointer"
+                    style={{ backgroundColor: value }}
+                    onClick={() => {
+                        // Your color picker logic here
+                    }}
+                />
+                <input
+                    type="color"
+                    value={value || '#000000'}
+                    onChange={(e) => onChange(e.target.value)}
+                    className="hidden"
+                />
+                <span className="text-xs font-mono text-gray-500">
+                    {typeof value === 'string' 
+                        ? value.toUpperCase() 
+                        : String(value || '#000000').toUpperCase()
+                    }
+                </span>
+            </div>
+        </div>
+    );
+};
+
+// Usage in your component
+const CustomColorPicker = () => {
+    return (
+        <div className="space-y-4">
+            <ColorPicker
+                label="Background"
+                value={customColors.bg}
+                onChange={(color) => setCustomColors(prev => ({ ...prev, bg: color }))}
+            />
+            <ColorPicker
+                label="Text"
+                value={customColors.text}
+                onChange={(color) => setCustomColors(prev => ({ ...prev, text: color }))}
+            />
+            <ColorPicker
+                label="Accent"
+                value={customColors.accent}
+                onChange={(color) => setCustomColors(prev => ({ ...prev, accent: color }))}
+            />
+            <ColorPicker
+                label="Shape Color"
+                value={customColors.shape_color}
+                onChange={(color) => setCustomColors(prev => ({ ...prev, shape_color: color }))}
+            />
+        </div>
+    );
+};
+
 export default function Home() {
   // State management
   const [topic, setTopic] = useState('');
   const [testimonialText, setTestimonialText] = useState('');
-  const [selectedShapes, setSelectedShapes] = useState(['Square']);
+  const [selectedShapes, setSelectedShapes] = useState([]);
   const [fontSize, setFontSize] = useState(32);
   const [hasQuotes, setHasQuotes] = useState(true);
   const [colorMode, setColorMode] = useState('preset');
@@ -62,7 +122,9 @@ export default function Home() {
   const [customColors, setCustomColors] = useState({
     bg: '#FFF5EE',
     text: '#8B4513',
-    accent: '#DEB887'
+    accent: '#DEB887',
+    shape_color: '#DEB887',
+    bgco: '#FFF5EE'
   });
   const [svgPreviews, setSvgPreviews] = useState({
     background: '',
@@ -85,13 +147,32 @@ export default function Home() {
   useEffect(() => {
     const fetchInitialData = async () => {
       try {
+        console.log("Fetching initial data from:", API_BASE_URL);
+        
+        // Add error handling and timeout
+        const axiosConfig = {
+          timeout: 5000,
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        };
+
         const [colorSchemesRes, shapePatternsRes] = await Promise.all([
-          axios.get(`${API_BASE_URL}/color-schemes`),
-          axios.get(`${API_BASE_URL}/shape-patterns`)
+          axios.get(`${API_BASE_URL}/color-schemes`, axiosConfig)
+            .catch(error => {
+              console.error('Error fetching color schemes:', error);
+              return { data: { preset_schemes: [] } };
+            }),
+          axios.get(`${API_BASE_URL}/shape-patterns`, axiosConfig)
+            .catch(error => {
+              console.error('Error fetching shape patterns:', error);
+              return { data: [] };
+            })
         ]);
 
         // Update color schemes if needed
-        if (colorSchemesRes.data.preset_schemes) {
+        if (colorSchemesRes.data?.preset_schemes) {
           setColorSchemes(colorSchemesRes.data);
         }
 
@@ -100,8 +181,8 @@ export default function Home() {
           setShapePatterns(shapePatternsRes.data);
         }
       } catch (error) {
-        console.error('Error fetching initial data:', error);
-        setError('Failed to load initial data');
+        console.error('Error in fetchInitialData:', error);
+        setError('Failed to load initial data. Please try again later.');
       }
     };
 
@@ -184,9 +265,11 @@ export default function Home() {
     try {
         setLoading(true);
         setError(null);
-
-        console.log("Current shape:", selectedShapes[0]);
-        console.log("Current shape color:", customColors.accent);
+        
+        console.log("=== FRONTEND: DESIGN UPDATE STARTED ===");
+        console.log("1. Preparing design data...");
+        console.log(`→ Shapes: ${selectedShapes.join(', ')}`);
+        console.log(`→ Colors:`, customColors);
 
         const response = await axios.post(`${API_BASE_URL}/update-design`, {
             text: testimonialText,
@@ -195,21 +278,24 @@ export default function Home() {
             has_quotes: hasQuotes,
             colors: {
                 ...customColors,
-                shape_color: customColors.accent // Ensure shape color is passed
+                shape1: selectedShapes[0] || null,
+                shape2: selectedShapes[1] || null
             }
         });
 
         if (response.data) {
-            console.log("Design updated with shape:", selectedShapes[0]);
+            console.log("2. Updating SVG previews...");
             setSvgPreviews({
                 background: response.data.background_svg || '',
                 shapes: response.data.shapes_svg || '',
                 text: response.data.text_svg || '',
                 combined: response.data.combined_svg || ''
             });
+            console.log("=== FRONTEND: DESIGN UPDATE COMPLETED ===");
         }
     } catch (error) {
-        console.error('Error updating design:', error);
+        console.error("=== FRONTEND: DESIGN UPDATE FAILED ===");
+        console.error("→ Error:", error);
         setError(error.response?.data?.detail || 'Failed to update design');
     } finally {
         setLoading(false);
@@ -423,49 +509,48 @@ export default function Home() {
   const handleRandomShape = async () => {
     try {
         setLoading(true);
-        console.log("Fetching random shape from backend...");
+        console.log("=== FRONTEND: SHAPE UPDATE STARTED ===");
         
+        console.log("1. Fetching shapes from backend...");
         const response = await axios.get(`${API_BASE_URL}/random-shape`);
-        console.log("Received shape data:", response.data);
+        console.log("→ Raw response:", response.data);
         
         if (response.data) {
-            const shape = response.data.shape;
+            console.log("2. Processing shape data...");
+            // Get shapes from shape1 and shape2
+            const shapes = [
+                response.data.shape1,
+                response.data.shape2
+            ].filter(Boolean); // Remove null/undefined values
+            
             const shapeColor = response.data.shape_color;
+            const bgColor = response.data.bgco;
             
-            console.log(`Setting shape: ${shape}, color: ${shapeColor}`);
+            console.log(`→ Found shapes: ${shapes.join(', ')}`);
+            console.log(`→ Using colors: shape=${shapeColor}, bg=${bgColor}`);
             
-            // Update shape selection and colors
-            setSelectedShapes([shape]);
+            console.log("3. Updating UI state...");
+            setSelectedShapes(shapes.map(s => s.toLowerCase()));
             setCustomColors(prev => ({
                 ...prev,
-                accent: shapeColor,
-                shape_color: shapeColor  // Add shape_color to customColors
+                shape_color: shapeColor,
+                bgco: bgColor,
+                bg: bgColor
             }));
             
-            // Update the design with new shape and color
-            const designResponse = await axios.post(`${API_BASE_URL}/update-design`, {
-                text: testimonialText,
-                selected_shapes: [shape],
-                font_size: fontSize,
-                has_quotes: hasQuotes,
-                colors: {
-                    ...customColors,
-                    shape_color: shapeColor
-                }
-            });
-
-            if (designResponse.data) {
-                setSvgPreviews({
-                    background: designResponse.data.background_svg || '',
-                    shapes: designResponse.data.shapes_svg || '',
-                    text: designResponse.data.text_svg || '',
-                    combined: designResponse.data.combined_svg || ''
-                });
-            }
+            console.log("4. Triggering design update...");
+            await updateDesign();
+            console.log("=== FRONTEND: SHAPE UPDATE COMPLETED ===");
+        } else {
+            console.warn("=== FRONTEND: SHAPE UPDATE FAILED ===");
+            console.warn("→ Invalid shape data:", response.data);
+            setError('No valid shapes received');
+            setSelectedShapes([]);
         }
     } catch (error) {
-        console.error('Error fetching random shape:', error);
-        setError('Failed to get random shape');
+        console.error("=== FRONTEND: SHAPE UPDATE FAILED ===");
+        console.error("→ Error:", error);
+        setError('Failed to get shapes');
     } finally {
         setLoading(false);
     }
@@ -484,6 +569,55 @@ export default function Home() {
                 ) || ''
             }}
         />
+    );
+  };
+
+  // Update the shape preview rendering
+  const renderShapePreview = (shapes, color) => {
+    if (!shapes || shapes.length === 0) {
+        return (
+            <div className="text-sm text-gray-500 italic">
+                No shapes selected from CSV
+            </div>
+        );
+    }
+
+    return (
+        <div className="space-y-2">
+            {shapes.map((shape) => (
+                <div key={shape} className="flex items-center justify-between p-2 bg-purple-50 rounded-lg">
+                    <div className="flex items-center gap-2">
+                        <span className="text-sm font-medium capitalize">{shape}</span>
+                        {shape === 'circle' && (
+                            <span className="text-xs text-gray-500">(with mini corners)</span>
+                        )}
+                    </div>
+                    <div className="flex items-center gap-2">
+                        {shape === 'circle' && (
+                            <div className="flex -space-x-1">
+                                {[...Array(4)].map((_, i) => (
+                                    <div
+                                        key={i}
+                                        className="w-2 h-2 rounded-full border border-white bg-white"
+                                        style={{ 
+                                            backgroundColor: color,
+                                            boxShadow: 'inset 0 0 0 2px ' + color 
+                                        }}
+                                    />
+                                ))}
+                            </div>
+                        )}
+                        <div 
+                            className={`w-4 h-4 ${shape === 'circle' ? 'rounded-full' : 'rounded-lg'} bg-white`}
+                            style={{ 
+                                backgroundColor: color,
+                                boxShadow: 'inset 0 0 0 2px ' + color 
+                            }}
+                        />
+                    </div>
+                </div>
+            ))}
+        </div>
     );
   };
 
@@ -612,7 +746,10 @@ export default function Home() {
                         className="w-8 h-8 rounded cursor-pointer"
                       />
                       <span className="text-xs font-mono text-gray-500">
-                        {value.toUpperCase()}
+                        {typeof value === 'string' 
+                            ? value.toUpperCase() 
+                            : String(value || '#000000').toUpperCase()
+                        }
                       </span>
                     </div>
                   </div>
@@ -690,7 +827,10 @@ export default function Home() {
                           className="w-8 h-8 rounded cursor-pointer"
                         />
                         <span className="text-xs font-mono text-gray-500">
-                          {value.toUpperCase()}
+                          {typeof value === 'string' 
+                              ? value.toUpperCase() 
+                              : String(value || '#000000').toUpperCase()
+                          }
                         </span>
                       </div>
                     </div>
@@ -737,17 +877,8 @@ export default function Home() {
                   Random Shape
                 </button>
               </div>
-              <div className="grid grid-cols-2 gap-2">
-                {selectedShapes.map((shape) => (
-                    <div key={shape} className="flex items-center justify-between p-2 bg-purple-50 rounded-lg">
-                        <span className="text-sm font-medium">{shape}</span>
-                        <div 
-                            className="w-4 h-4 rounded-full" 
-                            style={{ backgroundColor: customColors.shape_color || customColors.accent }}
-                        />
-                    </div>
-                ))}
-              </div>
+              {/* Show all selected shapes */}
+              {renderShapePreview(selectedShapes, customColors.shape_color)}
             </div>
 
             {/* Font Settings */}

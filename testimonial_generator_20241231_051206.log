@@ -1,0 +1,102 @@
+2024-12-31 05:12:06,331 - INFO - Initializing application
+2024-12-31 05:12:06,337 - DEBUG - Loading design configurations from ss11.csv
+2024-12-31 05:12:06,337 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F3F3EB', 'textco': '818174', 'imagesize': '(1400', 'fontsize': ' 900)', 'accent': '48', 'shape1': '#FF6F61', 'shape2': 'square', 'shape_color': 'circle', None: ['#7A7A6D']}
+2024-12-31 05:12:06,338 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F3F3EB', 'textco': '#818174', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 05:12:06,338 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5EFE9', 'textco': '5E523E', 'imagesize': '(1400', 'fontsize': ' 900)', 'accent': '48', 'shape1': '#FF8C42', 'shape2': 'square', 'shape_color': '', None: ['#584D3E']}
+2024-12-31 05:12:06,338 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5EFE9', 'textco': '#5E523E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 05:12:06,338 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'FDF6F0', 'textco': '8C551E', 'imagesize': '(1400', 'fontsize': ' 900)', 'accent': '48', 'shape1': '#FFB74D', 'shape2': '', 'shape_color': 'circle', None: ['#8A5520']}
+2024-12-31 05:12:06,338 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#FDF6F0', 'textco': '#8C551E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2024-12-31 05:12:06,338 - DEBUG - Total configurations loaded: 3
+2024-12-31 05:12:06,339 - DEBUG - Using selector: KqueueSelector
+2024-12-31 05:12:06,381 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2024-12-31 05:12:06,403 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2024-12-31 05:12:06,438 - INFO - Initializing TestimonialGenerator
+2024-12-31 05:12:06,439 - INFO - Font downloaded successfully
+2024-12-31 05:12:06,439 - INFO - Validating CSV structure
+2024-12-31 05:12:06,439 - INFO - CSV columns found: ['Poppins-Medium', 'F3F3EB', '818174', '(1400', ' 900)', '48', '#FF6F61', 'square', 'circle', '#7A7A6D']
+2024-12-31 05:12:06,439 - ERROR - Missing required columns: {'textco', 'accent', 'bgco'}
+2024-12-31 05:12:06,439 - WARNING - CSV validation failed, using default color schemes
+2024-12-31 05:12:06,439 - INFO - TestimonialGenerator initialized successfully
+2024-12-31 05:12:06,443 - DEBUG - Using selector: KqueueSelector
+2024-12-31 05:12:06,586 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2024-12-31 05:12:06,587 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-31 05:12:06,587 - DEBUG - receive_response_body.complete
+2024-12-31 05:12:06,587 - DEBUG - response_closed.started
+2024-12-31 05:12:06,587 - DEBUG - response_closed.complete
+2024-12-31 05:12:06,587 - DEBUG - close.started
+2024-12-31 05:12:06,587 - DEBUG - close.complete
+2024-12-31 05:12:06,690 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1208ca290>
+2024-12-31 05:12:06,690 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x12095c680> server_hostname='api.gradio.app' timeout=3
+2024-12-31 05:12:07,231 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2024-12-31 05:12:07,269 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1049df710>
+2024-12-31 05:12:07,270 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2024-12-31 05:12:07,270 - DEBUG - send_request_headers.complete
+2024-12-31 05:12:07,270 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2024-12-31 05:12:07,270 - DEBUG - send_request_body.complete
+2024-12-31 05:12:07,270 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2024-12-31 05:12:07,564 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 30 Dec 2024 23:42:07 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2024-12-31 05:12:07,564 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2024-12-31 05:12:07,564 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2024-12-31 05:12:07,565 - DEBUG - receive_response_body.complete
+2024-12-31 05:12:07,565 - DEBUG - response_closed.started
+2024-12-31 05:12:07,565 - DEBUG - response_closed.complete
+2024-12-31 05:12:07,565 - DEBUG - close.started
+2024-12-31 05:12:07,565 - DEBUG - close.complete
+2024-12-31 05:12:10,710 - DEBUG - Generating testimonial text for topic: iphonw
+2024-12-31 05:12:10,710 - INFO - Fetching random color theme from CSV
+2024-12-31 05:12:10,711 - INFO - Selected row: ['Poppins-Medium', 'F5EFE9', '5E523E', '(1400', ' 900)', '48', '#FF8C42', 'square', '', '#584D3E']
+2024-12-31 05:12:10,711 - INFO - Generated theme: {'bg': '#F5EFE9', 'text': '#5E523E', 'accent': '#FF8C42'}
+2024-12-31 05:12:10,721 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Generate a positive testimonial (2-3 sentences) about iphonw.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'temperature': 0.7}}
+2024-12-31 05:12:10,749 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2024-12-31 05:12:10,750 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2024-12-31 05:12:10,807 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x121868990>
+2024-12-31 05:12:10,807 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x12095c560> server_hostname='api.groq.com' timeout=5.0
+2024-12-31 05:12:10,821 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x120eb8490>
+2024-12-31 05:12:10,821 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2024-12-31 05:12:10,821 - DEBUG - send_request_headers.complete
+2024-12-31 05:12:10,821 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2024-12-31 05:12:10,821 - DEBUG - send_request_body.complete
+2024-12-31 05:12:10,821 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2024-12-31 05:12:12,046 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 30 Dec 2024 23:42:12 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fa5e285ba830337-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4976'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'288ms'), (b'x-request-id', b'req_01jgcz5msder2970ayhn44bwzj'), (b'Set-Cookie', b'__cf_bm=ABNZsstqNqGFK.pfDfpfOAUPYOmk1k2GPsUs6kakRhc-1735602132-1.0.1.1-vuND9E4.HYqR07m_UQO...HrvSmqZIdwQSmYPHBsI6MwFSAQMwwhsxQG14FS8tNPs63m9OMU5548BiT3YO16bw; path=/; expires=Tue, 31-Dec-24 00:12:12 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2024-12-31 05:12:12,048 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2024-12-31 05:12:12,048 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2024-12-31 05:12:12,049 - DEBUG - receive_response_body.complete
+2024-12-31 05:12:12,049 - DEBUG - response_closed.started
+2024-12-31 05:12:12,049 - DEBUG - response_closed.complete
+2024-12-31 05:12:12,049 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Mon, 30 Dec 2024 23:42:12 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fa5e285ba830337-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4976', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '288ms', 'x-request-id': 'req_01jgcz5msder2970ayhn44bwzj', 'set-cookie': '__cf_bm=ABNZsstqNqGFK.pfDfpfOAUPYOmk1k2GPsUs6kakRhc-1735602132-1.0.1.1-vuND9E4.HYqR07m_UQO...HrvSmqZIdwQSmYPHBsI6MwFSAQMwwhsxQG14FS8tNPs63m9OMU5548BiT3YO16bw; path=/; expires=Tue, 31-Dec-24 00:12:12 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2024-12-31 05:12:12,053 - INFO - Fetching random color theme from CSV
+2024-12-31 05:12:12,054 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8C551E', '(1400', ' 900)', '48', '#FFB74D', '', 'circle', '#8A5520']
+2024-12-31 05:12:12,054 - INFO - Generated theme: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-31 05:12:12,054 - INFO - Using random colors: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-31 05:12:12,054 - DEBUG - Colors determined: {'bg': '#FDF6F0', 'text': '#8C551E', 'accent': '#FFB74D'}
+2024-12-31 05:12:12,054 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 32, 'bgco': '#FDF6F0', 'textco': '#8C551E', 'accent': '#FFB74D', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#FFB74D'}
+2024-12-31 05:12:12,054 - DEBUG - Generating SVG components...
+2024-12-31 05:12:12,057 - INFO - ╔══════════════════════════════════════
+2024-12-31 05:12:12,057 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 05:12:12,057 - INFO - ╠══════════════════════════════════════
+2024-12-31 05:12:12,057 - INFO - ║ 1. Setting up SVG canvas...
+2024-12-31 05:12:12,057 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 05:12:12,057 - INFO - ║ 2. Processing color settings...
+2024-12-31 05:12:12,057 - INFO - ║   → Using color: #FFB74D
+2024-12-31 05:12:12,057 - INFO - ║ 3. Validating shape data...
+2024-12-31 05:12:12,058 - INFO - ║   → Using shape list: []
+2024-12-31 05:12:12,058 - INFO - ║ 4. Drawing shapes...
+2024-12-31 05:12:12,058 - INFO - ╠══════════════════════════════════════
+2024-12-31 05:12:12,058 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 05:12:12,058 - INFO - ╚══════════════════════════════════════
+2024-12-31 05:12:12,059 - INFO - ╔══════════════════════════════════════
+2024-12-31 05:12:12,059 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2024-12-31 05:12:12,059 - INFO - ╠══════════════════════════════════════
+2024-12-31 05:12:12,060 - INFO - ║ 1. Setting up SVG canvas...
+2024-12-31 05:12:12,060 - INFO - ║   → Canvas size: 1080x1080
+2024-12-31 05:12:12,060 - INFO - ║ 2. Processing color settings...
+2024-12-31 05:12:12,060 - INFO - ║   → Using color: #FFB74D
+2024-12-31 05:12:12,060 - INFO - ║ 3. Validating shape data...
+2024-12-31 05:12:12,060 - INFO - ║   → Using shape list: []
+2024-12-31 05:12:12,060 - INFO - ║ 4. Drawing shapes...
+2024-12-31 05:12:12,060 - INFO - ╠══════════════════════════════════════
+2024-12-31 05:12:12,060 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2024-12-31 05:12:12,060 - INFO - ╚══════════════════════════════════════
+2024-12-31 05:12:12,062 - DEBUG - SVG components generated successfully.
+2024-12-31 05:13:21,491 - DEBUG - close.started
+2024-12-31 05:13:21,492 - DEBUG - close.complete
