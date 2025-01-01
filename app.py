@@ -77,60 +77,29 @@ class SVGResponse(BaseModel):
 @app.post("/generate-testimonial", response_model=SVGResponse)
 async def generate_testimonial(request: TestimonialRequest):
     try:
-        # Get random style from CSV
-        style_data = generator.get_random_style_from_csv()
-        if not style_data:
-            logger.error("Failed to get style data, using default style")
-            style_data = {
-                'font': 'Poppins-Medium',
-                'bgco': '#FFFFFF',
-                'textco': '#000000',
-                'accent': '#2196F3',
-                'shape1': 'square',
-                'shape2': 'circle',
-                'shape_color': '#2196F3',
-                'grid_pos1': 'center',
-                'grid_pos2': 'corners',
-                'style_description': 'Default professional style',
-                'fontsize': 48,
-                'imagesize': (1080, 1080)
-            }
-            
-        # Generate testimonial with style
-        testimonial_text = generator.generate_testimonial_with_style(
-            request.topic, 
-            style_data
-        )
+        # Generate testimonial text with CSV data
+        testimonial_text = generator.generate_testimonial(request.topic)
         
-        if not testimonial_text:
-            raise HTTPException(status_code=500, detail="Failed to generate testimonial")
-            
-        # Update colors with style data
+        # Get the current design style from generator
+        design_style = generator.design_style
+        
+        # Update colors dictionary with all theme data
         colors = {
-            "bg": style_data['bgco'],
-            "text": style_data['textco'],
-            "accent": style_data['accent'],
-            "shape_color": style_data['shape_color'],
-            "shape1": style_data['shape1'],
-            "shape2": style_data['shape2'],
-            "grid_pos1": style_data['grid_pos1'],
-            "grid_pos2": style_data['grid_pos2']
+            'bg': design_style['bgco'],
+            'text': design_style['textco'],
+            'accent': design_style['accent'],
+            'shape_color': design_style['shape_color'],
+            'font': design_style['font'],
+            'fontsize': request.font_size,
+            'shape1': design_style['shape1'],
+            'shape2': design_style['shape2'],
+            'grid_pos1': design_style['grid_pos1'],
+            'grid_pos2': design_style['grid_pos2']
         }
         
-        # Add CORS headers to the response
-        headers = {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type",
-        }
-        
-        # Generate SVG components with proper opacity for shape color
-        logger.debug("Generating SVG components...")
+        # Generate SVG components
         background_svg = generator.render_background_svg(colors['bg']) or ''
-        shapes_svg = generator.render_shapes_svg(
-            colors['shape_color'],
-            [s for s in [colors.get('shape1'), colors.get('shape2')] if s]  # Use shapes from colors
-        ) or ''
+        shapes_svg = generator.render_shapes_svg(colors['shape_color']) or ''
         text_svg = generator.render_text_svg(
             testimonial_text,
             colors['text'],
@@ -139,24 +108,19 @@ async def generate_testimonial(request: TestimonialRequest):
         ) or ''
         combined_svg = generator.render_svg(
             testimonial_text,
-            request.selected_shapes,
+            [colors['shape1'], colors['shape2']],
             request.has_quotes
         ) or ''
         
-        logger.debug("SVG components generated successfully.")
-        
-        # Return response with headers
-        return JSONResponse(
-            content=SVGResponse(
-                background_svg=background_svg,
-                shapes_svg=shapes_svg,
-                text_svg=text_svg,
-                combined_svg=combined_svg,
-                text_content=testimonial_text,
-                colors=colors
-            ).model_dump(),  # Use model_dump instead of dict
-            headers=headers
+        return SVGResponse(
+            background_svg=background_svg,
+            shapes_svg=shapes_svg,
+            text_svg=text_svg,
+            combined_svg=combined_svg,
+            text_content=testimonial_text,
+            colors=colors
         )
+        
     except Exception as e:
         logger.error(f"Error in generate_testimonial: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))

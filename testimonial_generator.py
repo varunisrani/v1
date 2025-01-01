@@ -12,6 +12,7 @@ import svgwrite
 from IPython.display import display, HTML
 import ast  # Import ast for safe evaluation
 import pandas as pd
+import re
 
 # Set up logging
 logging.basicConfig(
@@ -198,68 +199,22 @@ class SVGShapeGenerator:
             dwg.add(dwg.line(start=(width, height), end=(width, height-size), stroke=stroke_color, stroke_width=t, stroke_opacity=opacity))
 
     @staticmethod
-    def draw_square(dwg, width, height, color, opacity=0.5):
-        """Draw a centered square card with shadow effect"""
-        try:
-            color = SVGShapeGenerator.validate_color(color)
-            logger.info(f"Drawing square with color: {color}")
-            
-            # Calculate card dimensions for perfect centering
-            card_size = min(width, height) * 0.85  # 85% of the smallest dimension
-            x = (width - card_size) / 2  # Center horizontally
-            y = (height - card_size) / 2  # Center vertically
-            
-            # Draw shadow
-            dwg.add(dwg.rect(
-                insert=(x + 4, y + 4),
-                size=(card_size, card_size),
-                fill='#000000',
-                fill_opacity=0.1,
-                rx=20,
-                ry=20
-            ))
-            
-            # Draw main card with shape color as background
-            dwg.add(dwg.rect(
-                insert=(x, y),
-                size=(card_size, card_size),
-                fill=color,  # Use shape color as fill
-                stroke='none',  # Remove border
-                fill_opacity=opacity,  # Add some transparency
-                rx=20,
-                ry=20
-            ))
-            
-            # Add a white inner card for contrast
-            inner_margin = card_size * 0.05  # 5% margin
-            inner_size = card_size * 0.9   # 90% of card size
-            dwg.add(dwg.rect(
-                insert=(x + inner_margin, y + inner_margin),
-                size=(inner_size, inner_size),
-                fill='#FFFFFF',  # White background
-                stroke='none',
-                rx=15,  # Slightly smaller border radius
-                ry=15
-            ))
-            
-            logger.info("Square drawn successfully")
-            return True
-        except Exception as e:
-            logger.error(f"Error drawing square: {str(e)}")
-            return False
-
-    @staticmethod
-    def draw_circle(dwg, width, height, color, opacity=0.5):
+    def draw_circle(dwg, width, height, color, opacity=0.5, center=None):
         """Draw a centered circle with mini circles in corners"""
         try:
             color = SVGShapeGenerator.validate_color(color)
             logger.info(f"Drawing circle with color: {color}")
             
-            # Calculate main circle dimensions
-            circle_size = min(width, height) * 0.85  # 85% of smallest dimension
-            x = width / 2   # Center x
-            y = height / 2  # Center y
+            # Calculate circle dimensions
+            circle_size = min(width, height) * 0.25  # 25% of smallest dimension
             radius = circle_size / 2
+            
+            # Use provided center or default to center of canvas
+            if center:
+                x, y = center
+            else:
+                x = width / 2
+                y = height / 2
             
             # Draw shadow for main circle
             dwg.add(dwg.circle(
@@ -275,105 +230,141 @@ class SVGShapeGenerator:
                 r=radius,
                 fill=color,
                 fill_opacity=opacity,
-                stroke='none'  # Remove border
-            ))
-            
-            # Add inner white circle for contrast
-            inner_radius = radius * 0.9  # 90% of main circle
-            dwg.add(dwg.circle(
-                center=(x, y),
-                r=inner_radius,
-                fill='#FFFFFF',  # White background
                 stroke='none'
             ))
             
-            # Add mini circles in corners
-            mini_circle_radius = radius * 0.15  # 15% of main circle radius
-            corner_margin = mini_circle_radius * 1.5  # Margin from edges
+            # Add inner white circle for contrast
+            dwg.add(dwg.circle(
+                center=(x, y),
+                r=radius * 0.7,  # 70% of main circle
+                fill='#FFFFFF',
+                stroke='none'
+            ))
             
-            # Corner positions
-            corners = [
-                (corner_margin, corner_margin),  # Top-left
-                (width - corner_margin, corner_margin),  # Top-right
-                (corner_margin, height - corner_margin),  # Bottom-left
-                (width - corner_margin, height - corner_margin)  # Bottom-right
-            ]
-            
-            # Draw mini circles in corners
-            for cx, cy in corners:
-                # Draw shadow for mini circle
-                dwg.add(dwg.circle(
-                    center=(cx + 2, cy + 2),
-                    r=mini_circle_radius,
-                    fill='#000000',
-                    fill_opacity=0.1
-                ))
-                
-                # Draw mini circle with same color as main circle
-                dwg.add(dwg.circle(
-                    center=(cx, cy),
-                    r=mini_circle_radius,
-                    fill=color,
-                    fill_opacity=opacity,
-                    stroke='none'  # Remove border
-                ))
-                
-                # Add inner white circle for mini circles
-                dwg.add(dwg.circle(
-                    center=(cx, cy),
-                    r=mini_circle_radius * 0.7,  # 70% of mini circle
-                    fill='#FFFFFF',  # White background
-                    stroke='none'
-                ))
-            
-            logger.info("Circle and mini circles drawn successfully")
+            logger.info("Circle drawn successfully")
             return True
             
         except Exception as e:
             logger.error(f"Error drawing circle: {str(e)}")
             return False
 
-    def render_text_svg(self, text, color, font_size=32, has_quotes=True):
-        """Render text centered in SVG"""
-        width, height = self.design_style['imagesize']
-        dwg = svgwrite.Drawing(size=self.design_style['imagesize'])
-        
-        # Calculate text position for center alignment
-        text_x = width / 2  # Center horizontally
-        text_y = height / 2  # Center vertically
-        
-        # Create text group for centering
-        text_group = dwg.g(
-            style=f"font-family: {self.font_path}; font-size: {font_size}px; text-anchor: middle; dominant-baseline: middle;"
-        )
-        
-        if has_quotes:
-            # Add quotes with proper positioning
-            quote_size = font_size * 1.5
-            text_group.add(dwg.text(
-                """,
-                insert=(text_x - quote_size/2, text_y - quote_size/4),
-                fill=color,
-                style=f"font-size: {quote_size}px; opacity: 0.3"
+    @staticmethod
+    def draw_square(dwg, width, height, color, opacity=0.5, center=None):
+        """Draw a centered square card with shadow effect"""
+        try:
+            color = SVGShapeGenerator.validate_color(color)
+            logger.info(f"Drawing square with color: {color}")
+            
+            # Calculate square dimensions
+            square_size = min(width, height) * 0.25  # 25% of smallest dimension
+            
+            # Use provided center or default to center of canvas
+            if center:
+                x, y = center
+            else:
+                x = width / 2
+                y = height / 2
+            
+            # Adjust x,y to be top-left corner
+            x = x - square_size/2
+            y = y - square_size/2
+            
+            # Draw shadow
+            dwg.add(dwg.rect(
+                insert=(x + 4, y + 4),
+                size=(square_size, square_size),
+                fill='#000000',
+                fill_opacity=0.1,
+                rx=10,
+                ry=10
             ))
-            text_group.add(dwg.text(
-                """,
-                insert=(text_x + quote_size/2, text_y + quote_size/4),
+            
+            # Draw main square
+            dwg.add(dwg.rect(
+                insert=(x, y),
+                size=(square_size, square_size),
                 fill=color,
-                style=f"font-size: {quote_size}px; opacity: 0.3"
+                fill_opacity=opacity,
+                stroke='none',
+                rx=10,
+                ry=10
             ))
-        
-        # Add main text
-        text_group.add(dwg.text(
-            text,
-            insert=(text_x, text_y),
-            fill=color,
-            text_anchor="middle",
-            alignment_baseline="middle"
-        ))
-        
-        dwg.add(text_group)
-        return dwg.tostring()
+            
+            # Add inner white square for contrast
+            inner_margin = square_size * 0.15
+            dwg.add(dwg.rect(
+                insert=(x + inner_margin, y + inner_margin),
+                size=(square_size * 0.7, square_size * 0.7),
+                fill='#FFFFFF',
+                stroke='none',
+                rx=5,
+                ry=5
+            ))
+            
+            logger.info("Square drawn successfully")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Error drawing square: {str(e)}")
+            return False
+
+    def render_text_svg(self, text, text_color, font_size, has_quotes):
+        try:
+            width, height = self.design_style['imagesize']
+            dwg = svgwrite.Drawing(size=(width, height))
+            
+            # Ensure text_color is properly formatted
+            if isinstance(text_color, tuple):
+                # Handle tuple color format
+                text_color = f"#{text_color[0]:02x}{text_color[1]:02x}{text_color[2]:02x}"
+            elif not isinstance(text_color, str):
+                # Convert to string if not already
+                text_color = str(text_color)
+            
+            # Ensure hex format
+            if not text_color.startswith('#'):
+                # Remove any existing '#' and format properly
+                text_color = f"#{text_color.replace('#', '')}"
+            
+            # Validate hex color format
+            if not re.match(r'^#(?:[0-9a-fA-F]{3}){1,2}$', text_color):
+                logger.warning(f"Invalid text color format: {text_color}, using default")
+                text_color = "#000000"
+            
+            logger.debug(f"Using text color: {text_color}")
+            
+            if has_quotes:
+                text = f'"{text}"'
+            
+            # Calculate text position relative to card
+            card_height = height * 0.6
+            card_y = (height - card_height) / 2
+            
+            # Draw main content inside the card
+            content_lines = self.wrap_text(text, font_size * 0.8, width * 0.7)
+            y_pos = card_y + 80
+            
+            # Center and render text
+            for line in content_lines:
+                text_element = dwg.text(
+                    line,
+                    insert=(width/2, y_pos),
+                    fill=text_color,
+                    font_size=f"{font_size * 0.8}px",  # Add 'px' unit
+                    font_family=self.design_style.get('font', 'Poppins-Medium'),
+                    text_anchor="middle",
+                    alignment_baseline="middle"
+                )
+                dwg.add(text_element)
+                y_pos += font_size * 1.2
+
+            return dwg.tostring()
+            
+        except Exception as e:
+            logger.error(f"Error rendering text SVG: {str(e)}")
+            logger.error("Text color was: %s", text_color)
+            logger.error("Stack trace:", exc_info=True)
+            return None
 
     @staticmethod
     def get_grid_position(position, width, height, shape_size):
@@ -420,10 +411,10 @@ class SVGShapeGenerator:
             
             if shape_type == 'square':
                 # Draw square
-                SVGShapeGenerator.draw_square(dwg, width, height, color, opacity, x, y, shape_size)
+                SVGShapeGenerator.draw_square(dwg, width, height, color, opacity=0.9, center=coords)
             elif shape_type == 'circle':
                 # Draw circle
-                SVGShapeGenerator.draw_circle(dwg, width, height, color, opacity, x, y, shape_size)
+                SVGShapeGenerator.draw_circle(dwg, width, height, color, opacity=0.9, center=coords)
                 
             return True
             
@@ -592,31 +583,131 @@ class TestimonialGenerator:
             logger.error(f"Error rendering combined SVG: {str(e)}")
             return None
 
+    def generate_color_theme(self):
+        """Generate a beautiful and harmonious color theme"""
+        
+        # Color palettes for different moods
+        palettes = {
+            'modern': {
+                'bg': ['#F5F7FA', '#F0F4F8', '#EDF2F7', '#E6EDF3', '#ECF0F4'],
+                'text': ['#1A202C', '#2D3748', '#4A5568', '#2C3E50', '#34495E'],
+                'accent': ['#3498DB', '#2980B9', '#0088CC', '#4299E1', '#3182CE'],
+                'shapes': ['#9B59B6', '#8E44AD', '#6B46C1', '#805AD5', '#6C2BD9']
+            },
+            'warm': {
+                'bg': ['#FDF6F0', '#FEF6E4', '#FFF5E6', '#FFF4E0', '#FFF3D6'],
+                'text': ['#433422', '#5C4B37', '#6B5744', '#4B3F2F', '#5A4B3B'],
+                'accent': ['#F39C12', '#E67E22', '#FF9F43', '#FFA726', '#FF9800'],
+                'shapes': ['#E74C3C', '#C0392B', '#D35400', '#FF5252', '#FF6B6B']
+            },
+            'nature': {
+                'bg': ['#F0F7F4', '#E8F5E9', '#F1F8E9', '#E8F6F3', '#E0F7FA'],
+                'text': ['#1B4332', '#2D3B2D', '#324A3B', '#1B5E20', '#2E7D32'],
+                'accent': ['#27AE60', '#2ECC71', '#16A085', '#4CAF50', '#00BFA5'],
+                'shapes': ['#20B2AA', '#3CB371', '#00C853', '#00BCD4', '#26A69A']
+            },
+            'creative': {
+                'bg': ['#F8F0F9', '#F3E5F5', '#F5E6FF', '#FCE4EC', '#FFE0F0'],
+                'text': ['#4A154B', '#5B2C6F', '#6A1B9A', '#4A148C', '#6A1B9A'],
+                'accent': ['#9C27B0', '#E91E63', '#FF4081', '#EC407A', '#D81B60'],
+                'shapes': ['#673AB7', '#8E24AA', '#AA00FF', '#7B1FA2', '#6200EA']
+            }
+        }
+
+        # Randomly select a palette type
+        palette_type = random.choice(list(palettes.keys()))
+        palette = palettes[palette_type]
+
+        # Generate unique colors
+        colors = {
+            'bgco': random.choice(palette['bg']),
+            'textco': random.choice(palette['text']),
+            'accent1': random.choice(palette['accent']),
+            'accent2': None,
+            'shape1': None,
+            'shape2': None
+        }
+
+        # Ensure accent2 is different from accent1
+        while True:
+            colors['accent2'] = random.choice(palette['accent'])
+            if colors['accent2'] != colors['accent1']:
+                break
+
+        # Ensure shape colors are different from accents
+        used_colors = {colors['accent1'], colors['accent2']}
+        while True:
+            colors['shape1'] = random.choice(palette['shapes'])
+            if colors['shape1'] not in used_colors:
+                used_colors.add(colors['shape1'])
+                break
+
+        while True:
+            colors['shape2'] = random.choice(palette['shapes'])
+            if colors['shape2'] not in used_colors:
+                break
+
+        return colors, palette_type
+
     def generate_testimonial(self, topic):
-        """Generate testimonial with random theme"""
+        """Generate testimonial with beautiful color theme"""
         try:
-            # Get random colors from CSV
-            colors = self.get_random_color_theme()
+            # Read CSV just for structure
+            df = pd.read_csv('ss11.csv')
+            random_row = df.sample(n=1).iloc[0]
             
-            # Update design style with new colors
-            self.design_style.update({
-                'bgco': colors['bg'],
-                'textco': colors['text'],
-                'accent': colors['accent']
-            })
+            # Generate beautiful color theme
+            colors, palette_type = self.generate_color_theme()
             
-            # Generate testimonial text
+            # Create prompt for AI
+            prompt = f"""Create a positive testimonial (2-3 sentences) about {topic}.
+            The testimonial should match this {palette_type} color theme mood:
+            - Background: {colors['bgco']} (light and airy)
+            - Text: {colors['textco']} (clear and readable)
+            - Accent: {colors['accent1']} (vibrant primary)
+            - Secondary: {colors['accent2']} (complementary)
+
+            Make the testimonial reflect the color mood:
+            - Modern: Professional and sleek
+            - Warm: Friendly and inviting
+            - Nature: Fresh and organic
+            - Creative: Dynamic and innovative
+
+            Return just the testimonial text."""
+
+            # Generate response using Groq
             response = self.client.chat.completions.create(
                 messages=[{
                     "role": "system",
-                    "content": f"Generate a positive testimonial (2-3 sentences) about {topic}."
+                    "content": prompt
                 }],
                 model="mixtral-8x7b-32768",
-                temperature=0.7,
-                max_tokens=150
+                temperature=0.9,
+                max_tokens=200
             )
             
-            return response.choices[0].message.content.strip()
+            testimonial = response.choices[0].message.content.strip()
+            
+            # Update design style with generated colors
+            self.design_style.update({
+                'font': random_row['font'],
+                'bgco': colors['bgco'],
+                'textco': colors['textco'],
+                'accent': colors['accent1'],
+                'accent2': colors['accent2'],
+                'shape_color': colors['shape1'],
+                'shape_color2': colors['shape2'],
+                'imagesize': (1080, 1080),
+                'fontsize': int(random_row['fontsize']),
+                'shape1': random_row['shape1'],
+                'shape2': random_row['shape2'],
+                'grid_pos1': random_row['grid_pos1'],
+                'grid_pos2': random_row['grid_pos2']
+            })
+            
+            logger.info(f"Generated {palette_type} theme: {colors}")
+            return testimonial
+
         except Exception as e:
             logger.error(f"Error generating testimonial: {str(e)}")
             return f"This {topic} exceeded all my expectations! The quality is outstanding, and the customer service team went above and beyond to ensure my satisfaction."
@@ -626,32 +717,57 @@ class TestimonialGenerator:
             width, height = self.design_style['imagesize']
             dwg = svgwrite.Drawing(size=(width, height))
             
+            # Ensure text_color is properly formatted
+            if isinstance(text_color, tuple):
+                # Handle tuple color format
+                text_color = f"#{text_color[0]:02x}{text_color[1]:02x}{text_color[2]:02x}"
+            elif not isinstance(text_color, str):
+                # Convert to string if not already
+                text_color = str(text_color)
+            
+            # Ensure hex format
+            if not text_color.startswith('#'):
+                # Remove any existing '#' and format properly
+                text_color = f"#{text_color.replace('#', '')}"
+            
+            # Validate hex color format
+            if not re.match(r'^#(?:[0-9a-fA-F]{3}){1,2}$', text_color):
+                logger.warning(f"Invalid text color format: {text_color}, using default")
+                text_color = "#000000"
+            
+            logger.debug(f"Using text color: {text_color}")
+            
             if has_quotes:
                 text = f'"{text}"'
             
             # Calculate text position relative to card
-            card_height = height * 0.6  # Match card height from draw_square
+            card_height = height * 0.6
             card_y = (height - card_height) / 2
             
             # Draw main content inside the card
             content_lines = self.wrap_text(text, font_size * 0.8, width * 0.7)
-            y_pos = card_y + 80  # Start inside the card
+            y_pos = card_y + 80
             
             # Center and render text
             for line in content_lines:
-                dwg.add(dwg.text(
+                text_element = dwg.text(
                     line,
                     insert=(width/2, y_pos),
                     fill=text_color,
-                    font_size=font_size * 0.8,
-                    font_family=self.design_style['font'],
-                    text_anchor="middle"
-                ))
+                    font_size=f"{font_size * 0.8}px",  # Add 'px' unit
+                    font_family=self.design_style.get('font', 'Poppins-Medium'),
+                    text_anchor="middle",
+                    alignment_baseline="middle"
+                )
+                dwg.add(text_element)
                 y_pos += font_size * 1.2
 
             return dwg.tostring()
+            
         except Exception as e:
             logger.error(f"Error rendering text SVG: {str(e)}")
+            logger.error("Text color was: %s", text_color)
+            logger.error("Stack trace:", exc_info=True)
             return None
 
     def render_background_svg(self, bg_color):
@@ -665,62 +781,60 @@ class TestimonialGenerator:
             return None
 
     def render_shapes_svg(self, color, selected_shapes=None):
-        """Render shapes in SVG"""
+        """Render shapes in SVG based on grid positions"""
         try:
-            logger.info("╔══════════════════════════════════════")
-            logger.info("║ SHAPE RENDERING PROCESS INITIATED")
-            logger.info("╠══════════════════════════════════════")
-            
             width, height = self.design_style['imagesize']
             dwg = svgwrite.Drawing(size=(width, height))
-            logger.info(f"║   → Canvas size: {width}x{height}")
             
-            logger.info("║ 2. Processing color settings...")
+            # Grid dimensions
+            grid_size = 3
+            cell_width = width / grid_size
+            cell_height = height / grid_size
+            
+            # Get shape positions from design style
+            shape1 = self.design_style.get('shape1')
+            shape2 = self.design_style.get('shape2')
+            pos1 = self.design_style.get('grid_pos1')
+            pos2 = self.design_style.get('grid_pos2')
             shape_color = self.design_style.get('shape_color', color)
-            logger.info(f"║   → Using color: {shape_color}")
             
-            logger.info("║ 3. Validating shape data...")
-            # Use shapes from design_style if no shapes provided
-            if not selected_shapes:
-                shapes_list = [s for s in [self.design_style.get('shape1'), self.design_style.get('shape2')] if s]
-                logger.info(f"║   → Using shapes from design style: {shapes_list}")
-            elif isinstance(selected_shapes, str):
-                shapes_list = [s.strip().lower() for s in selected_shapes.split(',') if s.strip()]
-                logger.info(f"║   → Converted string to list: {shapes_list}")
-            elif isinstance(selected_shapes, list):
-                shapes_list = [s.strip().lower() for s in selected_shapes if s.strip()]
-                logger.info(f"║   → Using provided shape list: {shapes_list}")
-            else:
-                logger.error(f"║   → Invalid shape type: {type(selected_shapes)}")
-                return None
+            def get_grid_coordinates(position):
+                if position == 'center':
+                    return (width/2, height/2)
+                elif position == 'corners':
+                    return None  # Special case for corners
+                else:
+                    try:
+                        pos = int(position)
+                        row = (pos - 1) // grid_size
+                        col = (pos - 1) % grid_size
+                        x = col * cell_width + cell_width/2
+                        y = row * cell_height + cell_height/2
+                        return (x, y)
+                    except:
+                        return (width/2, height/2)
             
-            logger.info(f"║   → Final shape list: {shapes_list}")
+            # Draw shapes at their positions
+            if shape1 and pos1:
+                coords = get_grid_coordinates(pos1)
+                if coords:
+                    if shape1.lower() == 'square':
+                        SVGShapeGenerator.draw_square(dwg, width, height, shape_color, opacity=0.9, center=coords)
+                    elif shape1.lower() == 'circle':
+                        SVGShapeGenerator.draw_circle(dwg, width, height, shape_color, opacity=0.9, center=coords)
             
-            # Draw shapes
-            logger.info("║ 4. Drawing shapes...")
-            if 'square' in shapes_list:
-                logger.info("║   → Drawing square in center")
-                if SVGShapeGenerator.draw_square(dwg, width, height, shape_color, opacity=0.9):
-                    logger.info("║   → Square drawn successfully")
-            
-            if 'circle' in shapes_list:
-                logger.info("║   → Drawing circle in corners")
-                if SVGShapeGenerator.draw_circle(dwg, width, height, shape_color, opacity=0.9):
-                    logger.info("║   → Circle drawn successfully")
-            
-            logger.info("╠══════════════════════════════════════")
-            logger.info("║ SHAPE RENDERING PROCESS COMPLETED")
-            logger.info("╚══════════════════════════════════════")
+            if shape2 and pos2:
+                coords = get_grid_coordinates(pos2)
+                if coords:
+                    if shape2.lower() == 'square':
+                        SVGShapeGenerator.draw_square(dwg, width, height, shape_color, opacity=0.9, center=coords)
+                    elif shape2.lower() == 'circle':
+                        SVGShapeGenerator.draw_circle(dwg, width, height, shape_color, opacity=0.9, center=coords)
             
             return dwg.tostring()
             
         except Exception as e:
-            logger.error("╔══════════════════════════════════════")
-            logger.error("║ SHAPE RENDERING PROCESS FAILED")
-            logger.error("╠══════════════════════════════════════")
-            logger.error(f"║ Error: {str(e)}")
-            logger.error("║ Stack trace:", exc_info=True)
-            logger.error("╚══════════════════════════════════════")
+            logger.error(f"Error rendering shapes SVG: {str(e)}")
             return None
 
     def get_random_color_theme(self):
@@ -872,104 +986,6 @@ class TestimonialGenerator:
                 'shapes': [],
                 'shape_color': '#000000',
                 'bgco': '#FFFFFF'
-            }
-
-    def generate_testimonial_with_style(self, topic, style_data):
-        """Generate testimonial with specific style from CSV data"""
-        try:
-            logger.info("╔══════════════════════════════════════")
-            logger.info("║ GENERATING STYLED TESTIMONIAL")
-            logger.info("╠══════════════════════════════════════")
-            
-            # Prepare style description for Groq
-            style_prompt = f"""Style: {style_data['style_description']}
-            Colors: Background ({style_data['bgco']}), Text ({style_data['textco']}), Accent ({style_data['accent']})
-            Shapes: {style_data['shape1']} and {style_data['shape2']}
-            Grid Positions: Position 1 at {style_data['grid_pos1']}, Position 2 at {style_data['grid_pos2']}"""
-            
-            # Create Groq prompt
-            prompt = f"""Generate a unique and compelling testimonial about {topic}.
-            Consider this design style:
-            {style_prompt}
-            
-            Make the testimonial match the mood and tone of the design.
-            Keep it concise (2-3 sentences) but impactful.
-            Focus on authenticity and emotional resonance.
-            
-            The testimonial should feel:
-            1. Genuine and personal
-            2. Aligned with the visual style
-            3. Professional yet relatable
-            
-            Previous testimonial styles to avoid: [List of recent testimonials]"""
-            
-            # Call Groq API
-            chat_completion = client.chat.completions.create(
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "You are an expert testimonial writer who creates authentic, compelling testimonials that match specific design styles."
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                model="mixtral-8x7b-32768",
-                temperature=0.7,
-                max_tokens=150,
-                top_p=1,
-                stream=False
-            )
-            
-            testimonial = chat_completion.choices[0].message.content.strip()
-            logger.info(f"║ Generated testimonial: {testimonial}")
-            
-            return testimonial
-            
-        except Exception as e:
-            logger.error(f"Error generating styled testimonial: {str(e)}")
-            return None
-
-    def get_random_style_from_csv(self):
-        """Get random style configuration from CSV"""
-        try:
-            with open('ss11.csv', mode='r') as file:
-                reader = csv.DictReader(file)
-                styles = list(reader)
-                selected_style = random.choice(styles)
-                
-                # Process the style data
-                return {
-                    'font': selected_style['font'],
-                    'bgco': f"#{selected_style['bgco']}",
-                    'textco': f"#{selected_style['textco']}",
-                    'accent': selected_style['accent'],
-                    'shape1': selected_style['shape1'],
-                    'shape2': selected_style['shape2'],
-                    'shape_color': selected_style['shape_color'],
-                    'grid_pos1': selected_style['grid_pos1'],
-                    'grid_pos2': selected_style['grid_pos2'],
-                    'style_description': selected_style['style_description'],
-                    'fontsize': int(selected_style['fontsize']),
-                    'imagesize': (int(selected_style['imagesize']), int(selected_style['imagesize']))  # Square image
-                }
-        except Exception as e:
-            logger.error(f"Error getting style from CSV: {str(e)}")
-            # Provide default values if there's an error
-            return {
-                'font': 'Poppins-Medium',
-                'bgco': '#FFFFFF',
-                'textco': '#000000',
-                'accent': '#2196F3',
-                'shape1': 'square',
-                'shape2': 'circle',
-                'shape_color': '#2196F3',
-                'grid_pos1': 'center',
-                'grid_pos2': 'corners',
-                'style_description': 'Default professional style',
-                'fontsize': 48,
-                'imagesize': (1080, 1080)
             }
 
 # Add this to store the current design state

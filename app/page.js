@@ -143,6 +143,10 @@ export default function Home() {
   const [draggedShape, setDraggedShape] = useState(null);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [showGrid, setShowGrid] = useState(false);
+  const [gridPositions, setGridPositions] = useState({
+    shape1: null,
+    shape2: null
+  });
 
   // Fetch initial data
   useEffect(() => {
@@ -214,48 +218,48 @@ export default function Home() {
     try {
         setLoading(true);
         setError(null);
-        
-        console.log("=== GENERATING TESTIMONIAL ===");
-        console.log("Topic:", topic);
-        
-        const response = await axios.post(`${API_BASE_URL}/generate-testimonial`, {
-            topic,
+
+        // Prepare request data based on color mode
+        let requestData = {
+            topic: topic || "general product",
+            selected_shapes: selectedShapes,
             font_size: fontSize,
             has_quotes: hasQuotes,
-            colors: {
-                random: true  // Always use random style from CSV
-            }
-        });
-        
-        if (response.data) {
-            // Update all states with the received style
-            setTestimonialText(response.data.text_content);
-            setCustomColors({
-                bg: response.data.colors.bg,
-                text: response.data.colors.text,
-                accent: response.data.colors.accent,
-                shape_color: response.data.colors.shape_color
-            });
-            setSelectedShapes([
-                {
-                    type: response.data.colors.shape1,
-                    position: response.data.colors.grid_pos1
+            colors: colorMode === 'random' 
+                ? { random: true }
+                : colorMode === 'preset'
+                ? COLOR_SCHEMES[presetScheme]
+                : customColors
+        };
+
+        const response = await axios.post(
+            `${API_BASE_URL}/generate-testimonial`,
+            requestData,
+            {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                 },
-                {
-                    type: response.data.colors.shape2,
-                    position: response.data.colors.grid_pos2
-                }
-            ]);
+                withCredentials: false  // Set this to false if you don't need credentials
+            }
+        );
+
+        if (response.data) {
+            setTestimonialText(response.data.text_content);
             setSvgPreviews({
-                background: response.data.background_svg,
-                shapes: response.data.shapes_svg,
-                text: response.data.text_svg,
-                combined: response.data.combined_svg
+                background: response.data.background_svg || '',
+                shapes: response.data.shapes_svg || '',
+                text: response.data.text_svg || '',
+                combined: response.data.combined_svg || ''
             });
+            
+            if (colorMode === 'random' && response.data.colors) {
+                setCustomColors(response.data.colors);
+            }
         }
     } catch (error) {
-        console.error('Error:', error);
-        setError('Failed to generate testimonial');
+        console.error('Error generating testimonial:', error);
+        setError(error.response?.data?.detail || 'Failed to generate testimonial');
     } finally {
         setLoading(false);
     }
@@ -577,88 +581,51 @@ export default function Home() {
   const renderShapePreview = (shapes, color) => {
     const gridCells = Array(9).fill(null);
     
+    // Get positions from current design
+    const pos1 = gridPositions.shape1;
+    const pos2 = gridPositions.shape2;
+    
     // Map shapes to grid
-    shapes.forEach((shape, index) => {
-        if (shape.position === 'corners' && shape.type === 'circle') {
-            gridCells[0] = 'circle';
-            gridCells[2] = 'circle';
-            gridCells[6] = 'circle';
-            gridCells[8] = 'circle';
-        } else if (shape.position === 'center') {
-            gridCells[4] = shape.type;
-        } else if (typeof shape.position === 'number') {
-            gridCells[shape.position - 1] = shape.type;
+    if (shapes[0]) {
+        if (pos1 === 'center') {
+            gridCells[4] = shapes[0];
+        } else if (pos1 === 'corners') {
+            gridCells[0] = shapes[0];
+            gridCells[2] = shapes[0];
+            gridCells[6] = shapes[0];
+            gridCells[8] = shapes[0];
+        } else if (typeof pos1 === 'number') {
+            gridCells[pos1 - 1] = shapes[0];
         }
-    });
-
+    }
+    
+    if (shapes[1]) {
+        if (pos2 === 'center') {
+            gridCells[4] = shapes[1];
+        } else if (pos2 === 'corners') {
+            gridCells[0] = shapes[1];
+            gridCells[2] = shapes[1];
+            gridCells[6] = shapes[1];
+            gridCells[8] = shapes[1];
+        } else if (typeof pos2 === 'number') {
+            gridCells[pos2 - 1] = shapes[1];
+        }
+    }
+    
     return (
-        <div className="space-y-2">
-            {/* Add Grid Toggle Button */}
-            <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-600">Grid View</span>
-                <button
-                    onClick={() => setShowGrid(!showGrid)}
-                    className={`px-3 py-1 text-sm rounded-lg transition-colors ${
-                        showGrid 
-                            ? 'bg-purple-100 text-purple-700' 
-                            : 'bg-gray-100 text-gray-600'
-                    }`}
-                >
-                    {showGrid ? 'Hide Grid' : 'Show Grid'}
-                </button>
-            </div>
-            
-            {/* Grid Preview */}
-            <div className={`grid grid-cols-3 gap-1 w-full aspect-square bg-gray-100 p-1 rounded-lg relative ${
-                showGrid ? 'before:border-gray-300 before:border before:absolute before:inset-0 before:grid before:grid-cols-3 before:pointer-events-none' : ''
-            }`}>
-                {gridCells.map((cell, index) => (
-                    <div 
-                        key={index} 
-                        className={`aspect-square bg-white rounded flex items-center justify-center relative ${
-                            showGrid ? 'border border-gray-200' : ''
+        <div className="grid grid-cols-3 gap-1 w-full aspect-square bg-gray-100 p-1 rounded-lg">
+            {gridCells.map((shape, index) => (
+                <div key={index} 
+                     className="aspect-square bg-white rounded flex items-center justify-center">
+                    {shape && (
+                        <div className={`w-2/3 h-2/3 ${
+                            shape === 'circle' ? 'rounded-full' : 'rounded-lg'
                         }`}
-                    >
-                        {/* Grid Position Number */}
-                        {showGrid && (
-                            <span className="absolute top-1 left-1 text-xs text-gray-400">
-                                {index + 1}
-                            </span>
-                        )}
-                        
-                        {/* Shape */}
-                        {cell && (
-                            <div 
-                                className={`w-2/3 h-2/3 ${
-                                    cell === 'circle' ? 'rounded-full' : 'rounded-lg'
-                                }`}
-                                style={{ 
-                                    backgroundColor: color,
-                                    boxShadow: 'inset 0 0 0 2px white'
-                                }}
-                            />
-                        )}
-                    </div>
-                ))}
-            </div>
-            
-            {/* Grid Position Legend */}
-            {showGrid && (
-                <div className="mt-2 p-2 bg-gray-50 rounded-lg">
-                    <p className="text-xs text-gray-500 mb-1">Grid Positions:</p>
-                    <div className="grid grid-cols-3 gap-1 text-xs text-gray-400">
-                        <div>1: Top-Left</div>
-                        <div>2: Top-Center</div>
-                        <div>3: Top-Right</div>
-                        <div>4: Middle-Left</div>
-                        <div>5: Center</div>
-                        <div>6: Middle-Right</div>
-                        <div>7: Bottom-Left</div>
-                        <div>8: Bottom-Center</div>
-                        <div>9: Bottom-Right</div>
-                    </div>
+                        style={{ backgroundColor: color }}
+                        />
+                    )}
                 </div>
-            )}
+            ))}
         </div>
     );
   };

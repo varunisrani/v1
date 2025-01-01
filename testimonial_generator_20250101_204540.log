@@ -1,0 +1,416 @@
+2025-01-01 20:45:40,513 - INFO - Initializing application
+2025-01-01 20:45:40,519 - DEBUG - Loading design configurations from ss11.csv
+2025-01-01 20:45:40,519 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F3F4F6', 'textco': '2C3E50', 'imagesize': '1080', 'fontsize': '48', 'accent': '#E74C3C', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#7D3C98', 'grid_pos1': 'center', 'grid_pos2': 'corners', 'style_description': 'Professional and modern'}
+2025-01-01 20:45:40,519 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F3F4F6', 'textco': '#2C3E50', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##E74C3C'}
+2025-01-01 20:45:40,519 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F6FA', 'textco': '34495E', 'imagesize': '1080', 'fontsize': '48', 'accent': '#2980B9', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#16A085', 'grid_pos1': '4', 'grid_pos2': '1', 'style_description': 'Clean and minimal'}
+2025-01-01 20:45:40,519 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F6FA', 'textco': '#34495E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##2980B9'}
+2025-01-01 20:45:40,519 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'FDF6F0', 'textco': '8E44AD', 'imagesize': '1080', 'fontsize': '48', 'accent': '#F39C12', 'shape1': 'square', 'shape2': 'square', 'shape_color': '#D35400', 'grid_pos1': '5', 'grid_pos2': '7', 'style_description': 'Bold and energetic'}
+2025-01-01 20:45:40,519 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#FDF6F0', 'textco': '#8E44AD', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##F39C12'}
+2025-01-01 20:45:40,519 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F0E5D8', 'textco': '4B3C3C', 'imagesize': '1080', 'fontsize': '48', 'accent': '#C0392B', 'shape1': 'square', 'shape2': 'circle', 'shape_color': '#7D3C98', 'grid_pos1': '2', 'grid_pos2': '8', 'style_description': 'Warm and inviting'}
+2025-01-01 20:45:40,520 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F0E5D8', 'textco': '#4B3C3C', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##C0392B'}
+2025-01-01 20:45:40,520 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'E8D8D0', 'textco': '3C2B2B', 'imagesize': '1080', 'fontsize': '48', 'accent': '#8E44AD', 'shape1': 'circle', 'shape2': 'circle', 'shape_color': '#2980B9', 'grid_pos1': '1', 'grid_pos2': '9', 'style_description': 'Elegant and sophisticated'}
+2025-01-01 20:45:40,520 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#E8D8D0', 'textco': '#3C2B2B', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##8E44AD'}
+2025-01-01 20:45:40,520 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F0E1', 'textco': '5E4D3E', 'imagesize': '1080', 'fontsize': '48', 'accent': '#27AE60', 'shape1': 'circle', 'shape2': 'square', 'shape_color': '#16A085', 'grid_pos1': '6', 'grid_pos2': '3', 'style_description': 'Natural and organic'}
+2025-01-01 20:45:40,520 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F0E1', 'textco': '#5E4D3E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '##27AE60'}
+2025-01-01 20:45:40,520 - DEBUG - Total configurations loaded: 6
+2025-01-01 20:45:40,522 - DEBUG - Using selector: KqueueSelector
+2025-01-01 20:45:40,566 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-01-01 20:45:40,582 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-01 20:45:40,617 - INFO - Initializing TestimonialGenerator
+2025-01-01 20:45:40,617 - INFO - Font downloaded successfully
+2025-01-01 20:45:40,617 - INFO - Validating CSV structure
+2025-01-01 20:45:40,617 - INFO - CSV columns found: ['Poppins-Medium', 'F3F4F6', '2C3E50', '1080', '48', '#E74C3C', 'square', 'circle', '#7D3C98', 'center', 'corners', 'Professional and modern']
+2025-01-01 20:45:40,617 - ERROR - Missing required columns: {'bgco', 'accent', 'textco'}
+2025-01-01 20:45:40,617 - WARNING - CSV validation failed, using default color schemes
+2025-01-01 20:45:40,617 - INFO - TestimonialGenerator initialized successfully
+2025-01-01 20:45:40,622 - DEBUG - Using selector: KqueueSelector
+2025-01-01 20:45:40,847 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x110230990>
+2025-01-01 20:45:40,847 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x110298560> server_hostname='api.gradio.app' timeout=3
+2025-01-01 20:45:41,330 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-01-01 20:45:41,389 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11005f490>
+2025-01-01 20:45:41,389 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-01-01 20:45:41,389 - DEBUG - send_request_headers.complete
+2025-01-01 20:45:41,389 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-01-01 20:45:41,389 - DEBUG - send_request_body.complete
+2025-01-01 20:45:41,389 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-01-01 20:45:41,658 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 15:15:41 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-01-01 20:45:41,659 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-01-01 20:45:41,659 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-01-01 20:45:41,659 - DEBUG - receive_response_body.complete
+2025-01-01 20:45:41,659 - DEBUG - response_closed.started
+2025-01-01 20:45:41,659 - DEBUG - response_closed.complete
+2025-01-01 20:45:41,659 - DEBUG - close.started
+2025-01-01 20:45:41,659 - DEBUG - close.complete
+2025-01-01 20:45:42,116 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-01-01 20:45:42,117 - DEBUG - send_request_headers.complete
+2025-01-01 20:45:42,117 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-01-01 20:45:42,117 - DEBUG - send_request_body.complete
+2025-01-01 20:45:42,117 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-01-01 20:45:42,401 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 15:15:42 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'3'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-01-01 20:45:42,402 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2025-01-01 20:45:42,403 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-01-01 20:45:42,403 - DEBUG - receive_response_body.complete
+2025-01-01 20:45:42,403 - DEBUG - response_closed.started
+2025-01-01 20:45:42,403 - DEBUG - response_closed.complete
+2025-01-01 20:45:42,404 - DEBUG - close.started
+2025-01-01 20:45:42,404 - DEBUG - close.complete
+2025-01-01 20:45:46,104 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:46,105 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:46,105 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:46,105 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:46,105 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:46,105 - INFO - ║   → Using color: #000000
+2025-01-01 20:45:46,105 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:46,106 - INFO - ║   → Using provided shape list: ['square']
+2025-01-01 20:45:46,106 - INFO - ║   → Final shape list: ['square']
+2025-01-01 20:45:46,106 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:46,106 - INFO - ║   → Drawing square in center
+2025-01-01 20:45:46,106 - INFO - Drawing square with color: #000000
+2025-01-01 20:45:46,106 - INFO - Square drawn successfully
+2025-01-01 20:45:46,106 - INFO - ║   → Square drawn successfully
+2025-01-01 20:45:46,106 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:46,106 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:46,106 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:46,106 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:46,106 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:46,106 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:46,106 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:46,106 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:46,106 - INFO - ║   → Using color: #000000
+2025-01-01 20:45:46,106 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:46,106 - INFO - ║   → Using provided shape list: ['circle']
+2025-01-01 20:45:46,106 - INFO - ║   → Final shape list: ['circle']
+2025-01-01 20:45:46,107 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:46,107 - INFO - ║   → Drawing circle in corners
+2025-01-01 20:45:46,107 - INFO - Drawing circle with color: #000000
+2025-01-01 20:45:46,107 - INFO - Circle and mini circles drawn successfully
+2025-01-01 20:45:46,107 - INFO - ║   → Circle drawn successfully
+2025-01-01 20:45:46,107 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:46,107 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:46,108 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:50,964 - DEBUG - Generating testimonial text for topic: iphone
+2025-01-01 20:45:50,964 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:50,964 - INFO - Selected row: ['Poppins-Medium', 'F3F4F6', '2C3E50', '1080', '48', '#E74C3C', 'square', 'circle', '#7D3C98', 'center', 'corners', 'Professional and modern']
+2025-01-01 20:45:50,964 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#E74C3C'
+2025-01-01 20:45:50,964 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#E74C3C'
+2025-01-01 20:45:50,970 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Generate a positive testimonial (2-3 sentences) about iphone.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'temperature': 0.7}}
+2025-01-01 20:45:50,998 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-01 20:45:50,999 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-01-01 20:45:51,007 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1105c5f50>
+2025-01-01 20:45:51,007 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x110298440> server_hostname='api.groq.com' timeout=5.0
+2025-01-01 20:45:51,017 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11033d3d0>
+2025-01-01 20:45:51,017 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:51,017 - DEBUG - send_request_headers.complete
+2025-01-01 20:45:51,017 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-01 20:45:51,017 - DEBUG - send_request_body.complete
+2025-01-01 20:45:51,018 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:51,780 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 15:15:51 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb37793fac2032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4976'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'288ms'), (b'x-request-id', b'req_01jgh6zy9ae3xrkatay64ay1qh'), (b'Set-Cookie', b'__cf_bm=OqwI2nSW_oVsrWuznxAc0xVawvfXGZqBMPVe.4BSvPY-1735744551-1.0.1.1-3P51sVKY331rwD3iGuYwZ4MInLXChwJzwo67AQxcZ_gRz.3CSeJR8.IiKiaD8btGR1SC26FZ_z85U7RJneauHw; path=/; expires=Wed, 01-Jan-25 15:45:51 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-01 20:45:51,783 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-01 20:45:51,783 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-01 20:45:51,784 - DEBUG - receive_response_body.complete
+2025-01-01 20:45:51,784 - DEBUG - response_closed.started
+2025-01-01 20:45:51,785 - DEBUG - response_closed.complete
+2025-01-01 20:45:51,785 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 15:15:51 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb37793fac2032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4976', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '288ms', 'x-request-id': 'req_01jgh6zy9ae3xrkatay64ay1qh', 'set-cookie': '__cf_bm=OqwI2nSW_oVsrWuznxAc0xVawvfXGZqBMPVe.4BSvPY-1735744551-1.0.1.1-3P51sVKY331rwD3iGuYwZ4MInLXChwJzwo67AQxcZ_gRz.3CSeJR8.IiKiaD8btGR1SC26FZ_z85U7RJneauHw; path=/; expires=Wed, 01-Jan-25 15:45:51 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-01 20:45:51,791 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:51,791 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8E44AD', '1080', '48', '#F39C12', 'square', 'square', '#D35400', '5', '7', 'Bold and energetic']
+2025-01-01 20:45:51,792 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#F39C12'
+2025-01-01 20:45:51,792 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#F39C12'
+2025-01-01 20:45:51,792 - INFO - Using random colors: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:51,792 - DEBUG - Colors determined: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:51,792 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 32, 'bgco': '#FFF5EE', 'textco': '#8B4513', 'accent': '#DEB887', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#DEB887', 'shape1': None, 'shape2': None}
+2025-01-01 20:45:51,792 - DEBUG - Generating SVG components...
+2025-01-01 20:45:51,793 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:51,793 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:51,793 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:51,793 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:51,793 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:51,794 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:51,794 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:51,794 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:51,794 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:51,794 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:51,794 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:51,794 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:51,794 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:51,796 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:51,796 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:51,796 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:51,796 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:51,796 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:51,796 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:51,796 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:51,796 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:51,796 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:51,796 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:51,796 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:51,796 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:51,796 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:51,798 - DEBUG - SVG components generated successfully.
+2025-01-01 20:45:54,201 - DEBUG - Generating testimonial text for topic: iphone
+2025-01-01 20:45:54,201 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:54,202 - INFO - Selected row: ['Poppins-Medium', 'F5F6FA', '34495E', '1080', '48', '#2980B9', 'square', 'circle', '#16A085', '4', '1', 'Clean and minimal']
+2025-01-01 20:45:54,202 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#2980B9'
+2025-01-01 20:45:54,202 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#2980B9'
+2025-01-01 20:45:54,203 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Generate a positive testimonial (2-3 sentences) about iphone.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'temperature': 0.7}}
+2025-01-01 20:45:54,204 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-01 20:45:54,204 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:54,204 - DEBUG - send_request_headers.complete
+2025-01-01 20:45:54,204 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-01 20:45:54,204 - DEBUG - send_request_body.complete
+2025-01-01 20:45:54,204 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:54,804 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 15:15:54 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb377a7eecc032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14398'), (b'x-ratelimit-remaining-tokens', b'4976'), (b'x-ratelimit-reset-requests', b'8.645s'), (b'x-ratelimit-reset-tokens', b'288ms'), (b'x-request-id', b'req_01jgh701j7fkeag1cxxfp7b0ze'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-01 20:45:54,805 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-01 20:45:54,805 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-01 20:45:54,806 - DEBUG - receive_response_body.complete
+2025-01-01 20:45:54,806 - DEBUG - response_closed.started
+2025-01-01 20:45:54,806 - DEBUG - response_closed.complete
+2025-01-01 20:45:54,806 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 15:15:54 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb377a7eecc032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14398', 'x-ratelimit-remaining-tokens': '4976', 'x-ratelimit-reset-requests': '8.645s', 'x-ratelimit-reset-tokens': '288ms', 'x-request-id': 'req_01jgh701j7fkeag1cxxfp7b0ze', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-01 20:45:54,807 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:54,807 - INFO - Selected row: ['Poppins-Medium', 'F0E5D8', '4B3C3C', '1080', '48', '#C0392B', 'square', 'circle', '#7D3C98', '2', '8', 'Warm and inviting']
+2025-01-01 20:45:54,808 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#C0392B'
+2025-01-01 20:45:54,808 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#C0392B'
+2025-01-01 20:45:54,808 - INFO - Using random colors: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:54,808 - DEBUG - Colors determined: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:54,808 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 32, 'bgco': '#FFF5EE', 'textco': '#8B4513', 'accent': '#DEB887', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#DEB887', 'shape1': None, 'shape2': None}
+2025-01-01 20:45:54,808 - DEBUG - Generating SVG components...
+2025-01-01 20:45:54,809 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:54,809 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:54,809 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:54,809 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:54,809 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:54,809 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:54,809 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:54,809 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:54,809 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:54,809 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:54,809 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:54,809 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:54,810 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:54,811 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:54,812 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:54,812 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:54,812 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:54,812 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:54,812 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:54,812 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:54,812 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:54,812 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:54,812 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:54,812 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:54,812 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:54,812 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:54,814 - DEBUG - SVG components generated successfully.
+2025-01-01 20:45:55,849 - DEBUG - Generating testimonial text for topic: iphone
+2025-01-01 20:45:55,850 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:55,850 - INFO - Selected row: ['Poppins-Medium', 'F0E5D8', '4B3C3C', '1080', '48', '#C0392B', 'square', 'circle', '#7D3C98', '2', '8', 'Warm and inviting']
+2025-01-01 20:45:55,850 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#C0392B'
+2025-01-01 20:45:55,850 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#C0392B'
+2025-01-01 20:45:55,853 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Generate a positive testimonial (2-3 sentences) about iphone.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'temperature': 0.7}}
+2025-01-01 20:45:55,854 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-01 20:45:55,856 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:55,857 - DEBUG - send_request_headers.complete
+2025-01-01 20:45:55,857 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-01 20:45:55,858 - DEBUG - send_request_body.complete
+2025-01-01 20:45:55,858 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:56,399 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 15:15:56 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb377b23ce4032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14397'), (b'x-ratelimit-remaining-tokens', b'4976'), (b'x-ratelimit-reset-requests', b'16.525s'), (b'x-ratelimit-reset-tokens', b'288ms'), (b'x-request-id', b'req_01jgh7030dfke89taqryhdnzr2'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-01 20:45:56,400 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-01 20:45:56,401 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-01 20:45:56,402 - DEBUG - receive_response_body.complete
+2025-01-01 20:45:56,402 - DEBUG - response_closed.started
+2025-01-01 20:45:56,402 - DEBUG - response_closed.complete
+2025-01-01 20:45:56,402 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 15:15:56 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb377b23ce4032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14397', 'x-ratelimit-remaining-tokens': '4976', 'x-ratelimit-reset-requests': '16.525s', 'x-ratelimit-reset-tokens': '288ms', 'x-request-id': 'req_01jgh7030dfke89taqryhdnzr2', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-01 20:45:56,403 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:56,403 - INFO - Selected row: ['Poppins-Medium', 'F5F0E1', '5E4D3E', '1080', '48', '#27AE60', 'circle', 'square', '#16A085', '6', '3', 'Natural and organic']
+2025-01-01 20:45:56,404 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#27AE60'
+2025-01-01 20:45:56,404 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#27AE60'
+2025-01-01 20:45:56,404 - INFO - Using random colors: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:56,404 - DEBUG - Colors determined: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:56,404 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 32, 'bgco': '#FFF5EE', 'textco': '#8B4513', 'accent': '#DEB887', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#DEB887', 'shape1': None, 'shape2': None}
+2025-01-01 20:45:56,404 - DEBUG - Generating SVG components...
+2025-01-01 20:45:56,405 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:56,405 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:56,406 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:56,406 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:56,406 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:56,406 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:56,406 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:56,406 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:56,406 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:56,406 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:56,406 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:56,406 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:56,406 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:56,408 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:56,408 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:56,408 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:56,409 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:56,409 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:56,409 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:56,409 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:56,409 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:56,409 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:56,409 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:56,409 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:56,409 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:56,409 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:56,411 - DEBUG - SVG components generated successfully.
+2025-01-01 20:45:57,095 - DEBUG - Generating testimonial text for topic: iphone
+2025-01-01 20:45:57,095 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:57,096 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8E44AD', '1080', '48', '#F39C12', 'square', 'square', '#D35400', '5', '7', 'Bold and energetic']
+2025-01-01 20:45:57,096 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#F39C12'
+2025-01-01 20:45:57,096 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#F39C12'
+2025-01-01 20:45:57,098 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Generate a positive testimonial (2-3 sentences) about iphone.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'temperature': 0.7}}
+2025-01-01 20:45:57,100 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-01 20:45:57,101 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:57,102 - DEBUG - send_request_headers.complete
+2025-01-01 20:45:57,102 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-01 20:45:57,102 - DEBUG - send_request_body.complete
+2025-01-01 20:45:57,102 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:57,574 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 15:15:57 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb377b9f97b032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14396'), (b'x-ratelimit-remaining-tokens', b'4976'), (b'x-ratelimit-reset-requests', b'22.755999999s'), (b'x-ratelimit-reset-tokens', b'288ms'), (b'x-request-id', b'req_01jgh70477ejy85nnane2bx1fc'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-01 20:45:57,575 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-01 20:45:57,575 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-01 20:45:57,576 - DEBUG - receive_response_body.complete
+2025-01-01 20:45:57,576 - DEBUG - response_closed.started
+2025-01-01 20:45:57,577 - DEBUG - response_closed.complete
+2025-01-01 20:45:57,577 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 15:15:57 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb377b9f97b032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14396', 'x-ratelimit-remaining-tokens': '4976', 'x-ratelimit-reset-requests': '22.755999999s', 'x-ratelimit-reset-tokens': '288ms', 'x-request-id': 'req_01jgh70477ejy85nnane2bx1fc', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-01 20:45:57,578 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:57,578 - INFO - Selected row: ['Poppins-Medium', 'FDF6F0', '8E44AD', '1080', '48', '#F39C12', 'square', 'square', '#D35400', '5', '7', 'Bold and energetic']
+2025-01-01 20:45:57,578 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#F39C12'
+2025-01-01 20:45:57,578 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#F39C12'
+2025-01-01 20:45:57,579 - INFO - Using random colors: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:57,579 - DEBUG - Colors determined: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:57,579 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 32, 'bgco': '#FFF5EE', 'textco': '#8B4513', 'accent': '#DEB887', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#DEB887', 'shape1': None, 'shape2': None}
+2025-01-01 20:45:57,579 - DEBUG - Generating SVG components...
+2025-01-01 20:45:57,579 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:57,579 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:57,580 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:57,580 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:57,580 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:57,580 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:57,580 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:57,580 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:57,580 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:57,580 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:57,580 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:57,580 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:57,580 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:57,582 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:57,582 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:57,582 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:57,583 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:57,583 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:57,583 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:57,583 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:57,583 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:57,583 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:57,583 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:57,583 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:57,583 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:57,583 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:57,585 - DEBUG - SVG components generated successfully.
+2025-01-01 20:45:58,031 - DEBUG - Generating testimonial text for topic: iphone
+2025-01-01 20:45:58,032 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:58,032 - INFO - Selected row: ['Poppins-Medium', 'F5F0E1', '5E4D3E', '1080', '48', '#27AE60', 'circle', 'square', '#16A085', '6', '3', 'Natural and organic']
+2025-01-01 20:45:58,032 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#27AE60'
+2025-01-01 20:45:58,032 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#27AE60'
+2025-01-01 20:45:58,034 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Generate a positive testimonial (2-3 sentences) about iphone.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 150, 'temperature': 0.7}}
+2025-01-01 20:45:58,035 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-01 20:45:58,036 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:58,036 - DEBUG - send_request_headers.complete
+2025-01-01 20:45:58,036 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-01 20:45:58,036 - DEBUG - send_request_body.complete
+2025-01-01 20:45:58,037 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-01 20:45:58,550 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 15:15:58 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb377bfdda7032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14395'), (b'x-ratelimit-remaining-tokens', b'4949'), (b'x-ratelimit-reset-requests', b'28.995s'), (b'x-ratelimit-reset-tokens', b'606ms'), (b'x-request-id', b'req_01jgh7056revkry484qxnfmymy'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-01 20:45:58,551 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-01 20:45:58,551 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-01 20:45:58,552 - DEBUG - receive_response_body.complete
+2025-01-01 20:45:58,552 - DEBUG - response_closed.started
+2025-01-01 20:45:58,552 - DEBUG - response_closed.complete
+2025-01-01 20:45:58,552 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 15:15:58 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb377bfdda7032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14395', 'x-ratelimit-remaining-tokens': '4949', 'x-ratelimit-reset-requests': '28.995s', 'x-ratelimit-reset-tokens': '606ms', 'x-request-id': 'req_01jgh7056revkry484qxnfmymy', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-01 20:45:58,553 - INFO - Fetching random color theme from CSV
+2025-01-01 20:45:58,554 - INFO - Selected row: ['Poppins-Medium', 'F5F6FA', '34495E', '1080', '48', '#2980B9', 'square', 'circle', '#16A085', '4', '1', 'Clean and minimal']
+2025-01-01 20:45:58,554 - ERROR - Error getting random color theme: invalid literal for int() with base 10: '#2980B9'
+2025-01-01 20:45:58,554 - ERROR - Full error details: 
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 750, in get_random_color_theme
+    "fontsize": int(selected_row[5]),          # 48
+                ^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '#2980B9'
+2025-01-01 20:45:58,555 - INFO - Using random colors: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:58,555 - DEBUG - Colors determined: {'bg': '#FFF5EE', 'text': '#8B4513', 'accent': '#DEB887', 'shape1': None, 'shape2': None, 'shape_color': '#DEB887'}
+2025-01-01 20:45:58,555 - DEBUG - Generator design style updated: {'font': 'Poppins-Medium', 'imagesize': (1080, 1080), 'fontsize': 32, 'bgco': '#FFF5EE', 'textco': '#8B4513', 'accent': '#DEB887', 'text_align': 'center', 'vertical_align': 'middle', 'shape_color': '#DEB887', 'shape1': None, 'shape2': None}
+2025-01-01 20:45:58,555 - DEBUG - Generating SVG components...
+2025-01-01 20:45:58,556 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:58,556 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:58,556 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:58,556 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:58,556 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:58,557 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:58,557 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:58,557 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:58,557 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:58,557 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:58,557 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:58,557 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:58,557 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:58,559 - INFO - ╔══════════════════════════════════════
+2025-01-01 20:45:58,559 - INFO - ║ SHAPE RENDERING PROCESS INITIATED
+2025-01-01 20:45:58,559 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:58,560 - INFO - ║   → Canvas size: 1080x1080
+2025-01-01 20:45:58,560 - INFO - ║ 2. Processing color settings...
+2025-01-01 20:45:58,560 - INFO - ║   → Using color: #DEB887
+2025-01-01 20:45:58,560 - INFO - ║ 3. Validating shape data...
+2025-01-01 20:45:58,560 - INFO - ║   → Using shapes from design style: []
+2025-01-01 20:45:58,560 - INFO - ║   → Final shape list: []
+2025-01-01 20:45:58,560 - INFO - ║ 4. Drawing shapes...
+2025-01-01 20:45:58,560 - INFO - ╠══════════════════════════════════════
+2025-01-01 20:45:58,560 - INFO - ║ SHAPE RENDERING PROCESS COMPLETED
+2025-01-01 20:45:58,560 - INFO - ╚══════════════════════════════════════
+2025-01-01 20:45:58,561 - DEBUG - SVG components generated successfully.
+2025-01-01 20:49:16,253 - DEBUG - close.started
+2025-01-01 20:49:16,254 - DEBUG - close.complete
