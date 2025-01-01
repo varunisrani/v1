@@ -1,0 +1,849 @@
+2025-01-02 00:47:48,687 - INFO - Initializing application
+2025-01-02 00:47:48,692 - DEBUG - Loading design configurations from ss11.csv
+2025-01-02 00:47:48,693 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F3F4F6', 'textco': '2C3E50', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#E74C3C', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#7D3C98', 'grid_pos2': '2', None: ['6']}
+2025-01-02 00:47:48,693 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F3F4F6', 'textco': '#2C3E50', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 00:47:48,693 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F6FA', 'textco': '34495E', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#2980B9', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#16A085', 'grid_pos2': '2', None: ['6']}
+2025-01-02 00:47:48,693 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F6FA', 'textco': '#34495E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 00:47:48,693 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'FDF6F0', 'textco': '8E44AD', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#F39C12', 'shape2': 'square', 'shape_color': 'square', 'grid_pos1': '#D35400', 'grid_pos2': '2', None: ['6']}
+2025-01-02 00:47:48,693 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#FDF6F0', 'textco': '#8E44AD', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 00:47:48,693 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F0E5D8', 'textco': '4B3C3C', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#C0392B', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#7D3C98', 'grid_pos2': '2', None: ['6']}
+2025-01-02 00:47:48,693 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F0E5D8', 'textco': '#4B3C3C', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 00:47:48,693 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'E8D8D0', 'textco': '3C2B2B', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#8E44AD', 'shape2': 'circle', 'shape_color': 'circle', 'grid_pos1': '#2980B9', 'grid_pos2': '2', None: ['6']}
+2025-01-02 00:47:48,693 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#E8D8D0', 'textco': '#3C2B2B', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 00:47:48,693 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F0E1', 'textco': '5E4D3E', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#27AE60', 'shape2': 'circle', 'shape_color': 'square', 'grid_pos1': '#16A085', 'grid_pos2': '2', None: ['6']}
+2025-01-02 00:47:48,693 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F0E1', 'textco': '#5E4D3E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 00:47:48,693 - DEBUG - Total configurations loaded: 6
+2025-01-02 00:47:48,695 - DEBUG - Using selector: KqueueSelector
+2025-01-02 00:47:48,702 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-01-02 00:47:48,761 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-02 00:47:48,802 - INFO - Initializing TestimonialGenerator
+2025-01-02 00:47:48,802 - INFO - Font downloaded successfully
+2025-01-02 00:47:48,802 - INFO - Validating CSV structure
+2025-01-02 00:47:48,802 - INFO - CSV columns found: ['Poppins-Medium', 'F3F4F6', '2C3E50', '(1080', '1080)', '48', '#E74C3C', 'square', 'circle', '#7D3C98', '2', '6']
+2025-01-02 00:47:48,802 - ERROR - Missing required columns: {'accent', 'textco', 'bgco'}
+2025-01-02 00:47:48,802 - WARNING - CSV validation failed, using default color schemes
+2025-01-02 00:47:48,802 - INFO - TestimonialGenerator initialized successfully
+2025-01-02 00:47:48,807 - DEBUG - Using selector: KqueueSelector
+2025-01-02 00:47:48,896 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2025-01-02 00:47:48,896 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-01-02 00:47:48,896 - DEBUG - receive_response_body.complete
+2025-01-02 00:47:48,896 - DEBUG - response_closed.started
+2025-01-02 00:47:48,896 - DEBUG - response_closed.complete
+2025-01-02 00:47:48,896 - DEBUG - close.started
+2025-01-02 00:47:48,896 - DEBUG - close.complete
+2025-01-02 00:47:49,052 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e62f610>
+2025-01-02 00:47:49,053 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e6c0170> server_hostname='api.gradio.app' timeout=3
+2025-01-02 00:47:49,480 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-01-02 00:47:49,635 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1068d1890>
+2025-01-02 00:47:49,636 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-01-02 00:47:49,636 - DEBUG - send_request_headers.complete
+2025-01-02 00:47:49,636 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-01-02 00:47:49,636 - DEBUG - send_request_body.complete
+2025-01-02 00:47:49,636 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-01-02 00:47:49,990 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:17:49 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-01-02 00:47:49,991 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-01-02 00:47:49,992 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-01-02 00:47:49,992 - DEBUG - receive_response_body.complete
+2025-01-02 00:47:49,992 - DEBUG - response_closed.started
+2025-01-02 00:47:49,993 - DEBUG - response_closed.complete
+2025-01-02 00:47:49,993 - DEBUG - close.started
+2025-01-02 00:47:49,993 - DEBUG - close.complete
+2025-01-02 00:48:10,178 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #E0F7FA (light and airy)\n            - Text: #324A3B (clear and readable)\n            - Accent: #16A085 (vibrant primary)\n            - Secondary: #27AE60 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:10,199 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:10,199 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-01-02 00:48:10,245 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e7567d0>
+2025-01-02 00:48:10,245 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e593f50> server_hostname='api.groq.com' timeout=5.0
+2025-01-02 00:48:10,258 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e9b32d0>
+2025-01-02 00:48:10,258 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:10,258 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:10,258 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:10,258 - DEBUG - send_request_body.complete
+2025-01-02 00:48:10,258 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:11,602 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:11 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4da8a3f9e032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4657'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'4.116s'), (b'x-request-id', b'req_01jghmvngtf3f9z87jvxnk482n'), (b'Set-Cookie', b'__cf_bm=omvrKTpX1ilDCG79_UStML0e5fWEjzJv7Jn.lJeaQUg-1735759091-1.0.1.1-wBbeGL0CxJR5Aos7PtIuF_pHERT5XV.X5M5.cb.ola2I1ecvMe.V5gPWt.qGb7Gs5PdMk81cknQyoXvbk5J9uQ; path=/; expires=Wed, 01-Jan-25 19:48:11 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:11,604 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:11,604 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:11,605 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:11,605 - DEBUG - response_closed.started
+2025-01-02 00:48:11,605 - DEBUG - response_closed.complete
+2025-01-02 00:48:11,606 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:11 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4da8a3f9e032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4657', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '4.116s', 'x-request-id': 'req_01jghmvngtf3f9z87jvxnk482n', 'set-cookie': '__cf_bm=omvrKTpX1ilDCG79_UStML0e5fWEjzJv7Jn.lJeaQUg-1735759091-1.0.1.1-wBbeGL0CxJR5Aos7PtIuF_pHERT5XV.X5M5.cb.ola2I1ecvMe.V5gPWt.qGb7Gs5PdMk81cknQyoXvbk5J9uQ; path=/; expires=Wed, 01-Jan-25 19:48:11 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:11,611 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:11,611 - INFO - Position reasoning: Placing the circle at position 1 and square at position 9 creates a balanced, diagonal line that draws attention to the corners, emphasizing the natural shapes and the vibrant colors they represent.
+2025-01-02 00:48:11,612 - INFO - Generated nature theme: {'bgco': '#E0F7FA', 'textco': '#324A3B', 'accent1': '#16A085', 'accent2': '#27AE60', 'shape1': '#00BCD4', 'shape2': '#3CB371'}
+2025-01-02 00:48:11,613 - INFO - Drawing circle with color: #00BCD4
+2025-01-02 00:48:11,613 - INFO - Circle drawn successfully
+2025-01-02 00:48:11,613 - INFO - Drawing square with color: #00BCD4
+2025-01-02 00:48:11,614 - INFO - Square drawn successfully
+2025-01-02 00:48:11,615 - DEBUG - Using text color: #324A3B
+2025-01-02 00:48:11,616 - INFO - Drawing circle with color: #00BCD4
+2025-01-02 00:48:11,616 - INFO - Circle drawn successfully
+2025-01-02 00:48:11,616 - INFO - Drawing square with color: #00BCD4
+2025-01-02 00:48:11,616 - INFO - Square drawn successfully
+2025-01-02 00:48:11,617 - DEBUG - Using text color: #324A3B
+2025-01-02 00:48:13,749 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #E0F7FA (light and airy)\n            - Text: #2E7D32 (clear and readable)\n            - Accent: #2ECC71 (vibrant primary)\n            - Secondary: #27AE60 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:13,751 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:13,751 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:13,752 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:13,752 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:13,752 - DEBUG - send_request_body.complete
+2025-01-02 00:48:13,752 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:14,362 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:14 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4daa009e8032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14398'), (b'x-ratelimit-remaining-tokens', b'4455'), (b'x-ratelimit-reset-requests', b'9.162s'), (b'x-ratelimit-reset-tokens', b'6.53s'), (b'x-request-id', b'req_01jghmvr9jfxbtqc7mvw35nqmn'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:14,364 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:14,364 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:14,365 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:14,365 - DEBUG - response_closed.started
+2025-01-02 00:48:14,365 - DEBUG - response_closed.complete
+2025-01-02 00:48:14,365 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:14 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4daa009e8032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14398', 'x-ratelimit-remaining-tokens': '4455', 'x-ratelimit-reset-requests': '9.162s', 'x-ratelimit-reset-tokens': '6.53s', 'x-request-id': 'req_01jghmvr9jfxbtqc7mvw35nqmn', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:14,367 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:14,367 - INFO - Position reasoning: Placing the square at the top left and the circle at the bottom right creates an interesting diagonal line and uses the corners for emphasis, drawing the eye from one shape to the other.
+2025-01-02 00:48:14,367 - INFO - Generated nature theme: {'bgco': '#E0F7FA', 'textco': '#2E7D32', 'accent1': '#2ECC71', 'accent2': '#27AE60', 'shape1': '#26A69A', 'shape2': '#00C853'}
+2025-01-02 00:48:14,368 - INFO - Drawing square with color: #26A69A
+2025-01-02 00:48:14,368 - INFO - Square drawn successfully
+2025-01-02 00:48:14,368 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:48:14,369 - INFO - Circle drawn successfully
+2025-01-02 00:48:14,369 - DEBUG - Using text color: #2E7D32
+2025-01-02 00:48:14,370 - INFO - Drawing square with color: #26A69A
+2025-01-02 00:48:14,371 - INFO - Square drawn successfully
+2025-01-02 00:48:14,371 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:48:14,371 - INFO - Circle drawn successfully
+2025-01-02 00:48:14,372 - DEBUG - Using text color: #2E7D32
+2025-01-02 00:48:14,906 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #FFE0F0 (light and airy)\n            - Text: #5B2C6F (clear and readable)\n            - Accent: #E91E63 (vibrant primary)\n            - Secondary: #EC407A (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:14,907 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:14,907 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:14,908 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:14,908 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:14,908 - DEBUG - send_request_body.complete
+2025-01-02 00:48:14,908 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:15,528 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:15 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4daa74d64032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14397'), (b'x-ratelimit-remaining-tokens', b'4119'), (b'x-ratelimit-reset-requests', b'16.892s'), (b'x-ratelimit-reset-tokens', b'10.565s'), (b'x-request-id', b'req_01jghmvsc8evcspqcvhjnhx72c'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:15,529 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:15,529 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:15,530 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:15,530 - DEBUG - response_closed.started
+2025-01-02 00:48:15,530 - DEBUG - response_closed.complete
+2025-01-02 00:48:15,530 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:15 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4daa74d64032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14397', 'x-ratelimit-remaining-tokens': '4119', 'x-ratelimit-reset-requests': '16.892s', 'x-ratelimit-reset-tokens': '10.565s', 'x-request-id': 'req_01jghmvsc8evcspqcvhjnhx72c', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:15,532 - INFO - AI decided positions - Shape1: Corners, Shape2: 5 (center)
+2025-01-02 00:48:15,532 - INFO - Position reasoning: Placing Shape 1 (square) in the corners draws attention to the four edges of the grid, while the centrally located Shape 2 (circle) emphasizes the iPhone's creative and intuitive touch interface.
+2025-01-02 00:48:15,532 - INFO - Generated creative theme: {'bgco': '#FFE0F0', 'textco': '#5B2C6F', 'accent1': '#E91E63', 'accent2': '#EC407A', 'shape1': '#6200EA', 'shape2': '#8E24AA'}
+2025-01-02 00:48:15,533 - INFO - Drawing square with color: #6200EA
+2025-01-02 00:48:15,533 - INFO - Square drawn successfully
+2025-01-02 00:48:15,533 - INFO - Drawing circle with color: #6200EA
+2025-01-02 00:48:15,533 - INFO - Circle drawn successfully
+2025-01-02 00:48:15,534 - DEBUG - Using text color: #5B2C6F
+2025-01-02 00:48:15,535 - INFO - Drawing square with color: #6200EA
+2025-01-02 00:48:15,537 - INFO - Square drawn successfully
+2025-01-02 00:48:15,537 - INFO - Drawing circle with color: #6200EA
+2025-01-02 00:48:15,537 - INFO - Circle drawn successfully
+2025-01-02 00:48:15,538 - DEBUG - Using text color: #5B2C6F
+2025-01-02 00:48:16,226 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #F8F0F9 (light and airy)\n            - Text: #5B2C6F (clear and readable)\n            - Accent: #D81B60 (vibrant primary)\n            - Secondary: #FF4081 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:16,227 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:16,228 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:16,228 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:16,228 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:16,228 - DEBUG - send_request_body.complete
+2025-01-02 00:48:16,229 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:16,861 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:16 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4daaf98e0032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14396'), (b'x-ratelimit-remaining-tokens', b'3789'), (b'x-ratelimit-reset-requests', b'22.638999999s'), (b'x-ratelimit-reset-tokens', b'14.520999999s'), (b'x-request-id', b'req_01jghmvtptfe98vxjt8y3c7y7y'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:16,863 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:16,863 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:16,863 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:16,864 - DEBUG - response_closed.started
+2025-01-02 00:48:16,864 - DEBUG - response_closed.complete
+2025-01-02 00:48:16,864 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:16 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4daaf98e0032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14396', 'x-ratelimit-remaining-tokens': '3789', 'x-ratelimit-reset-requests': '22.638999999s', 'x-ratelimit-reset-tokens': '14.520999999s', 'x-request-id': 'req_01jghmvtptfe98vxjt8y3c7y7y', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:16,865 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:16,865 - INFO - Position reasoning: Positioning the first square at the top left corner (1) and the second square at the bottom right corner (9) creates a sense of balance while drawing the eye across the grid diagonally, emphasizing the creative color theme.
+2025-01-02 00:48:16,865 - INFO - Generated creative theme: {'bgco': '#F8F0F9', 'textco': '#5B2C6F', 'accent1': '#D81B60', 'accent2': '#FF4081', 'shape1': '#6200EA', 'shape2': '#8E24AA'}
+2025-01-02 00:48:16,866 - INFO - Drawing square with color: #6200EA
+2025-01-02 00:48:16,866 - INFO - Square drawn successfully
+2025-01-02 00:48:16,866 - INFO - Drawing square with color: #6200EA
+2025-01-02 00:48:16,866 - INFO - Square drawn successfully
+2025-01-02 00:48:16,867 - DEBUG - Using text color: #5B2C6F
+2025-01-02 00:48:16,868 - INFO - Drawing square with color: #6200EA
+2025-01-02 00:48:16,868 - INFO - Square drawn successfully
+2025-01-02 00:48:16,868 - INFO - Drawing square with color: #6200EA
+2025-01-02 00:48:16,869 - INFO - Square drawn successfully
+2025-01-02 00:48:16,869 - DEBUG - Using text color: #5B2C6F
+2025-01-02 00:48:17,426 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #F1F8E9 (light and airy)\n            - Text: #2D3B2D (clear and readable)\n            - Accent: #2ECC71 (vibrant primary)\n            - Secondary: #4CAF50 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:17,427 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:17,428 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:17,428 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:17,428 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:17,428 - DEBUG - send_request_body.complete
+2025-01-02 00:48:17,428 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:17,950 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:17 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dab70c23032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14395'), (b'x-ratelimit-remaining-tokens', b'3436'), (b'x-ratelimit-reset-requests', b'28.933s'), (b'x-ratelimit-reset-tokens', b'18.767s'), (b'x-request-id', b'req_01jghmvvr6fxbr0pnhv3rvs9kk'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:17,951 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:17,951 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:17,952 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:17,952 - DEBUG - response_closed.started
+2025-01-02 00:48:17,952 - DEBUG - response_closed.complete
+2025-01-02 00:48:17,952 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:17 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dab70c23032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14395', 'x-ratelimit-remaining-tokens': '3436', 'x-ratelimit-reset-requests': '28.933s', 'x-ratelimit-reset-tokens': '18.767s', 'x-request-id': 'req_01jghmvvr6fxbr0pnhv3rvs9kk', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:17,953 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:17,953 - INFO - Position reasoning: Beginning and ending the row with the two circles creates a balanced, visually appealing layout that highlights the shape and the positive testimonial. The first circle is at the top left corner to draw the eye in and the second circle sits at the bottom right corner, leading the reader through the text.
+2025-01-02 00:48:17,953 - INFO - Generated nature theme: {'bgco': '#F1F8E9', 'textco': '#2D3B2D', 'accent1': '#2ECC71', 'accent2': '#4CAF50', 'shape1': '#3CB371', 'shape2': '#20B2AA'}
+2025-01-02 00:48:17,954 - INFO - Drawing circle with color: #3CB371
+2025-01-02 00:48:17,954 - INFO - Circle drawn successfully
+2025-01-02 00:48:17,954 - INFO - Drawing circle with color: #3CB371
+2025-01-02 00:48:17,954 - INFO - Circle drawn successfully
+2025-01-02 00:48:17,955 - DEBUG - Using text color: #2D3B2D
+2025-01-02 00:48:17,956 - INFO - Drawing circle with color: #3CB371
+2025-01-02 00:48:17,957 - INFO - Circle drawn successfully
+2025-01-02 00:48:17,957 - INFO - Drawing circle with color: #3CB371
+2025-01-02 00:48:17,957 - INFO - Circle drawn successfully
+2025-01-02 00:48:17,957 - DEBUG - Using text color: #2D3B2D
+2025-01-02 00:48:18,605 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: warm\n            - Background: #FFF4E0 (light and airy)\n            - Text: #6B5744 (clear and readable)\n            - Accent: #FF9F43 (vibrant primary)\n            - Secondary: #F39C12 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:18,606 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:18,607 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:18,607 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:18,607 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:18,607 - DEBUG - send_request_body.complete
+2025-01-02 00:48:18,608 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:19,215 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:19 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dabe6f65032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14394'), (b'x-ratelimit-remaining-tokens', b'3090'), (b'x-ratelimit-reset-requests', b'34.704999999s'), (b'x-ratelimit-reset-tokens', b'22.914s'), (b'x-request-id', b'req_01jghmvx0veqyrpsdnwhqb6h2a'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:19,216 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:19,216 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:19,217 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:19,217 - DEBUG - response_closed.started
+2025-01-02 00:48:19,217 - DEBUG - response_closed.complete
+2025-01-02 00:48:19,217 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:19 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dabe6f65032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14394', 'x-ratelimit-remaining-tokens': '3090', 'x-ratelimit-reset-requests': '34.704999999s', 'x-ratelimit-reset-tokens': '22.914s', 'x-request-id': 'req_01jghmvx0veqyrpsdnwhqb6h2a', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:19,218 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:19,219 - INFO - Position reasoning: Placing the circle in the upper left and the square in the lower right creates an interesting diagonal flow while maintaining visual balance. Corners are used for emphasis, making the shapes stand out against the warm background.
+2025-01-02 00:48:19,219 - INFO - Generated warm theme: {'bgco': '#FFF4E0', 'textco': '#6B5744', 'accent1': '#FF9F43', 'accent2': '#F39C12', 'shape1': '#D35400', 'shape2': '#FF6B6B'}
+2025-01-02 00:48:19,219 - INFO - Drawing circle with color: #D35400
+2025-01-02 00:48:19,220 - INFO - Circle drawn successfully
+2025-01-02 00:48:19,220 - INFO - Drawing square with color: #D35400
+2025-01-02 00:48:19,220 - INFO - Square drawn successfully
+2025-01-02 00:48:19,220 - DEBUG - Using text color: #6B5744
+2025-01-02 00:48:19,222 - INFO - Drawing circle with color: #D35400
+2025-01-02 00:48:19,222 - INFO - Circle drawn successfully
+2025-01-02 00:48:19,222 - INFO - Drawing square with color: #D35400
+2025-01-02 00:48:19,222 - INFO - Square drawn successfully
+2025-01-02 00:48:19,223 - DEBUG - Using text color: #6B5744
+2025-01-02 00:48:19,701 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #E8F6F3 (light and airy)\n            - Text: #1B5E20 (clear and readable)\n            - Accent: #27AE60 (vibrant primary)\n            - Secondary: #16A085 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:19,703 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:19,704 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:19,704 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:19,704 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:19,704 - DEBUG - send_request_body.complete
+2025-01-02 00:48:19,704 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:20,337 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:20 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dac54a41032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14393'), (b'x-ratelimit-remaining-tokens', b'2730'), (b'x-ratelimit-reset-requests', b'41.016999999s'), (b'x-ratelimit-reset-tokens', b'27.229s'), (b'x-request-id', b'req_01jghmvxzefh5bvrb1bem4d118'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:20,338 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:20,338 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:20,339 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:20,339 - DEBUG - response_closed.started
+2025-01-02 00:48:20,339 - DEBUG - response_closed.complete
+2025-01-02 00:48:20,340 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:20 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dac54a41032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14393', 'x-ratelimit-remaining-tokens': '2730', 'x-ratelimit-reset-requests': '41.016999999s', 'x-ratelimit-reset-tokens': '27.229s', 'x-request-id': 'req_01jghmvxzefh5bvrb1bem4d118', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:20,340 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:20,341 - INFO - Position reasoning: Positioning Shape 1 (square) in the upper left corner (1) and Shape 2 (circle) in the lower right corner (9) creates visual balance with the diagonal alignment and complements the rectangular shape of the iPhone. Additionally, it draws attention to the corners and emphasizes the sense of balance in the layout.
+2025-01-02 00:48:20,341 - INFO - Generated nature theme: {'bgco': '#E8F6F3', 'textco': '#1B5E20', 'accent1': '#27AE60', 'accent2': '#16A085', 'shape1': '#00C853', 'shape2': '#26A69A'}
+2025-01-02 00:48:20,341 - INFO - Drawing square with color: #00C853
+2025-01-02 00:48:20,341 - INFO - Square drawn successfully
+2025-01-02 00:48:20,342 - INFO - Drawing circle with color: #00C853
+2025-01-02 00:48:20,342 - INFO - Circle drawn successfully
+2025-01-02 00:48:20,342 - DEBUG - Using text color: #1B5E20
+2025-01-02 00:48:20,343 - INFO - Drawing square with color: #00C853
+2025-01-02 00:48:20,344 - INFO - Square drawn successfully
+2025-01-02 00:48:20,344 - INFO - Drawing circle with color: #00C853
+2025-01-02 00:48:20,344 - INFO - Circle drawn successfully
+2025-01-02 00:48:20,345 - DEBUG - Using text color: #1B5E20
+2025-01-02 00:48:22,788 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #FCE4EC (light and airy)\n            - Text: #6A1B9A (clear and readable)\n            - Accent: #9C27B0 (vibrant primary)\n            - Secondary: #D81B60 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:22,789 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:22,790 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:22,790 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:22,790 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:22,791 - DEBUG - send_request_body.complete
+2025-01-02 00:48:22,791 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:23,417 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:23 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dad88bc8032a-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14392'), (b'x-ratelimit-remaining-tokens', b'2513'), (b'x-ratelimit-reset-requests', b'44.830999999s'), (b'x-ratelimit-reset-tokens', b'29.841s'), (b'x-request-id', b'req_01jghmw12geyfsxe1b9jb8fpnz'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:23,419 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:23,419 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:23,419 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:23,420 - DEBUG - response_closed.started
+2025-01-02 00:48:23,420 - DEBUG - response_closed.complete
+2025-01-02 00:48:23,420 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:23 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dad88bc8032a-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14392', 'x-ratelimit-remaining-tokens': '2513', 'x-ratelimit-reset-requests': '44.830999999s', 'x-ratelimit-reset-tokens': '29.841s', 'x-request-id': 'req_01jghmw12geyfsxe1b9jb8fpnz', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:23,421 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:23,421 - INFO - Position reasoning: Placing the square in the top left corner (1) and the circle in the bottom right corner (9) creates a harmonious diagonal line while using the corners for emphasis, reflecting the iPhone's unique features and capabilities.
+2025-01-02 00:48:23,421 - INFO - Generated creative theme: {'bgco': '#FCE4EC', 'textco': '#6A1B9A', 'accent1': '#9C27B0', 'accent2': '#D81B60', 'shape1': '#8E24AA', 'shape2': '#673AB7'}
+2025-01-02 00:48:23,422 - INFO - Drawing square with color: #8E24AA
+2025-01-02 00:48:23,422 - INFO - Square drawn successfully
+2025-01-02 00:48:23,422 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:48:23,422 - INFO - Circle drawn successfully
+2025-01-02 00:48:23,423 - DEBUG - Using text color: #6A1B9A
+2025-01-02 00:48:23,424 - INFO - Drawing square with color: #8E24AA
+2025-01-02 00:48:23,424 - INFO - Square drawn successfully
+2025-01-02 00:48:23,424 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:48:23,425 - INFO - Circle drawn successfully
+2025-01-02 00:48:23,425 - DEBUG - Using text color: #6A1B9A
+2025-01-02 00:48:43,595 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #F3E5F5 (light and airy)\n            - Text: #6A1B9A (clear and readable)\n            - Accent: #FF4081 (vibrant primary)\n            - Secondary: #9C27B0 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:43,607 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:43,609 - DEBUG - close.started
+2025-01-02 00:48:43,613 - DEBUG - close.complete
+2025-01-02 00:48:43,613 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-01-02 00:48:43,623 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e9d1e50>
+2025-01-02 00:48:43,623 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e593f50> server_hostname='api.groq.com' timeout=5.0
+2025-01-02 00:48:43,637 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e9b1d90>
+2025-01-02 00:48:43,637 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:43,638 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:43,638 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:43,638 - DEBUG - send_request_body.complete
+2025-01-02 00:48:43,638 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:44,250 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:44 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4db5ad8260333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14394'), (b'x-ratelimit-remaining-tokens', b'3802'), (b'x-ratelimit-reset-requests', b'33.149999999s'), (b'x-ratelimit-reset-tokens', b'14.364999999s'), (b'x-request-id', b'req_01jghmwne8febs95r7964pga6n'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:44,252 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:44,252 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:44,253 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:44,253 - DEBUG - response_closed.started
+2025-01-02 00:48:44,253 - DEBUG - response_closed.complete
+2025-01-02 00:48:44,253 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:44 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4db5ad8260333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14394', 'x-ratelimit-remaining-tokens': '3802', 'x-ratelimit-reset-requests': '33.149999999s', 'x-ratelimit-reset-tokens': '14.364999999s', 'x-request-id': 'req_01jghmwne8febs95r7964pga6n', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:44,254 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:44,254 - INFO - Position reasoning: A delightful asymmetrical layout, placing one circle at the top left corner and the other at the bottom right, creates visual interest and highlights the iPhone's ability to inspire creativity in all its users.
+2025-01-02 00:48:44,255 - INFO - Generated creative theme: {'bgco': '#F3E5F5', 'textco': '#6A1B9A', 'accent1': '#FF4081', 'accent2': '#9C27B0', 'shape1': '#8E24AA', 'shape2': '#673AB7'}
+2025-01-02 00:48:44,256 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:48:44,256 - INFO - Circle drawn successfully
+2025-01-02 00:48:44,256 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:48:44,257 - INFO - Circle drawn successfully
+2025-01-02 00:48:44,258 - DEBUG - Using text color: #6A1B9A
+2025-01-02 00:48:44,259 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:48:44,260 - INFO - Circle drawn successfully
+2025-01-02 00:48:44,260 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:48:44,260 - INFO - Circle drawn successfully
+2025-01-02 00:48:44,260 - DEBUG - Using text color: #6A1B9A
+2025-01-02 00:48:44,788 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #E0F7FA (light and airy)\n            - Text: #1B4332 (clear and readable)\n            - Accent: #4CAF50 (vibrant primary)\n            - Secondary: #16A085 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:44,790 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:44,790 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:44,791 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:44,791 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:44,791 - DEBUG - send_request_body.complete
+2025-01-02 00:48:44,791 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:45,368 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:45 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4db620b780333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14393'), (b'x-ratelimit-remaining-tokens', b'3461'), (b'x-ratelimit-reset-requests', b'40.873999999s'), (b'x-ratelimit-reset-tokens', b'18.468s'), (b'x-request-id', b'req_01jghmwphceyjbgmpyfrwhke84'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:45,369 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:45,370 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:45,370 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:45,371 - DEBUG - response_closed.started
+2025-01-02 00:48:45,371 - DEBUG - response_closed.complete
+2025-01-02 00:48:45,371 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:45 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4db620b780333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14393', 'x-ratelimit-remaining-tokens': '3461', 'x-ratelimit-reset-requests': '40.873999999s', 'x-ratelimit-reset-tokens': '18.468s', 'x-request-id': 'req_01jghmwphceyjbgmpyfrwhke84', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:45,372 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:45,372 - INFO - Position reasoning: Placing the circles in opposing corners creates an interesting asymmetry, drawing attention to the testimonial text while maintaining visual balance.
+2025-01-02 00:48:45,372 - INFO - Generated nature theme: {'bgco': '#E0F7FA', 'textco': '#1B4332', 'accent1': '#4CAF50', 'accent2': '#16A085', 'shape1': '#00C853', 'shape2': '#26A69A'}
+2025-01-02 00:48:45,373 - INFO - Drawing circle with color: #00C853
+2025-01-02 00:48:45,373 - INFO - Circle drawn successfully
+2025-01-02 00:48:45,373 - INFO - Drawing circle with color: #00C853
+2025-01-02 00:48:45,373 - INFO - Circle drawn successfully
+2025-01-02 00:48:45,374 - DEBUG - Using text color: #1B4332
+2025-01-02 00:48:45,375 - INFO - Drawing circle with color: #00C853
+2025-01-02 00:48:45,376 - INFO - Circle drawn successfully
+2025-01-02 00:48:45,376 - INFO - Drawing circle with color: #00C853
+2025-01-02 00:48:45,376 - INFO - Circle drawn successfully
+2025-01-02 00:48:45,376 - DEBUG - Using text color: #1B4332
+2025-01-02 00:48:46,058 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: warm\n            - Background: #FEF6E4 (light and airy)\n            - Text: #5C4B37 (clear and readable)\n            - Accent: #E67E22 (vibrant primary)\n            - Secondary: #FF9800 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:46,061 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:46,061 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:46,062 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:46,062 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:46,062 - DEBUG - send_request_body.complete
+2025-01-02 00:48:46,062 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:46,523 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:46 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4db69fec70333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14392'), (b'x-ratelimit-remaining-tokens', b'3128'), (b'x-ratelimit-reset-requests', b'46.781s'), (b'x-ratelimit-reset-tokens', b'22.464s'), (b'x-request-id', b'req_01jghmwqqkfeca35094y2ayb4b'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:46,524 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:46,524 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:46,525 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:46,525 - DEBUG - response_closed.started
+2025-01-02 00:48:46,525 - DEBUG - response_closed.complete
+2025-01-02 00:48:46,525 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:46 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4db69fec70333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14392', 'x-ratelimit-remaining-tokens': '3128', 'x-ratelimit-reset-requests': '46.781s', 'x-ratelimit-reset-tokens': '22.464s', 'x-request-id': 'req_01jghmwqqkfeca35094y2ayb4b', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:46,526 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:46,526 - INFO - Position reasoning: Positioning the two circles in opposite corners creates visual interest and highlights the shape's symmetry while emphasizing the overall design.
+2025-01-02 00:48:46,526 - INFO - Generated warm theme: {'bgco': '#FEF6E4', 'textco': '#5C4B37', 'accent1': '#E67E22', 'accent2': '#FF9800', 'shape1': '#FF6B6B', 'shape2': '#FF5252'}
+2025-01-02 00:48:46,527 - INFO - Drawing circle with color: #FF6B6B
+2025-01-02 00:48:46,527 - INFO - Circle drawn successfully
+2025-01-02 00:48:46,527 - INFO - Drawing circle with color: #FF6B6B
+2025-01-02 00:48:46,528 - INFO - Circle drawn successfully
+2025-01-02 00:48:46,528 - DEBUG - Using text color: #5C4B37
+2025-01-02 00:48:46,530 - INFO - Drawing circle with color: #FF6B6B
+2025-01-02 00:48:46,530 - INFO - Circle drawn successfully
+2025-01-02 00:48:46,530 - INFO - Drawing circle with color: #FF6B6B
+2025-01-02 00:48:46,530 - INFO - Circle drawn successfully
+2025-01-02 00:48:46,532 - DEBUG - Using text color: #5C4B37
+2025-01-02 00:48:46,996 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #F5E6FF (light and airy)\n            - Text: #4A148C (clear and readable)\n            - Accent: #FF4081 (vibrant primary)\n            - Secondary: #EC407A (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:46,997 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:46,997 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:46,998 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:46,998 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:46,998 - DEBUG - send_request_body.complete
+2025-01-02 00:48:46,998 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:47,451 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:47 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4db6fd92b0333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14391'), (b'x-ratelimit-remaining-tokens', b'2790'), (b'x-ratelimit-reset-requests', b'53.103s'), (b'x-ratelimit-reset-tokens', b'26.514s'), (b'x-request-id', b'req_01jghmwrkrfecb5k3a5hbj9gbc'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:47,452 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:47,453 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:47,453 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:47,453 - DEBUG - response_closed.started
+2025-01-02 00:48:47,453 - DEBUG - response_closed.complete
+2025-01-02 00:48:47,453 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:47 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4db6fd92b0333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14391', 'x-ratelimit-remaining-tokens': '2790', 'x-ratelimit-reset-requests': '53.103s', 'x-ratelimit-reset-tokens': '26.514s', 'x-request-id': 'req_01jghmwrkrfecb5k3a5hbj9gbc', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:47,454 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:47,454 - INFO - Position reasoning: Placing the square in the top left and the circle in the bottom right creates an interesting asymmetry, guiding the eye in an engaging z-pattern while maintaining visual balance.
+2025-01-02 00:48:47,454 - INFO - Generated creative theme: {'bgco': '#F5E6FF', 'textco': '#4A148C', 'accent1': '#FF4081', 'accent2': '#EC407A', 'shape1': '#8E24AA', 'shape2': '#7B1FA2'}
+2025-01-02 00:48:47,455 - INFO - Drawing square with color: #8E24AA
+2025-01-02 00:48:47,455 - INFO - Square drawn successfully
+2025-01-02 00:48:47,456 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:48:47,456 - INFO - Circle drawn successfully
+2025-01-02 00:48:47,456 - DEBUG - Using text color: #4A148C
+2025-01-02 00:48:47,458 - INFO - Drawing square with color: #8E24AA
+2025-01-02 00:48:47,458 - INFO - Square drawn successfully
+2025-01-02 00:48:47,458 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:48:47,458 - INFO - Circle drawn successfully
+2025-01-02 00:48:47,459 - DEBUG - Using text color: #4A148C
+2025-01-02 00:48:47,931 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #FFE0F0 (light and airy)\n            - Text: #4A154B (clear and readable)\n            - Accent: #E91E63 (vibrant primary)\n            - Secondary: #D81B60 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:47,933 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:47,934 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:47,934 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:47,934 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:47,934 - DEBUG - send_request_body.complete
+2025-01-02 00:48:47,935 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:48,514 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:48 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4db75bb770333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14390'), (b'x-ratelimit-remaining-tokens', b'2438'), (b'x-ratelimit-reset-requests', b'59.027999999s'), (b'x-ratelimit-reset-tokens', b'30.739s'), (b'x-request-id', b'req_01jghmwsj4fec9staqxy2mv2q9'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:48,515 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:48,516 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:48,516 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:48,516 - DEBUG - response_closed.started
+2025-01-02 00:48:48,516 - DEBUG - response_closed.complete
+2025-01-02 00:48:48,516 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:48 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4db75bb770333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14390', 'x-ratelimit-remaining-tokens': '2438', 'x-ratelimit-reset-requests': '59.027999999s', 'x-ratelimit-reset-tokens': '30.739s', 'x-request-id': 'req_01jghmwsj4fec9staqxy2mv2q9', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:48,517 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:48,517 - INFO - Position reasoning: To create visual balance, I chose to place Shape 1 at the top left corner (1) and Shape 2 at the bottom right corner (9). This draws the viewer's eye through the grid diagonally, emphasizing the two shapes and making the layout visually engaging.
+2025-01-02 00:48:48,517 - INFO - Generated creative theme: {'bgco': '#FFE0F0', 'textco': '#4A154B', 'accent1': '#E91E63', 'accent2': '#D81B60', 'shape1': '#7B1FA2', 'shape2': '#8E24AA'}
+2025-01-02 00:48:48,518 - INFO - Drawing circle with color: #7B1FA2
+2025-01-02 00:48:48,518 - INFO - Circle drawn successfully
+2025-01-02 00:48:48,518 - INFO - Drawing square with color: #7B1FA2
+2025-01-02 00:48:48,519 - INFO - Square drawn successfully
+2025-01-02 00:48:48,519 - DEBUG - Using text color: #4A154B
+2025-01-02 00:48:48,520 - INFO - Drawing circle with color: #7B1FA2
+2025-01-02 00:48:48,521 - INFO - Circle drawn successfully
+2025-01-02 00:48:48,521 - INFO - Drawing square with color: #7B1FA2
+2025-01-02 00:48:48,521 - INFO - Square drawn successfully
+2025-01-02 00:48:48,522 - DEBUG - Using text color: #4A154B
+2025-01-02 00:48:49,612 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: modern\n            - Background: #EDF2F7 (light and airy)\n            - Text: #4A5568 (clear and readable)\n            - Accent: #2980B9 (vibrant primary)\n            - Secondary: #4299E1 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:49,614 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:49,615 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:49,615 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:49,616 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:49,616 - DEBUG - send_request_body.complete
+2025-01-02 00:48:49,616 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:50,206 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4db8038360333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14389'), (b'x-ratelimit-remaining-tokens', b'2109'), (b'x-ratelimit-reset-requests', b'1m4.270999999s'), (b'x-ratelimit-reset-tokens', b'34.683s'), (b'x-request-id', b'req_01jghmwv85feh90rpz0c54zezr'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:50,208 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:50,208 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:50,209 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:50,209 - DEBUG - response_closed.started
+2025-01-02 00:48:50,209 - DEBUG - response_closed.complete
+2025-01-02 00:48:50,209 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:50 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4db8038360333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14389', 'x-ratelimit-remaining-tokens': '2109', 'x-ratelimit-reset-requests': '1m4.270999999s', 'x-ratelimit-reset-tokens': '34.683s', 'x-request-id': 'req_01jghmwv85feh90rpz0c54zezr', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:50,210 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:50,210 - INFO - Position reasoning: Placing the square in the top left corner (1) and the circle in the bottom right corner (9) creates visual balance and an interesting asymmetrical layout.
+2025-01-02 00:48:50,210 - INFO - Generated modern theme: {'bgco': '#EDF2F7', 'textco': '#4A5568', 'accent1': '#2980B9', 'accent2': '#4299E1', 'shape1': '#6B46C1', 'shape2': '#6C2BD9'}
+2025-01-02 00:48:50,211 - INFO - Drawing square with color: #6B46C1
+2025-01-02 00:48:50,211 - INFO - Square drawn successfully
+2025-01-02 00:48:50,211 - INFO - Drawing circle with color: #6B46C1
+2025-01-02 00:48:50,212 - INFO - Circle drawn successfully
+2025-01-02 00:48:50,212 - DEBUG - Using text color: #4A5568
+2025-01-02 00:48:50,213 - INFO - Drawing square with color: #6B46C1
+2025-01-02 00:48:50,214 - INFO - Square drawn successfully
+2025-01-02 00:48:50,214 - INFO - Drawing circle with color: #6B46C1
+2025-01-02 00:48:50,214 - INFO - Circle drawn successfully
+2025-01-02 00:48:50,215 - DEBUG - Using text color: #4A5568
+2025-01-02 00:48:50,712 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #FCE4EC (light and airy)\n            - Text: #6A1B9A (clear and readable)\n            - Accent: #9C27B0 (vibrant primary)\n            - Secondary: #E91E63 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:50,713 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:50,713 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:50,714 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:50,714 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:50,714 - DEBUG - send_request_body.complete
+2025-01-02 00:48:50,714 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:51,843 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:51 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4db871b270333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14388'), (b'x-ratelimit-remaining-tokens', b'1780'), (b'x-ratelimit-reset-requests', b'1m10.838s'), (b'x-ratelimit-reset-tokens', b'38.636s'), (b'x-request-id', b'req_01jghmwwchf3j99jeez1874zx6'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:51,844 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:51,844 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:51,845 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:51,845 - DEBUG - response_closed.started
+2025-01-02 00:48:51,845 - DEBUG - response_closed.complete
+2025-01-02 00:48:51,845 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:51 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4db871b270333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14388', 'x-ratelimit-remaining-tokens': '1780', 'x-ratelimit-reset-requests': '1m10.838s', 'x-ratelimit-reset-tokens': '38.636s', 'x-request-id': 'req_01jghmwwchf3j99jeez1874zx6', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:51,846 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:51,847 - INFO - Position reasoning: I chose Position 1 (top left corner) and Position 9 (bottom right corner) to create a balanced and engaging asymmetrical layout. By placing the square in the top left corner and the circle in the bottom right corner, I emphasize the unique qualities of each shape while maintaining visual harmony.
+2025-01-02 00:48:51,847 - INFO - Generated creative theme: {'bgco': '#FCE4EC', 'textco': '#6A1B9A', 'accent1': '#9C27B0', 'accent2': '#E91E63', 'shape1': '#6200EA', 'shape2': '#7B1FA2'}
+2025-01-02 00:48:51,848 - INFO - Drawing square with color: #6200EA
+2025-01-02 00:48:51,848 - INFO - Square drawn successfully
+2025-01-02 00:48:51,848 - INFO - Drawing circle with color: #6200EA
+2025-01-02 00:48:51,848 - INFO - Circle drawn successfully
+2025-01-02 00:48:51,849 - DEBUG - Using text color: #6A1B9A
+2025-01-02 00:48:51,850 - INFO - Drawing square with color: #6200EA
+2025-01-02 00:48:51,851 - INFO - Square drawn successfully
+2025-01-02 00:48:51,851 - INFO - Drawing circle with color: #6200EA
+2025-01-02 00:48:51,851 - INFO - Circle drawn successfully
+2025-01-02 00:48:51,851 - DEBUG - Using text color: #6A1B9A
+2025-01-02 00:48:53,377 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #F0F7F4 (light and airy)\n            - Text: #324A3B (clear and readable)\n            - Accent: #2ECC71 (vibrant primary)\n            - Secondary: #16A085 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:53,379 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:53,379 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:53,380 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:53,380 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:53,380 - DEBUG - send_request_body.complete
+2025-01-02 00:48:53,380 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:53,959 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:53 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4db97bb480333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14387'), (b'x-ratelimit-remaining-tokens', b'1541'), (b'x-ratelimit-reset-requests', b'1m15.382s'), (b'x-ratelimit-reset-tokens', b'41.497s'), (b'x-request-id', b'req_01jghmwyy9fehstmbv5eamxhhy'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:53,960 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:53,960 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:53,961 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:53,961 - DEBUG - response_closed.started
+2025-01-02 00:48:53,961 - DEBUG - response_closed.complete
+2025-01-02 00:48:53,961 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:53 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4db97bb480333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14387', 'x-ratelimit-remaining-tokens': '1541', 'x-ratelimit-reset-requests': '1m15.382s', 'x-ratelimit-reset-tokens': '41.497s', 'x-request-id': 'req_01jghmwyy9fehstmbv5eamxhhy', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:53,962 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:53,963 - INFO - Position reasoning: Placing the circle at the top left corner (1) and the square at the bottom right corner (9) creates visual balance and uses the corners for emphasis, while the asymmetry adds interest.
+2025-01-02 00:48:53,963 - INFO - Generated nature theme: {'bgco': '#F0F7F4', 'textco': '#324A3B', 'accent1': '#2ECC71', 'accent2': '#16A085', 'shape1': '#26A69A', 'shape2': '#3CB371'}
+2025-01-02 00:48:53,964 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:48:53,964 - INFO - Circle drawn successfully
+2025-01-02 00:48:53,964 - INFO - Drawing square with color: #26A69A
+2025-01-02 00:48:53,964 - INFO - Square drawn successfully
+2025-01-02 00:48:53,965 - DEBUG - Using text color: #324A3B
+2025-01-02 00:48:53,966 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:48:53,967 - INFO - Circle drawn successfully
+2025-01-02 00:48:53,967 - INFO - Drawing square with color: #26A69A
+2025-01-02 00:48:53,968 - INFO - Square drawn successfully
+2025-01-02 00:48:53,970 - DEBUG - Using text color: #324A3B
+2025-01-02 00:48:55,630 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #F0F7F4 (light and airy)\n            - Text: #1B4332 (clear and readable)\n            - Accent: #27AE60 (vibrant primary)\n            - Secondary: #00BFA5 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:55,632 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:55,632 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:55,632 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:55,633 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:55,633 - DEBUG - send_request_body.complete
+2025-01-02 00:48:55,633 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:56,348 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:56 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dba5ca5a0333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14386'), (b'x-ratelimit-remaining-tokens', b'1297'), (b'x-ratelimit-reset-requests', b'1m21.709s'), (b'x-ratelimit-reset-tokens', b'44.436s'), (b'x-request-id', b'req_01jghmx15xfh8vn79b66act3c9'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:56,351 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:56,352 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:56,352 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:56,352 - DEBUG - response_closed.started
+2025-01-02 00:48:56,352 - DEBUG - response_closed.complete
+2025-01-02 00:48:56,352 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:56 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dba5ca5a0333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14386', 'x-ratelimit-remaining-tokens': '1297', 'x-ratelimit-reset-requests': '1m21.709s', 'x-ratelimit-reset-tokens': '44.436s', 'x-request-id': 'req_01jghmx15xfh8vn79b66act3c9', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:56,353 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:56,353 - INFO - Position reasoning: By placing the square in the upper left corner (1) and the circle in the lower right corner (9), we create a balanced and visually engaging asymmetrical layout that highlights the unique qualities of each shape while emphasizing the natural color theme.
+2025-01-02 00:48:56,353 - INFO - Generated nature theme: {'bgco': '#F0F7F4', 'textco': '#1B4332', 'accent1': '#27AE60', 'accent2': '#00BFA5', 'shape1': '#20B2AA', 'shape2': '#26A69A'}
+2025-01-02 00:48:56,354 - INFO - Drawing square with color: #20B2AA
+2025-01-02 00:48:56,354 - INFO - Square drawn successfully
+2025-01-02 00:48:56,354 - INFO - Drawing circle with color: #20B2AA
+2025-01-02 00:48:56,354 - INFO - Circle drawn successfully
+2025-01-02 00:48:56,355 - DEBUG - Using text color: #1B4332
+2025-01-02 00:48:56,356 - INFO - Drawing square with color: #20B2AA
+2025-01-02 00:48:56,356 - INFO - Square drawn successfully
+2025-01-02 00:48:56,356 - INFO - Drawing circle with color: #20B2AA
+2025-01-02 00:48:56,356 - INFO - Circle drawn successfully
+2025-01-02 00:48:56,357 - DEBUG - Using text color: #1B4332
+2025-01-02 00:48:56,971 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: modern\n            - Background: #F5F7FA (light and airy)\n            - Text: #2C3E50 (clear and readable)\n            - Accent: #3498DB (vibrant primary)\n            - Secondary: #2980B9 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:48:56,973 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:48:56,974 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:56,974 - DEBUG - send_request_headers.complete
+2025-01-02 00:48:56,974 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:48:56,974 - DEBUG - send_request_body.complete
+2025-01-02 00:48:56,974 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:48:57,540 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:18:57 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dbae3e300333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14385'), (b'x-ratelimit-remaining-tokens', b'956'), (b'x-ratelimit-reset-requests', b'1m28.702999999s'), (b'x-ratelimit-reset-tokens', b'48.527s'), (b'x-request-id', b'req_01jghmx2effh8v6st3vqy3vr25'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:48:57,541 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:48:57,541 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:48:57,542 - DEBUG - receive_response_body.complete
+2025-01-02 00:48:57,542 - DEBUG - response_closed.started
+2025-01-02 00:48:57,542 - DEBUG - response_closed.complete
+2025-01-02 00:48:57,542 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:18:57 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dbae3e300333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14385', 'x-ratelimit-remaining-tokens': '956', 'x-ratelimit-reset-requests': '1m28.702999999s', 'x-ratelimit-reset-tokens': '48.527s', 'x-request-id': 'req_01jghmx2effh8v6st3vqy3vr25', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:48:57,543 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:48:57,543 - INFO - Position reasoning: Positioning the two circles on opposite corners creates visual interest and highlights the modern, sleek design of the iPhone, drawing the viewer's focus towards the testimonial text.
+2025-01-02 00:48:57,543 - INFO - Generated modern theme: {'bgco': '#F5F7FA', 'textco': '#2C3E50', 'accent1': '#3498DB', 'accent2': '#2980B9', 'shape1': '#6B46C1', 'shape2': '#9B59B6'}
+2025-01-02 00:48:57,544 - INFO - Drawing circle with color: #6B46C1
+2025-01-02 00:48:57,544 - INFO - Circle drawn successfully
+2025-01-02 00:48:57,545 - INFO - Drawing circle with color: #6B46C1
+2025-01-02 00:48:57,545 - INFO - Circle drawn successfully
+2025-01-02 00:48:57,545 - DEBUG - Using text color: #2C3E50
+2025-01-02 00:48:57,547 - INFO - Drawing circle with color: #6B46C1
+2025-01-02 00:48:57,547 - INFO - Circle drawn successfully
+2025-01-02 00:48:57,547 - INFO - Drawing circle with color: #6B46C1
+2025-01-02 00:48:57,547 - INFO - Circle drawn successfully
+2025-01-02 00:48:57,548 - DEBUG - Using text color: #2C3E50
+2025-01-02 00:49:01,073 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #F1F8E9 (light and airy)\n            - Text: #1B4332 (clear and readable)\n            - Accent: #27AE60 (vibrant primary)\n            - Secondary: #2ECC71 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:01,075 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:01,076 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:01,077 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:01,077 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:01,077 - DEBUG - send_request_body.complete
+2025-01-02 00:49:01,077 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:01,577 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:01 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dbc7db960333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14384'), (b'x-ratelimit-remaining-tokens', b'858'), (b'x-ratelimit-reset-requests', b'1m31.986s'), (b'x-ratelimit-reset-tokens', b'49.703s'), (b'x-request-id', b'req_01jghmx6bxfh9banfesz5jjaqh'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:01,578 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:01,579 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:01,579 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:01,579 - DEBUG - response_closed.started
+2025-01-02 00:49:01,580 - DEBUG - response_closed.complete
+2025-01-02 00:49:01,580 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:01 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dbc7db960333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14384', 'x-ratelimit-remaining-tokens': '858', 'x-ratelimit-reset-requests': '1m31.986s', 'x-ratelimit-reset-tokens': '49.703s', 'x-request-id': 'req_01jghmx6bxfh9banfesz5jjaqh', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:01,581 - INFO - AI decided positions - Shape1: 5 (center), Shape2: 1, 3, 7, or 9 (corners)
+2025-01-02 00:49:01,581 - INFO - Position reasoning: Placing the first circle in the center emphasizes its importance while distributing the other three circles evenly on the corners creates visual balance and highlights the iPhone's sleek design.
+2025-01-02 00:49:01,581 - INFO - Generated nature theme: {'bgco': '#F1F8E9', 'textco': '#1B4332', 'accent1': '#27AE60', 'accent2': '#2ECC71', 'shape1': '#26A69A', 'shape2': '#00BCD4'}
+2025-01-02 00:49:01,582 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:49:01,582 - INFO - Circle drawn successfully
+2025-01-02 00:49:01,582 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:49:01,583 - INFO - Circle drawn successfully
+2025-01-02 00:49:01,583 - DEBUG - Using text color: #1B4332
+2025-01-02 00:49:01,585 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:49:01,586 - INFO - Circle drawn successfully
+2025-01-02 00:49:01,586 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:49:01,586 - INFO - Circle drawn successfully
+2025-01-02 00:49:01,587 - DEBUG - Using text color: #1B4332
+2025-01-02 00:49:04,460 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #E8F5E9 (light and airy)\n            - Text: #1B5E20 (clear and readable)\n            - Accent: #2ECC71 (vibrant primary)\n            - Secondary: #27AE60 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:04,461 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:04,462 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:04,462 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:04,462 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:04,463 - DEBUG - send_request_body.complete
+2025-01-02 00:49:04,463 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:05,106 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:05 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dbdcfdcf0333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14383'), (b'x-ratelimit-remaining-tokens', b'704'), (b'x-ratelimit-reset-requests', b'1m38.512999999s'), (b'x-ratelimit-reset-tokens', b'51.542s'), (b'x-request-id', b'req_01jghmx9ryevfvy04yxctt8f34'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:05,107 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:05,108 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:05,108 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:05,108 - DEBUG - response_closed.started
+2025-01-02 00:49:05,108 - DEBUG - response_closed.complete
+2025-01-02 00:49:05,108 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:05 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dbdcfdcf0333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14383', 'x-ratelimit-remaining-tokens': '704', 'x-ratelimit-reset-requests': '1m38.512999999s', 'x-ratelimit-reset-tokens': '51.542s', 'x-request-id': 'req_01jghmx9ryevfvy04yxctt8f34', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:05,109 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:49:05,109 - INFO - Position reasoning: By placing the square at position 1 and the circle at position 9, we create a balanced asymmetrical layout that draws the eye towards the vibrant accent color of the circle. The use of corners emphasizes the importance and uniqueness of each shape, reflecting the iPhone's innovative features.
+2025-01-02 00:49:05,109 - INFO - Generated nature theme: {'bgco': '#E8F5E9', 'textco': '#1B5E20', 'accent1': '#2ECC71', 'accent2': '#27AE60', 'shape1': '#00BCD4', 'shape2': '#00C853'}
+2025-01-02 00:49:05,110 - INFO - Drawing square with color: #00BCD4
+2025-01-02 00:49:05,110 - INFO - Square drawn successfully
+2025-01-02 00:49:05,110 - INFO - Drawing circle with color: #00BCD4
+2025-01-02 00:49:05,110 - INFO - Circle drawn successfully
+2025-01-02 00:49:05,111 - DEBUG - Using text color: #1B5E20
+2025-01-02 00:49:05,112 - INFO - Drawing square with color: #00BCD4
+2025-01-02 00:49:05,114 - INFO - Square drawn successfully
+2025-01-02 00:49:05,114 - INFO - Drawing circle with color: #00BCD4
+2025-01-02 00:49:05,114 - INFO - Circle drawn successfully
+2025-01-02 00:49:05,115 - DEBUG - Using text color: #1B5E20
+2025-01-02 00:49:05,856 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #FFE0F0 (light and airy)\n            - Text: #4A148C (clear and readable)\n            - Accent: #EC407A (vibrant primary)\n            - Secondary: #FF4081 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:05,858 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:05,858 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:05,858 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:05,858 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:05,859 - DEBUG - send_request_body.complete
+2025-01-02 00:49:05,859 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:06,408 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:06 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dbe5ba000333-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14382'), (b'x-ratelimit-remaining-tokens', b'364'), (b'x-ratelimit-reset-requests', b'1m46.636999999s'), (b'x-ratelimit-reset-tokens', b'55.629s'), (b'x-request-id', b'req_01jghmxb3nfh9axt4gksdqzb4x'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:06,409 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:06,410 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:06,410 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:06,410 - DEBUG - response_closed.started
+2025-01-02 00:49:06,410 - DEBUG - response_closed.complete
+2025-01-02 00:49:06,411 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:06 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dbe5ba000333-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14382', 'x-ratelimit-remaining-tokens': '364', 'x-ratelimit-reset-requests': '1m46.636999999s', 'x-ratelimit-reset-tokens': '55.629s', 'x-request-id': 'req_01jghmxb3nfh9axt4gksdqzb4x', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:06,412 - INFO - AI decided positions - Shape1: 5 (center), Shape2: 1, 3, 7, 9 (corners)
+2025-01-02 00:49:06,412 - INFO - Position reasoning: The central position of the square emphasizes the iPhone's core functionality, while the colorful circles in the corners highlight the device's creative features and potential.
+2025-01-02 00:49:06,412 - INFO - Generated creative theme: {'bgco': '#FFE0F0', 'textco': '#4A148C', 'accent1': '#EC407A', 'accent2': '#FF4081', 'shape1': '#673AB7', 'shape2': '#6200EA'}
+2025-01-02 00:49:06,413 - INFO - Drawing square with color: #673AB7
+2025-01-02 00:49:06,413 - INFO - Square drawn successfully
+2025-01-02 00:49:06,413 - INFO - Drawing circle with color: #673AB7
+2025-01-02 00:49:06,414 - INFO - Circle drawn successfully
+2025-01-02 00:49:06,415 - DEBUG - Using text color: #4A148C
+2025-01-02 00:49:06,416 - INFO - Drawing square with color: #673AB7
+2025-01-02 00:49:06,416 - INFO - Square drawn successfully
+2025-01-02 00:49:06,416 - INFO - Drawing circle with color: #673AB7
+2025-01-02 00:49:06,416 - INFO - Circle drawn successfully
+2025-01-02 00:49:06,417 - DEBUG - Using text color: #4A148C
+2025-01-02 00:49:29,090 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #E0F7FA (light and airy)\n            - Text: #2D3B2D (clear and readable)\n            - Accent: #2ECC71 (vibrant primary)\n            - Secondary: #00BFA5 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:29,114 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:29,119 - DEBUG - close.started
+2025-01-02 00:49:29,130 - DEBUG - close.complete
+2025-01-02 00:49:29,130 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-01-02 00:49:29,142 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e9cf090>
+2025-01-02 00:49:29,142 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x10e593f50> server_hostname='api.groq.com' timeout=5.0
+2025-01-02 00:49:29,155 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x10e9cf110>
+2025-01-02 00:49:29,155 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:29,155 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:29,156 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:29,156 - DEBUG - send_request_body.complete
+2025-01-02 00:49:29,156 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:29,728 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:29 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dc775c6b032b-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14384'), (b'x-ratelimit-remaining-tokens', b'1871'), (b'x-ratelimit-reset-requests', b'1m30.682999999s'), (b'x-ratelimit-reset-tokens', b'37.545s'), (b'x-request-id', b'req_01jghmy1wbfent22hqtxnet5h5'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:29,728 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:29,728 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:29,728 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:29,728 - DEBUG - response_closed.started
+2025-01-02 00:49:29,728 - DEBUG - response_closed.complete
+2025-01-02 00:49:29,729 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:29 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dc775c6b032b-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14384', 'x-ratelimit-remaining-tokens': '1871', 'x-ratelimit-reset-requests': '1m30.682999999s', 'x-ratelimit-reset-tokens': '37.545s', 'x-request-id': 'req_01jghmy1wbfent22hqtxnet5h5', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:29,729 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:49:29,729 - INFO - Position reasoning: Positioning the square in the top left corner and the circle in the bottom right corner creates an interesting asymmetry that draws the eye across the grid. The contrasting shapes and positions help achieve visual balance, emphasizing the natural harmony of the color theme.
+2025-01-02 00:49:29,730 - INFO - Generated nature theme: {'bgco': '#E0F7FA', 'textco': '#2D3B2D', 'accent1': '#2ECC71', 'accent2': '#00BFA5', 'shape1': '#26A69A', 'shape2': '#3CB371'}
+2025-01-02 00:49:29,730 - INFO - Drawing square with color: #26A69A
+2025-01-02 00:49:29,730 - INFO - Square drawn successfully
+2025-01-02 00:49:29,731 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:49:29,731 - INFO - Circle drawn successfully
+2025-01-02 00:49:29,731 - DEBUG - Using text color: #2D3B2D
+2025-01-02 00:49:29,732 - INFO - Drawing square with color: #26A69A
+2025-01-02 00:49:29,732 - INFO - Square drawn successfully
+2025-01-02 00:49:29,732 - INFO - Drawing circle with color: #26A69A
+2025-01-02 00:49:29,732 - INFO - Circle drawn successfully
+2025-01-02 00:49:29,732 - DEBUG - Using text color: #2D3B2D
+2025-01-02 00:49:30,429 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: circle\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: warm\n            - Background: #FEF6E4 (light and airy)\n            - Text: #4B3F2F (clear and readable)\n            - Accent: #FFA726 (vibrant primary)\n            - Secondary: #E67E22 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:30,430 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:30,430 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:30,430 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:30,430 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:30,431 - DEBUG - send_request_body.complete
+2025-01-02 00:49:30,431 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:30,993 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:31 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dc7f4f88032b-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14383'), (b'x-ratelimit-remaining-tokens', b'1535'), (b'x-ratelimit-reset-requests', b'1m40.725s'), (b'x-ratelimit-reset-tokens', b'41.579s'), (b'x-request-id', b'req_01jghmy346fc2b0cbbq810z6ht'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:30,993 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:30,994 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:30,994 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:30,994 - DEBUG - response_closed.started
+2025-01-02 00:49:30,994 - DEBUG - response_closed.complete
+2025-01-02 00:49:30,994 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:31 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dc7f4f88032b-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14383', 'x-ratelimit-remaining-tokens': '1535', 'x-ratelimit-reset-requests': '1m40.725s', 'x-ratelimit-reset-tokens': '41.579s', 'x-request-id': 'req_01jghmy346fc2b0cbbq810z6ht', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:30,994 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:49:30,994 - INFO - Position reasoning: Placing the circle at the top left corner (1) and the square at the bottom right corner (9) creates a balanced and engaging asymmetrical layout, drawing focus to both shapes and emphasizing the testimonial.
+2025-01-02 00:49:30,995 - INFO - Generated warm theme: {'bgco': '#FEF6E4', 'textco': '#4B3F2F', 'accent1': '#FFA726', 'accent2': '#E67E22', 'shape1': '#FF5252', 'shape2': '#FF6B6B'}
+2025-01-02 00:49:30,995 - INFO - Drawing circle with color: #FF5252
+2025-01-02 00:49:30,995 - INFO - Circle drawn successfully
+2025-01-02 00:49:30,995 - INFO - Drawing square with color: #FF5252
+2025-01-02 00:49:30,995 - INFO - Square drawn successfully
+2025-01-02 00:49:30,995 - DEBUG - Using text color: #4B3F2F
+2025-01-02 00:49:30,996 - INFO - Drawing circle with color: #FF5252
+2025-01-02 00:49:30,996 - INFO - Circle drawn successfully
+2025-01-02 00:49:30,996 - INFO - Drawing square with color: #FF5252
+2025-01-02 00:49:30,996 - INFO - Square drawn successfully
+2025-01-02 00:49:30,997 - DEBUG - Using text color: #4B3F2F
+2025-01-02 00:49:31,462 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: modern\n            - Background: #F0F4F8 (light and airy)\n            - Text: #4A5568 (clear and readable)\n            - Accent: #3182CE (vibrant primary)\n            - Secondary: #2980B9 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:31,464 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:31,464 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:31,465 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:31,465 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:31,465 - DEBUG - send_request_body.complete
+2025-01-02 00:49:31,465 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:32,056 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:32 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dc85ca5b032b-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14382'), (b'x-ratelimit-remaining-tokens', b'1188'), (b'x-ratelimit-reset-requests', b'1m46.966999999s'), (b'x-ratelimit-reset-tokens', b'45.733s'), (b'x-request-id', b'req_01jghmy44jevhsr5qyeczc0azz'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:32,059 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:32,060 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:32,060 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:32,060 - DEBUG - response_closed.started
+2025-01-02 00:49:32,060 - DEBUG - response_closed.complete
+2025-01-02 00:49:32,061 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:32 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dc85ca5b032b-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14382', 'x-ratelimit-remaining-tokens': '1188', 'x-ratelimit-reset-requests': '1m46.966999999s', 'x-ratelimit-reset-tokens': '45.733s', 'x-request-id': 'req_01jghmy44jevhsr5qyeczc0azz', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:32,063 - INFO - AI decided positions - Shape1: 5 (center), Shape2: 1, 3, 7, or 9 (corners)
+2025-01-02 00:49:32,063 - INFO - Position reasoning: Placing the accent shape in the center draws attention to the testimonial, while the secondary shapes in the corners provide a modern, asymmetrical layout.
+2025-01-02 00:49:32,064 - INFO - Generated modern theme: {'bgco': '#F0F4F8', 'textco': '#4A5568', 'accent1': '#3182CE', 'accent2': '#2980B9', 'shape1': '#8E44AD', 'shape2': '#6C2BD9'}
+2025-01-02 00:49:32,065 - INFO - Drawing square with color: #8E44AD
+2025-01-02 00:49:32,066 - INFO - Square drawn successfully
+2025-01-02 00:49:32,066 - INFO - Drawing square with color: #8E44AD
+2025-01-02 00:49:32,066 - INFO - Square drawn successfully
+2025-01-02 00:49:32,066 - DEBUG - Using text color: #4A5568
+2025-01-02 00:49:32,067 - INFO - Drawing square with color: #8E44AD
+2025-01-02 00:49:32,067 - INFO - Square drawn successfully
+2025-01-02 00:49:32,067 - INFO - Drawing square with color: #8E44AD
+2025-01-02 00:49:32,067 - INFO - Square drawn successfully
+2025-01-02 00:49:32,068 - DEBUG - Using text color: #4A5568
+2025-01-02 00:49:32,602 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: nature\n            - Background: #E0F7FA (light and airy)\n            - Text: #324A3B (clear and readable)\n            - Accent: #4CAF50 (vibrant primary)\n            - Secondary: #16A085 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:32,603 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:32,603 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:32,604 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:32,604 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:32,604 - DEBUG - send_request_body.complete
+2025-01-02 00:49:32,604 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:33,131 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:33 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dc8ced85032b-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14381'), (b'x-ratelimit-remaining-tokens', b'837'), (b'x-ratelimit-reset-requests', b'1m52.932s'), (b'x-ratelimit-reset-tokens', b'49.949s'), (b'x-request-id', b'req_01jghmy55tfxk8b7a0tmys54re'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:33,132 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:33,132 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:33,132 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:33,132 - DEBUG - response_closed.started
+2025-01-02 00:49:33,132 - DEBUG - response_closed.complete
+2025-01-02 00:49:33,132 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:33 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dc8ced85032b-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14381', 'x-ratelimit-remaining-tokens': '837', 'x-ratelimit-reset-requests': '1m52.932s', 'x-ratelimit-reset-tokens': '49.949s', 'x-request-id': 'req_01jghmy55tfxk8b7a0tmys54re', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:33,132 - INFO - AI decided positions - Shape1: Corners, Shape2: 5
+2025-01-02 00:49:33,132 - INFO - Position reasoning: The square resides in the corner for emphasis, while the circle in position 5 creates visual balance and contrasts the square's angular form.
+2025-01-02 00:49:33,132 - INFO - Generated nature theme: {'bgco': '#E0F7FA', 'textco': '#324A3B', 'accent1': '#4CAF50', 'accent2': '#16A085', 'shape1': '#00C853', 'shape2': '#20B2AA'}
+2025-01-02 00:49:33,133 - INFO - Drawing square with color: #00C853
+2025-01-02 00:49:33,133 - INFO - Square drawn successfully
+2025-01-02 00:49:33,133 - INFO - Drawing circle with color: #00C853
+2025-01-02 00:49:33,133 - INFO - Circle drawn successfully
+2025-01-02 00:49:33,133 - DEBUG - Using text color: #324A3B
+2025-01-02 00:49:33,133 - INFO - Drawing square with color: #00C853
+2025-01-02 00:49:33,133 - INFO - Square drawn successfully
+2025-01-02 00:49:33,133 - INFO - Drawing circle with color: #00C853
+2025-01-02 00:49:33,133 - INFO - Circle drawn successfully
+2025-01-02 00:49:33,134 - DEBUG - Using text color: #324A3B
+2025-01-02 00:49:33,701 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: warm\n            - Background: #FFF3D6 (light and airy)\n            - Text: #4B3F2F (clear and readable)\n            - Accent: #F39C12 (vibrant primary)\n            - Secondary: #FFA726 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:33,701 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:33,702 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:33,702 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:33,702 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:33,702 - DEBUG - send_request_body.complete
+2025-01-02 00:49:33,702 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:34,557 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:34 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dc93b892032b-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14380'), (b'x-ratelimit-remaining-tokens', b'501'), (b'x-ratelimit-reset-requests', b'1m58.789s'), (b'x-ratelimit-reset-tokens', b'53.983s'), (b'x-request-id', b'req_01jghmy6bpfc2vx2qh97kzh0ma'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:34,558 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:34,558 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:34,558 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:34,558 - DEBUG - response_closed.started
+2025-01-02 00:49:34,558 - DEBUG - response_closed.complete
+2025-01-02 00:49:34,558 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:34 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dc93b892032b-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14380', 'x-ratelimit-remaining-tokens': '501', 'x-ratelimit-reset-requests': '1m58.789s', 'x-ratelimit-reset-tokens': '53.983s', 'x-request-id': 'req_01jghmy6bpfc2vx2qh97kzh0ma', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:34,558 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:49:34,558 - INFO - Position reasoning: Positioning the square in the top left corner (1) and the circle in the bottom right corner (9) creates a harmonious, diagonal line that draws the eye from one shape to the other. This asymmetrical layout adds interest while maintaining visual balance.
+2025-01-02 00:49:34,558 - INFO - Generated warm theme: {'bgco': '#FFF3D6', 'textco': '#4B3F2F', 'accent1': '#F39C12', 'accent2': '#FFA726', 'shape1': '#FF6B6B', 'shape2': '#E74C3C'}
+2025-01-02 00:49:34,559 - INFO - Drawing square with color: #FF6B6B
+2025-01-02 00:49:34,559 - INFO - Square drawn successfully
+2025-01-02 00:49:34,559 - INFO - Drawing circle with color: #FF6B6B
+2025-01-02 00:49:34,559 - INFO - Circle drawn successfully
+2025-01-02 00:49:34,559 - DEBUG - Using text color: #4B3F2F
+2025-01-02 00:49:34,560 - INFO - Drawing square with color: #FF6B6B
+2025-01-02 00:49:34,560 - INFO - Square drawn successfully
+2025-01-02 00:49:34,560 - INFO - Drawing circle with color: #FF6B6B
+2025-01-02 00:49:34,560 - INFO - Circle drawn successfully
+2025-01-02 00:49:34,560 - DEBUG - Using text color: #4B3F2F
+2025-01-02 00:49:35,085 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: circle\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: creative\n            - Background: #F3E5F5 (light and airy)\n            - Text: #6A1B9A (clear and readable)\n            - Accent: #FF4081 (vibrant primary)\n            - Secondary: #E91E63 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:35,086 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:35,087 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:35,087 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:35,087 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:35,087 - DEBUG - send_request_body.complete
+2025-01-02 00:49:35,087 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:35,716 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:35 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dc9c6cd7032b-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14379'), (b'x-ratelimit-remaining-tokens', b'151'), (b'x-ratelimit-reset-requests', b'2m4.640999999s'), (b'x-ratelimit-reset-tokens', b'58.187s'), (b'x-request-id', b'req_01jghmy7p7fegv8grd7qfzdy01'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:35,716 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:35,717 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:35,717 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:35,717 - DEBUG - response_closed.started
+2025-01-02 00:49:35,717 - DEBUG - response_closed.complete
+2025-01-02 00:49:35,717 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:35 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dc9c6cd7032b-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14379', 'x-ratelimit-remaining-tokens': '151', 'x-ratelimit-reset-requests': '2m4.640999999s', 'x-ratelimit-reset-tokens': '58.187s', 'x-request-id': 'req_01jghmy7p7fegv8grd7qfzdy01', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:35,718 - INFO - AI decided positions - Shape1: 1, Shape2: 9
+2025-01-02 00:49:35,718 - INFO - Position reasoning: Positioning the square at the top left and the circle at the bottom right creates an interesting diagonal flow while utilizing the corners for emphasis. This asymmetrical layout maintains visual balance and showcases the uniqueness of each shape.
+2025-01-02 00:49:35,719 - INFO - Generated creative theme: {'bgco': '#F3E5F5', 'textco': '#6A1B9A', 'accent1': '#FF4081', 'accent2': '#E91E63', 'shape1': '#8E24AA', 'shape2': '#673AB7'}
+2025-01-02 00:49:35,719 - INFO - Drawing square with color: #8E24AA
+2025-01-02 00:49:35,719 - INFO - Square drawn successfully
+2025-01-02 00:49:35,720 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:49:35,720 - INFO - Circle drawn successfully
+2025-01-02 00:49:35,720 - DEBUG - Using text color: #6A1B9A
+2025-01-02 00:49:35,721 - INFO - Drawing square with color: #8E24AA
+2025-01-02 00:49:35,721 - INFO - Square drawn successfully
+2025-01-02 00:49:35,721 - INFO - Drawing circle with color: #8E24AA
+2025-01-02 00:49:35,722 - INFO - Circle drawn successfully
+2025-01-02 00:49:35,723 - DEBUG - Using text color: #6A1B9A
+2025-01-02 00:49:36,299 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: modern\n            - Background: #E6EDF3 (light and airy)\n            - Text: #34495E (clear and readable)\n            - Accent: #3498DB (vibrant primary)\n            - Secondary: #4299E1 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:36,300 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:36,300 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:36,301 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:36,301 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:36,301 - DEBUG - send_request_body.complete
+2025-01-02 00:49:36,301 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:37,316 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'Date', b'Wed, 01 Jan 2025 19:19:37 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'332'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dca3f852032b-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Retry-After', b'2'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14379'), (b'x-ratelimit-remaining-tokens', b'202'), (b'x-ratelimit-reset-requests', b'2m4.183s'), (b'x-ratelimit-reset-tokens', b'57.566s'), (b'x-request-id', b'req_01jghmy9f0fhasw03qjn63mqd4'), (b'Server', b'cloudflare')])
+2025-01-02 00:49:37,326 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-01-02 00:49:37,328 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:37,332 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:37,334 - DEBUG - response_closed.started
+2025-01-02 00:49:37,334 - DEBUG - response_closed.complete
+2025-01-02 00:49:37,340 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "429 Too Many Requests" Headers({'date': 'Wed, 01 Jan 2025 19:19:37 GMT', 'content-type': 'application/json', 'content-length': '332', 'connection': 'keep-alive', 'cf-ray': '8fb4dca3f852032b-AMD', 'cf-cache-status': 'DYNAMIC', 'retry-after': '2', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14379', 'x-ratelimit-remaining-tokens': '202', 'x-ratelimit-reset-requests': '2m4.183s', 'x-ratelimit-reset-tokens': '57.566s', 'x-request-id': 'req_01jghmy9f0fhasw03qjn63mqd4', 'server': 'cloudflare'})
+2025-01-02 00:49:37,342 - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/myenv/lib/python3.11/site-packages/groq/_base_client.py", line 1037, in _request
+    response.raise_for_status()
+  File "/Users/varunisrani/Desktop/v1/myenv/lib/python3.11/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '429 Too Many Requests' for url 'https://api.groq.com/openai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429
+2025-01-02 00:49:37,358 - DEBUG - Retrying due to status code 429
+2025-01-02 00:49:37,358 - DEBUG - 2 retries left
+2025-01-02 00:49:37,358 - INFO - Retrying request to /openai/v1/chat/completions in 2.000000 seconds
+2025-01-02 00:49:39,367 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': "Create a positive testimonial (2-3 sentences) about iphone and decide optimal positions for two shapes on a 3x3 grid.\n\n            Grid Layout (positions 1-9):\n            [1][2][3]\n            [4][5][6]\n            [7][8][9]\n\n            Special positions:\n            - 'center' (middle of grid)\n            - 'corners' (all four corners)\n\n            Current shapes:\n            - Shape 1: square\n            - Shape 2: square\n\n            Design Rules:\n            - Choose positions that create visual balance\n            - Avoid overlapping shapes\n            - Consider the shape types when positioning\n            - Create interesting asymmetrical layouts\n            - Use corners or center for emphasis\n\n            Color Theme: modern\n            - Background: #E6EDF3 (light and airy)\n            - Text: #34495E (clear and readable)\n            - Accent: #3498DB (vibrant primary)\n            - Secondary: #4299E1 (complementary)\n\n            Return in this format:\n            Testimonial: [your testimonial text]\n            Grid Position 1: [position number 1-9 or 'center' or 'corners']\n            Grid Position 2: [different position number 1-9 or 'center' or 'corners']\n            Reason: [brief explanation of position choices]"}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 250, 'temperature': 0.9}}
+2025-01-02 00:49:39,369 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 00:49:39,370 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:39,370 - DEBUG - send_request_headers.complete
+2025-01-02 00:49:39,371 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 00:49:39,371 - DEBUG - send_request_body.complete
+2025-01-02 00:49:39,371 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 00:49:39,970 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Wed, 01 Jan 2025 19:19:39 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fb4dcb72cb3032b-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14378'), (b'x-ratelimit-remaining-tokens', b'58'), (b'x-ratelimit-reset-requests', b'2m7.801999999s'), (b'x-ratelimit-reset-tokens', b'59.301s'), (b'x-request-id', b'req_01jghmybsafxm9vhkn02382r4v'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 00:49:39,971 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 00:49:39,972 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 00:49:39,973 - DEBUG - receive_response_body.complete
+2025-01-02 00:49:39,973 - DEBUG - response_closed.started
+2025-01-02 00:49:39,974 - DEBUG - response_closed.complete
+2025-01-02 00:49:39,974 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Wed, 01 Jan 2025 19:19:39 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fb4dcb72cb3032b-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14378', 'x-ratelimit-remaining-tokens': '58', 'x-ratelimit-reset-requests': '2m7.801999999s', 'x-ratelimit-reset-tokens': '59.301s', 'x-request-id': 'req_01jghmybsafxm9vhkn02382r4v', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 00:49:39,978 - INFO - AI decided positions - Shape1: 5 (center), Shape2: Corners (1,3,7,9)
+2025-01-02 00:49:39,980 - INFO - Position reasoning: Placing the accent shape in the center draws attention to the testimonial, while squares in the corners establish a stable and visually balanced layout that complements the modern theme.
+2025-01-02 00:49:39,980 - INFO - Generated modern theme: {'bgco': '#E6EDF3', 'textco': '#34495E', 'accent1': '#3498DB', 'accent2': '#4299E1', 'shape1': '#9B59B6', 'shape2': '#805AD5'}
+2025-01-02 00:49:39,981 - INFO - Drawing square with color: #9B59B6
+2025-01-02 00:49:39,981 - INFO - Square drawn successfully
+2025-01-02 00:49:39,982 - INFO - Drawing square with color: #9B59B6
+2025-01-02 00:49:39,982 - INFO - Square drawn successfully
+2025-01-02 00:49:39,983 - DEBUG - Using text color: #34495E
+2025-01-02 00:49:39,984 - INFO - Drawing square with color: #9B59B6
+2025-01-02 00:49:39,984 - INFO - Square drawn successfully
+2025-01-02 00:49:39,985 - INFO - Drawing square with color: #9B59B6
+2025-01-02 00:49:39,985 - INFO - Square drawn successfully
+2025-01-02 00:49:39,986 - DEBUG - Using text color: #34495E
+2025-01-02 00:50:05,096 - DEBUG - close.started
+2025-01-02 00:50:05,097 - DEBUG - close.complete

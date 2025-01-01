@@ -649,8 +649,66 @@ class TestimonialGenerator:
 
         return colors, palette_type
 
+    def get_dynamic_grid_positions(self, shape1_type, shape2_type):
+        """Generate dynamic and visually appealing grid positions"""
+        
+        # Define position strategies for different combinations
+        position_strategies = {
+            ('square', 'circle'): [
+                # Diagonal arrangements
+                {'pos1': 1, 'pos2': 9},  # Top-left to bottom-right
+                {'pos1': 3, 'pos2': 7},  # Top-right to bottom-left
+                # Frame arrangements
+                {'pos1': 2, 'pos2': 8},  # Top-bottom
+                {'pos1': 4, 'pos2': 6},  # Left-right
+                # Center with corner
+                {'pos1': 5, 'pos2': 1},  # Center with top-left
+                {'pos1': 5, 'pos2': 3},  # Center with top-right
+                {'pos1': 5, 'pos2': 7},  # Center with bottom-left
+                {'pos1': 5, 'pos2': 9},  # Center with bottom-right
+            ],
+            ('circle', 'circle'): [
+                # Symmetrical arrangements
+                {'pos1': 1, 'pos2': 3},  # Top corners
+                {'pos1': 7, 'pos2': 9},  # Bottom corners
+                {'pos1': 1, 'pos2': 7},  # Left corners
+                {'pos1': 3, 'pos2': 9},  # Right corners
+                # Center with balanced position
+                {'pos1': 5, 'pos2': 2},  # Center with top
+                {'pos1': 5, 'pos2': 8},  # Center with bottom
+            ],
+            ('square', 'square'): [
+                # Grid-like arrangements
+                {'pos1': 2, 'pos2': 8},  # Vertical alignment
+                {'pos1': 4, 'pos2': 6},  # Horizontal alignment
+                {'pos1': 1, 'pos2': 5},  # Corner with center
+                {'pos1': 3, 'pos2': 5},  # Different corner with center
+                {'pos1': 7, 'pos2': 5},  # Another corner with center
+                {'pos1': 9, 'pos2': 5},  # Last corner with center
+            ]
+        }
+
+        # Get shape combination
+        combo = (shape1_type.lower(), shape2_type.lower())
+        
+        # If combination not found, use reverse order
+        if combo not in position_strategies:
+            combo = (shape2_type.lower(), shape1_type.lower())
+        
+        # If still not found, use default square-circle combination
+        strategy_list = position_strategies.get(combo, position_strategies[('square', 'circle')])
+        
+        # Randomly select a strategy with weights favoring more interesting combinations
+        weights = [1.5 if 5 in (s['pos1'], s['pos2']) else 1.0 for s in strategy_list]
+        strategy = random.choices(strategy_list, weights=weights, k=1)[0]
+        
+        # Sometimes flip positions for more variety
+        if random.random() > 0.5:
+            return strategy['pos2'], strategy['pos1']
+        return strategy['pos1'], strategy['pos2']
+
     def generate_testimonial(self, topic):
-        """Generate testimonial with beautiful color theme"""
+        """Generate testimonial with beautiful color theme and dynamic grid positions"""
         try:
             # Read CSV just for structure
             df = pd.read_csv('ss11.csv')
@@ -659,21 +717,19 @@ class TestimonialGenerator:
             # Generate beautiful color theme
             colors, palette_type = self.generate_color_theme()
             
+            # Get dynamic grid positions based on shapes
+            grid_pos1, grid_pos2 = self.get_dynamic_grid_positions(
+                random_row['shape1'], 
+                random_row['shape2']
+            )
+            
             # Create prompt for AI
             prompt = f"""Create a positive testimonial (2-3 sentences) about {topic}.
             The testimonial should match this {palette_type} color theme mood:
             - Background: {colors['bgco']} (light and airy)
             - Text: {colors['textco']} (clear and readable)
             - Accent: {colors['accent1']} (vibrant primary)
-            - Secondary: {colors['accent2']} (complementary)
-
-            Make the testimonial reflect the color mood:
-            - Modern: Professional and sleek
-            - Warm: Friendly and inviting
-            - Nature: Fresh and organic
-            - Creative: Dynamic and innovative
-
-            Return just the testimonial text."""
+            - Secondary: {colors['accent2']} (complementary)"""
 
             # Generate response using Groq
             response = self.client.chat.completions.create(
@@ -688,7 +744,10 @@ class TestimonialGenerator:
             
             testimonial = response.choices[0].message.content.strip()
             
-            # Update design style with generated colors
+            # Log the chosen positions
+            logger.info(f"Dynamic positions chosen - Shape1: {grid_pos1}, Shape2: {grid_pos2}")
+            
+            # Update design style with generated colors and dynamic positions
             self.design_style.update({
                 'font': random_row['font'],
                 'bgco': colors['bgco'],
@@ -701,8 +760,8 @@ class TestimonialGenerator:
                 'fontsize': int(random_row['fontsize']),
                 'shape1': random_row['shape1'],
                 'shape2': random_row['shape2'],
-                'grid_pos1': random_row['grid_pos1'],
-                'grid_pos2': random_row['grid_pos2']
+                'grid_pos1': grid_pos1,
+                'grid_pos2': grid_pos2
             })
             
             logger.info(f"Generated {palette_type} theme: {colors}")
