@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from typing import List, Optional, Dict, Union
+from typing import List, Optional, Dict, Union, Any
 import uvicorn
 from testimonial_generator import TestimonialGenerator, SVGShapeGenerator
 import json
@@ -70,7 +70,15 @@ class SVGResponse(BaseModel):
     combined_svg: str
     text_content: str
     colors: Dict[str, Optional[Union[str, int, float]]]
-    image_margin: int = Field(default=40)
+    design_info: Dict[str, Any] = Field(
+        default={
+            "theme_type": "default",
+            "composition": "medium",
+            "margin": 40,
+            "shape1_size": 0.25,
+            "shape2_size": 0.22
+        }
+    )
 
     class Config:
         from_attributes = True

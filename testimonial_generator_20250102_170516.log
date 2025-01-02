@@ -490,3 +490,5 @@
 2025-01-02 17:06:20,332 - INFO - Grid position 7 - x: 180.0, y: 900.0
 2025-01-02 17:06:20,332 - INFO - Drawing square with color: #FF5722, size: 0.3
 2025-01-02 17:06:20,334 - DEBUG - Using text color: #5E4D3E
+2025-01-02 17:09:33,794 - DEBUG - close.started
+2025-01-02 17:09:33,796 - DEBUG - close.complete

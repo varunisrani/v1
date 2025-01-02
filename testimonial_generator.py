@@ -1065,9 +1065,9 @@ class TestimonialGenerator:
             return (width/2, height/2)
 
     def generate_color_theme(self):
-        """Generate harmonious color theme"""
+        """Generate harmonious color theme with matching shape sizes and margins"""
         try:
-            # Predefined beautiful color palettes
+            # Predefined beautiful color palettes with shape size and margin recommendations
             color_palettes = {
                 "warm": {
                     "backgrounds": [
@@ -1085,7 +1085,19 @@ class TestimonialGenerator:
                     "shapes": [
                         "#E67E22", "#FF6B6B", "#FF7043", "#FF5722", "#FF4081",
                         "#C0392B", "#D35400", "#E74C3C"
-                    ]
+                    ],
+                    "shape_sizes": {
+                        "large": (0.28, 0.25),
+                        "medium": (0.25, 0.22),
+                        "small": (0.22, 0.20),
+                        "balanced": (0.25, 0.25)
+                    },
+                    "margins": {
+                        "large": 60,     # More breathing space for bold designs
+                        "medium": 48,    # Balanced margin
+                        "small": 40,     # Tighter composition
+                        "minimal": 32    # Very tight composition
+                    }
                 },
                 "cool": {
                     "backgrounds": [
@@ -1103,7 +1115,19 @@ class TestimonialGenerator:
                     "shapes": [
                         "#16A085", "#2980B9", "#00ACC1", "#00BCD4", "#03A9F4",
                         "#039BE5", "#0288D1", "#0277BD"
-                    ]
+                    ],
+                    "shape_sizes": {
+                        "large": (0.30, 0.25),
+                        "medium": (0.25, 0.22),
+                        "small": (0.20, 0.18),
+                        "balanced": (0.23, 0.23)
+                    },
+                    "margins": {
+                        "large": 64,     # Spacious layout for professional look
+                        "medium": 52,    # Standard spacing
+                        "small": 44,     # Closer composition
+                        "minimal": 36    # Compact layout
+                    }
                 },
                 "nature": {
                     "backgrounds": [
@@ -1121,7 +1145,19 @@ class TestimonialGenerator:
                     "shapes": [
                         "#00C853", "#00E676", "#69F0AE", "#76FF03", "#C6FF00",
                         "#FFEA00", "#FFD740", "#FFAB00"
-                    ]
+                    ],
+                    "shape_sizes": {
+                        "large": (0.27, 0.24),
+                        "medium": (0.24, 0.21),
+                        "small": (0.21, 0.19),
+                        "balanced": (0.22, 0.22)
+                    },
+                    "margins": {
+                        "large": 56,     # Organic spacing
+                        "medium": 46,    # Natural balance
+                        "small": 38,     # Cozy arrangement
+                        "minimal": 32    # Intimate spacing
+                    }
                 },
                 "elegant": {
                     "backgrounds": [
@@ -1139,13 +1175,39 @@ class TestimonialGenerator:
                     "shapes": [
                         "#9B59B6", "#8E44AD", "#7D3C98", "#673AB7", "#5E35B1",
                         "#512DA8", "#4527A0", "#311B92"
-                    ]
+                    ],
+                    "shape_sizes": {
+                        "large": (0.26, 0.23),
+                        "medium": (0.23, 0.20),
+                        "small": (0.20, 0.18),
+                        "balanced": (0.21, 0.21)
+                    },
+                    "margins": {
+                        "large": 72,     # Luxurious spacing
+                        "medium": 56,    # Refined balance
+                        "small": 48,     # Sophisticated composition
+                        "minimal": 40    # Modern minimal
+                    }
                 }
             }
 
             # Randomly select a theme type
             theme_type = random.choice(list(color_palettes.keys()))
             palette = color_palettes[theme_type]
+
+            # Select composition style based on theme
+            composition_style = random.choice(['large', 'medium', 'small', 'minimal'])
+            
+            # Get shape sizes and margin for the selected style
+            shape_sizes = palette["shape_sizes"][composition_style if composition_style != 'minimal' else 'small']
+            margin = palette["margins"][composition_style]
+
+            # Adjust margin based on shape sizes
+            total_shape_size = shape_sizes[0] + shape_sizes[1]
+            if total_shape_size > 0.45:  # If shapes are large
+                margin = max(32, margin - 8)  # Reduce margin but keep minimum
+            elif total_shape_size < 0.35:  # If shapes are small
+                margin = min(72, margin + 8)  # Increase margin but keep maximum
 
             # Select colors from the chosen palette
             colors = {
@@ -1154,10 +1216,17 @@ class TestimonialGenerator:
                 'accent1': random.choice(palette["accents"]),
                 'accent2': random.choice(palette["accents"]),
                 'shape1': random.choice(palette["shapes"]),
-                'shape2': random.choice(palette["shapes"])
+                'shape2': random.choice(palette["shapes"]),
+                'shape1_size': shape_sizes[0],
+                'shape2_size': shape_sizes[1],
+                'margin': margin
             }
 
-            logger.info(f"Generated {theme_type} theme: {colors}")
+            logger.info(f"Generated {theme_type} theme with {composition_style} composition:")
+            logger.info(f"- Shape sizes: {shape_sizes}")
+            logger.info(f"- Margin: {margin}px")
+            logger.info(f"- Colors: {colors}")
+            
             return colors, theme_type
 
         except Exception as e:
@@ -1168,7 +1237,10 @@ class TestimonialGenerator:
                 'accent1': '#2196F3',
                 'accent2': '#1976D2',
                 'shape1': '#2196F3',
-                'shape2': '#1976D2'
+                'shape2': '#1976D2',
+                'shape1_size': 0.25,
+                'shape2_size': 0.22,
+                'margin': 40
             }, "default"
 
 # Add this to store the current design state
