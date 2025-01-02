@@ -520,3 +520,5 @@
 2025-01-02 16:16:42,250 - INFO - Drawing circle with color: #FF6B6B and size factor: 0.25
 2025-01-02 16:16:42,251 - INFO - Drawing circle with color: #FF6B6B and size factor: 0.25
 2025-01-02 16:16:42,251 - DEBUG - Using text color: #5A4B3B
+2025-01-02 16:19:00,448 - DEBUG - close.started
+2025-01-02 16:19:00,450 - DEBUG - close.complete

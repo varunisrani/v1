@@ -70,6 +70,7 @@ class SVGResponse(BaseModel):
     combined_svg: str
     text_content: str
     colors: Dict[str, Optional[Union[str, int, float]]]
+    image_margin: int = Field(default=40)
 
     class Config:
         from_attributes = True

@@ -1,0 +1,68 @@
+2025-01-02 16:44:43,861 - INFO - Initializing application
+2025-01-02 16:44:43,867 - DEBUG - Loading design configurations from ss11.csv
+2025-01-02 16:44:43,867 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F3F4F6', 'textco': '2C3E50', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#E74C3C', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#7D3C98', 'grid_pos2': '1', 'shape1_size': '9', 'shape2_size': '0.25', 'image_margin': '0.20', None: ['40']}
+2025-01-02 16:44:43,867 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F3F4F6', 'textco': '#2C3E50', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:44:43,867 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F6FA', 'textco': '34495E', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#2980B9', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#16A085', 'grid_pos2': '3', 'shape1_size': '7', 'shape2_size': '0.30', 'image_margin': '0.25', None: ['50']}
+2025-01-02 16:44:43,867 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F6FA', 'textco': '#34495E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:44:43,867 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'FDF6F0', 'textco': '8E44AD', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#F39C12', 'shape2': 'square', 'shape_color': 'square', 'grid_pos1': '#D35400', 'grid_pos2': '1', 'shape1_size': '9', 'shape2_size': '0.28', 'image_margin': '0.28', None: ['60']}
+2025-01-02 16:44:43,867 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#FDF6F0', 'textco': '#8E44AD', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:44:43,867 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F0E5D8', 'textco': '4B3C3C', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#C0392B', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#7D3C98', 'grid_pos2': '3', 'shape1_size': '7', 'shape2_size': '0.35', 'image_margin': '0.22', None: ['40']}
+2025-01-02 16:44:43,867 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F0E5D8', 'textco': '#4B3C3C', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:44:43,867 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'E8D8D0', 'textco': '3C2B2B', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#8E44AD', 'shape2': 'circle', 'shape_color': 'circle', 'grid_pos1': '#2980B9', 'grid_pos2': '1', 'shape1_size': '9', 'shape2_size': '0.25', 'image_margin': '0.25', None: ['50']}
+2025-01-02 16:44:43,867 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#E8D8D0', 'textco': '#3C2B2B', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:44:43,867 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F0E1', 'textco': '5E4D3E', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#27AE60', 'shape2': 'circle', 'shape_color': 'square', 'grid_pos1': '#16A085', 'grid_pos2': '3', 'shape1_size': '7', 'shape2_size': '0.20', 'image_margin': '0.30', None: ['60']}
+2025-01-02 16:44:43,867 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F0E1', 'textco': '#5E4D3E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:44:43,867 - DEBUG - Total configurations loaded: 6
+2025-01-02 16:44:43,869 - DEBUG - Using selector: KqueueSelector
+2025-01-02 16:44:43,934 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-01-02 16:44:43,936 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-02 16:44:43,969 - INFO - Initializing TestimonialGenerator
+2025-01-02 16:44:43,969 - INFO - Font downloaded successfully
+2025-01-02 16:44:43,969 - INFO - Validating CSV structure
+2025-01-02 16:44:43,969 - INFO - CSV columns found: ['Poppins-Medium', 'F3F4F6', '2C3E50', '(1080', '1080)', '48', '#E74C3C', 'square', 'circle', '#7D3C98', '1', '9', '0.25', '0.20', '40']
+2025-01-02 16:44:43,969 - ERROR - Missing required columns: {'textco', 'accent', 'bgco'}
+2025-01-02 16:44:43,969 - WARNING - CSV validation failed, using default color schemes
+2025-01-02 16:44:43,970 - INFO - TestimonialGenerator initialized successfully
+2025-01-02 16:44:43,974 - DEBUG - Using selector: KqueueSelector
+2025-01-02 16:44:44,102 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2025-01-02 16:44:44,102 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-01-02 16:44:44,102 - DEBUG - receive_response_body.complete
+2025-01-02 16:44:44,102 - DEBUG - response_closed.started
+2025-01-02 16:44:44,102 - DEBUG - response_closed.complete
+2025-01-02 16:44:44,102 - DEBUG - close.started
+2025-01-02 16:44:44,103 - DEBUG - close.complete
+2025-01-02 16:44:44,233 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x11ad0d410>
+2025-01-02 16:44:44,233 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x11ad584d0> server_hostname='api.gradio.app' timeout=3
+2025-01-02 16:44:44,287 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-01-02 16:44:44,844 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x109b93a90>
+2025-01-02 16:44:44,845 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-01-02 16:44:44,845 - DEBUG - send_request_headers.complete
+2025-01-02 16:44:44,845 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-01-02 16:44:44,845 - DEBUG - send_request_body.complete
+2025-01-02 16:44:44,845 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-01-02 16:44:45,148 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:14:45 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-01-02 16:44:45,148 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-01-02 16:44:45,149 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-01-02 16:44:45,149 - DEBUG - receive_response_body.complete
+2025-01-02 16:44:45,149 - DEBUG - response_closed.started
+2025-01-02 16:44:45,149 - DEBUG - response_closed.complete
+2025-01-02 16:44:45,149 - DEBUG - close.started
+2025-01-02 16:44:45,150 - DEBUG - close.complete
+2025-01-02 16:44:46,529 - INFO - Using image margin: 60px
+2025-01-02 16:44:46,529 - ERROR - Error generating testimonial: name 'testimonial' is not defined
+2025-01-02 16:44:46,529 - ERROR - Stack trace:
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 656, in generate_testimonial
+    return testimonial
+           ^^^^^^^^^^^
+NameError: name 'testimonial' is not defined
+2025-01-02 16:44:46,530 - ERROR - Error in generate_testimonial: 'shape_color'
+2025-01-02 16:44:47,556 - INFO - Using image margin: 40px
+2025-01-02 16:44:47,556 - ERROR - Error generating testimonial: name 'testimonial' is not defined
+2025-01-02 16:44:47,556 - ERROR - Stack trace:
+Traceback (most recent call last):
+  File "/Users/varunisrani/Desktop/v1/testimonial_generator.py", line 656, in generate_testimonial
+    return testimonial
+           ^^^^^^^^^^^
+NameError: name 'testimonial' is not defined
+2025-01-02 16:44:47,557 - ERROR - Error in generate_testimonial: 'shape_color'

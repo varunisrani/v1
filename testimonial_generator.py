@@ -13,6 +13,7 @@ from IPython.display import display, HTML
 import ast  # Import ast for safe evaluation
 import pandas as pd
 import re
+from xml.etree import ElementTree as ET
 
 # Set up logging
 logging.basicConfig(
@@ -203,9 +204,9 @@ class SVGShapeGenerator:
         """Draw a centered circle with custom size"""
         try:
             color = SVGShapeGenerator.validate_color(color)
-            logger.info(f"Drawing circle with color: {color} and size factor: {size_factor}")
+            logger.info(f"Drawing circle with color: {color}, size: {size_factor}")
             
-            # Calculate circle dimensions based on size factor
+            # Calculate circle dimensions
             circle_size = min(width, height) * size_factor
             radius = circle_size / 2
             
@@ -252,9 +253,9 @@ class SVGShapeGenerator:
         """Draw a centered square with custom size"""
         try:
             color = SVGShapeGenerator.validate_color(color)
-            logger.info(f"Drawing square with color: {color} and size factor: {size_factor}")
+            logger.info(f"Drawing square with color: {color}, size: {size_factor}")
             
-            # Calculate square dimensions based on size factor
+            # Calculate square dimensions
             square_size = min(width, height) * size_factor
             
             # Use provided center or default to center of canvas
@@ -289,15 +290,33 @@ class SVGShapeGenerator:
                 ry=10
             ))
             
-            # Add inner white square for contrast
-            inner_margin = square_size * 0.15
+            # Add subtle gradient effect instead of white border
+            gradient = dwg.defs.add(dwg.linearGradient(
+                id="squareGradient",
+                x1="0%",
+                y1="0%",
+                x2="100%",
+                y2="100%"
+            ))
+            gradient.add_stop_color(
+                offset='0%',
+                color='#FFFFFF',
+                opacity=0.1
+            )
+            gradient.add_stop_color(
+                offset='100%',
+                color='#FFFFFF',
+                opacity=0
+            )
+            
+            # Add gradient overlay
             dwg.add(dwg.rect(
-                insert=(x + inner_margin, y + inner_margin),
-                size=(square_size * 0.7, square_size * 0.7),
-                fill='#FFFFFF',
+                insert=(x, y),
+                size=(square_size, square_size),
+                fill="url(#squareGradient)",
                 stroke='none',
-                rx=5,
-                ry=5
+                rx=10,
+                ry=10
             ))
             
             return True
@@ -475,7 +494,7 @@ class TestimonialGenerator:
         self.client = client
         self.design_style = {
             'font': 'Poppins-Medium',
-            'imagesize': (1080, 1080),  # Updated to square dimensions
+            'imagesize': (1080, 1080),
             'fontsize': 48,
             'bgco': '#FFFFFF',
             'textco': '#000000',
@@ -483,7 +502,8 @@ class TestimonialGenerator:
         }
         self.font_path = None
         self._download_font()
-        self.shape_generator = SVGShapeGenerator()  # Create instance of SVGShapeGenerator
+        self.shape_generator = SVGShapeGenerator()
+        self.debug_mode = False
         
         # Validate CSV structure on initialization
         if not self.validate_csv_structure():
@@ -567,140 +587,122 @@ class TestimonialGenerator:
         combined += '</svg>'
         return combined
 
-    def render_svg(self, text, selected_shapes, has_quotes):
+    def render_svg(self, text, selected_shapes=None, has_quotes=True):
+        """Render complete SVG with margin"""
         try:
-            # Get components
-            bg_svg = self.render_background_svg(self.design_style['bgco'])
-            shapes_svg = self.render_shapes_svg(self.design_style['accent'], selected_shapes)
+            width, height = self.design_style['imagesize']
+            image_margin = int(self.design_style.get('image_margin', 40))
+            bg_color = f"#{self.design_style['bgco'].strip('#')}"
+            
+            # Create main SVG
+            dwg = svgwrite.Drawing(size=(width, height))
+            
+            # Add full background first (covers entire SVG including margins)
+            dwg.add(dwg.rect(
+                insert=(0, 0),
+                size=(width, height),
+                fill=bg_color,
+                rx=0,
+                ry=0
+            ))
+            
+            # Add inner background with rounded corners
+            dwg.add(dwg.rect(
+                insert=(image_margin, image_margin),
+                size=(width - 2*image_margin, height - 2*image_margin),
+                fill=bg_color,
+                rx=10,
+                ry=10
+            ))
+            
+            # Create a group for content with margin transform
+            content_group = dwg.g()
+            content_group.translate(image_margin, image_margin)
+            content_group.scale((width - 2*image_margin)/width)
+            
+            # Add shapes
+            shapes_svg = self.render_shapes_svg(self.design_style.get('shape_color'), selected_shapes)
+            if shapes_svg:
+                # Extract shape elements from shapes SVG
+                shapes_tree = ET.fromstring(shapes_svg)
+                for shape_elem in shapes_tree.findall('.//*[@fill]'):
+                    # Create new shape with same attributes
+                    if shape_elem.tag.endswith('circle'):
+                        circle = dwg.circle(
+                            center=(float(shape_elem.get('cx', 0)), float(shape_elem.get('cy', 0))),
+                            r=float(shape_elem.get('r', 0)),
+                            fill=shape_elem.get('fill', '#000'),
+                            fill_opacity=float(shape_elem.get('fill-opacity', 1))
+                        )
+                        content_group.add(circle)
+                    elif shape_elem.tag.endswith('rect'):
+                        rect = dwg.rect(
+                            insert=(float(shape_elem.get('x', 0)), float(shape_elem.get('y', 0))),
+                            size=(float(shape_elem.get('width', 0)), float(shape_elem.get('height', 0))),
+                            fill=shape_elem.get('fill', '#000'),
+                            fill_opacity=float(shape_elem.get('fill-opacity', 1)),
+                            rx=float(shape_elem.get('rx', 0)),
+                            ry=float(shape_elem.get('ry', 0))
+                        )
+                        content_group.add(rect)
+            
+            # Add text
             text_svg = self.render_text_svg(
                 text,
                 self.design_style['textco'],
                 self.design_style['fontsize'],
                 has_quotes
             )
-
-            # Combine SVGs using the new method
-            combined_svg = self.combine_svg_strings(bg_svg, shapes_svg, text_svg)
-            return combined_svg
-
+            if text_svg:
+                # Extract text elements from text SVG
+                text_tree = ET.fromstring(text_svg)
+                for text_elem in text_tree.findall('.//*[@font-size]'):
+                    # Create new text element with same attributes
+                    text_node = dwg.text(
+                        text_elem.text,
+                        insert=(float(text_elem.get('x', 0)), float(text_elem.get('y', 0))),
+                        font_size=text_elem.get('font-size'),
+                        font_family=text_elem.get('font-family', 'Poppins-Medium'),
+                        fill=text_elem.get('fill', '#000'),
+                        text_anchor=text_elem.get('text-anchor', 'middle'),
+                        alignment_baseline=text_elem.get('alignment-baseline', 'middle')
+                    )
+                    content_group.add(text_node)
+            
+            # Add the content group to main SVG
+            dwg.add(content_group)
+            
+            # Add outer border (optional)
+            dwg.add(dwg.rect(
+                insert=(image_margin, image_margin),
+                size=(width - 2*image_margin, height - 2*image_margin),
+                fill='none',
+                stroke='#E0E0E0',
+                stroke_width=1,
+                rx=10,
+                ry=10
+            ))
+            
+            return dwg.tostring()
+            
         except Exception as e:
-            logger.error(f"Error rendering combined SVG: {str(e)}")
+            logger.error(f"Error rendering SVG: {str(e)}")
+            logger.error("Stack trace:", exc_info=True)
             return None
 
-    def generate_color_theme(self):
-        """Generate a beautiful and harmonious color theme"""
-        
-        # Color palettes for different moods
-        palettes = {
-            'modern': {
-                'bg': ['#F5F7FA', '#F0F4F8', '#EDF2F7', '#E6EDF3', '#ECF0F4'],
-                'text': ['#1A202C', '#2D3748', '#4A5568', '#2C3E50', '#34495E'],
-                'accent': ['#3498DB', '#2980B9', '#0088CC', '#4299E1', '#3182CE'],
-                'shapes': ['#9B59B6', '#8E44AD', '#6B46C1', '#805AD5', '#6C2BD9']
-            },
-            'warm': {
-                'bg': ['#FDF6F0', '#FEF6E4', '#FFF5E6', '#FFF4E0', '#FFF3D6'],
-                'text': ['#433422', '#5C4B37', '#6B5744', '#4B3F2F', '#5A4B3B'],
-                'accent': ['#F39C12', '#E67E22', '#FF9F43', '#FFA726', '#FF9800'],
-                'shapes': ['#E74C3C', '#C0392B', '#D35400', '#FF5252', '#FF6B6B']
-            },
-            'nature': {
-                'bg': ['#F0F7F4', '#E8F5E9', '#F1F8E9', '#E8F6F3', '#E0F7FA'],
-                'text': ['#1B4332', '#2D3B2D', '#324A3B', '#1B5E20', '#2E7D32'],
-                'accent': ['#27AE60', '#2ECC71', '#16A085', '#4CAF50', '#00BFA5'],
-                'shapes': ['#20B2AA', '#3CB371', '#00C853', '#00BCD4', '#26A69A']
-            },
-            'creative': {
-                'bg': ['#F8F0F9', '#F3E5F5', '#F5E6FF', '#FCE4EC', '#FFE0F0'],
-                'text': ['#4A154B', '#5B2C6F', '#6A1B9A', '#4A148C', '#6A1B9A'],
-                'accent': ['#9C27B0', '#E91E63', '#FF4081', '#EC407A', '#D81B60'],
-                'shapes': ['#673AB7', '#8E24AA', '#AA00FF', '#7B1FA2', '#6200EA']
-            }
-        }
-
-        # Randomly select a palette type
-        palette_type = random.choice(list(palettes.keys()))
-        palette = palettes[palette_type]
-
-        # Generate unique colors
-        colors = {
-            'bgco': random.choice(palette['bg']),
-            'textco': random.choice(palette['text']),
-            'accent1': random.choice(palette['accent']),
-            'accent2': None,
-            'shape1': None,
-            'shape2': None
-        }
-
-        # Ensure accent2 is different from accent1
-        while True:
-            colors['accent2'] = random.choice(palette['accent'])
-            if colors['accent2'] != colors['accent1']:
-                break
-
-        # Ensure shape colors are different from accents
-        used_colors = {colors['accent1'], colors['accent2']}
-        while True:
-            colors['shape1'] = random.choice(palette['shapes'])
-            if colors['shape1'] not in used_colors:
-                used_colors.add(colors['shape1'])
-                break
-
-        while True:
-            colors['shape2'] = random.choice(palette['shapes'])
-            if colors['shape2'] not in used_colors:
-                break
-
-        return colors, palette_type
-
-    def get_dynamic_grid_positions(self, shape1_type, shape2_type):
-        """Generate grid positions using only diagonal combinations (1,9 and 3,7)"""
-        
-        # Define only diagonal position combinations
-        diagonal_combinations = [
-            {'pos1': 1, 'pos2': 9},  # Diagonal top-left to bottom-right
-            {'pos1': 3, 'pos2': 7},  # Diagonal top-right to bottom-left
-            {'pos1': 9, 'pos2': 1},  # Reverse diagonal top-left to bottom-right
-            {'pos1': 7, 'pos2': 3},  # Reverse diagonal top-right to bottom-left
-        ]
-
-        # Weight the combinations based on shape types
-        weights = []
-        for combo in diagonal_combinations:
-            weight = 1.0
-            
-            # Adjust weights based on shape combinations
-            if shape1_type.lower() != shape2_type.lower():
-                # For different shapes, prefer original diagonal arrangements
-                if (combo['pos1'] == 1 and combo['pos2'] == 9) or \
-                   (combo['pos1'] == 3 and combo['pos2'] == 7):
-                    weight = 1.4
-            
-            weights.append(weight)
-
-        # Select a combination using weighted random choice
-        chosen_combo = random.choices(diagonal_combinations, weights=weights, k=1)[0]
-        
-        logger.info(f"Selected diagonal positions: {chosen_combo['pos1']}, {chosen_combo['pos2']}")
-        return chosen_combo['pos1'], chosen_combo['pos2']
-
     def generate_testimonial(self, topic):
-        """Generate testimonial with beautiful color theme and dynamic grid positions"""
         try:
             # Read CSV just for structure
             df = pd.read_csv('ss11.csv')
             random_row = df.sample(n=1).iloc[0]
             
+            # Get image margin from CSV
+            image_margin = int(random_row.get('image_margin', 40))
+            
             # Generate beautiful color theme
             colors, palette_type = self.generate_color_theme()
             
-            # Get dynamic grid positions based on shapes
-            grid_pos1, grid_pos2 = self.get_dynamic_grid_positions(
-                random_row['shape1'], 
-                random_row['shape2']
-            )
-            
-            # Create prompt for AI
+            # Generate testimonial using Groq
             prompt = f"""Create a positive testimonial (2-3 sentences) about {topic}.
             The testimonial should match this {palette_type} color theme mood:
             - Background: {colors['bgco']} (light and airy)
@@ -708,7 +710,6 @@ class TestimonialGenerator:
             - Accent: {colors['accent1']} (vibrant primary)
             - Secondary: {colors['accent2']} (complementary)"""
 
-            # Generate response using Groq
             response = self.client.chat.completions.create(
                 messages=[{
                     "role": "system",
@@ -721,14 +722,7 @@ class TestimonialGenerator:
             
             testimonial = response.choices[0].message.content.strip()
             
-            # Log the chosen positions
-            logger.info(f"Dynamic positions chosen - Shape1: {grid_pos1}, Shape2: {grid_pos2}")
-            
-            # Get shape sizes from CSV or use defaults
-            shape1_size = float(random_row.get('shape1_size', 0.25))
-            shape2_size = float(random_row.get('shape2_size', 0.25))
-            
-            # Update design style with generated colors and dynamic positions
+            # Update design style with generated colors and other properties
             self.design_style.update({
                 'font': random_row['font'],
                 'bgco': colors['bgco'],
@@ -741,20 +735,21 @@ class TestimonialGenerator:
                 'fontsize': int(random_row['fontsize']),
                 'shape1': random_row['shape1'],
                 'shape2': random_row['shape2'],
-                'grid_pos1': grid_pos1,
-                'grid_pos2': grid_pos2,
-                'shape1_size': shape1_size,  # Added shape sizes
-                'shape2_size': shape2_size   # Added shape sizes
+                'grid_pos1': int(random_row['grid_pos1']),
+                'grid_pos2': int(random_row['grid_pos2']),
+                'shape1_size': float(random_row['shape1_size']),
+                'shape2_size': float(random_row['shape2_size']),
+                'image_margin': image_margin
             })
             
+            logger.info(f"Using image margin: {image_margin}px")
             logger.info(f"Generated {palette_type} theme: {colors}")
-            logger.info(f"Shape sizes - Shape1: {shape1_size}, Shape2: {shape2_size}")
             return testimonial
 
         except Exception as e:
             logger.error(f"Error generating testimonial: {str(e)}")
             logger.error("Stack trace:", exc_info=True)
-            return f"This {topic} exceeded all my expectations! The quality is outstanding, and the customer service team went above and beyond to ensure my satisfaction."
+            return f"This {topic} exceeded all my expectations!"
 
     def render_text_svg(self, text, text_color, font_size, has_quotes):
         try:
@@ -825,7 +820,7 @@ class TestimonialGenerator:
             return None
 
     def render_shapes_svg(self, color, selected_shapes=None):
-        """Render shapes in SVG based on grid positions with custom sizes"""
+        """Render shapes in SVG based on grid positions"""
         try:
             width, height = self.design_style['imagesize']
             dwg = svgwrite.Drawing(size=(width, height))
@@ -838,60 +833,55 @@ class TestimonialGenerator:
             shape_color = self.design_style.get('shape_color', color)
             shape1_size = float(self.design_style.get('shape1_size', 0.25))
             shape2_size = float(self.design_style.get('shape2_size', 0.25))
-            
-            def get_grid_coordinates(position):
-                if position == 'center':
-                    return (width/2, height/2)
-                elif position == 'corners':
-                    return None
-                else:
-                    try:
-                        pos = int(position)
-                        row = (pos - 1) // 3
-                        col = (pos - 1) % 3
-                        x = col * (width/3) + (width/6)
-                        y = row * (height/3) + (height/6)
-                        return (x, y)
-                    except:
-                        return (width/2, height/2)
-            
-            # Draw shapes at their positions with custom sizes
+
+            # Draw shapes
             if shape1 and pos1:
-                coords = get_grid_coordinates(pos1)
+                coords = self.get_grid_coordinates(pos1)
                 if coords:
+                    x, y = coords
                     if shape1.lower() == 'square':
                         SVGShapeGenerator.draw_square(
-                            dwg, width, height, shape_color, 
-                            opacity=0.9, center=coords, 
+                            dwg, width, height,
+                            shape_color, 
+                            opacity=0.9,
+                            center=(x, y),
                             size_factor=shape1_size
                         )
                     elif shape1.lower() == 'circle':
                         SVGShapeGenerator.draw_circle(
-                            dwg, width, height, shape_color, 
-                            opacity=0.9, center=coords, 
+                            dwg, width, height,
+                            shape_color, 
+                            opacity=0.9,
+                            center=(x, y),
                             size_factor=shape1_size
                         )
-            
+
             if shape2 and pos2:
-                coords = get_grid_coordinates(pos2)
+                coords = self.get_grid_coordinates(pos2)
                 if coords:
+                    x, y = coords
                     if shape2.lower() == 'square':
                         SVGShapeGenerator.draw_square(
-                            dwg, width, height, shape_color, 
-                            opacity=0.9, center=coords, 
+                            dwg, width, height,
+                            shape_color, 
+                            opacity=0.9,
+                            center=(x, y),
                             size_factor=shape2_size
                         )
                     elif shape2.lower() == 'circle':
                         SVGShapeGenerator.draw_circle(
-                            dwg, width, height, shape_color, 
-                            opacity=0.9, center=coords, 
+                            dwg, width, height,
+                            shape_color, 
+                            opacity=0.9,
+                            center=(x, y),
                             size_factor=shape2_size
                         )
-            
+
             return dwg.tostring()
             
         except Exception as e:
             logger.error(f"Error rendering shapes SVG: {str(e)}")
+            logger.error("Stack trace:", exc_info=True)
             return None
 
     def get_random_color_theme(self):
@@ -1044,6 +1034,142 @@ class TestimonialGenerator:
                 'shape_color': '#000000',
                 'bgco': '#FFFFFF'
             }
+
+    def get_grid_coordinates(self, position):
+        """Calculate grid position for 3x3 grid"""
+        try:
+            width, height = self.design_style['imagesize']
+            
+            if position == 'center':
+                return (width/2, height/2)
+            elif position == 'corners':
+                return None
+            else:
+                # Calculate grid cell size
+                cell_width = width / 3
+                cell_height = height / 3
+                
+                pos = int(position)
+                row = (pos - 1) // 3
+                col = (pos - 1) % 3
+                
+                # Calculate base position
+                x = col * cell_width + (cell_width/2)
+                y = row * cell_height + (cell_height/2)
+                
+                logger.info(f"Grid position {position} - x: {x}, y: {y}")
+                return (x, y)
+        except Exception as e:
+            logger.error(f"Error calculating grid coordinates: {str(e)}")
+            width, height = self.design_style['imagesize']
+            return (width/2, height/2)
+
+    def generate_color_theme(self):
+        """Generate harmonious color theme"""
+        try:
+            # Predefined beautiful color palettes
+            color_palettes = {
+                "warm": {
+                    "backgrounds": [
+                        "#FFF5E6", "#FDF6F0", "#FFF8DC", "#FFEFD5", "#F5E6E8",
+                        "#F0E5D8", "#F5F0E1", "#FFF0F5"
+                    ],
+                    "text": [
+                        "#4A4036", "#5E4D3E", "#6B4423", "#8B4513", "#6B5744",
+                        "#4B3C3C", "#5E4D3E", "#4A3B37"
+                    ],
+                    "accents": [
+                        "#FF9F43", "#FFA726", "#FF8C42", "#FF7F50", "#FF6B6B",
+                        "#E74C3C", "#FF5252", "#FF4081"
+                    ],
+                    "shapes": [
+                        "#E67E22", "#FF6B6B", "#FF7043", "#FF5722", "#FF4081",
+                        "#C0392B", "#D35400", "#E74C3C"
+                    ]
+                },
+                "cool": {
+                    "backgrounds": [
+                        "#F5F6FA", "#F3F4F6", "#E8F4F9", "#E3F2FD", "#F0F7F4",
+                        "#F5FFFA", "#F0FFFF", "#F0F8FF"
+                    ],
+                    "text": [
+                        "#2C3E50", "#34495E", "#1B4965", "#2C3E50", "#1B5E20",
+                        "#1A237E", "#1B3A57", "#2E4053"
+                    ],
+                    "accents": [
+                        "#2980B9", "#3498DB", "#00BCD4", "#03A9F4", "#00ACC1",
+                        "#039BE5", "#1E88E5", "#1976D2"
+                    ],
+                    "shapes": [
+                        "#16A085", "#2980B9", "#00ACC1", "#00BCD4", "#03A9F4",
+                        "#039BE5", "#0288D1", "#0277BD"
+                    ]
+                },
+                "nature": {
+                    "backgrounds": [
+                        "#F0F7F4", "#E8F5E9", "#F1F8E9", "#F9FBE7", "#FFFDE7",
+                        "#FFF8E1", "#FFF3E0", "#FBE9E7"
+                    ],
+                    "text": [
+                        "#1B5E20", "#2E7D32", "#33691E", "#827717", "#F57F17",
+                        "#FF6F00", "#E65100", "#BF360C"
+                    ],
+                    "accents": [
+                        "#27AE60", "#2ECC71", "#66BB6A", "#7CB342", "#C0CA33",
+                        "#FDD835", "#FFB300", "#FB8C00"
+                    ],
+                    "shapes": [
+                        "#00C853", "#00E676", "#69F0AE", "#76FF03", "#C6FF00",
+                        "#FFEA00", "#FFD740", "#FFAB00"
+                    ]
+                },
+                "elegant": {
+                    "backgrounds": [
+                        "#F3F4F6", "#F5F6FA", "#F8FAFC", "#F5F5F5", "#FAFAFA",
+                        "#FFFFFF", "#F9FAFB", "#F7FAFC"
+                    ],
+                    "text": [
+                        "#2C3E50", "#34495E", "#1A202C", "#2D3748", "#4A5568",
+                        "#718096", "#2C3E50", "#2D3748"
+                    ],
+                    "accents": [
+                        "#7D3C98", "#8E44AD", "#9B59B6", "#6C5CE7", "#5758BB",
+                        "#3498DB", "#2980B9", "#16A085"
+                    ],
+                    "shapes": [
+                        "#9B59B6", "#8E44AD", "#7D3C98", "#673AB7", "#5E35B1",
+                        "#512DA8", "#4527A0", "#311B92"
+                    ]
+                }
+            }
+
+            # Randomly select a theme type
+            theme_type = random.choice(list(color_palettes.keys()))
+            palette = color_palettes[theme_type]
+
+            # Select colors from the chosen palette
+            colors = {
+                'bgco': random.choice(palette["backgrounds"]),
+                'textco': random.choice(palette["text"]),
+                'accent1': random.choice(palette["accents"]),
+                'accent2': random.choice(palette["accents"]),
+                'shape1': random.choice(palette["shapes"]),
+                'shape2': random.choice(palette["shapes"])
+            }
+
+            logger.info(f"Generated {theme_type} theme: {colors}")
+            return colors, theme_type
+
+        except Exception as e:
+            logger.error(f"Error generating color theme: {str(e)}")
+            return {
+                'bgco': '#FFFFFF',
+                'textco': '#000000',
+                'accent1': '#2196F3',
+                'accent2': '#1976D2',
+                'shape1': '#2196F3',
+                'shape2': '#1976D2'
+            }, "default"
 
 # Add this to store the current design state
 class DesignState:

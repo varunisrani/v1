@@ -1,0 +1,594 @@
+2025-01-02 16:53:01,069 - INFO - Initializing application
+2025-01-02 16:53:01,075 - DEBUG - Loading design configurations from ss11.csv
+2025-01-02 16:53:01,075 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F3F4F6', 'textco': '2C3E50', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#E74C3C', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#7D3C98', 'grid_pos2': '1', 'shape1_size': '9', 'shape2_size': '0.25', 'image_margin': '0.20', None: ['40']}
+2025-01-02 16:53:01,075 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F3F4F6', 'textco': '#2C3E50', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:53:01,075 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F6FA', 'textco': '34495E', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#2980B9', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#16A085', 'grid_pos2': '3', 'shape1_size': '7', 'shape2_size': '0.30', 'image_margin': '0.25', None: ['50']}
+2025-01-02 16:53:01,075 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F6FA', 'textco': '#34495E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:53:01,075 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'FDF6F0', 'textco': '8E44AD', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#F39C12', 'shape2': 'square', 'shape_color': 'square', 'grid_pos1': '#D35400', 'grid_pos2': '1', 'shape1_size': '9', 'shape2_size': '0.28', 'image_margin': '0.28', None: ['60']}
+2025-01-02 16:53:01,075 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#FDF6F0', 'textco': '#8E44AD', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:53:01,075 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F0E5D8', 'textco': '4B3C3C', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#C0392B', 'shape2': 'square', 'shape_color': 'circle', 'grid_pos1': '#7D3C98', 'grid_pos2': '3', 'shape1_size': '7', 'shape2_size': '0.35', 'image_margin': '0.22', None: ['40']}
+2025-01-02 16:53:01,075 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F0E5D8', 'textco': '#4B3C3C', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:53:01,075 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'E8D8D0', 'textco': '3C2B2B', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#8E44AD', 'shape2': 'circle', 'shape_color': 'circle', 'grid_pos1': '#2980B9', 'grid_pos2': '1', 'shape1_size': '9', 'shape2_size': '0.25', 'image_margin': '0.25', None: ['50']}
+2025-01-02 16:53:01,075 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#E8D8D0', 'textco': '#3C2B2B', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:53:01,075 - DEBUG - Processing row: {'font': 'Poppins-Medium', 'bgco': 'F5F0E1', 'textco': '5E4D3E', 'imagesize': '(1080', 'fontsize': '1080)', 'accent': '48', 'shape1': '#27AE60', 'shape2': 'circle', 'shape_color': 'square', 'grid_pos1': '#16A085', 'grid_pos2': '3', 'shape1_size': '7', 'shape2_size': '0.20', 'image_margin': '0.30', None: ['60']}
+2025-01-02 16:53:01,075 - DEBUG - Configuration added: {'font': 'Poppins-Medium', 'bgco': '#F5F0E1', 'textco': '#5E4D3E', 'imagesize': (1080, 1080), 'fontsize': 48, 'accent': '#48'}
+2025-01-02 16:53:01,075 - DEBUG - Total configurations loaded: 6
+2025-01-02 16:53:01,077 - DEBUG - Using selector: KqueueSelector
+2025-01-02 16:53:01,117 - DEBUG - connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-01-02 16:53:01,136 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-01-02 16:53:01,173 - INFO - Initializing TestimonialGenerator
+2025-01-02 16:53:01,174 - INFO - Font downloaded successfully
+2025-01-02 16:53:01,174 - INFO - Validating CSV structure
+2025-01-02 16:53:01,174 - INFO - CSV columns found: ['Poppins-Medium', 'F3F4F6', '2C3E50', '(1080', '1080)', '48', '#E74C3C', 'square', 'circle', '#7D3C98', '1', '9', '0.25', '0.20', '40']
+2025-01-02 16:53:01,174 - ERROR - Missing required columns: {'textco', 'accent', 'bgco'}
+2025-01-02 16:53:01,174 - WARNING - CSV validation failed, using default color schemes
+2025-01-02 16:53:01,174 - INFO - TestimonialGenerator initialized successfully
+2025-01-02 16:53:01,179 - DEBUG - Using selector: KqueueSelector
+2025-01-02 16:53:01,263 - INFO - HTTP Request: GET https://api.gradio.app/gradio-messaging/en "HTTP/1.1 200 OK"
+2025-01-02 16:53:01,263 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-01-02 16:53:01,263 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:01,263 - DEBUG - response_closed.started
+2025-01-02 16:53:01,263 - DEBUG - response_closed.complete
+2025-01-02 16:53:01,263 - DEBUG - close.started
+2025-01-02 16:53:01,263 - DEBUG - close.complete
+2025-01-02 16:53:01,418 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1223164d0>
+2025-01-02 16:53:01,419 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x1227584d0> server_hostname='api.gradio.app' timeout=3
+2025-01-02 16:53:01,475 - DEBUG - https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-01-02 16:53:01,994 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x1112ad390>
+2025-01-02 16:53:01,994 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2025-01-02 16:53:01,994 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:01,995 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2025-01-02 16:53:01,995 - DEBUG - send_request_body.complete
+2025-01-02 16:53:01,995 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2025-01-02 16:53:02,281 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:02 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-01-02 16:53:02,281 - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-01-02 16:53:02,281 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2025-01-02 16:53:02,281 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:02,281 - DEBUG - response_closed.started
+2025-01-02 16:53:02,282 - DEBUG - response_closed.complete
+2025-01-02 16:53:02,282 - DEBUG - close.started
+2025-01-02 16:53:02,282 - DEBUG - close.complete
+2025-01-02 16:53:03,260 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:03,330 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:03,330 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-01-02 16:53:03,356 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x122f6b350>
+2025-01-02 16:53:03,357 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x1227583b0> server_hostname='api.groq.com' timeout=5.0
+2025-01-02 16:53:03,370 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x122f6b250>
+2025-01-02 16:53:03,370 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:03,370 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:03,370 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:03,371 - DEBUG - send_request_body.complete
+2025-01-02 16:53:03,371 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:03,916 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:03 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba5ff229940330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14399'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'6s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc2d2seccre8yhhf7g5swk'), (b'Set-Cookie', b'__cf_bm=04RSgNTSy3no45OR7XHgMO6l0H6S9oMsP1e5SvBjVkY-1735816983-1.0.1.1-4vzdmkZnWGRilnXcqcYLf_.eO0LDhSKkz5vAESamjmRY82TBWCDTqcAI0lbroApya63H3w8guEzKsgYOCcRwdQ; path=/; expires=Thu, 02-Jan-25 11:53:03 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:03,918 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:03,918 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:03,919 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:03,919 - DEBUG - response_closed.started
+2025-01-02 16:53:03,919 - DEBUG - response_closed.complete
+2025-01-02 16:53:03,919 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:03 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba5ff229940330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14399', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '6s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc2d2seccre8yhhf7g5swk', 'set-cookie': '__cf_bm=04RSgNTSy3no45OR7XHgMO6l0H6S9oMsP1e5SvBjVkY-1735816983-1.0.1.1-4vzdmkZnWGRilnXcqcYLf_.eO0LDhSKkz5vAESamjmRY82TBWCDTqcAI0lbroApya63H3w8guEzKsgYOCcRwdQ; path=/; expires=Thu, 02-Jan-25 11:53:03 GMT; domain=.groq.com; HttpOnly; Secure; SameSite=None', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:03,926 - INFO - Using image margin: 60px
+2025-01-02 16:53:03,926 - INFO - Generated testimonial with design style: {'font': 'FDF6F0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#8E44AD', 'textco': '#(1080', 'accent': '#F39C12', 'shape_color': '#D35400', 'shape1': 'square', 'shape2': 'square', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.28, 'shape2_size': 0.28, 'image_margin': 60}
+2025-01-02 16:53:03,927 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:03,927 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:03,928 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:03,928 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:03,929 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:03,929 - DEBUG - Using text color: #000000
+2025-01-02 16:53:03,931 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:03,931 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:03,931 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:03,931 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:03,932 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:03,932 - DEBUG - Using text color: #000000
+2025-01-02 16:53:05,783 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:05,784 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:05,785 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:05,785 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:05,785 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:05,785 - DEBUG - send_request_body.complete
+2025-01-02 16:53:05,785 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:06,187 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:06 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba600149f30330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14398'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'9.674999999s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc2fbgf059njkm7brqssr6'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:06,188 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:06,188 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:06,189 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:06,190 - DEBUG - response_closed.started
+2025-01-02 16:53:06,190 - DEBUG - response_closed.complete
+2025-01-02 16:53:06,190 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:06 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba600149f30330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14398', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '9.674999999s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc2fbgf059njkm7brqssr6', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:06,191 - INFO - Using image margin: 50px
+2025-01-02 16:53:06,191 - INFO - Generated testimonial with design style: {'font': 'E8D8D0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#3C2B2B', 'textco': '#(1080', 'accent': '#8E44AD', 'shape_color': '#2980B9', 'shape1': 'circle', 'shape2': 'circle', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.25, 'shape2_size': 0.25, 'image_margin': 50}
+2025-01-02 16:53:06,192 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:06,192 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:06,192 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:06,192 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:06,193 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:06,193 - DEBUG - Using text color: #000000
+2025-01-02 16:53:06,194 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:06,194 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:06,194 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:06,195 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:06,195 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:06,195 - DEBUG - Using text color: #000000
+2025-01-02 16:53:06,693 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:06,695 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:06,696 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:06,696 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:06,696 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:06,696 - DEBUG - send_request_body.complete
+2025-01-02 16:53:06,697 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:07,328 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:07 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba6006fd750330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14397'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'17.008s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc2gahe4j9k5hhdwz5keyp'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:07,330 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:07,330 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:07,331 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:07,331 - DEBUG - response_closed.started
+2025-01-02 16:53:07,331 - DEBUG - response_closed.complete
+2025-01-02 16:53:07,331 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:07 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba6006fd750330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14397', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '17.008s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc2gahe4j9k5hhdwz5keyp', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:07,332 - INFO - Using image margin: 50px
+2025-01-02 16:53:07,332 - INFO - Generated testimonial with design style: {'font': 'E8D8D0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#3C2B2B', 'textco': '#(1080', 'accent': '#8E44AD', 'shape_color': '#2980B9', 'shape1': 'circle', 'shape2': 'circle', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.25, 'shape2_size': 0.25, 'image_margin': 50}
+2025-01-02 16:53:07,333 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:07,333 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:07,333 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:07,333 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:07,334 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:07,334 - DEBUG - Using text color: #000000
+2025-01-02 16:53:07,335 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:07,335 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:07,335 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:07,336 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:07,336 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:07,337 - DEBUG - Using text color: #000000
+2025-01-02 16:53:10,305 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:10,307 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:10,307 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:10,308 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:10,308 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:10,308 - DEBUG - send_request_body.complete
+2025-01-02 16:53:10,310 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:10,917 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:10 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba601d9b350330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14396'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'20.379s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc2kvrf4m92gqtbht69mh3'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:10,919 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:10,919 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:10,919 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:10,919 - DEBUG - response_closed.started
+2025-01-02 16:53:10,920 - DEBUG - response_closed.complete
+2025-01-02 16:53:10,920 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:10 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba601d9b350330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14396', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '20.379s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc2kvrf4m92gqtbht69mh3', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:10,921 - INFO - Using image margin: 40px
+2025-01-02 16:53:10,921 - INFO - Generated testimonial with design style: {'font': 'F0E5D8', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#4B3C3C', 'textco': '#(1080', 'accent': '#C0392B', 'shape_color': '#7D3C98', 'shape1': 'square', 'shape2': 'circle', 'grid_pos1': 3, 'grid_pos2': 7, 'shape1_size': 0.35, 'shape2_size': 0.22, 'image_margin': 40}
+2025-01-02 16:53:10,922 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:10,922 - INFO - Drawing square with color: #7D3C98, size: 0.35
+2025-01-02 16:53:10,922 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:10,922 - INFO - Drawing circle with color: #7D3C98, size: 0.22
+2025-01-02 16:53:10,923 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:10,923 - DEBUG - Using text color: #000000
+2025-01-02 16:53:10,925 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:10,925 - INFO - Drawing square with color: #7D3C98, size: 0.35
+2025-01-02 16:53:10,925 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:10,925 - INFO - Drawing circle with color: #7D3C98, size: 0.22
+2025-01-02 16:53:10,926 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:10,926 - DEBUG - Using text color: #000000
+2025-01-02 16:53:13,262 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:13,263 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:13,264 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:13,264 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:13,264 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:13,264 - DEBUG - send_request_body.complete
+2025-01-02 16:53:13,264 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:13,780 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:13 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba602ffe930330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14395'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'27.144999999s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc2pn0e4jrft76gwrxvw03'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:13,781 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:13,782 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:13,782 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:13,782 - DEBUG - response_closed.started
+2025-01-02 16:53:13,782 - DEBUG - response_closed.complete
+2025-01-02 16:53:13,782 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:13 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba602ffe930330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14395', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '27.144999999s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc2pn0e4jrft76gwrxvw03', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:13,783 - INFO - Using image margin: 40px
+2025-01-02 16:53:13,783 - INFO - Generated testimonial with design style: {'font': 'F0E5D8', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#4B3C3C', 'textco': '#(1080', 'accent': '#C0392B', 'shape_color': '#7D3C98', 'shape1': 'square', 'shape2': 'circle', 'grid_pos1': 3, 'grid_pos2': 7, 'shape1_size': 0.35, 'shape2_size': 0.22, 'image_margin': 40}
+2025-01-02 16:53:13,784 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:13,784 - INFO - Drawing square with color: #7D3C98, size: 0.35
+2025-01-02 16:53:13,784 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:13,784 - INFO - Drawing circle with color: #7D3C98, size: 0.22
+2025-01-02 16:53:13,785 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:13,785 - DEBUG - Using text color: #000000
+2025-01-02 16:53:13,787 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:13,787 - INFO - Drawing square with color: #7D3C98, size: 0.35
+2025-01-02 16:53:13,787 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:13,787 - INFO - Drawing circle with color: #7D3C98, size: 0.22
+2025-01-02 16:53:13,788 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:13,789 - DEBUG - Using text color: #000000
+2025-01-02 16:53:14,277 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:14,279 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:14,279 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:14,280 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:14,280 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:14,280 - DEBUG - send_request_body.complete
+2025-01-02 16:53:14,280 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:14,908 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:14 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba60365a940330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14394'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'34.95s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc2qntfh4am1navawmwfgj'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:14,908 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:14,908 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:14,908 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:14,908 - DEBUG - response_closed.started
+2025-01-02 16:53:14,908 - DEBUG - response_closed.complete
+2025-01-02 16:53:14,909 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:14 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba60365a940330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14394', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '34.95s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc2qntfh4am1navawmwfgj', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:14,909 - INFO - Using image margin: 40px
+2025-01-02 16:53:14,909 - INFO - Generated testimonial with design style: {'font': 'F0E5D8', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#4B3C3C', 'textco': '#(1080', 'accent': '#C0392B', 'shape_color': '#7D3C98', 'shape1': 'square', 'shape2': 'circle', 'grid_pos1': 3, 'grid_pos2': 7, 'shape1_size': 0.35, 'shape2_size': 0.22, 'image_margin': 40}
+2025-01-02 16:53:14,910 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:14,910 - INFO - Drawing square with color: #7D3C98, size: 0.35
+2025-01-02 16:53:14,910 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:14,910 - INFO - Drawing circle with color: #7D3C98, size: 0.22
+2025-01-02 16:53:14,910 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:14,910 - DEBUG - Using text color: #000000
+2025-01-02 16:53:14,912 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:14,912 - INFO - Drawing square with color: #7D3C98, size: 0.35
+2025-01-02 16:53:14,912 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:14,912 - INFO - Drawing circle with color: #7D3C98, size: 0.22
+2025-01-02 16:53:14,913 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:14,913 - DEBUG - Using text color: #000000
+2025-01-02 16:53:15,125 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:15,126 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:15,127 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:15,128 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:15,128 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:15,128 - DEBUG - send_request_body.complete
+2025-01-02 16:53:15,128 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:15,727 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:15 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba603bbe660330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14393'), (b'x-ratelimit-remaining-tokens', b'4935'), (b'x-ratelimit-reset-requests', b'41.148s'), (b'x-ratelimit-reset-tokens', b'773ms'), (b'x-request-id', b'req_01jgkc2rggex08c3eth0aw0fv3'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:15,728 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:15,728 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:15,729 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:15,729 - DEBUG - response_closed.started
+2025-01-02 16:53:15,729 - DEBUG - response_closed.complete
+2025-01-02 16:53:15,729 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:15 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba603bbe660330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14393', 'x-ratelimit-remaining-tokens': '4935', 'x-ratelimit-reset-requests': '41.148s', 'x-ratelimit-reset-tokens': '773ms', 'x-request-id': 'req_01jgkc2rggex08c3eth0aw0fv3', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:15,730 - INFO - Using image margin: 50px
+2025-01-02 16:53:15,731 - INFO - Generated testimonial with design style: {'font': 'F5F6FA', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#34495E', 'textco': '#(1080', 'accent': '#2980B9', 'shape_color': '#16A085', 'shape1': 'square', 'shape2': 'circle', 'grid_pos1': 3, 'grid_pos2': 7, 'shape1_size': 0.3, 'shape2_size': 0.25, 'image_margin': 50}
+2025-01-02 16:53:15,731 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:15,731 - INFO - Drawing square with color: #16A085, size: 0.3
+2025-01-02 16:53:15,732 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:15,732 - INFO - Drawing circle with color: #16A085, size: 0.25
+2025-01-02 16:53:15,733 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:15,733 - DEBUG - Using text color: #000000
+2025-01-02 16:53:15,734 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:15,734 - INFO - Drawing square with color: #16A085, size: 0.3
+2025-01-02 16:53:15,735 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:15,735 - INFO - Drawing circle with color: #16A085, size: 0.25
+2025-01-02 16:53:15,736 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:15,736 - DEBUG - Using text color: #000000
+2025-01-02 16:53:16,055 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:16,055 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:16,056 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:16,056 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:16,056 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:16,056 - DEBUG - send_request_body.complete
+2025-01-02 16:53:16,057 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:16,544 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:16 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba60417a090330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14392'), (b'x-ratelimit-remaining-tokens', b'4929'), (b'x-ratelimit-reset-requests', b'47.104s'), (b'x-ratelimit-reset-tokens', b'852ms'), (b'x-request-id', b'req_01jgkc2schfh48bhyhxd06jjgb'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:16,545 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:16,546 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:16,546 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:16,546 - DEBUG - response_closed.started
+2025-01-02 16:53:16,546 - DEBUG - response_closed.complete
+2025-01-02 16:53:16,547 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:16 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba60417a090330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14392', 'x-ratelimit-remaining-tokens': '4929', 'x-ratelimit-reset-requests': '47.104s', 'x-ratelimit-reset-tokens': '852ms', 'x-request-id': 'req_01jgkc2schfh48bhyhxd06jjgb', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:16,548 - INFO - Using image margin: 60px
+2025-01-02 16:53:16,548 - INFO - Generated testimonial with design style: {'font': 'FDF6F0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#8E44AD', 'textco': '#(1080', 'accent': '#F39C12', 'shape_color': '#D35400', 'shape1': 'square', 'shape2': 'square', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.28, 'shape2_size': 0.28, 'image_margin': 60}
+2025-01-02 16:53:16,549 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:16,549 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:16,549 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:16,549 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:16,550 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:16,550 - DEBUG - Using text color: #000000
+2025-01-02 16:53:16,551 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:16,552 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:16,552 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:16,552 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:16,553 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:16,554 - DEBUG - Using text color: #000000
+2025-01-02 16:53:16,992 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:16,994 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:16,995 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:16,995 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:16,995 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:16,995 - DEBUG - send_request_body.complete
+2025-01-02 16:53:16,995 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:17,510 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:17 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba60476dd30330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14391'), (b'x-ratelimit-remaining-tokens', b'4937'), (b'x-ratelimit-reset-requests', b'52.954s'), (b'x-ratelimit-reset-tokens', b'753.999999ms'), (b'x-request-id', b'req_01jgkc2td9fh4bg6dhx0t55s3b'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:17,511 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:17,511 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:17,512 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:17,512 - DEBUG - response_closed.started
+2025-01-02 16:53:17,512 - DEBUG - response_closed.complete
+2025-01-02 16:53:17,512 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:17 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba60476dd30330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14391', 'x-ratelimit-remaining-tokens': '4937', 'x-ratelimit-reset-requests': '52.954s', 'x-ratelimit-reset-tokens': '753.999999ms', 'x-request-id': 'req_01jgkc2td9fh4bg6dhx0t55s3b', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:17,514 - INFO - Using image margin: 40px
+2025-01-02 16:53:17,514 - INFO - Generated testimonial with design style: {'font': 'F0E5D8', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#4B3C3C', 'textco': '#(1080', 'accent': '#C0392B', 'shape_color': '#7D3C98', 'shape1': 'square', 'shape2': 'circle', 'grid_pos1': 3, 'grid_pos2': 7, 'shape1_size': 0.35, 'shape2_size': 0.22, 'image_margin': 40}
+2025-01-02 16:53:17,515 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:17,515 - INFO - Drawing square with color: #7D3C98, size: 0.35
+2025-01-02 16:53:17,515 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:17,515 - INFO - Drawing circle with color: #7D3C98, size: 0.22
+2025-01-02 16:53:17,516 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:17,516 - DEBUG - Using text color: #000000
+2025-01-02 16:53:17,518 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:17,518 - INFO - Drawing square with color: #7D3C98, size: 0.35
+2025-01-02 16:53:17,518 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:17,519 - INFO - Drawing circle with color: #7D3C98, size: 0.22
+2025-01-02 16:53:17,520 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:17,520 - DEBUG - Using text color: #000000
+2025-01-02 16:53:17,903 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:17,906 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:17,907 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:17,907 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:17,907 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:17,907 - DEBUG - send_request_body.complete
+2025-01-02 16:53:17,907 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:18,490 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:18 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba604d08ff0330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14390'), (b'x-ratelimit-remaining-tokens', b'4937'), (b'x-ratelimit-reset-requests', b'59.135999999s'), (b'x-ratelimit-reset-tokens', b'750.999999ms'), (b'x-request-id', b'req_01jgkc2v8af08bb1nm0w7759xj'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:18,491 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:18,492 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:18,492 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:18,492 - DEBUG - response_closed.started
+2025-01-02 16:53:18,492 - DEBUG - response_closed.complete
+2025-01-02 16:53:18,493 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:18 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba604d08ff0330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14390', 'x-ratelimit-remaining-tokens': '4937', 'x-ratelimit-reset-requests': '59.135999999s', 'x-ratelimit-reset-tokens': '750.999999ms', 'x-request-id': 'req_01jgkc2v8af08bb1nm0w7759xj', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:18,494 - INFO - Using image margin: 60px
+2025-01-02 16:53:18,494 - INFO - Generated testimonial with design style: {'font': 'FDF6F0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#8E44AD', 'textco': '#(1080', 'accent': '#F39C12', 'shape_color': '#D35400', 'shape1': 'square', 'shape2': 'square', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.28, 'shape2_size': 0.28, 'image_margin': 60}
+2025-01-02 16:53:18,494 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:18,494 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:18,495 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:18,495 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:18,496 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:18,496 - DEBUG - Using text color: #000000
+2025-01-02 16:53:18,498 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:18,498 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:18,498 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:18,498 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:18,500 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:18,500 - DEBUG - Using text color: #000000
+2025-01-02 16:53:18,816 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:18,818 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:18,819 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:18,819 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:18,819 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:18,819 - DEBUG - send_request_body.complete
+2025-01-02 16:53:18,819 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:19,411 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:19 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba6052ccaa0330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14389'), (b'x-ratelimit-remaining-tokens', b'4939'), (b'x-ratelimit-reset-requests', b'1m5.003s'), (b'x-ratelimit-reset-tokens', b'731ms'), (b'x-request-id', b'req_01jgkc2w7gfjvae53sqnv7dv1d'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:19,412 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:19,412 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:19,413 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:19,413 - DEBUG - response_closed.started
+2025-01-02 16:53:19,413 - DEBUG - response_closed.complete
+2025-01-02 16:53:19,414 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:19 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba6052ccaa0330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14389', 'x-ratelimit-remaining-tokens': '4939', 'x-ratelimit-reset-requests': '1m5.003s', 'x-ratelimit-reset-tokens': '731ms', 'x-request-id': 'req_01jgkc2w7gfjvae53sqnv7dv1d', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:19,415 - INFO - Using image margin: 40px
+2025-01-02 16:53:19,415 - INFO - Generated testimonial with design style: {'font': 'F3F4F6', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#2C3E50', 'textco': '#(1080', 'accent': '#E74C3C', 'shape_color': '#7D3C98', 'shape1': 'square', 'shape2': 'circle', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.25, 'shape2_size': 0.2, 'image_margin': 40}
+2025-01-02 16:53:19,415 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:19,415 - INFO - Drawing square with color: #7D3C98, size: 0.25
+2025-01-02 16:53:19,416 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:19,416 - INFO - Drawing circle with color: #7D3C98, size: 0.2
+2025-01-02 16:53:19,416 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:19,416 - DEBUG - Using text color: #000000
+2025-01-02 16:53:19,418 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:19,418 - INFO - Drawing square with color: #7D3C98, size: 0.25
+2025-01-02 16:53:19,418 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:19,418 - INFO - Drawing circle with color: #7D3C98, size: 0.2
+2025-01-02 16:53:19,419 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:19,419 - DEBUG - Using text color: #000000
+2025-01-02 16:53:19,730 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:19,732 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:19,732 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:19,733 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:19,733 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:19,733 - DEBUG - send_request_body.complete
+2025-01-02 16:53:19,733 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:20,231 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:20 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba605878c40330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14388'), (b'x-ratelimit-remaining-tokens', b'4924'), (b'x-ratelimit-reset-requests', b'1m11.246999999s'), (b'x-ratelimit-reset-tokens', b'909.999999ms'), (b'x-request-id', b'req_01jgkc2wz2fh58ch6z1n0kaz4b'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:20,232 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:20,233 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:20,233 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:20,233 - DEBUG - response_closed.started
+2025-01-02 16:53:20,233 - DEBUG - response_closed.complete
+2025-01-02 16:53:20,234 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:20 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba605878c40330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14388', 'x-ratelimit-remaining-tokens': '4924', 'x-ratelimit-reset-requests': '1m11.246999999s', 'x-ratelimit-reset-tokens': '909.999999ms', 'x-request-id': 'req_01jgkc2wz2fh58ch6z1n0kaz4b', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:20,235 - INFO - Using image margin: 60px
+2025-01-02 16:53:20,235 - INFO - Generated testimonial with design style: {'font': 'FDF6F0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#8E44AD', 'textco': '#(1080', 'accent': '#F39C12', 'shape_color': '#D35400', 'shape1': 'square', 'shape2': 'square', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.28, 'shape2_size': 0.28, 'image_margin': 60}
+2025-01-02 16:53:20,235 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:20,236 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:20,236 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:20,236 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:20,237 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:20,237 - DEBUG - Using text color: #000000
+2025-01-02 16:53:20,240 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:20,240 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:20,240 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:20,241 - INFO - Drawing square with color: #D35400, size: 0.28
+2025-01-02 16:53:20,242 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:20,242 - DEBUG - Using text color: #000000
+2025-01-02 16:53:20,642 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:20,644 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:20,645 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:20,645 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:20,645 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:20,645 - DEBUG - send_request_body.complete
+2025-01-02 16:53:20,646 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:21,153 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:21 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba605e2cc60330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14387'), (b'x-ratelimit-remaining-tokens', b'4928'), (b'x-ratelimit-reset-requests', b'1m16.992s'), (b'x-ratelimit-reset-tokens', b'852.999999ms'), (b'x-request-id', b'req_01jgkc2xyke3ws028w681swedv'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:21,154 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:21,155 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:21,155 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:21,155 - DEBUG - response_closed.started
+2025-01-02 16:53:21,155 - DEBUG - response_closed.complete
+2025-01-02 16:53:21,155 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:21 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba605e2cc60330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14387', 'x-ratelimit-remaining-tokens': '4928', 'x-ratelimit-reset-requests': '1m16.992s', 'x-ratelimit-reset-tokens': '852.999999ms', 'x-request-id': 'req_01jgkc2xyke3ws028w681swedv', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:21,157 - INFO - Using image margin: 50px
+2025-01-02 16:53:21,157 - INFO - Generated testimonial with design style: {'font': 'E8D8D0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#3C2B2B', 'textco': '#(1080', 'accent': '#8E44AD', 'shape_color': '#2980B9', 'shape1': 'circle', 'shape2': 'circle', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.25, 'shape2_size': 0.25, 'image_margin': 50}
+2025-01-02 16:53:21,157 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:21,157 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:21,158 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:21,158 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:21,158 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:21,158 - DEBUG - Using text color: #000000
+2025-01-02 16:53:21,160 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:21,160 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:21,160 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:21,160 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:21,161 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:21,161 - DEBUG - Using text color: #000000
+2025-01-02 16:53:21,571 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:21,574 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:21,574 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:21,575 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:21,575 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:21,575 - DEBUG - send_request_body.complete
+2025-01-02 16:53:21,575 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:22,075 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:22 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba6063e86d0330-AMD'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14386'), (b'x-ratelimit-remaining-tokens', b'4934'), (b'x-ratelimit-reset-requests', b'1m23.1s'), (b'x-ratelimit-reset-tokens', b'786ms'), (b'x-request-id', b'req_01jgkc2ytrfh5spmrtbw51rc0j'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:22,075 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:22,077 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:22,077 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:22,077 - DEBUG - response_closed.started
+2025-01-02 16:53:22,077 - DEBUG - response_closed.complete
+2025-01-02 16:53:22,078 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:22 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba6063e86d0330-AMD', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14386', 'x-ratelimit-remaining-tokens': '4934', 'x-ratelimit-reset-requests': '1m23.1s', 'x-ratelimit-reset-tokens': '786ms', 'x-request-id': 'req_01jgkc2ytrfh5spmrtbw51rc0j', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:22,078 - INFO - Using image margin: 50px
+2025-01-02 16:53:22,078 - INFO - Generated testimonial with design style: {'font': 'E8D8D0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#3C2B2B', 'textco': '#(1080', 'accent': '#8E44AD', 'shape_color': '#2980B9', 'shape1': 'circle', 'shape2': 'circle', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.25, 'shape2_size': 0.25, 'image_margin': 50}
+2025-01-02 16:53:22,079 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:22,079 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:22,079 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:22,079 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:22,080 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:22,080 - DEBUG - Using text color: #000000
+2025-01-02 16:53:22,082 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:22,082 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:22,082 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:22,082 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:22,083 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:22,083 - DEBUG - Using text color: #000000
+2025-01-02 16:53:49,433 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:49,435 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:49,436 - DEBUG - close.started
+2025-01-02 16:53:49,436 - DEBUG - close.complete
+2025-01-02 16:53:49,436 - DEBUG - connect_tcp.started host='api.groq.com' port=443 local_address=None timeout=5.0 socket_options=None
+2025-01-02 16:53:49,456 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x122f7cc10>
+2025-01-02 16:53:49,456 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x1227583b0> server_hostname='api.groq.com' timeout=5.0
+2025-01-02 16:53:49,481 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x122f6b390>
+2025-01-02 16:53:49,481 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:49,481 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:49,481 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:49,482 - DEBUG - send_request_body.complete
+2025-01-02 16:53:49,482 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:49,892 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:49 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba61124c34f4d2-BOM'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14389'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'1m2.166s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc3t0kfjy9mw9bd7rpn5sy'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:49,893 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:49,893 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:49,894 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:49,894 - DEBUG - response_closed.started
+2025-01-02 16:53:49,894 - DEBUG - response_closed.complete
+2025-01-02 16:53:49,895 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:49 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba61124c34f4d2-BOM', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14389', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '1m2.166s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc3t0kfjy9mw9bd7rpn5sy', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:49,896 - INFO - Using image margin: 120px
+2025-01-02 16:53:49,896 - INFO - Generated testimonial with design style: {'font': 'F5F0E1', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#5E4D3E', 'textco': '#(1080', 'accent': '#27AE60', 'shape_color': '#16A085', 'shape1': 'circle', 'shape2': 'square', 'grid_pos1': 3, 'grid_pos2': 7, 'shape1_size': 0.2, 'shape2_size': 0.3, 'image_margin': 120}
+2025-01-02 16:53:49,897 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:49,897 - INFO - Drawing circle with color: #16A085, size: 0.2
+2025-01-02 16:53:49,897 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:49,897 - INFO - Drawing square with color: #16A085, size: 0.3
+2025-01-02 16:53:49,898 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:49,898 - DEBUG - Using text color: #000000
+2025-01-02 16:53:49,900 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:49,900 - INFO - Drawing circle with color: #16A085, size: 0.2
+2025-01-02 16:53:49,900 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:49,900 - INFO - Drawing square with color: #16A085, size: 0.3
+2025-01-02 16:53:49,902 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:49,902 - DEBUG - Using text color: #000000
+2025-01-02 16:53:51,621 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:51,622 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:51,623 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:51,623 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:51,623 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:51,623 - DEBUG - send_request_body.complete
+2025-01-02 16:53:51,623 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:52,039 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:52 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba611fbd17f4d2-BOM'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14388'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'1m9.865s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc3w3cf0dv2fbcysw1jt3n'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:52,040 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:52,041 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:52,043 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:52,043 - DEBUG - response_closed.started
+2025-01-02 16:53:52,043 - DEBUG - response_closed.complete
+2025-01-02 16:53:52,043 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:52 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba611fbd17f4d2-BOM', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14388', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '1m9.865s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc3w3cf0dv2fbcysw1jt3n', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:52,045 - INFO - Using image margin: 120px
+2025-01-02 16:53:52,045 - INFO - Generated testimonial with design style: {'font': 'F3F4F6', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#2C3E50', 'textco': '#(1080', 'accent': '#E74C3C', 'shape_color': '#7D3C98', 'shape1': 'square', 'shape2': 'circle', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.25, 'shape2_size': 0.2, 'image_margin': 120}
+2025-01-02 16:53:52,046 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:52,046 - INFO - Drawing square with color: #7D3C98, size: 0.25
+2025-01-02 16:53:52,046 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:52,046 - INFO - Drawing circle with color: #7D3C98, size: 0.2
+2025-01-02 16:53:52,047 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:52,047 - DEBUG - Using text color: #000000
+2025-01-02 16:53:52,049 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:52,049 - INFO - Drawing square with color: #7D3C98, size: 0.25
+2025-01-02 16:53:52,049 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:52,049 - INFO - Drawing circle with color: #7D3C98, size: 0.2
+2025-01-02 16:53:52,050 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:52,050 - DEBUG - Using text color: #000000
+2025-01-02 16:53:52,638 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:52,639 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:52,640 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:52,640 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:52,640 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:52,640 - DEBUG - send_request_body.complete
+2025-01-02 16:53:52,640 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:53,205 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:53 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba61261a04f4d2-BOM'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14387'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'1m16.883s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc3x69echsn8vcb29dxjb4'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:53,206 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:53,206 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:53,207 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:53,207 - DEBUG - response_closed.started
+2025-01-02 16:53:53,207 - DEBUG - response_closed.complete
+2025-01-02 16:53:53,207 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:53 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba61261a04f4d2-BOM', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14387', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '1m16.883s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc3x69echsn8vcb29dxjb4', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:53,208 - INFO - Using image margin: 120px
+2025-01-02 16:53:53,208 - INFO - Generated testimonial with design style: {'font': 'F5F6FA', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#34495E', 'textco': '#(1080', 'accent': '#2980B9', 'shape_color': '#16A085', 'shape1': 'square', 'shape2': 'circle', 'grid_pos1': 3, 'grid_pos2': 7, 'shape1_size': 0.3, 'shape2_size': 0.25, 'image_margin': 120}
+2025-01-02 16:53:53,209 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:53,209 - INFO - Drawing square with color: #16A085, size: 0.3
+2025-01-02 16:53:53,209 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:53,209 - INFO - Drawing circle with color: #16A085, size: 0.25
+2025-01-02 16:53:53,210 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:53,210 - DEBUG - Using text color: #000000
+2025-01-02 16:53:53,211 - INFO - Grid position 3 - x: 900.0, y: 180.0
+2025-01-02 16:53:53,211 - INFO - Drawing square with color: #16A085, size: 0.3
+2025-01-02 16:53:53,212 - INFO - Grid position 7 - x: 180.0, y: 900.0
+2025-01-02 16:53:53,212 - INFO - Drawing circle with color: #16A085, size: 0.25
+2025-01-02 16:53:53,214 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:53,214 - DEBUG - Using text color: #000000
+2025-01-02 16:53:53,525 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:53,528 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:53,528 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:53,529 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:53,529 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:53,529 - DEBUG - send_request_body.complete
+2025-01-02 16:53:53,529 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:54,741 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:54 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba612b9d94f4d2-BOM'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14386'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'1m22.5s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc3yn7fh9rpm6rw3my4chp'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:54,742 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:54,743 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:54,743 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:54,744 - DEBUG - response_closed.started
+2025-01-02 16:53:54,744 - DEBUG - response_closed.complete
+2025-01-02 16:53:54,744 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:54 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba612b9d94f4d2-BOM', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14386', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '1m22.5s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc3yn7fh9rpm6rw3my4chp', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:54,745 - INFO - Using image margin: 120px
+2025-01-02 16:53:54,745 - INFO - Generated testimonial with design style: {'font': 'E8D8D0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#3C2B2B', 'textco': '#(1080', 'accent': '#8E44AD', 'shape_color': '#2980B9', 'shape1': 'circle', 'shape2': 'circle', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.25, 'shape2_size': 0.25, 'image_margin': 120}
+2025-01-02 16:53:54,745 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:54,745 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:54,746 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:54,746 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:54,746 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:54,746 - DEBUG - Using text color: #000000
+2025-01-02 16:53:54,748 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:54,749 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:54,749 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:54,749 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:54,750 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:54,750 - DEBUG - Using text color: #000000
+2025-01-02 16:53:55,213 - DEBUG - Request options: {'method': 'post', 'url': '/openai/v1/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'Create a positive testimonial (2-3 sentences) about f.'}], 'model': 'mixtral-8x7b-32768', 'max_tokens': 200, 'temperature': 0.9}}
+2025-01-02 16:53:55,216 - DEBUG - Sending HTTP Request: POST https://api.groq.com/openai/v1/chat/completions
+2025-01-02 16:53:55,217 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:55,217 - DEBUG - send_request_headers.complete
+2025-01-02 16:53:55,217 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-01-02 16:53:55,218 - DEBUG - send_request_body.complete
+2025-01-02 16:53:55,218 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-01-02 16:53:55,663 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 02 Jan 2025 11:23:55 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'8fba61362ce8f4d2-BOM'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'private, max-age=0, no-store, no-cache, must-revalidate'), (b'Vary', b'Origin, Accept-Encoding'), (b'Via', b'1.1 google'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'x-groq-region', b'us-west-1'), (b'x-ratelimit-limit-requests', b'14400'), (b'x-ratelimit-limit-tokens', b'5000'), (b'x-ratelimit-remaining-requests', b'14385'), (b'x-ratelimit-remaining-tokens', b'4978'), (b'x-ratelimit-reset-requests', b'1m29.032999999s'), (b'x-ratelimit-reset-tokens', b'264ms'), (b'x-request-id', b'req_01jgkc3zkfe40bpx28a5axh96g'), (b'Server', b'cloudflare'), (b'Content-Encoding', b'gzip')])
+2025-01-02 16:53:55,665 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-01-02 16:53:55,665 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-01-02 16:53:55,665 - DEBUG - receive_response_body.complete
+2025-01-02 16:53:55,666 - DEBUG - response_closed.started
+2025-01-02 16:53:55,666 - DEBUG - response_closed.complete
+2025-01-02 16:53:55,666 - DEBUG - HTTP Response: POST https://api.groq.com/openai/v1/chat/completions "200 OK" Headers({'date': 'Thu, 02 Jan 2025 11:23:55 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'cf-ray': '8fba61362ce8f4d2-BOM', 'cf-cache-status': 'DYNAMIC', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate', 'vary': 'Origin, Accept-Encoding', 'via': '1.1 google', 'alt-svc': 'h3=":443"; ma=86400', 'x-groq-region': 'us-west-1', 'x-ratelimit-limit-requests': '14400', 'x-ratelimit-limit-tokens': '5000', 'x-ratelimit-remaining-requests': '14385', 'x-ratelimit-remaining-tokens': '4978', 'x-ratelimit-reset-requests': '1m29.032999999s', 'x-ratelimit-reset-tokens': '264ms', 'x-request-id': 'req_01jgkc3zkfe40bpx28a5axh96g', 'server': 'cloudflare', 'content-encoding': 'gzip'})
+2025-01-02 16:53:55,667 - INFO - Using image margin: 120px
+2025-01-02 16:53:55,667 - INFO - Generated testimonial with design style: {'font': 'E8D8D0', 'imagesize': (1080, 1080), 'fontsize': 48, 'bgco': '#3C2B2B', 'textco': '#(1080', 'accent': '#8E44AD', 'shape_color': '#2980B9', 'shape1': 'circle', 'shape2': 'circle', 'grid_pos1': 1, 'grid_pos2': 9, 'shape1_size': 0.25, 'shape2_size': 0.25, 'image_margin': 120}
+2025-01-02 16:53:55,668 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:55,668 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:55,668 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:55,668 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:55,669 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:55,669 - DEBUG - Using text color: #000000
+2025-01-02 16:53:55,671 - INFO - Grid position 1 - x: 180.0, y: 180.0
+2025-01-02 16:53:55,671 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:55,671 - INFO - Grid position 9 - x: 900.0, y: 900.0
+2025-01-02 16:53:55,671 - INFO - Drawing circle with color: #2980B9, size: 0.25
+2025-01-02 16:53:55,674 - WARNING - Invalid text color format: #(1080, using default
+2025-01-02 16:53:55,674 - DEBUG - Using text color: #000000
+2025-01-02 16:55:20,330 - DEBUG - close.started
+2025-01-02 16:55:20,331 - DEBUG - close.complete
