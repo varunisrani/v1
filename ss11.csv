@@ -1,7 +1,7 @@
-font,bgco,textco,imagesize,fontsize,accent,shape1,shape2,shape_color,grid_pos1,grid_pos2
-Poppins-Medium,F3F4F6,2C3E50,(1080,1080),48,#E74C3C,square,circle,#7D3C98,2,6
-Poppins-Medium,F5F6FA,34495E,(1080,1080),48,#2980B9,square,circle,#16A085,2,6
-Poppins-Medium,FDF6F0,8E44AD,(1080,1080),48,#F39C12,square,square,#D35400,2,6
-Poppins-Medium,F0E5D8,4B3C3C,(1080,1080),48,#C0392B,square,circle,#7D3C98,2,6
-Poppins-Medium,E8D8D0,3C2B2B,(1080,1080),48,#8E44AD,circle,circle,#2980B9,2,6
-Poppins-Medium,F5F0E1,5E4D3E,(1080,1080),48,#27AE60,circle,square,#16A085,2,6
+font,bgco,textco,imagesize,fontsize,accent,shape1,shape2,shape_color,grid_pos1,grid_pos2,shape1_size,shape2_size
+Poppins-Medium,F3F4F6,2C3E50,(1080,1080),48,#E74C3C,square,circle,#7D3C98,1,9,0.25,0.20
+Poppins-Medium,F5F6FA,34495E,(1080,1080),48,#2980B9,square,circle,#16A085,3,7,0.30,0.25
+Poppins-Medium,FDF6F0,8E44AD,(1080,1080),48,#F39C12,square,square,#D35400,1,9,0.28,0.28
+Poppins-Medium,F0E5D8,4B3C3C,(1080,1080),48,#C0392B,square,circle,#7D3C98,3,7,0.35,0.22
+Poppins-Medium,E8D8D0,3C2B2B,(1080,1080),48,#8E44AD,circle,circle,#2980B9,1,9,0.25,0.25
+Poppins-Medium,F5F0E1,5E4D3E,(1080,1080),48,#27AE60,circle,square,#16A085,3,7,0.20,0.30

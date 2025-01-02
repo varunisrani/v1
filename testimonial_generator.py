@@ -199,14 +199,14 @@ class SVGShapeGenerator:
             dwg.add(dwg.line(start=(width, height), end=(width, height-size), stroke=stroke_color, stroke_width=t, stroke_opacity=opacity))
 
     @staticmethod
-    def draw_circle(dwg, width, height, color, opacity=0.5, center=None):
-        """Draw a centered circle with mini circles in corners"""
+    def draw_circle(dwg, width, height, color, opacity=0.5, center=None, size_factor=0.25):
+        """Draw a centered circle with custom size"""
         try:
             color = SVGShapeGenerator.validate_color(color)
-            logger.info(f"Drawing circle with color: {color}")
+            logger.info(f"Drawing circle with color: {color} and size factor: {size_factor}")
             
-            # Calculate circle dimensions
-            circle_size = min(width, height) * 0.25  # 25% of smallest dimension
+            # Calculate circle dimensions based on size factor
+            circle_size = min(width, height) * size_factor
             radius = circle_size / 2
             
             # Use provided center or default to center of canvas
@@ -216,7 +216,7 @@ class SVGShapeGenerator:
                 x = width / 2
                 y = height / 2
             
-            # Draw shadow for main circle
+            # Draw shadow
             dwg.add(dwg.circle(
                 center=(x + 4, y + 4),
                 r=radius,
@@ -224,7 +224,7 @@ class SVGShapeGenerator:
                 fill_opacity=0.1
             ))
             
-            # Draw main circle with shape color
+            # Draw main circle
             dwg.add(dwg.circle(
                 center=(x, y),
                 r=radius,
@@ -236,12 +236,11 @@ class SVGShapeGenerator:
             # Add inner white circle for contrast
             dwg.add(dwg.circle(
                 center=(x, y),
-                r=radius * 0.7,  # 70% of main circle
+                r=radius * 0.7,
                 fill='#FFFFFF',
                 stroke='none'
             ))
             
-            logger.info("Circle drawn successfully")
             return True
             
         except Exception as e:
@@ -249,14 +248,14 @@ class SVGShapeGenerator:
             return False
 
     @staticmethod
-    def draw_square(dwg, width, height, color, opacity=0.5, center=None):
-        """Draw a centered square card with shadow effect"""
+    def draw_square(dwg, width, height, color, opacity=0.5, center=None, size_factor=0.25):
+        """Draw a centered square with custom size"""
         try:
             color = SVGShapeGenerator.validate_color(color)
-            logger.info(f"Drawing square with color: {color}")
+            logger.info(f"Drawing square with color: {color} and size factor: {size_factor}")
             
-            # Calculate square dimensions
-            square_size = min(width, height) * 0.25  # 25% of smallest dimension
+            # Calculate square dimensions based on size factor
+            square_size = min(width, height) * size_factor
             
             # Use provided center or default to center of canvas
             if center:
@@ -301,7 +300,6 @@ class SVGShapeGenerator:
                 ry=5
             ))
             
-            logger.info("Square drawn successfully")
             return True
             
         except Exception as e:
@@ -411,10 +409,16 @@ class SVGShapeGenerator:
             
             if shape_type == 'square':
                 # Draw square
-                SVGShapeGenerator.draw_square(dwg, width, height, color, opacity=0.9, center=coords)
+                SVGShapeGenerator.draw_square(
+                    dwg, width, height, color, 
+                    opacity=0.9, center=coords
+                )
             elif shape_type == 'circle':
                 # Draw circle
-                SVGShapeGenerator.draw_circle(dwg, width, height, color, opacity=0.9, center=coords)
+                SVGShapeGenerator.draw_circle(
+                    dwg, width, height, color, 
+                    opacity=0.9, center=coords
+                )
                 
             return True
             
@@ -650,62 +654,35 @@ class TestimonialGenerator:
         return colors, palette_type
 
     def get_dynamic_grid_positions(self, shape1_type, shape2_type):
-        """Generate dynamic and visually appealing grid positions"""
+        """Generate grid positions using only diagonal combinations (1,9 and 3,7)"""
         
-        # Define position strategies for different combinations
-        position_strategies = {
-            ('square', 'circle'): [
-                # Diagonal arrangements
-                {'pos1': 1, 'pos2': 9},  # Top-left to bottom-right
-                {'pos1': 3, 'pos2': 7},  # Top-right to bottom-left
-                # Frame arrangements
-                {'pos1': 2, 'pos2': 8},  # Top-bottom
-                {'pos1': 4, 'pos2': 6},  # Left-right
-                # Center with corner
-                {'pos1': 5, 'pos2': 1},  # Center with top-left
-                {'pos1': 5, 'pos2': 3},  # Center with top-right
-                {'pos1': 5, 'pos2': 7},  # Center with bottom-left
-                {'pos1': 5, 'pos2': 9},  # Center with bottom-right
-            ],
-            ('circle', 'circle'): [
-                # Symmetrical arrangements
-                {'pos1': 1, 'pos2': 3},  # Top corners
-                {'pos1': 7, 'pos2': 9},  # Bottom corners
-                {'pos1': 1, 'pos2': 7},  # Left corners
-                {'pos1': 3, 'pos2': 9},  # Right corners
-                # Center with balanced position
-                {'pos1': 5, 'pos2': 2},  # Center with top
-                {'pos1': 5, 'pos2': 8},  # Center with bottom
-            ],
-            ('square', 'square'): [
-                # Grid-like arrangements
-                {'pos1': 2, 'pos2': 8},  # Vertical alignment
-                {'pos1': 4, 'pos2': 6},  # Horizontal alignment
-                {'pos1': 1, 'pos2': 5},  # Corner with center
-                {'pos1': 3, 'pos2': 5},  # Different corner with center
-                {'pos1': 7, 'pos2': 5},  # Another corner with center
-                {'pos1': 9, 'pos2': 5},  # Last corner with center
-            ]
-        }
+        # Define only diagonal position combinations
+        diagonal_combinations = [
+            {'pos1': 1, 'pos2': 9},  # Diagonal top-left to bottom-right
+            {'pos1': 3, 'pos2': 7},  # Diagonal top-right to bottom-left
+            {'pos1': 9, 'pos2': 1},  # Reverse diagonal top-left to bottom-right
+            {'pos1': 7, 'pos2': 3},  # Reverse diagonal top-right to bottom-left
+        ]
 
-        # Get shape combination
-        combo = (shape1_type.lower(), shape2_type.lower())
+        # Weight the combinations based on shape types
+        weights = []
+        for combo in diagonal_combinations:
+            weight = 1.0
+            
+            # Adjust weights based on shape combinations
+            if shape1_type.lower() != shape2_type.lower():
+                # For different shapes, prefer original diagonal arrangements
+                if (combo['pos1'] == 1 and combo['pos2'] == 9) or \
+                   (combo['pos1'] == 3 and combo['pos2'] == 7):
+                    weight = 1.4
+            
+            weights.append(weight)
+
+        # Select a combination using weighted random choice
+        chosen_combo = random.choices(diagonal_combinations, weights=weights, k=1)[0]
         
-        # If combination not found, use reverse order
-        if combo not in position_strategies:
-            combo = (shape2_type.lower(), shape1_type.lower())
-        
-        # If still not found, use default square-circle combination
-        strategy_list = position_strategies.get(combo, position_strategies[('square', 'circle')])
-        
-        # Randomly select a strategy with weights favoring more interesting combinations
-        weights = [1.5 if 5 in (s['pos1'], s['pos2']) else 1.0 for s in strategy_list]
-        strategy = random.choices(strategy_list, weights=weights, k=1)[0]
-        
-        # Sometimes flip positions for more variety
-        if random.random() > 0.5:
-            return strategy['pos2'], strategy['pos1']
-        return strategy['pos1'], strategy['pos2']
+        logger.info(f"Selected diagonal positions: {chosen_combo['pos1']}, {chosen_combo['pos2']}")
+        return chosen_combo['pos1'], chosen_combo['pos2']
 
     def generate_testimonial(self, topic):
         """Generate testimonial with beautiful color theme and dynamic grid positions"""
@@ -747,6 +724,10 @@ class TestimonialGenerator:
             # Log the chosen positions
             logger.info(f"Dynamic positions chosen - Shape1: {grid_pos1}, Shape2: {grid_pos2}")
             
+            # Get shape sizes from CSV or use defaults
+            shape1_size = float(random_row.get('shape1_size', 0.25))
+            shape2_size = float(random_row.get('shape2_size', 0.25))
+            
             # Update design style with generated colors and dynamic positions
             self.design_style.update({
                 'font': random_row['font'],
@@ -761,14 +742,18 @@ class TestimonialGenerator:
                 'shape1': random_row['shape1'],
                 'shape2': random_row['shape2'],
                 'grid_pos1': grid_pos1,
-                'grid_pos2': grid_pos2
+                'grid_pos2': grid_pos2,
+                'shape1_size': shape1_size,  # Added shape sizes
+                'shape2_size': shape2_size   # Added shape sizes
             })
             
             logger.info(f"Generated {palette_type} theme: {colors}")
+            logger.info(f"Shape sizes - Shape1: {shape1_size}, Shape2: {shape2_size}")
             return testimonial
 
         except Exception as e:
             logger.error(f"Error generating testimonial: {str(e)}")
+            logger.error("Stack trace:", exc_info=True)
             return f"This {topic} exceeded all my expectations! The quality is outstanding, and the customer service team went above and beyond to ensure my satisfaction."
 
     def render_text_svg(self, text, text_color, font_size, has_quotes):
@@ -840,55 +825,68 @@ class TestimonialGenerator:
             return None
 
     def render_shapes_svg(self, color, selected_shapes=None):
-        """Render shapes in SVG based on grid positions"""
+        """Render shapes in SVG based on grid positions with custom sizes"""
         try:
             width, height = self.design_style['imagesize']
             dwg = svgwrite.Drawing(size=(width, height))
             
-            # Grid dimensions
-            grid_size = 3
-            cell_width = width / grid_size
-            cell_height = height / grid_size
-            
-            # Get shape positions from design style
+            # Get shape positions and sizes from design style
             shape1 = self.design_style.get('shape1')
             shape2 = self.design_style.get('shape2')
             pos1 = self.design_style.get('grid_pos1')
             pos2 = self.design_style.get('grid_pos2')
             shape_color = self.design_style.get('shape_color', color)
+            shape1_size = float(self.design_style.get('shape1_size', 0.25))
+            shape2_size = float(self.design_style.get('shape2_size', 0.25))
             
             def get_grid_coordinates(position):
                 if position == 'center':
                     return (width/2, height/2)
                 elif position == 'corners':
-                    return None  # Special case for corners
+                    return None
                 else:
                     try:
                         pos = int(position)
-                        row = (pos - 1) // grid_size
-                        col = (pos - 1) % grid_size
-                        x = col * cell_width + cell_width/2
-                        y = row * cell_height + cell_height/2
+                        row = (pos - 1) // 3
+                        col = (pos - 1) % 3
+                        x = col * (width/3) + (width/6)
+                        y = row * (height/3) + (height/6)
                         return (x, y)
                     except:
                         return (width/2, height/2)
             
-            # Draw shapes at their positions
+            # Draw shapes at their positions with custom sizes
             if shape1 and pos1:
                 coords = get_grid_coordinates(pos1)
                 if coords:
                     if shape1.lower() == 'square':
-                        SVGShapeGenerator.draw_square(dwg, width, height, shape_color, opacity=0.9, center=coords)
+                        SVGShapeGenerator.draw_square(
+                            dwg, width, height, shape_color, 
+                            opacity=0.9, center=coords, 
+                            size_factor=shape1_size
+                        )
                     elif shape1.lower() == 'circle':
-                        SVGShapeGenerator.draw_circle(dwg, width, height, shape_color, opacity=0.9, center=coords)
+                        SVGShapeGenerator.draw_circle(
+                            dwg, width, height, shape_color, 
+                            opacity=0.9, center=coords, 
+                            size_factor=shape1_size
+                        )
             
             if shape2 and pos2:
                 coords = get_grid_coordinates(pos2)
                 if coords:
                     if shape2.lower() == 'square':
-                        SVGShapeGenerator.draw_square(dwg, width, height, shape_color, opacity=0.9, center=coords)
+                        SVGShapeGenerator.draw_square(
+                            dwg, width, height, shape_color, 
+                            opacity=0.9, center=coords, 
+                            size_factor=shape2_size
+                        )
                     elif shape2.lower() == 'circle':
-                        SVGShapeGenerator.draw_circle(dwg, width, height, shape_color, opacity=0.9, center=coords)
+                        SVGShapeGenerator.draw_circle(
+                            dwg, width, height, shape_color, 
+                            opacity=0.9, center=coords, 
+                            size_factor=shape2_size
+                        )
             
             return dwg.tostring()
             

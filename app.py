@@ -69,7 +69,7 @@ class SVGResponse(BaseModel):
     text_svg: str
     combined_svg: str
     text_content: str
-    colors: Dict[str, Optional[Union[str, int]]]
+    colors: Dict[str, Optional[Union[str, int, float]]]
 
     class Config:
         from_attributes = True
@@ -94,7 +94,9 @@ async def generate_testimonial(request: TestimonialRequest):
             'shape1': design_style['shape1'],
             'shape2': design_style['shape2'],
             'grid_pos1': design_style['grid_pos1'],
-            'grid_pos2': design_style['grid_pos2']
+            'grid_pos2': design_style['grid_pos2'],
+            'shape1_size': design_style['shape1_size'],
+            'shape2_size': design_style['shape2_size']
         }
         
         # Generate SVG components
